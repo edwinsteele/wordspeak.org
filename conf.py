@@ -10,11 +10,11 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "Your Name"
-BLOG_TITLE = "Demo Site"
-BLOG_URL = "http://nikola.ralsina.com.ar"
-BLOG_EMAIL = "joe@demo.site"
-BLOG_DESCRIPTION = "This is a demo site for Nikola."
+BLOG_AUTHOR = "Edwin Steele"
+BLOG_TITLE = "Wordspeak"
+BLOG_URL = "http://www.wordspeak.org"
+BLOG_EMAIL = "edwin@wordspeak.org"
+BLOG_DESCRIPTION = "Edwin's writings."
 
 
 # post_pages contains (wildcard, destination, template, use_in_feed) tuples.
