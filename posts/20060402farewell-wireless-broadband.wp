@@ -17,29 +17,17 @@
 <h4>An Ode to Wireless Broadband</h4>
 
 <pre>bullitt:~ edwin$ ping www.unwired.com.au
-
 PING www.unwired.com.au (220.101.191.10): 56 data bytes
-
 64 bytes from 220.101.191.10: icmp_seq=0 ttl=59 time=210.72 ms
-
 64 bytes from 220.101.191.10: icmp_seq=1 ttl=59 time=301.443 ms
-
 64 bytes from 220.101.191.10: icmp_seq=4 ttl=59 time=159.269 ms
-
 64 bytes from 220.101.191.10: icmp_seq=5 ttl=59 time=561.475 ms
-
 64 bytes from 220.101.191.10: icmp_seq=7 ttl=59 time=219.599 ms
-
 64 bytes from 220.101.191.10: icmp_seq=8 ttl=59 time=491.45 ms
-
 64 bytes from 220.101.191.10: icmp_seq=9 ttl=59 time=113.836 ms
-
 ^C
-
 --- www.unwired.com.au ping statistics ---
-
 10 packets transmitted, 7 packets received, 30% packet loss
-
 round-trip min/avg/max = 113.836/293.970/561.475 ms</pre>
 
 <h3>A post-mortem</h3>
