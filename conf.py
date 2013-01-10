@@ -104,7 +104,9 @@ SLUG_TAG_PATH = True
 #
 # If you don't need any of these, just set to []
 
-REDIRECTIONS = []
+REDIRECTIONS = [
+    ("2008/02/04/stone-churches-in-western-sydney-and-blue-mountains","posts/20080204stone-churches-in-western-sydney-and-blue-mountains.html")
+]
 
 # Commands to execute to deploy. Can be anything, for example,
 # you may use rsync:
