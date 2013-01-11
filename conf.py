@@ -105,24 +105,45 @@ SLUG_TAG_PATH = True
 # If you don't need any of these, just set to []
 
 REDIRECTIONS = [
-    ("2008/02/04/stone-churches-in-western-sydney-and-blue-mountains","posts/20080204stone-churches-in-western-sydney-and-blue-mountains.html")
+    ("2005/11/21/patience-grasshopper",
+        "/posts/20051121patience-grasshopper.html"),
+    ("2006/01/30/kosciuszko",
+        "/posts/20060130kosciuszko.html"),
+    ("2006/02/04/four-things",
+        "/posts/20060204four-things.html"),
+    ("2006/02/18/the-muhammed-cartoons-whats-really-going-on",
+        "/posts/20060218the-muhammed-cartoons-whats-really-going-on.html"),
+    ("2006/04/02/farewell-wireless-broadband",
+        "/posts/20060402farewell-wireless-broadband.html"),
+    ("2006/05/27/justifying-tax-cuts-for-the-rich",
+        "/posts/20060527justifying-tax-cuts-for-the-rich.html"),
+    ("2006/07/28/jenolan-caves-limestone-and-country-air",
+        "/posts/20060728jenolan-caves-limestone-and-country-air.html"),
+    ("2006/09/27/information-security-in-action-or-not-after-theft",
+        "/posts/20060927information-security-in-action-or-not-after-theft.html"),
+    ("2006/12/23/my-year-in-cities-2006",
+        "/posts/20061223my-year-in-cities-2005.html"),
+    ("2006/12/23/my-year-in-cities-2005",
+        "/posts/20061223my-year-in-cities-2006.html"),
+    ("2007/01/03/fiveish-things",
+        "/posts/20070103fiveish-things.html"),
+    ("2007/01/04/rock-climbing-at-barrenjoey-christmas-06",
+        "/posts/20070104rock-climbing-at-barrenjoey-christmas-06.html"),
+    ("2007/06/17/ship-run-aground-pasha-bulker",
+        "/posts/20070617ship-run-aground-pasha-bulker.html"),
+    ("2007/08/15/so-long-hong-kong",
+        "/posts/20070815so-long-hong-kong.html"),
+    ("2008/02/04/stone-churches-in-western-sydney-and-blue-mountains",
+        "/posts/20080204stone-churches-in-western-sydney-and-blue-mountains.html"),
+    ("2011/02/24/finding-a-new-home-for-my-photos",
+        "/posts/20110224finding-a-new-home-for-my-photos.html"),
+    ("2011/11/13/our-chicago-video-and-photos-are-up",
+        "/posts/20111113our-chicago-video-and-photos-are-up.html")
 ]
 
-# Commands to execute to deploy. Can be anything, for example,
-# you may use rsync:
-# "rsync -rav output/* joe@my.site:/srv/www/site"
-# And then do a backup, or ping pingomatic.
-# To do manual deployment, set it to []
-DEPLOY_COMMANDS = []
-
-# Where the output site should be located
-# If you don't use an absolute path, it will be considered as relative
-# to the location of conf.py
+DEPLOY_COMMANDS = ["rsync -e ssh --del -avz /Users/esteele/Code/wordspeak.org/output/ trutch.textdrive.us:/users/home/esteele/domains/test.wordspeak.org/web/public"]
 
 OUTPUT_FOLDER = 'output'
-
-# where the "cache" of partial generated content should be located
-# default: 'cache'
 CACHE_FOLDER = 'cache'
 
 # Filters to apply to the output.
