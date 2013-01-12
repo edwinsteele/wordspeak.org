@@ -36,7 +36,7 @@ BLOG_DESCRIPTION = "Edwin's writings."
 post_pages = (
     ("posts/*.wp", "posts", "post.tmpl", True),
     ("posts/*.txt", "posts", "post.tmpl", True),
-    ("stories/*.txt", "stories", "story.tmpl", False),
+    ("stories/*.txt", "pages", "story.tmpl", False),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -184,7 +184,7 @@ style="border-width:0; margin-bottom:12px;"
 src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML)
-CONTENT_FOOTER = 'Contents &copy; {date} <a href="mailto:{email}">{author}</a> - Powered by <a href="http://nikola.ralsina.com.ar">Nikola</a>'
+CONTENT_FOOTER = 'Contents &copy; {date} <a href="mailto:{email}">{author}</a> - <a href="/pages/about-this-site.html">Licencing Information</a>'
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year)
@@ -254,10 +254,11 @@ GLOBAL_CONTEXT = {
     # You should provide a key-value pair for each used language.
     'sidebar_links': {
         DEFAULT_LANG: (
-            ('/stories/about-this-site.html', 'About this site'),
-            ('/stories/photos-video.html', 'Photos and Video'),
+            ('/pages/about.html', 'About'),
+            ('/pages/projects.html', 'Projects'),
+            ('/pages/photos-video.html', 'Photos and Video'),
             ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), 'Archives'),
-            ('/categories/index.html', 'Tags'),
+            ('/rss.xml', 'RSS Feed'),
             ),
         }
     }
