@@ -4,11 +4,6 @@ from __future__ import unicode_literals
 import os
 import time
 
-########################################
-# Configuration, please edit
-########################################
-
-
 # Data about this site
 BLOG_AUTHOR = "Edwin Steele"
 BLOG_TITLE = "Wordspeak"
@@ -50,13 +45,6 @@ post_pages = (
 # FILES_FOLDERS = {'files': '' }
 # Which means copy 'files' into 'output'
 
-# A mapping of languages to file-extensions that represent that language.
-# Feel free to add or delete extensions to any list, but don't add any new
-# compilers unless you write the interface for it yourself.
-#
-# 'rest' is reStructuredText
-# 'markdown' is MarkDown
-# 'html' assumes the file is html and just copies it
 post_compilers = {
     "rest": ('.txt', '.rst'),
     "markdown": ('.md', '.mdown', '.markdown', ".wp"),
@@ -92,17 +80,7 @@ ARCHIVE_FILENAME = "archive.html"
 # output / TRANSLATION[lang] / RSS_PATH / rss.xml
 RSS_PATH = ""
 
-# Slug the Tag URL easier for users to type, special characters are
-# often removed or replaced as well.
 SLUG_TAG_PATH = True
-
-# A list of redirection tuples, [("foo/from.html", "/bar/to.html")].
-#
-# A HTML file will be created in output/foo/from.html that redirects
-# to the "/bar/to.html" URL. notice that the "from" side MUST be a
-# relative URL.
-#
-# If you don't need any of these, just set to []
 
 REDIRECTIONS = [
     ("2005/11/21/patience-grasshopper",
@@ -214,11 +192,11 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 # To enable comments via Disqus, you need to create a forum at
 # http://disqus.com, and set DISQUS_FORUM to the short name you selected.
 # If you want to disable comments, set it to False.
-DISQUS_FORUM = "nikolademo"
+DISQUS_FORUM = False
 
 # Enable Addthis social buttons?
 # Defaults to true
-# ADD_THIS_BUTTONS = True
+ADD_THIS_BUTTONS = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -276,11 +254,10 @@ GLOBAL_CONTEXT = {
     # You should provide a key-value pair for each used language.
     'sidebar_links': {
         DEFAULT_LANG: (
+            ('/stories/about-this-site.html', 'About this site'),
+            ('/stories/photos-video.html', 'Photos and Video'),
             ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), 'Archives'),
             ('/categories/index.html', 'Tags'),
-            ('/stories/about-nikola.html', 'About Nikola'),
-            ('/stories/handbook.html', 'The Nikola Handbook'),
-            ('http://nikola.ralsina.com.ar', 'Powered by Nikola!'),
             ),
         }
     }
