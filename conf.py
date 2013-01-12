@@ -175,16 +175,10 @@ DATE_FORMAT = '%Y-%m-%d %H:%M'
 # INDEX_TEASERS = False
 
 # A HTML fragment describing the license, for the sidebar.
-# I recomment using the Creative Commons' wizard:
-# http://creativecommons.org/choose/
-LICENSE = """
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ar/">
-<img alt="Creative Commons License BY-NC-SA"
-style="border-width:0; margin-bottom:12px;"
-src="http://i.creativecommons.org/l/by-nc-sa/2.5/ar/88x31.png"></a>"""
+LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML)
-CONTENT_FOOTER = 'Contents &copy; {date} <a href="mailto:{email}">{author}</a> - <a href="/pages/about-this-site.html">Licencing Information</a>'
+CONTENT_FOOTER = 'Copyright &copy; {date} <a href="mailto:{email}">{author}</a> | <a href="/pages/about-this-site.html">Licencing Information</a>'
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year)
@@ -256,7 +250,7 @@ GLOBAL_CONTEXT = {
         DEFAULT_LANG: (
             ('/pages/about.html', 'About'),
             ('/pages/projects.html', 'Projects'),
-            ('/pages/photos-video.html', 'Photos and Video'),
+            ('/pages/photos-and-video.html', 'Photos and Video'),
             ('/' + os.path.join(ARCHIVE_PATH, ARCHIVE_FILENAME), 'Archives'),
             ('/rss.xml', 'RSS Feed'),
             ),
