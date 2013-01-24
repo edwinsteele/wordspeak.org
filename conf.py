@@ -119,7 +119,10 @@ REDIRECTIONS = [
         "/posts/20111113our-chicago-video-and-photos-are-up.html")
 ]
 
-DEPLOY_COMMANDS = ["rsync -e ssh --del -avz /Users/esteele/Code/wordspeak.org/output/ trutch.textdrive.us:/users/home/esteele/domains/test.wordspeak.org/web/public"]
+DEPLOY_COMMANDS = [
+    "rsync -e ssh --del -avz /Users/esteele/Code/wordspeak.org/output/ trutch.textdrive.us:/users/home/esteele/domains/test.wordspeak.org/web/public",
+    "rsync -e ssh --del -avz /Users/esteele/Code/wordspeak.org/output/ trutch.textdrive.us:/users/home/esteele/web/public"
+]
 
 OUTPUT_FOLDER = 'output'
 CACHE_FOLDER = 'cache'
