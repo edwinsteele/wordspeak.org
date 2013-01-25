@@ -34,8 +34,8 @@ BLOG_DESCRIPTION = "Edwin's writings."
 #
 
 post_pages = (
-    ("posts/*.wp", "posts", "post.tmpl", True),
     ("posts/*.txt", "posts", "post.tmpl", True),
+    ("posts/*.wp", "posts", "post.tmpl", True),
     ("stories/*.txt", "pages", "story.tmpl", False),
 )
 
