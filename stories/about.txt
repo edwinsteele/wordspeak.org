@@ -5,6 +5,10 @@
 .. link: 
 .. description: 
 
+Contact
+*******
+You can reach me at edwin@wordspeak.org.
+
 Behind the keyboard
 *******************
 I live in Sydney, Australia, and am happily married with two children. I'm a follower of Jesus and am a part of `ImagineNations Church <http://www.imaginenationschurch.com>`_ in western Sydney. My day job is in IT Operations but I also love writing sofware in Python in my spare time.
@@ -24,6 +28,4 @@ On the server
 
 Licencing
 *********
-* This site and its written contents are licenced under `Creative Commons Attribution-NonCommercial <http://creativecommons.org/licenses/by-nc/3.0/>`_
-* My Flickr photos have licencing information visible on that site. Most of them are licenced under `Creative Commons Attribution-NonCommercial <http://creativecommons.org/licenses/by-nc/3.0/>`_ 
-* Photos, Videos and Quicktime Panoramas hosted on this site are licenced under `Creative Commons Attribution-NonCommercial <http://creativecommons.org/licenses/by-nc/3.0/>`_ 
+See `Licencing </pages/licencing.html>`_

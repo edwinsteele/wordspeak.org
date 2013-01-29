@@ -120,8 +120,7 @@ REDIRECTIONS = [
 ]
 
 DEPLOY_COMMANDS = [
-    "rsync -e ssh --del -avz /Users/esteele/Code/wordspeak.org/output/ trutch.textdrive.us:/users/home/esteele/domains/test.wordspeak.org/web/public",
-    "rsync -e ssh --del -avz /Users/esteele/Code/wordspeak.org/output/ trutch.textdrive.us:/users/home/esteele/web/public"
+    "rsync -av /Users/esteele/Code/wordspeak.org/output/ /Users/esteele/Sites/staging.wordspeak.org"
 ]
 
 OUTPUT_FOLDER = 'output'
@@ -181,7 +180,7 @@ DATE_FORMAT = '%Y-%m-%d %H:%M'
 LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML)
-CONTENT_FOOTER = 'Copyright &copy; {date} <a href="mailto:{email}">{author}</a> | <a href="/pages/about.html">Licencing Information</a>'
+CONTENT_FOOTER = 'Uncopyright. No rights reserved | <a href="/pages/licencing.html">Why give it away?</a>'
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year)
