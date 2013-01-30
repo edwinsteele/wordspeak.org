@@ -23,7 +23,7 @@ On the desktop
 On the server
 *************
 * This site is built using `Nikola <http://nikola.ralsina.com.ar>`_ and is hosted by `Textdrive <http://textdrive.com>`_
-* Photos are hosted on `Flickr <http://www.flickr.com/photos/edwin_steele/>`_
+* Photos are hosted on `Flickr <http://www.flickr.com/photos/edwin_steele/>`_ and videos on `Vimeo <https://vimeo.com/edwinsteele/videos>`_
 * Source for this site is in my `Github Repo <https://github.com/edwinsteele/wordspeak.org>`_
 
 Licencing
