@@ -14,4 +14,4 @@ Photos
 
 Video
 -----
-* They're all on `My Vimeo account <https://vimeo.com/edwinsteele/videos>`_
+* They're all on `My Vimeo account <http://vimeo.com/edwinsteele/videos>`_
