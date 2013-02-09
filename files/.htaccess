@@ -2,5 +2,5 @@ RedirectMatch permanent ^/([0-9]{4})/([0-9]{2})/([0-9]{2})/([a-z][-a-z0-9]*)$ /p
 # /feed /feed/ /feed/rss /feed?=http://wordspeak.org
 RedirectMatch permanent ^/feed /rss.xml
 RedirectPermanent /rss /rss.xml
-AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
 AddType text/css .css
