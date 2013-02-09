@@ -88,7 +88,8 @@ REDIRECTIONS = [
 ]
 
 DEPLOY_COMMANDS = [
-    "rsync -av /Users/esteele/Code/wordspeak.org/output/ /Users/esteele/Sites/staging.wordspeak.org"
+    "rsync --del -a /Users/esteele/Code/wordspeak.org/output/ /Users/esteele/Sites/staging.wordspeak.org",
+    "rsync --del -a /Users/esteele/Code/wordspeak.org/output/.htaccess /Users/esteele/Sites/staging.wordspeak.org",
 ]
 
 OUTPUT_FOLDER = 'output'
