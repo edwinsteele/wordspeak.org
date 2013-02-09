@@ -1,6 +1,6 @@
-RewriteEngine on
-RewriteRule ^([0-9]{4})/([0-9]{2})/([0-9]{2})/([a-z][-a-z0-9]*)$ posts/$1$2$3$4.html
-RewriteRule ^feed rss.xml
-RewriteRule ^rss$ rss.xml
+RedirectMatch permanent ^/([0-9]{4})/([0-9]{2})/([0-9]{2})/([a-z][-a-z0-9]*)$ /posts/$1$2$3$4.html
+# /feed /feed/ /feed/rss /feed?=http://wordspeak.org
+RedirectMatch permanent ^/feed /rss.xml
+RedirectPermanent /rss /rss.xml
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
 AddType text/css .css
