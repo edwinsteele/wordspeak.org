@@ -1,4 +1,6 @@
 RewriteEngine on
-#RewriteRule ^([0-9]{4})/([0-9]{2})/([0-9]{2})/([a-z][-a-z]*)$ posts/$1$2$3$4.html
+RewriteRule ^([0-9]{4})/([0-9]{2})/([0-9]{2})/([a-z][-a-z0-9]*)$ posts/$1$2$3$4.html
 RewriteRule ^feed rss.xml
 RewriteRule ^rss$ rss.xml
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+AddType text/css .css
