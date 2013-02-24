@@ -18,8 +18,16 @@ def nikola_build():
 
     with cd(SITE_BASE):
         result = local("%s build" % (nikola,), capture=True)
-        print "%s actions performed\n" % \
-              (len(result.stdout.splitlines()) - 1),
+        if "TaskFailed" in result.stdout or \
+                "WARNING" in result.stderr:
+            print "Stdout:"
+            print result.stdout
+            print "Stderr:"
+            print result.stderr
+            abort("Build failed.")
+        else:
+            print "%s actions performed\n" % \
+                  (len(result.stdout.splitlines()) - 1),
 
 
 def repo_status():
@@ -66,6 +74,12 @@ def deploy():
         repo_push()
     else:
         print "Not pushing to live site."
+
+
+def clean():
+    with cd(SITE_BASE):
+        local("rm -rf output cache")
+
 
 if __name__ == '__main__':
     deploy()
