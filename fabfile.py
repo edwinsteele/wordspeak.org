@@ -44,7 +44,7 @@ def linkchecker():
                        " http://staging.wordspeak.org",
                        capture=True)
     if result.failed:
-        if not confirm("Failures with Linkchecker. %s Continue anyway?" %
+        if not confirm("Failures with linkchecker:\n%s\nContinue anyway?" %
                       ("\n".join(result.stdout.splitlines()[9:]))):
             abort("Aborting at user request.")
     else:
