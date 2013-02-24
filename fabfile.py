@@ -41,7 +41,6 @@ def linkchecker():
     with settings(warn_only=True):
         result = local("linkchecker"
                        " --config linkcheckerrc"
-                       " --no-status"
                        " http://staging.wordspeak.org",
                        capture=True)
     if result.failed:

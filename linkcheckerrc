@@ -1,36 +1,6 @@
 [output]
 status=0
 
-# standard text logger
-[text]
-
-# GML logger
-[gml]
-
-# DOT logger
-[dot]
-
-# CSV logger
-[csv]
-
-# SQL logger
-[sql]
-
-# HTML logger
-[html]
-
-# blacklist logger
-[blacklist]
-
-# custom xml logger
-[xml]
-
-# GraphXML logger
-[gxml]
-
-# Sitemap logger
-[sitemap]
-
 [checking]
 # check HTML or CSS syntax locally with HTML tidy or cssutils, falling
 # back to the W3C online validator
@@ -39,5 +9,3 @@ status=0
 
 [filtering]
 ignorewarnings=http-robots-denied,mail-unverified-address
-
-[authentication]
