@@ -17,7 +17,7 @@ Fabric came up again this week in an `article
 application team [1] and on this occasion I saw that they were solving a similar
 problem to one that I recently solved with a shell script. The authors seemed
 clear-headed and not prone to fads so I thought I'd take the opportunity to
-duplicate my my shell script functionality in a fabric fabfile.
+duplicate my shell script functionality in a fabric fabfile.
 
 I must say that I was impressed. The `fabric tutorial
 <http://docs.fabfile.org/en/1.5/tutorial.html>`_ is very well structured and
