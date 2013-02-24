@@ -1,5 +1,6 @@
 *.pyc
 .doit.db
 .DS_Store
+.idea
 cache
 output
