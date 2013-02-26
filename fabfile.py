@@ -40,9 +40,17 @@ def repo_status():
 
 def sync(destination_path):
     with cd(SITE_BASE):
-        local("rsync --del -a output/ %s" % (destination_path,))
-        local("rsync --del -a output/.htaccess %s" %
+        local("rsync --delete-after -a output/ %s" % (destination_path,))
+        local("rsync --delete-after -a output/.htaccess %s" %
               (destination_path,))
+
+
+def staging_sync():
+    sync(STAGING_RSYNC_DESTINATION)
+
+
+def prod_sync():
+    sync(PROD_RSYNC_DESTINATION)
 
 
 def linkchecker():
@@ -67,10 +75,10 @@ def repo_push():
 def deploy():
     nikola_build()
     repo_status()
-    sync(STAGING_RSYNC_DESTINATION)
+    staging_sync()
     linkchecker()
     if confirm("Push to live site?"):
-        sync(PROD_RSYNC_DESTINATION)
+        prod_sync()
         repo_push()
     else:
         print "Not pushing to live site."
