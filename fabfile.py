@@ -30,6 +30,11 @@ def nikola_build():
                   (len(result.stdout.splitlines()) - 1),
 
 
+def requirements_dump():
+    with cd(SITE_BASE):
+        local("pip freeze > requirements.txt")
+
+
 def repo_status():
     result = local("git status --porcelain", capture=True)
     if result.stdout:
@@ -74,6 +79,7 @@ def repo_push():
 
 def deploy():
     nikola_build()
+    requirements_dump()
     repo_status()
     staging_sync()
     linkchecker()

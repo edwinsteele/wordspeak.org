@@ -21,3 +21,4 @@ paramiko==1.9.0
 pycrypto==2.6
 requests==1.0.4
 webassets==0.8
+wsgiref==0.1.2
