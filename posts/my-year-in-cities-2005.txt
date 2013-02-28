@@ -6,7 +6,7 @@
 .. description: 
 
 
-So `my year in cities, 2006 <ttp://www.wordspeak.org/posts/20061223my-year-in-cities-2006.html>`_ wasn't quite as exotic as 2005 and it's never going
+So `my year in cities, 2006 <http://www.wordspeak.org/posts/20061223my-year-in-cities-2006.html>`_ wasn't quite as exotic as 2005 and it's never going
 to get easier to justify going back a whole year so I figured I'd do it now
 and cut my losses!
 
