@@ -34,9 +34,9 @@ BLOG_DESCRIPTION = "Edwin's writings."
 #
 
 post_pages = (
-    ("posts/*.txt", "posts", "post.tmpl", True),
+    ("posts/*.rst", "posts", "post.tmpl", True),
     ("posts/*.wp", "posts", "post.tmpl", True),
-    ("stories/*.txt", "pages", "story.tmpl", False),
+    ("stories/*.rst", "pages", "story.tmpl", False),
 )
 
 # One or more folders containing files to be copied as-is into the output.
@@ -46,7 +46,7 @@ post_pages = (
 # Which means copy 'files' into 'output'
 
 post_compilers = {
-    "rest": ('.txt', '.rst'),
+    "rest": ('.rst', '.txt'),
     "markdown": ('.md', '.mdown', '.markdown', ".wp"),
     "html": ('.html', '.htm')
     }
