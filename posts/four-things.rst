@@ -9,7 +9,7 @@
 The content and spread of this fun "Four Things" post is most interesting. I first saw it at `Eric Meyer's site <http://meyerweb.com/eric/thoughts/2006/01/24/four-things/>`_ but it's right throughout the web development community. Has anyone studied the `phylogeny <http://en.wikipedia.org/wiki/Phylogeny>`_ of these contagious little chronicles?
 
 Four Things
-#.----------
+-----------
 
 Four jobs I've had:
 
