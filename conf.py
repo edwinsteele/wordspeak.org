@@ -35,7 +35,6 @@ BLOG_DESCRIPTION = "Edwin's writings."
 
 post_pages = (
     ("posts/*.rst", "posts", "post.tmpl", True),
-    ("posts/*.wp", "posts", "post.tmpl", True),
     ("stories/*.rst", "pages", "story.tmpl", False),
 )
 
@@ -47,9 +46,8 @@ post_pages = (
 
 post_compilers = {
     "rest": ('.rst', '.txt'),
-    "markdown": ('.md', '.mdown', '.markdown', ".wp"),
-    "html": ('.html', '.htm')
-    }
+    "html": ('.html', '.htm'),
+}
 
 DEFAULT_LANG = "en"
 TRANSLATIONS = {
@@ -88,8 +86,6 @@ REDIRECTIONS = [
 ]
 
 DEPLOY_COMMANDS = [
-    "rsync --del -a /Users/esteele/Code/wordspeak.org/output/ /Users/esteele/Sites/staging.wordspeak.org",
-    "rsync --del -a /Users/esteele/Code/wordspeak.org/output/.htaccess /Users/esteele/Sites/staging.wordspeak.org",
 ]
 
 OUTPUT_FOLDER = 'output'
