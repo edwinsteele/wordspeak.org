@@ -46,7 +46,7 @@ Four places I've vacationed:
 #. Mauritania
 #. Death Valley, California
 
-Four of my favorite dishes:
+Four of my favourite dishes:
 
 #. Beef Vindaloo
 #. Plov
@@ -65,7 +65,7 @@ Four places I would rather be right now:
 #. In a window seat on a Singapore Airlines or Emirates flight
 #. Skiing in Switzerland
 #. Trekking in the Himalayas (in Nepal)
-#. Rockclimbing at `Moonarie <http://www.thecrag.com/climbing/australia/moonarie>`_ in South Australia
+#. Rock climbing at `Moonarie <http://www.thecrag.com/climbing/australia/moonarie>`_ in South Australia
 
 Four bloggers I am tagging:
 

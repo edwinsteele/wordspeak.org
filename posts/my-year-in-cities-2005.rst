@@ -14,10 +14,10 @@ and cut my losses!
 - Sydney, Australia (Home)
 - Almeria, Spain
 - Marrakech, Morocco *
-- Laayounne, Morocco/Western Sahara/Saharan Occidental *
+- Laayoune, Morocco/Western Sahara/Saharan Occidental *
 - Dakhla, Morocco/Western Sahara/Saharan Occidental *
-- Nouadibhou, Mauritania *
-- Nouackchott, Mauritania
+- Nouadhibou, Mauritania *
+- Nouakchott, Mauritania
 - Agadir, Morocco
 - London, UK
 - Essaouira, Morocco

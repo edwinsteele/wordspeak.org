@@ -11,11 +11,13 @@ You can reach me at edwin@wordspeak.org.
 
 Behind the keyboard
 *******************
-I live in Sydney, Australia, and am happily married with two children. I'm a follower of Jesus and am a part of `ImagineNations Church <http://www.imaginenationschurch.com>`_ in western Sydney. My day job is in IT Operations but I also love writing sofware in Python in my spare time.
+I live in Sydney, Australia, and am happily married with two children. I'm a
+follower of Jesus and am a part of `ImagineNations Church <http://www.imaginenationschurch.com>`_ in western Sydney. My day job is in IT
+Operations but I also love writing software in Python in my spare time.
 
 On the desktop
 **************
-* I do all my real work on a 13" Macbook air, and when I'm home it's hooked up to an Apple 23" display
+* I do all my real work on a 13" MacBook air, and when I'm home it's hooked up to an Apple 23" display
 * My current photos are taken with convenient devices, generally my iPad 3rd gen or on my wife's iPhone 4S. My older photos were taken on a more traditional format camera, a 3.2mp Canon Ixus IIs, 10mp Panasonic DMC-TZ15 or film Nikon FM2
 * I write text in Vim, write code in PyCharm and process photos in Aperture
 * I store my source code on `Github <https://github.com/edwinsteele>`_
@@ -24,8 +26,8 @@ On the server
 *************
 * This site is built using `Nikola <http://nikola.ralsina.com.ar>`_ and is hosted by `Textdrive <http://textdrive.com>`_
 * Photos are hosted on `Flickr <http://www.flickr.com/photos/edwin_steele/>`_ and videos on `Vimeo <http://vimeo.com/edwinsteele/videos>`_
-* Source for this site is in my `Github Repo <https://github.com/edwinsteele/wordspeak.org>`_
+* Source for this site is in my `Github repository <https://github.com/edwinsteele/wordspeak.org>`_
 
-Licencing
+Licensing
 *********
-See `Licencing </pages/licencing.html>`_
+See `Licensing </pages/licensing.html>`_

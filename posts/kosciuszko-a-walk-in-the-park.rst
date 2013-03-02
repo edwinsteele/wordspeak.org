@@ -6,7 +6,7 @@
 .. description: 
 
 
-.. _charlottes_pass_image_page: http://www.flickr.com/photos/edwin_steele/8395047739/
+.. _Charlotte_pass_image_page: http://www.flickr.com/photos/edwin_steele/8395047739/
 
 Mt. Kosciuszko is Australia's highest mountain. If you are planning the trip,
 I suggest you leave behind your supplemental oxygen, your ice axe and your
@@ -27,15 +27,15 @@ summer.
 
 Now, would it surprise you that I took photos? Honestly, I'm really thrilled
 with the way these came out. I'm especially fond of the jpg panoramas (and the
-zoomable Quicktime QTVR versions aren't bad either!). All the photos and jpg
+zoomable QuickTime QTVR versions aren't bad either!). All the photos and jpg
 panoramas are in my `Kosciuszko <http://www.flickr.com/photos/edwin_steele/sets/72157632562706220/>`_ album.
 
-Oh, ok. Here's a taste... 
+Oh, OK. Here's a taste... 
 
 .. image:: http://farm9.staticflickr.com/8228/8395047739_a78dd8fd53_z.jpg
 	:height: 181px
 	:width: 640px
 	:align: center
 	:alt: From the Charlotte's Pass viewing platform
-	:target: charlottes_pass_image_page_
+	:target: Charlotte_pass_image_page_
 

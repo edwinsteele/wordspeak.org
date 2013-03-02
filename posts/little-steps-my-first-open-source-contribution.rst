@@ -12,7 +12,9 @@ I made my first open source contribution today and I'm pretty stoked. The change
 * learning git (and the github workflow)
 * Hynek Schlawack's `My Road to the Python Commit Bit <http://hynek.me/articles/my-road-to-the-python-commit-bit/>`_
 * Jesse Noller's `Why aren't you contributing (To Python) <http://jessenoller.com/2010/04/22/why-arent-you-contributing-to-python>`_
-* The last `python bug day <http://blog.python.org/2012/10/python-bug-day-this-saturday.html>`_ and while I didn't make any changes, I looked for tasks and got everything setup and got in that "I really want to do this" headspace
+* The last `python bug day
+* <http://blog.python.org/2012/10/python-bug-day-this-saturday.html>`_ and
+* while I didn't make any changes, I looked for tasks and got everything setup and got in that "I really want to do this" headspace
 
 Sometimes it's hard to see how a sequence of little steps set you up for what's ahead. Here's to another little step, and to what's ahead.
 

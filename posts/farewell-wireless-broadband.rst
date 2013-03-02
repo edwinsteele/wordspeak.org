@@ -14,7 +14,7 @@ new technology" category but it was a really good fit for me.
 
 - I want ADSL-like speed for my internet access
 - I don't need sub-100ms ping times
-- I don't have a landline (I have a great mobile phone plan)
+- I don't have a land-line (I have a great mobile phone plan)
 - I can't get Cable Internet in my apartment block
 - I don't agree with leeching bandwidth from my neighbours' open wireless points
 
@@ -66,7 +66,7 @@ Page loading times
 ^^^^^^^^^^^^^^^^^^
 
 Yuk. Terrible. Yuk. If you look at the ping times above you'll understand when
-I say that it would often take 5 seconds to load the google search page.
+I say that it would often take 5 seconds to load the Google search page.
 Interestingly enough, larger pages weren't that much slower although they
 still took forever to put the first bit of information up on the screen. The
 page loading times deteriorated over the course of my 6 month contract which
@@ -104,7 +104,7 @@ Skype and VOIP
 ^^^^^^^^^^^^^^
 
 I wish I'd characterised Skype behaviour a little better but I didn't. I guess
-you can blame the broken mic on my powerbook. The time that I did have a
+you can blame the broken mic on my PowerBook. The time that I did have a
 conversation, a call using SkypeOut to Canada early in my 6 month contract,
 had acceptable connection quality but a sample size of one ain't much good. I
 do have doubts about whether Skype or VOIP would be acceptable with the
@@ -113,7 +113,7 @@ latency and packet loss but can only speculate.
 Setup notes
 ^^^^^^^^^^^
 
-Using the built-in diagnositic software, I found that my base station was
+Using the built-in diagnostic software, I found that my base station was
 either 1.3km or 4.7km distant (it changed between the two). Most of the time
 it was connected to a base station at Silverwater. My signal strength was
 -83db +/- 3. I wish I'd noted the quality. I spent the best part of an hour
@@ -128,7 +128,7 @@ The packet loss and latency killed this technology for me. Your mileage will
 vary, for better or for worse, by your location. I would have been interested
 to know whether the base station was overloaded or whether the technology just
 isn't great. Either way, I'm now zooming along with ADSL. Sure I'm paying an
-extra $35/month because I need a landline but it's worth it because it *just
+extra $35/month because I need a land-line but it's worth it because it *just
 works*.
 
 Now...does anyone want to buy a used Unwired modem?

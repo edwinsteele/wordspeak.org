@@ -10,7 +10,7 @@
 .. _computer-setup-sticky-page: http://www.flickr.com/photos/edwin_steele/8490798077/
 .. _computer-setup-cardboard-page: http://www.flickr.com/photos/edwin_steele/8491899784/
 
-The state of my workspace affects my state of mind. Perhaps I should't find it
+The state of my workspace affects my state of mind. Perhaps I shouldn't find it
 hard to write code when there's clutter, but until I find a way to cope with
 it, I'll continue to have occasional cleaning frenzies and purges. One such
 event happened last week and I'm pretty happy with the result.
@@ -25,7 +25,7 @@ event happened last week and I'm pretty happy with the result.
 Most items in my workspace are like old pairs of jeans. They don't look as
 good as those in the shops, and maybe aren't as flash, but they're 
 comfortable and do the job well. I use a decade-old mouse, a keyboard from the
-mid 90's, a monitor from 2005 and an aging macbook air and while they're
+mid 90's, a monitor from 2005 and an aging MacBook air and while they're
 functional, they leave something to be desired in the cable clutter 
 department. As I'm not going to replace them, I need to deal with the 
 clutter in another way.

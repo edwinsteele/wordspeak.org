@@ -5,4 +5,5 @@
 .. link: 
 .. description: 
 
-Software: A pointer to my `Github <https://github.com/edwinsteele>`_ repos and their deployed instances.
+Software: A pointer to my `Github <https://github.com/edwinsteele>`_
+repositories and their deployed instances.

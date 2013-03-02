@@ -28,7 +28,7 @@ handled by a `fabfile
 the fabfile is the same length as the `shell script <https://github.com/edwinsteele/setup-scripts/blob/5e4354fcefd41cd5e93bc20736e66b2291c168ab/wordspeaksync.sh>`_,
 I think it's far easier to read and allows partial deployments (reminding me of
 make). I particularly like the innovative use of context managers as it removes
-one of the key problems with deployment scripts, that inadvertantly modifying
+one of the key problems with deployment scripts, that inadvertently modifying
 global state can cause unexpected downstream side-effects. Well done, Fabric developers.
 
 I don't plan to replace all my shell scripts with fabfiles, but I'll seriously

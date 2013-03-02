@@ -145,7 +145,7 @@ DATE_FORMAT = '%Y-%m-%d %H:%M'
 LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML)
-CONTENT_FOOTER = 'Uncopyright. No rights reserved | <a href="/pages/licencing.html">Why give it away?</a>'
+CONTENT_FOOTER = 'Uncopyright. No rights reserved | <a href="/pages/licensing.html">Why give it away?</a>'
 CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
                                        author=BLOG_AUTHOR,
                                        date=time.gmtime().tm_year)

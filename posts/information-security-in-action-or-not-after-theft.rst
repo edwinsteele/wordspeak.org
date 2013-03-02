@@ -68,7 +68,7 @@ If you don't think such ID checks are necessary, take this situation:
 #. Owner calls carrier to have the phone locked. Thief's call goes dead.
 #. Thief waits an hour after the phone is locked, goes to the carrier's shop and gets a new SIM re-issued, needing to only know the number of the phone and the fact that it was stolen earlier in the day and locked about an hour ago
 #. Shop attendant smiles naively as the thief leaves quickly and efficiently with a new SIM
-#. Profit! at someone else's expense (hmmm)
+#. Profit! at someone else's expense (hmm)
 
 I've written this scenario to show how easy it is to take advantage of lax
 security. I'm sure thieves are smart and creative so I really doubt this is

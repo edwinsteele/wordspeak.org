@@ -6,7 +6,7 @@
 .. description: 
 
 
-Deeper than the average answer (coz they're deeper than the average question).
+Deeper than the average answer (because they're deeper than the average question).
 Presenting `Five(ish) Things I Don't Know About You
 <http://headrush.typepad.com/creating_passionate_users/2006/12/fiveish_things_.html>`_:
 
@@ -32,7 +32,7 @@ Presenting `Five(ish) Things I Don't Know About You
 	Courageous, selfless
 
 5: What are your top three passions? (can be current or past, work, hobbies, or causes)
-	My friends, rockclimbing & knowing, loving and serving God
+	My friends, rock climbing & knowing, loving and serving God
 
 6: Write--and answer--one more question that YOU would ask someone
 	Q: What are you going to do with your answers to these questions? A: Write down some "next actions" for improvement and achievement so you won't come up with the same answers in 5 years

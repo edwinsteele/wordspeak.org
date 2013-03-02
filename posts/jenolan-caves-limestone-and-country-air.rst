@@ -5,7 +5,7 @@
 .. link: 
 .. description: 
 
-.. _temple_of_baal_image_page: http://www.flickr.com/photos/edwin_steele/8412934156/
+.. _Temple_of_Baal_image_page: http://www.flickr.com/photos/edwin_steele/8412934156/
 
 What better way to spend a public holiday than out in the country? Breathe in
 the crisp morning air, drive through quiet winding roads, see and hear
@@ -36,5 +36,5 @@ And here's a taste from the "Temple of Baal" cave:
 	:height: 320px
 	:width: 240px
 	:alt: Temple of Baal Cave: Another shawl feature
-	:target: temple_of_baal_image_page_
+	:target: Temple_of_Baal_image_page_
 

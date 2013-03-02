@@ -16,7 +16,7 @@ shopping malls, its sights, its shopping malls, its skyline and... did I
 mention its shopping malls? (Yes, there far too many).
 
 Hong Kong was fun. I love architecture, I adore big cities, the food was brill
-and I could still speak english. I think I'd go mental if I lived there but it
+and I could still speak English. I think I'd go mental if I lived there but it
 was a great experience.
 
 You might ask why it's taken me 4 months to publish these photos. The answer

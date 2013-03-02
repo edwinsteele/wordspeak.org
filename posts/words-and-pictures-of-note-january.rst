@@ -7,7 +7,7 @@
 
 Holidays gave me a bit of time to watch and read in January. Here are the articles and movies that I enjoyed most:
 
-- `Snow Fall: The Avalanche at Tunnel Creek - NY Times <http://www.nytimes.com/projects/2012/snow-fall/?pagewanted=all#/?part=tunnel-creek>`_. The story behind a massive avalanche in washington state, supported by amazing multimedia. Read it on the site. (Bravo NY Times for pushing the presentation envelope).
+- `Snow Fall: The Avalanche at Tunnel Creek - NY Times <http://www.nytimes.com/projects/2012/snow-fall/?pagewanted=all#/?part=tunnel-creek>`_. The story behind a massive avalanche in Washington state, supported by amazing multimedia. Read it on the site. (Bravo NY Times for pushing the presentation envelope).
 - `Two Men, One Sky: A Flight to the Finish - NY Times <http://www.nytimes.com/2013/01/13/sports/two-men-one-sky-the-silent-realization-of-a-purer-form-of-flight.html?pagewanted=all&src=longreads&_r=0>`_. Two friends chase the hang gliding distance record.
 - `Speaking of contentment - Annie Wald <http://anniewald.com/2013/01/11/speaking-of-contentment/>`_. 3 quotes that reminded me just how much I already have.
 - `The man who saved the world - PBS <http://www.pbs.org/wnet/secrets/episodes/the-man-who-saved-the-world-watch-the-full-episode/905/>`_. The release of nuclear weapons was authorised during the Cuban missile crisis, and one submarine captain intended to use them. This is the story of the Russian naval officer who prevented him. Chilling.
@@ -15,4 +15,4 @@ Holidays gave me a bit of time to watch and read in January. Here are the articl
 And a few that didn't hit the mark:
 
 - `Prometheus <http://www.imdb.com/title/tt1446714/>`_: Really good eye-candy, so good that I didn't notice the paper thin plot until most of the way through. While I think that's an achievement, there was nothing to talk about or reflect on, which is big part of the experience for me.
-- `Inside job <http://www.imdb.com/title/tt1645089/>`_: 90 minutes of interviews with people who benefitted from the 2008 financial crisis but had the power and duty to prevent it. It felt tired and whingey and it didn't need to be (If you want to see how this sort of thing can be well done see `Chasing Madoff <http://www.imdb.com/title/tt1636849/>`_ or `Enron: The smartest guys in the room <http://www.imdb.com/title/tt1016268/>`_)
+- `Inside job <http://www.imdb.com/title/tt1645089/>`_: 90 minutes of interviews with people who benefited from the 2008 financial crisis but had the power and duty to prevent it. It felt tired and whingey and it didn't need to be (If you want to see how this sort of thing can be well done see `Chasing Madoff <http://www.imdb.com/title/tt1636849/>`_ or `Enron: The smartest guys in the room <http://www.imdb.com/title/tt1016268/>`_)
