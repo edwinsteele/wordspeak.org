@@ -25,7 +25,7 @@ class RstURLFilter(Filter):
     That is, any words that are RST defined URLs.
     """
     _DOC_ERRORS = ["zA"]
-    _pattern = re.compile(r"^<[a-zA-z]+:\/\/[^\s].*>`_")
+    _pattern = re.compile(r"^<([a-zA-z]+:\/)?\/[^\s].*>`_")
     def _skip(self, word):
         if self._pattern.match(word):
             return True
