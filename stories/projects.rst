@@ -7,7 +7,7 @@
 
 And by projects, I mean software development...
 
-d3 Javascript library
+d3 JavaScript library
 =====================
 
 * `Australian Map Demo </pages/d3/d3-australian-map-demo.html>`_. Shows a GeoJSON map and colour scales
