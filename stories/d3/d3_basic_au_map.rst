@@ -22,6 +22,21 @@ d3. It also gave me an opportunity to play with colour scales.
 	}
 	</style>
 	<div id="d3_top_level_div"/>
+
+
+If you want to see the numbering used in the colour scale, and my rationale for
+declaring NSW as the best state and QLD as the worst, see the source!
+
+The original (unembedded) html file is available on GitHub: https://github.com/edwinsteele/d3-projects/blob/master/basic_au_map/basic_au_map.html
+
+I made the GeoJSON file by converting ESRI Shapefiles from the `2006 Australian Census <http://www.abs.gov.au/ausstats/abs@.nsf/DetailsPage/1259.0.30.0022006?OpenDocument>`_ 
+using the QGIS program. I used the *simplify geometries* function within that program,
+with a tolerance of 0.005, to reduce the detail to a suitable level for the
+web. The data files are also available on GitHub:
+https://github.com/edwinsteele/d3-projects/blob/master/data/au-states.geojson
+
+.. raw:: html
+
 	<script type="text/javascript" src="/d3-projects/lib/d3.v2.js"></script>
 	<script type="text/javascript">
 
@@ -70,13 +85,3 @@ d3. It also gave me an opportunity to play with colour scales.
 	});
 	</script>
 
-If you want to see the numbering used in the colour scale, and my rationale for
-declaring NSW as the best state and QLD as the worst, see the source!
-
-The original (unembedded) html file is available on GitHub: https://github.com/edwinsteele/d3-projects/blob/master/basic_au_map/basic_au_map.html
-
-I made the GeoJSON file by converting ESRI Shapefiles from the `2006 Australian Census <http://www.abs.gov.au/ausstats/abs@.nsf/DetailsPage/1259.0.30.0022006?OpenDocument>`_ 
-using the QGIS program. I used the *simplify geometries* function within that program,
-with a tolerance of 0.005, to reduce the detail to a suitable level for the
-web. The data files are also available on GitHub:
-https://github.com/edwinsteele/d3-projects/blob/master/data/au-states.geojson
