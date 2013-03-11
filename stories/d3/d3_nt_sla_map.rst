@@ -1,4 +1,4 @@
-.. title: Spoken English Language Proficiency - Indigenous Australians in the NT
+.. title: Map of Spoken English Language Proficiency for Indigenous Australians in the NT
 .. slug: d3-nt-sla-map
 .. date: 2013/03/10 17:56:01
 .. tags: 
@@ -46,7 +46,9 @@ superceded) *CDATA online* tool focussing on dimensions of spoken english
 language, indigenous language and religion dimensions for the indigenous
 population in the Northern Territory. The dataset required extra processing
 as the CDATA pivot tables needed aggregation to give the appropriate level of
-granularity.
+granularity. The current tool for this type of analysis of Census data is
+called `TableBuilder <http://www.abs.gov.au/websitedbs/censushome.nsf/home/tablebuilder?opendocument&navpos=240>`_.
+It may provide a level of control that makes this post-processing uneccessary.
 
 Map and data is available on `GitHub <https://github.com/edwinsteele/d3-projects/data>`_
 
