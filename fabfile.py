@@ -142,7 +142,7 @@ def spellchecker():
     en_spellchecker = enchant.checker.SpellChecker(
         "en_GB",
         filters=[EmailFilter, URLFilter, RstURLFilter, RstEmailFilter])
-    rst_posts = glob.glob(os.path.join(SITE_BASE, "posts", '*.rst'))
+    rst_posts = glob.glob(os.path.join(SITE_BASE, "posts", "*.rst"))
     rst_pages = glob.glob(os.path.join(SITE_BASE, "stories", "*.rst"))
     for rst_file in rst_posts + rst_pages:
         with open(rst_file, 'r') as f:
@@ -150,7 +150,7 @@ def spellchecker():
 
         for line in lines:
             # Wrong place for this, but meh
-            if len(line) > 2 and line[0] == "." and line[1] == ".":
+            if line.startswith(".."):
                 # rst directive
                 continue
 
