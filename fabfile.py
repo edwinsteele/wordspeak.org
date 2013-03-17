@@ -100,7 +100,7 @@ def linkchecker():
     with settings(warn_only=True):
         result = local("linkchecker"
                        " --config linkcheckerrc"
-                       " " + STAGING_FQDN,
+                       " http://" + STAGING_FQDN,
                        capture=True)
     if result.failed:
         if not confirm("Failures with linkchecker:\n%s\nContinue anyway?" %
