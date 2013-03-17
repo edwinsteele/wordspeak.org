@@ -16,7 +16,6 @@ PROD_RSYNC_DESTINATION = "wordspeak.org:/users/home/esteele/web/public"
 DEV_NIKOLA = "/Users/esteele/Code/nikola-edwinsteele/nikola/scripts/nikola"
 REL_NIKOLA = "/Users/esteele/.virtualenvs/wordspeak/bin/nikola"
 SITE_BASE = "/Users/esteele/Code/wordspeak.org"
-OUTPUT_DIR = os.path.join(SITE_BASE, "output")
 
 
 class RstURLFilter(Filter):
@@ -209,13 +208,12 @@ def orphans():
     os.remove(LINKCHECKER_OUTPUT)
     for dirname, file_list in \
         [(d, filter(lambda x: x[-5:] == ".html", f))
-         for d, _, f in os.walk(SITE_BASE)]:
-        if dirname.startswith(OUTPUT_DIR):
-            for f in file_list:
-                path_beneath_output = \
-                    os.path.join(dirname[len(OUTPUT_DIR) + 1:], f)
-                if path_beneath_output not in FILESYSTEM_FILES_TO_IGNORE:
-                    html_files_on_filesystem.add(path_beneath_output)
+            for d, _, f in os.walk(STAGING_RSYNC_DESTINATION)]:
+        for f in file_list:
+            path_beneath_output = \
+                os.path.join(dirname[len(STAGING_RSYNC_DESTINATION) + 1:], f)
+            if path_beneath_output not in FILESYSTEM_FILES_TO_IGNORE:
+                html_files_on_filesystem.add(path_beneath_output)
 
     orphan_list = html_files_on_filesystem.difference(html_files_checked)
     for orphan in sorted(list(orphan_list)):
