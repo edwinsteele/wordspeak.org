@@ -144,14 +144,25 @@ def spellchecker():
         filters=[EmailFilter, URLFilter, RstURLFilter, RstEmailFilter])
     rst_posts = glob.glob(os.path.join(SITE_BASE, "posts", "*.rst"))
     rst_pages = glob.glob(os.path.join(SITE_BASE, "stories", "*.rst"))
+    in_rst_directive = False
+
     for rst_file in rst_posts + rst_pages:
         with open(rst_file, 'r') as f:
             lines = f.readlines()
 
         for line in lines:
             # Wrong place for this, but meh
-            if line.startswith(".."):
-                # rst directive
+            if in_rst_directive:
+                if len(line.strip()) == 0:
+                    # rst directive ends with blank line
+                    in_rst_directive = False
+                # don't try to spell check words inside an rst directive
+                continue
+
+            if line.startswith("..") or line.startswith("::"):
+                # rst directive starts with ^..
+                # raw directive starts with ^::
+                in_rst_directive = True
                 continue
 
             en_spellchecker.set_text(line)
@@ -226,4 +237,4 @@ def orphans():
 
 
 if __name__ == '__main__':
-    orphans()
+    spellchecker()

@@ -10,7 +10,7 @@ Last month I moved from having a dynamic `WordPress <http://wordpress.org>`_ blo
 
 My WordPress installation generated posts URLs in the form ``http://wordspeak.org/yyyy/mm/dd/some_post_name``. After using the WordPress importer in Nikola, that post now exists at ``http://wordspeak.org/posts/yyyymmddsome_post_name.html``. I noticed that Apache RewriteRules didn't play nicely with the relative paths that Nikola generates but I found I could achieve what I wanted with the Redirect family of directives. 
 
-Here's a snippet of my apache ``.htaccess`` file to handle these redirections.
+Here's a snippet of my Apache ``.htaccess`` file to handle these redirections.
 
  .. gist:: 4744113
 

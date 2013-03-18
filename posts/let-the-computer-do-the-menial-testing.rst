@@ -30,7 +30,6 @@ output from my most recent deployment, showing:
 * a push to the github repository to make sure it's current
 
 ::
-
 	(wordspeak)Mercury:wordspeak.org esteele$ fab deploy
 	[localhost] local: /Users/esteele/.virtualenvs/wordspeak/bin/nikola build
 	0 actions performed
@@ -54,15 +53,15 @@ output from my most recent deployment, showing:
 	Writing objects: 100% (13/13), 2.17 KiB, done.
 	Total 13 (delta 9), reused 0 (delta 0)
 	To git@github.com:edwinsteele/wordspeak.org.git
-	   39b8464..c81b8b1  master -> master
-
+	39b8464..c81b8b1  master -> master
 	Done.
 	(wordspeak)Mercury:wordspeak.org esteele$
+
 
 You can see that Fabric is doing all the donkey work, and I'm left to confirm
 a few (temporary) oddities and make a final choice to send the change onto the
 live site. It's very satisfying. At some point I'll probably extend it to do
-W3C validation of the html and RSS and as I don't know a way to detect JavaScript
+W3C validation of the HTML and RSS and as I don't know a way to detect JavaScript
 errors, I could use it as an
 excuse to learn how to write `selenium <https://pypi.python.org/pypi/selenium>`_ 
 tests. I regularly trigger warnings even in its current state, though, so it's
