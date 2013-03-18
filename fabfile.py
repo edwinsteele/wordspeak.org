@@ -159,9 +159,11 @@ def spellchecker():
                 # don't try to spell check words inside an rst directive
                 continue
 
-            if line.startswith("..") or line.startswith("::"):
+            if (line.startswith("..") and not line.startswith(".. title:")) \
+                or line.startswith("::"):
                 # rst directive starts with ^..
                 # raw directive starts with ^::
+                # we want to spellcheck the title directive
                 in_rst_directive = True
                 continue
 

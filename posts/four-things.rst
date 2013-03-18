@@ -51,7 +51,7 @@ Four of my favourite dishes:
 #. Beef Vindaloo
 #. Plov
 #. Eggs Benedict with Ham
-#. A good machiato
+#. A good macchiato
 
 Four sites I visit daily:
 
