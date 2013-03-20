@@ -4,3 +4,7 @@ RedirectMatch permanent ^/feed /rss.xml
 RedirectPermanent /rss /rss.xml
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript
 AddType text/css .css
+# Would prefer to use a local page, but at the moment Nikola doesn't handle
+#  redirects properly because of local paths. Would be better also because
+#  we don't need to worry whether we're on staging or prod
+ErrorDocument 404 http://wordspeak.org/pages/404.html
