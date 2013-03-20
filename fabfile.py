@@ -194,6 +194,7 @@ def orphans():
         'd3-projects/index_time_series/index-line.html',
         'd3-projects/stacked-column-ex/stacked-column-ex.html',
         'galleries/index.html',
+        'pages/404.html',
     ]
 
     html_files_on_filesystem = set()
