@@ -9,13 +9,14 @@
 Proficiency in Spoken English Amongst Indigenous Australians in NT
 ------------------------------------------------------------------
 
-This was an exercise in finding the number of data dimensions that could be put into a
-single infographic. It shares the same dataset as the `scatterplot </pages/d3/d3-nt-sla-scatter.html>`_
-and served as a concrete example of where maps have value over other types of
-graphical representation. In technical terms, this provided an opportunity to:
+This was an exercise in maximising data density, and an experiment in
+different forms of presentation of the same dataset. Both graphics below share
+the same dataset, which was interesting because it was real, multi-dimensional
+data from the 2006 Australian Census.
+
+In technical terms the map provided an opportunity to:
 
 * develop a GeoJSON map with more complicated boundaries than the simple Australian map that I'd created previously. The challenge was ensuring map areas remained enclosed as the number of polygons was reduced. A smaller file often led to *bleeding* of areas when the area was filled.
-* generate a meaningful and interesting multi-dimensional dataset
 * learn how to zoom and scroll the map, which was surprisingly easy (if you're willing to tolerate a few glitches)
 * implement mouse-overs to show another dimension of data, even though it requires the user to interact with the graph to extract that data.  There doesn't seem to be a clean way to do mouse-overs as the SVG spec doesn't offer z-positioning, so the method feels a bit dirty.
 
@@ -35,7 +36,12 @@ graphical representation. In technical terms, this provided an opportunity to:
         
     </style>
 
-Stuff about the scatterplot
+
+This scatterplot attempts to help answer the following question:
+
+Where is the greatest opportunity for missionary work in NT indigenous Australian
+communities if we wanted to minimise the effect of language barriers?
+
 
 .. raw:: html
 
@@ -64,6 +70,34 @@ Stuff about the scatterplot
 	}
     </style>
 
+The dataset only includes the indigenous community, those who said they are
+Aboriginal or Torres Strait Islanders and who were in the Northern Territory
+on census night. The dimensions are:
+
+x-axis
+	percentage that consider themselves protestant christian
+y-axis
+	percentage that consider they have "good" or "excellent" spoken english
+data-points
+	each point refers to a census Statistical Local Area (SLA). This was the smallest geographical subdivision in the 2006 census.
+colour
+	the bubbles are coloured by the largest language group in the SLA. While this is another dimension on the graph, it adds little value as there is such (magnificent) diversity within those language groups. It was an example of how another dimension could be added to the graph.
+size
+	the bubble is scaled to show the indigenous population in the SLA.
+
+The name of the SLA is shown, along with population, as a mouse-over, and a
+map (of dubious value) is shown when the bubble is clicked.
+
+Apologies for the lack of labelling - I found axis labels quite hard in d3.
+
+This graph took quite some time, and taught me about:
+
+* text placement on a canvas
+* the perils of using areas to represent a relative values (humans aren't able to compare the size of areas very well)
+* linking from canvas objects 
+* drawing on a canvas
+
+I'm really pleased with this scatterplot as a proof of concept.
 
 The map came from the ESRI Shapefiles of the `Northern Territory Statistical Local Areas <http://www.abs.gov.au/ausstats/abs@.nsf/DetailsPage/1259.0.30.0022006?OpenDocument>`_
 that were available as a part of the Australian 2006 Census. It was converted
