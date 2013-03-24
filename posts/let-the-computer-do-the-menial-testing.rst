@@ -30,6 +30,7 @@ output from my most recent deployment, showing:
 * a push to the github repository to make sure it's current
 
 ::
+
 	(wordspeak)Mercury:wordspeak.org esteele$ fab deploy
 	[localhost] local: /Users/esteele/.virtualenvs/wordspeak/bin/nikola build
 	0 actions performed
