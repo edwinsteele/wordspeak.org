@@ -174,10 +174,16 @@ def spellchecker():
 
                 continue
 
-            if (line.startswith("..") and not line.startswith(".. title:")):
-                # rst directive starts with ^..
+            if line.startswith("..") and not line.startswith(".. title:"):
+                # rst directive starts with ^.. and is terminated with one
+                #  blank line
+                # except code-block which has a blank line after the directive
+                #  and is terminated with one blank line
                 # we want to spellcheck the title directive
-                blank_lines_til_spellcheck_starts = 1
+                if line.startswith(".. code-block"):
+                    blank_lines_til_spellcheck_starts = 2
+                else:
+                    blank_lines_til_spellcheck_starts = 1
                 continue
 
             if line.startswith("::"):

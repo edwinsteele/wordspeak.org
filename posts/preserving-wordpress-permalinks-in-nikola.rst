@@ -12,7 +12,12 @@ My WordPress installation generated posts URLs in the form ``http://wordspeak.or
 
 Here's a snippet of my Apache ``.htaccess`` file to handle these redirections.
 
- .. gist:: 4744113
+.. code-block:: apacheconf
+
+	RedirectMatch permanent ^/([0-9]{4})/([0-9]{2})/([0-9]{2})/([a-z][-a-z0-9]*)$ /posts/$1$2$3$4.html
+	# /feed /feed/ /feed/rss /feed?=http://wordspeak.org
+	RedirectMatch permanent ^/feed /rss.xml
+	RedirectPermanent /rss /rss.xml
 
 Hopefully someone will find this valuable.
 

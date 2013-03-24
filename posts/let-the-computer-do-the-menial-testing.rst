@@ -29,7 +29,7 @@ output from my most recent deployment, showing:
 * the sync to the main site
 * a push to the github repository to make sure it's current
 
-::
+.. code-block:: console
 
 	(wordspeak)Mercury:wordspeak.org esteele$ fab deploy
 	[localhost] local: /Users/esteele/.virtualenvs/wordspeak/bin/nikola build

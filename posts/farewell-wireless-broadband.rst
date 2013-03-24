@@ -35,7 +35,7 @@ about my experiences.
 An Ode to Wireless Broadband
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-::
+.. code-block:: console
 
 	bullitt:~ edwin$ ping www.unwired.com.au
 	PING www.unwired.com.au (220.101.191.10): 56 data bytes
