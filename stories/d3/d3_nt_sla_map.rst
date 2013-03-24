@@ -113,7 +113,7 @@ granularity. The current tool for this type of analysis of Census data is
 called `TableBuilder <http://www.abs.gov.au/websitedbs/censushome.nsf/home/tablebuilder?opendocument&navpos=240>`_.
 It may provide a level of control that makes this post-processing uneccessary.
 
-Map and data is available on `GitHub <https://github.com/edwinsteele/d3-projects/data>`_
+Map and data is available on `GitHub <https://github.com/edwinsteele/d3-projects/tree/master/data>`_
 
 .. raw:: html
 
