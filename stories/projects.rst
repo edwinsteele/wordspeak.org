@@ -11,7 +11,7 @@ d3 JavaScript library
 =====================
 
 * `Australian Map Demo </pages/d3/d3-australian-map-demo.html>`_. Shows a GeoJSON map and colour scales
-* `Experiments with Census data </pages/d3/d3-nt-sla-map.html>`_. Multi-dimensional scatterplot and GeoJSON map based on Australian 2006 Census data.
+* `Experiments with Census data </pages/d3/d3-nt-sla-map.html>`_. Multi-dimensional scatter-plot and GeoJSON map based on Australian 2006 Census data.
 
 Django
 ======
