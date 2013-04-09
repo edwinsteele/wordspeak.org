@@ -1,5 +1,6 @@
 ADSL
 Aerogard
+Affleck
 Agadir
 Alban's
 Albans
@@ -33,6 +34,7 @@ Galactica
 GeoJSON
 Haard's
 Hawkesbury
+Hertzfeld
 Hong
 Hynek
 IEEE
@@ -109,6 +111,7 @@ else's
 eons
 fabfile
 fabfiles
+Fi
 gamers
 geotag
 geotagged
