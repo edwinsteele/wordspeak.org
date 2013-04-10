@@ -34,7 +34,9 @@ post_compilers = {
     "rest": ('.rst', '.txt'),
 }
 
-USE_CDN=True
+USE_CDN = True
+GZIP_FILES = True
+GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
 DISABLED_PLUGINS = ["render_galleries"]
 
 # Name of the theme to use. Themes are located in themes/theme_name
@@ -46,6 +48,8 @@ CONTENT_FOOTER = 'Uncopyright. No rights reserved | <a href="/pages/licensing.ht
 DISQUS_FORUM = False
 ADD_THIS_BUTTONS = False
 INDEX_DISPLAY_POST_COUNT = 5
+# XXX - what should this be?
+# RSS_TEASERS = True
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
