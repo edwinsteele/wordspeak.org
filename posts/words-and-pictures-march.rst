@@ -17,7 +17,7 @@ The movies:
   and miss but this was really engrossing. I didn't know the historical outcome so the movie held me all the more. p.s.: Ben Affleck has the coolest beard.
 - `Source Code <http://www.imdb.com/title/tt0945513/>`_ - A engaging
   time-travel thriller. It had a few plot holes but nothing that detracted
-  from the entertainment at all. Don't think too hard as you watch it and I think you'll it. I did.
+  from the entertainment at all. Don't think too hard as you watch it and I think you'll like it. I did.
  
 And the best reading of the month:
 
