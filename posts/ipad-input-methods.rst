@@ -90,4 +90,4 @@ Table Reference Appendix Thing
       - Yes
       - No
 
-.. [#] http://dependentongadgets.com/2012/10/21/penultimate-vs-myscript-notes-vs-notability-vs-noteshelf/
+.. [#] http://www.dependentongadgets.co.uk/2012/10/penultimate-vs-myscript-notes-vs-notability-vs-noteshelf/
