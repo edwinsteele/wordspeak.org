@@ -12,6 +12,7 @@ Barrenjoey
 Battlestar
 BitTorrent
 Blackheath
+BookCase
 Bulker
 Bulker's
 CBA
@@ -44,6 +45,7 @@ Ixus
 Jenolan
 Jono
 Kamerschen
+Kensington
 Kosciuszko
 Kottke's
 Kukreti
@@ -51,6 +53,7 @@ Laayoune
 Lapstone
 Las
 Leura
+Logitech
 MacBook
 macchiato
 Madoff
@@ -61,6 +64,7 @@ Moreton
 Muhammed
 Mulgoa
 Multi
+MyScript
 NSW
 Nada
 Nikola
@@ -74,6 +78,7 @@ Photobucket
 Picasa
 Plov
 Porchetta's
+Portenzo
 PowerBook
 Pre
 Preet
@@ -84,6 +89,8 @@ RSS
 RewriteRules
 Rockclimbing
 SIM
+Siri
+Siri's
 Schlawack's
 Silverwater
 SkypeOut
@@ -96,6 +103,7 @@ Technica
 Textdrive
 UBD
 Ulrich
+Ultrathin
 Unwired
 VOIP
 Vimeo
@@ -122,6 +130,8 @@ htaccess
 iLife
 iMovie
 internets
+iOS
+iPad's
 ish
 jpg
 kbps
