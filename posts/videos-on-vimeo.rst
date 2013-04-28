@@ -13,7 +13,5 @@ The software that I use to publish this blog, `Nikola <http://nikola.ralsina.com
 So here it is in action, showing one of our videos from our time in the US a few years ago.
 
 .. vimeo:: 58466321
-	height=360
-	width=640
 
 The rest of the videos are over at `my Vimeo page <http://vimeo.com/edwinsteele/videos>`_. Hope you enjoy them.
