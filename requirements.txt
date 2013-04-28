@@ -2,10 +2,10 @@ Fabric==1.5.3
 Jinja2==2.6
 LinkChecker==8.4
 MacFSEvents==0.3
-Mako==0.7.3
+Mako==0.8.0
 Markdown==2.2.1
 MarkupSafe==0.15
-Nikola==5.4.2
+Nikola==5.4.4
 Pillow==2.0.0
 PyRSS2Gen==1.1
 Pygments==1.6
