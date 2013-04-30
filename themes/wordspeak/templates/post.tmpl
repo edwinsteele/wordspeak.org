@@ -17,9 +17,3 @@
     ${disqus.html_disqus(post.permalink(absolute=True), post.title(lang), post.base_path)}
     </div>
 </%block>
-
-<%block name="sourcelink">
-    <li>
-    <a href="${post.pagenames[lang]+post.source_ext()}" id="sourcelink">${messages[lang]["Source"]}</a>
-    </li>
-</%block>
