@@ -1,4 +1,4 @@
-assets/css/all-nocdn.css=bootstrap.css,bootstrap-responsive.css,rst.css,code.css,slides.css,theme.css,custom.css
-assets/css/all.css=rst.css,code.css,slides.css,theme.css,custom.css
-assets/js/all-nocdn.js=bootstrap.min.js,jquery-1.7.2.min.js,slides.min.jquery.js
-assets/js/all.js=slides.min.jquery.js
+assets/css/all-nocdn.css=bootstrap.css,bootstrap-responsive.css,rst.css,code.css,theme.css,tipuesearch.css,custom.css
+assets/css/all.css=rst.css,code.css,theme.css,tipuesearch.css,custom.css
+assets/js/all-nocdn.js=bootstrap.min.js,jquery-1.7.2.min.js,tipuesearch.js,tipuesearch_set.js
+assets/js/all.js=tipuesearch.js,tipuesearch_set.js

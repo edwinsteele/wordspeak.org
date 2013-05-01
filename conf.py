@@ -34,6 +34,13 @@ post_compilers = {
     "rest": ('.rst', '.txt'),
 }
 
+# Specify these so we can move them outside the dropbox sync'ed area
+# MUST be absolute
+#OUTPUT_FOLDER='/Users/esteele/Code/wordspeak.org/output'
+#CACHE_FOLDER='/Users/esteele/Code/wordspeak.org/cache'
+OUTPUT_FOLDER='/Users/esteele/tmp/nikola_wordspeak_output'
+CACHE_FOLDER='/Users/esteele/tmp/nikola_wordspeak_cache'
+
 USE_CDN = True
 GZIP_FILES = True
 GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
@@ -50,6 +57,35 @@ ADD_THIS_BUTTONS = False
 INDEX_DISPLAY_POST_COUNT = 5
 # XXX - what should this be?
 # RSS_TEASERS = True
+
+SEARCH_FORM = """
+<span class="navbar-form pull-right">
+<input type="text" id="tipue_search_input">
+<input type="button" id="tipue_search_button">
+</span>"""
+
+ANALYTICS = """
+<!-- <script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script> -->
+<!-- <script type="text/javascript" src="/assets/js/tipuesearch.js"></script> -->
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+        'mode': 'json',
+        'contentLocation': '/assets/js/tipuesearch_content.json',
+        'showUrl': false
+    });
+});
+</script>
+"""
+
+EXTRA_HEAD_DATA = """
+<!-- <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css"> -->
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+"""
+
+ENABLED_EXTRAS = [
+    "local_search",
+]
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
