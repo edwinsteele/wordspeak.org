@@ -52,6 +52,20 @@ class _RstEmailFilter(enchant.tokenize.Filter):
         return False
 
 
+def _quietly_run_nikola_cmd(nikola, cmd):
+    result = local("%s %s" % (nikola, cmd), capture=True)
+    if "TaskFailed" in result.stdout or \
+            "WARNING" in result.stderr:
+        print "Stdout:"
+        print result.stdout
+        print "Stderr:"
+        print result.stderr
+        abort("Nikola command '%s' failed." % (cmd,))
+    else:
+        print "%s actions performed\n" % \
+              (len(result.stdout.splitlines()) - 1),
+
+
 def nikola_build():
     """Build the site using nikola"""
     with quiet():
@@ -62,19 +76,10 @@ def nikola_build():
 
     with cd(SITE_BASE):
         # local_search should run before build bundles, but isn't in 5.4.4
-        local("%s local_search" % (nikola,), capture=False)
-        result = local("%s build" % (nikola,), capture=True)
-        if "TaskFailed" in result.stdout or \
-                "WARNING" in result.stderr:
-            print "Stdout:"
-            print result.stdout
-            print "Stderr:"
-            print result.stderr
-            abort("Build failed.")
-        else:
-            print "%s actions performed\n" % \
-                  (len(result.stdout.splitlines()) - 1),
-
+        _quietly_run_nikola_cmd(nikola, "render_pages")
+        _quietly_run_nikola_cmd(nikola, "local_search")
+        _quietly_run_nikola_cmd(nikola, "build_bundles")
+        _quietly_run_nikola_cmd(nikola, "build")
 
 def requirements_dump():
     """pip freeze the package requirements"""
