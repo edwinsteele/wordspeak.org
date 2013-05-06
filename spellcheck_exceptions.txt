@@ -1,3 +1,4 @@
+AAVE
 ADSL
 Aerogard
 Affleck
@@ -7,6 +8,7 @@ Albans
 Almeria
 Angelfire
 Arduino
+Arment's
 Ars
 Barrenjoey
 Battlestar
@@ -15,6 +17,7 @@ Blackheath
 BookCase
 Bulker
 Bulker's
+Bullitt
 CBA
 CPUs
 CommSecure
@@ -41,6 +44,7 @@ Hynek
 IEEE
 IIs
 ImagineNations
+Instapaper
 Ixus
 Jenolan
 Jono
@@ -53,7 +57,9 @@ Laayoune
 Lapstone
 Las
 Leura
+Lex
 Logitech
+Longform
 MacBook
 macchiato
 Madoff
@@ -85,14 +91,16 @@ Preet
 PyCharm
 QTVR
 QuickTime
-RSS
+Rififi
 RewriteRules
 Rockclimbing
+RSS
 SIM
 Siri
 Siri's
 Schlawack's
 Silverwater
+Skyfall
 SkypeOut
 Smugmug
 Springwood
@@ -112,6 +120,7 @@ Wentworth
 WordPress
 Zealand
 aging
+centric
 cha
 ching
 der
