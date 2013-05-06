@@ -6,7 +6,7 @@
 .. slug: words-and-pictures-april
 
 This month I got stuck in a tome, and I found it hard to leave the office during
-the day, which meant my lunchtime `Instapaper <http://instapaper.com>`_ routine didn't
+the day, which meant my lunchtime `Instapaper <http://instapaper.com/>`_ routine didn't
 happen very often, which means there aren't so many smaller articles for recommendation
 this month.
 
