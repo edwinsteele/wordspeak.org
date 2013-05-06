@@ -32,7 +32,7 @@ Movies:
 * `Bullitt <http://www.imdb.com/title/tt0062765/>`_. Come for the car chase, stay for the
   cinematography. My only expectations were of the green Mustang Fastback so I
   was surprised to find myself captivated by the scenes without dialogue and the
-  periods of silence, which reminded me of the amazing safe-cracking scene in <Rififi http://www.imdb.com/title/tt0048021/>`_.
+  periods of silence, which reminded me of the amazing safe-cracking scene in `Rififi <http://www.imdb.com/title/tt0048021/>`_.
   Far more artsy than I expected, and very enjoyable.
 
 
