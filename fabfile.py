@@ -13,13 +13,11 @@ import conf
 
 
 STAGING_FQDN = "staging.wordspeak.org"
-STAGING_RSYNC_DESTINATION = "/Users/esteele/Sites/staging.wordspeak.org"
+STAGING_RSYNC_DESTINATION = os.path.join(os.path.expanduser("~"), "Sites/staging.wordspeak.org")
 PROD_RSYNC_DESTINATION = "wordspeak.org:/users/home/esteele/web/public"
-DEV_NIKOLA = "/Users/esteele/Code/nikola-edwinsteele/nikola/scripts/nikola"
-REL_NIKOLA = "/Users/esteele/.virtualenvs/wordspeak/bin/nikola"
-SITE_BASE = "/Users/esteele/Code/wordspeak.org"
-# OUTPUT_BASE = os.path.join(SITE_BASE, "output")
-# CACHE_BASE = os.path.join(SITE_BASE, "cache")
+DEV_NIKOLA = os.path.join(os.path.expanduser("~"), "Code/nikola-edwinsteele/nikola/scripts/nikola")
+REL_NIKOLA = os.path.join(os.path.expanduser("~"), ".virtualenvs/wordspeak/bin/nikola")
+SITE_BASE = os.path.join(os.path.expanduser("~"), "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
 

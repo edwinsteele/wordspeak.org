@@ -38,8 +38,8 @@ post_compilers = {
 # MUST be absolute
 #OUTPUT_FOLDER='/Users/esteele/Code/wordspeak.org/output'
 #CACHE_FOLDER='/Users/esteele/Code/wordspeak.org/cache'
-OUTPUT_FOLDER='/Users/esteele/tmp/nikola_wordspeak_output'
-CACHE_FOLDER='/Users/esteele/tmp/nikola_wordspeak_cache'
+OUTPUT_FOLDER=os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_output')
+CACHE_FOLDER=os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_cache')
 
 USE_CDN = True
 GZIP_FILES = True
