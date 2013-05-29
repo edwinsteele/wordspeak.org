@@ -157,7 +157,9 @@ def clean():
 
 def spellchecker():
     """Spellcheck the ReST files on the site"""
+
     has_errors = False
+    enchant._broker.set_ordering("en_GB", "aspell")
     pwl_dictionary = enchant.request_pwl_dict(
         os.path.join(SITE_BASE, "spellcheck_exceptions.txt"))
     en_spellchecker = enchant.checker.SpellChecker(
