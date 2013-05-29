@@ -82,7 +82,10 @@ def nikola_build():
 def requirements_dump():
     """pip freeze the package requirements"""
     with cd(SITE_BASE):
-        local("pip freeze > requirements.txt")
+        # pyinotify and MacFSEvents only build on their particular platform
+        #  so exclude them. They'll get pulled in when a pip install doit
+        #  is done so there's no loss.
+        local("pip freeze | egrep -v '(pyinotify|MacFSEvents)' > requirements.txt")
 
 
 def repo_status():
@@ -159,6 +162,8 @@ def spellchecker():
     """Spellcheck the ReST files on the site"""
 
     has_errors = False
+    # aspell is available on mac by default, and I don't want to manage custom
+    #  word lists for both aspell and myspell so we'll just use one
     enchant._broker.set_ordering("en_GB", "aspell")
     pwl_dictionary = enchant.request_pwl_dict(
         os.path.join(SITE_BASE, "spellcheck_exceptions.txt"))

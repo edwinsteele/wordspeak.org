@@ -1,7 +1,6 @@
 Fabric==1.5.3
 Jinja2==2.6
 LinkChecker==8.4
-MacFSEvents==0.3
 Mako==0.8.0
 Markdown==2.2.1
 MarkupSafe==0.15
