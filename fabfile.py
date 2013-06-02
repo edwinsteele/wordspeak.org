@@ -8,18 +8,19 @@ import re
 import enchant
 import enchant.checker
 import enchant.tokenize
-# from enchant.tokenize import EmailFilter, URLFilter, Filter
 import conf
 
-
+TILDE = os.path.expanduser("~")
 STAGING_FQDN = "staging.wordspeak.org"
-STAGING_RSYNC_DESTINATION = os.path.join(os.path.expanduser("~"), "Sites/staging.wordspeak.org")
+STAGING_RSYNC_DESTINATION = os.path.join(TILDE, "Sites/staging.wordspeak.org")
 PROD_RSYNC_DESTINATION = "wordspeak.org:/users/home/esteele/web/public"
-DEV_NIKOLA = os.path.join(os.path.expanduser("~"), "Code/nikola-edwinsteele/nikola/scripts/nikola")
-REL_NIKOLA = os.path.join(os.path.expanduser("~"), ".virtualenvs/wordspeak/bin/nikola")
-SITE_BASE = os.path.join(os.path.expanduser("~"), "Code/wordspeak.org")
+DEV_NIKOLA = os.path.join(TILDE,
+                          "Code/nikola-edwinsteele/nikola/scripts/nikola")
+REL_NIKOLA = os.path.join(TILDE, ".virtualenvs/wordspeak/bin/nikola")
+SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
+
 
 class _RstURLFilter(enchant.tokenize.Filter):
     """Filter skipping over URLs.
@@ -79,13 +80,27 @@ def nikola_build():
         _quietly_run_nikola_cmd(nikola, "build_bundles")
         _quietly_run_nikola_cmd(nikola, "build")
 
+
 def requirements_dump():
     """pip freeze the package requirements"""
     with cd(SITE_BASE):
         # pyinotify and MacFSEvents only build on their particular platform
         #  so exclude them. They'll get pulled in when a pip install doit
         #  is done so there's no loss.
-        local("pip freeze | egrep -v '(pyinotify|MacFSEvents)' > requirements.txt")
+        local("pip freeze | egrep -v '(pyinotify|MacFSEvents)'"
+              "> requirements.txt")
+
+
+def maybe_add_untracked_files():
+    """Look for untracked files in the repo and give option to add"""
+    with cd(SITE_BASE):
+        result = local("git status --porcelain", capture=True)
+
+    for line in result.stdout.splitlines():
+        if line[0:2] == "??" and \
+                confirm("Add untracked file '%s'?" % (line[3:],)):
+            with cd(SITE_BASE):
+                local("git add '%s'" % (line[3:],))
 
 
 def repo_status():
@@ -138,6 +153,7 @@ def repo_push():
 
 def deploy():
     """Runs all the pre-deployment checks, pushing to staging and then prod"""
+    maybe_add_untracked_files()
     nikola_build()
     requirements_dump()
     spellchecker()
