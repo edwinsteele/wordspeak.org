@@ -164,3 +164,7 @@ wordspeak
 workflow
 workspace
 zoomable
+Linode
+iSSH
+tmux
+MySpell
