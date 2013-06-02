@@ -18,7 +18,7 @@ more about the constraints that I face if I were to use it as a primary device.
 
 Linode
 ======
-I setup a `Linode 1GB virtual server <http://www.linode.com>`_ and moved my blog
+I setup a `Linode 1GB virtual server <https://www.linode.com>`_ and moved my blog
 publishing setup across to it. The act of publishing my blog, as distinct from
 writing a post, is the part that is most vulnerable to flaky internet connectivity
 so it makes sense to host it on a device that always has good connectivity.
