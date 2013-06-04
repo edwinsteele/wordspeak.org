@@ -6,4 +6,6 @@
 .. description: 
 
 
-The requested URL was not found on this server.
+May I suggest you try the search field above?
+
+Go on, try it.
