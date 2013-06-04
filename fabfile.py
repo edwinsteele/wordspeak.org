@@ -107,11 +107,19 @@ def maybe_add_untracked_files():
 
 def repo_status():
     """Check whether there are any uncommitted/untracked files in the repo"""
-    result = local("git status --porcelain", capture=True)
+    with cd(SITE_BASE):
+        result = local("git status --porcelain", capture=True)
     if result.stdout:
         print result.stdout
-        if not confirm("Repo has uncommitted/untracked files. Continue?"):
+        response = prompt("Repo has uncommitted/untracked files. "
+                          "'abort' to abort or type a commit message",
+                          default="abort").strip()
+
+        if response == "abort":
             abort("Aborting at user request.")
+        else:
+            with cd(SITE_BASE):
+                local("git commit -a -m'%s'" % (response,))
 
 
 def _sync(destination_path):
@@ -151,23 +159,6 @@ def linkchecker():
 def repo_push():
     """Push the wordspeak repo to github"""
     local("git push")
-
-
-def deploy():
-    """Runs all the pre-deployment checks, pushing to staging and then prod"""
-    maybe_add_untracked_files()
-    nikola_build()
-    requirements_dump()
-    spellchecker()
-    repo_status()
-    staging_sync()
-    linkchecker()
-    orphans()
-    if confirm("Push to live site?"):
-        prod_sync()
-        repo_push()
-    else:
-        print "Not pushing to live site."
 
 
 def clean():
@@ -270,11 +261,11 @@ def spellchecker():
                         ", ".join(en_spellchecker.suggest(err.word))
                     action = prompt("Add '%s' to dictionary [add] or "
                                     "replace [type replacement]?" % (err.word,),
-                                    default="add")
+                                    default="add").strip()
                     if action == "add":
                         _add_to_spellcheck_exceptions(err.word)
                     else:
-                        _replace_in_file(rst_file, err.word.strip(), action)
+                        _replace_in_file(rst_file, err.word, action)
 
 
 def orphans():
@@ -334,6 +325,23 @@ def orphans():
         if not confirm("Orphaned html files exist"
                        " (are on disk but aren't linked). Continue?"):
             abort("Aborting at user request")
+
+
+def deploy():
+    """Runs all the pre-deployment checks, pushing to staging and then prod"""
+    maybe_add_untracked_files()
+    nikola_build()
+    requirements_dump()
+    spellchecker()
+    repo_status()
+    staging_sync()
+    linkchecker()
+    orphans()
+    if confirm("Push to live site?"):
+        prod_sync()
+        repo_push()
+    else:
+        print "Not pushing to live site."
 
 
 if __name__ == '__main__':
