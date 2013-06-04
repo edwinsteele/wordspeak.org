@@ -1,6 +1,7 @@
 from fabric.api import abort, local, settings
 from fabric.contrib.console import confirm
 from fabric.context_managers import cd, quiet
+from fabric.operations import prompt
 import csv
 import glob
 import os
@@ -20,6 +21,7 @@ REL_NIKOLA = os.path.join(TILDE, ".virtualenvs/wordspeak/bin/nikola")
 SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
+SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
 
 
 class _RstURLFilter(enchant.tokenize.Filter):
@@ -174,15 +176,74 @@ def clean():
         local("rm -rf %s %s" % (OUTPUT_BASE, CACHE_BASE))
 
 
+def _non_directive_lines(lines):
+    """filters out all the rst directives
+
+    so the spell checker doesn't get confused"""
+    blank_lines_til_spellcheck_starts = 0
+    for line in lines:
+        if blank_lines_til_spellcheck_starts > 0:
+            if len(line.strip()) == 0:
+                # rst directive ends with blank line
+                blank_lines_til_spellcheck_starts -= 1
+
+            continue
+
+        if line.startswith("..") and not line.startswith(".. title:"):
+            # rst directive starts with ^.. and is terminated with one
+            #  blank line
+            # except code-block which has a blank line after the directive
+            #  and is terminated with one blank line
+            # we want to spellcheck the title directive
+            if line.startswith(".. code-block"):
+                blank_lines_til_spellcheck_starts = 2
+            else:
+                blank_lines_til_spellcheck_starts = 1
+            continue
+
+        if line.startswith("::"):
+            # block directive starts with ^::
+            # it's immediately followed by a blank line and is terminated
+            #  by another blank line
+            blank_lines_til_spellcheck_starts = 2
+            continue
+
+        yield line
+
+
+def _add_to_spellcheck_exceptions(word):
+    with open(SPELLCHECK_EXCEPTIONS, "r+") as exceptions_file:
+        # Make sure we're writing the exception on a new line
+        if exceptions_file.read()[-1] != "\n":
+            exceptions_file.write("\n")
+        exceptions_file.write(word + "\n")
+    print "Added '%s' to spell check exception list" % (word,)
+
+
+def _replace_in_file(input_file, old_word, new_word):
+    with open(input_file) as f:
+        contents = f.read()
+        contents = re.sub(r'(\s)%s(\s)' % (old_word,),
+                          r'\1%s\2' % (new_word,),
+                          contents)  # word on its own
+        contents = re.sub(r'(\s)%s' % (old_word,),
+                          r'\1%s' % (new_word,),
+                          contents)  # word at end of file
+        contents = re.sub(r'%s(\s)' % (old_word,),
+                          r'%s\1' % (new_word,),
+                          contents)  # word at start of file
+    with open(input_file, "w") as f:
+        f.write(contents)
+    print "Replaced %s with %s in %s" % (old_word, new_word, input_file)
+
+
 def spellchecker():
     """Spellcheck the ReST files on the site"""
 
-    has_errors = False
     # aspell is available on mac by default, and I don't want to manage custom
-    #  word lists for both aspell and myspell so we'll just use one
+    #  word lists for both aspell and myspell so we'll just use aspell
     enchant._broker.set_ordering("en_GB", "aspell")
-    pwl_dictionary = enchant.request_pwl_dict(
-        os.path.join(SITE_BASE, "spellcheck_exceptions.txt"))
+    pwl_dictionary = enchant.request_pwl_dict(SPELLCHECK_EXCEPTIONS)
     en_spellchecker = enchant.checker.SpellChecker(
         "en_GB",
         filters=[enchant.tokenize.EmailFilter,
@@ -192,54 +253,28 @@ def spellchecker():
     )
     rst_posts = glob.glob(os.path.join(SITE_BASE, "posts", "*.rst"))
     rst_pages = glob.glob(os.path.join(SITE_BASE, "stories", "*.rst"))
-    blank_lines_til_spellcheck_starts = 0
 
     for rst_file in rst_posts + rst_pages:
         with open(rst_file, 'r') as f:
             lines = f.readlines()
 
-        for line in lines:
-            # Wrong place for this, but meh
-            if blank_lines_til_spellcheck_starts > 0:
-                if len(line.strip()) == 0:
-                    # rst directive ends with blank line
-                    blank_lines_til_spellcheck_starts -= 1
-
-                continue
-
-            if line.startswith("..") and not line.startswith(".. title:"):
-                # rst directive starts with ^.. and is terminated with one
-                #  blank line
-                # except code-block which has a blank line after the directive
-                #  and is terminated with one blank line
-                # we want to spellcheck the title directive
-                if line.startswith(".. code-block"):
-                    blank_lines_til_spellcheck_starts = 2
-                else:
-                    blank_lines_til_spellcheck_starts = 1
-                continue
-
-            if line.startswith("::"):
-                # block directive starts with ^::
-                # it's immediately followed by a blank line and is terminated
-                #  by another blank line
-                blank_lines_til_spellcheck_starts = 2
-                continue
-
+        for line in _non_directive_lines(lines):
             en_spellchecker.set_text(line)
             for err in en_spellchecker:
                 if not pwl_dictionary.check(err.word):
-                    has_errors = True
-                    print "%s (line %s): Not in dictionary:"\
-                          "%s (suggestions: %s)" % \
-                          (os.path.basename(rst_file),
-                           lines.index(line) + 1,
-                           err.word,
-                           ", ".join(en_spellchecker.suggest(err.word)))
-
-    if has_errors:
-        if not confirm("Spell check errors. Continue?"):
-            abort("Aborting at user request")
+                    print "Not in dictionary: %s (file: %s line: %s)" % \
+                          (err.word,
+                           os.path.basename(rst_file),
+                           lines.index(line) + 1)
+                    print "  Suggestions: " + \
+                        ", ".join(en_spellchecker.suggest(err.word))
+                    action = prompt("Add '%s' to dictionary [add] or "
+                                    "replace [type replacement]?" % (err.word,),
+                                    default="add")
+                    if action == "add":
+                        _add_to_spellcheck_exceptions(err.word)
+                    else:
+                        _replace_in_file(rst_file, err.word.strip(), action)
 
 
 def orphans():
