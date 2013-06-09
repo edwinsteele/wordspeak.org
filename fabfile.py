@@ -22,7 +22,7 @@ SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
 SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
-UNWANTED_BUILD_ARTIFACTS = ["tipue_search.html"]
+UNWANTED_BUILD_ARTIFACTS = [os.path.join(OUTPUT_BASE, "tipue_search.html")]
 
 
 class _RstURLFilter(enchant.tokenize.Filter):
