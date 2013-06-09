@@ -57,3 +57,8 @@ div.admonition, div.attention, div.caution, div.danger, div.error, div.hint, div
     border: 1px solid #aaa;
     border-radius: 5px;
 }
+
+/* previously in custom.css */
+h1 { font-size: 24px !important; }
+h1 small { font-size: 14px !important; }
+h2 { font-size: 18px !important; }
