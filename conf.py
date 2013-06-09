@@ -18,9 +18,8 @@ TRANSLATIONS = {
 SIDEBAR_LINKS = {
     DEFAULT_LANG: (
         ('/pages/about.html', 'About'),
-        ('/pages/projects.html', 'Projects'),
-        ('/pages/photos-and-video.html', 'Photos and Video'),
-        ('/archive.html', 'Archives'),
+        ('/pages/projects.html', 'Software and Media'),
+        ('/categories/index.html', 'Posts by Category'),
         ('/rss.xml', 'RSS Feed'),
         ),
     }

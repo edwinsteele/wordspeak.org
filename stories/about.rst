@@ -31,3 +31,7 @@ On the server
 Licensing
 *********
 See `Licensing </pages/licensing.html>`_
+
+Archives
+********
+See `Archives by Year </archive.html>`_

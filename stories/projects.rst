@@ -1,11 +1,21 @@
-.. title: Projects
+.. title: Software and Media
 .. slug: projects
 .. date: 2013/01/12 17:56:51
 .. tags: 
 .. link: 
 .. description: 
 
-And by projects, I mean software development...
+
+Media
+-----
+
+* Photos are all on `My Flickr account <http://flickr.com/photos/edwin_steele>`_
+* Videos are all on `My Vimeo account <http://vimeo.com/edwinsteele/videos>`_
+
+.. How about a favourites album to get people started?
+
+Software Projects
+-----------------
 
 d3 JavaScript library
 =====================
@@ -16,9 +26,10 @@ d3 JavaScript library
 Django
 ======
 
-* `Sensors <https://github.com/edwinsteele/sensorsproject>`_. Recording and * publishing data from Arduino sensors. Not deployed.
+* `Sensors <https://github.com/edwinsteele/sensorsproject>`_. Recording and publishing data from Arduino sensors. Not deployed.
 * `Visual Commute <https://github.com/edwinsteele/visual-commute>`_. Graphical timetables. Still very much a work in progress.
 
 This site
 =========
+
 * An excuse to learn lots of technologies while I write. Build, deployment and source posts are in the `wordspeak repository <https://github.com/edwinsteele/wordspeak.org>`_
