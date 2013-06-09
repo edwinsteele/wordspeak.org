@@ -81,7 +81,7 @@ def nikola_build():
         _quietly_run_nikola_cmd(nikola, "local_search")
         _quietly_run_nikola_cmd(nikola, "build_bundles")
         # Bundles don't include other css files. Force a rebuild
-        local("rm output/assets/css/all.css")
+        local("rm %s/assets/css/all.css" % (OUTPUT_BASE,))
         _quietly_run_nikola_cmd(nikola, "build")
 
 
