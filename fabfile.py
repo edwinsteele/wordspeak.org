@@ -22,6 +22,7 @@ SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
 SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
+UNWANTED_BUILD_ARTIFACTS = ["tipue_search.html"]
 
 
 class _RstURLFilter(enchant.tokenize.Filter):
@@ -334,11 +335,20 @@ def orphans():
             abort("Aborting at user request")
 
 
+def post_build_cleanup():
+    """Get rid of the stuff that we don't want to push but was built
+    (and can't easily be disabled"""
+    with cd(OUTPUT_BASE):
+        for f in UNWANTED_BUILD_ARTIFACTS:
+            local("rm %s" % (f,))
+
+
 def deploy():
     """Runs all the pre-deployment checks, pushing to staging and then prod"""
     repo_pull()
     maybe_add_untracked_files()
     nikola_build()
+    post_build_cleanup()
     requirements_dump()
     spellchecker()
     repo_status()
