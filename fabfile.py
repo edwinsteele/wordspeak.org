@@ -340,7 +340,7 @@ def post_build_cleanup():
     (and can't easily be disabled"""
     with cd(OUTPUT_BASE):
         for f in UNWANTED_BUILD_ARTIFACTS:
-            local("rm %s" % (f,))
+            local("rm -f %s" % (f,))
 
 
 def deploy():
