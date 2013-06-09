@@ -4,6 +4,7 @@ RedirectMatch permanent ^/feed /rss.xml
 RedirectPermanent /rss /rss.xml
 AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
 AddType text/css .css
+AddType application/json .json
 # Would prefer to use a local page, but at the moment Nikola doesn't handle
 #  redirects properly because of local paths. Would be better also because
 #  we don't need to worry whether we're on staging or prod
