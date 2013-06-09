@@ -79,8 +79,7 @@ $(document).ready(function() {
 """
 
 EXTRA_HEAD_DATA = """
-<!-- <link rel="stylesheet" type="text/css" href="/assets/css/tipuesearch.css"> -->
-<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 20px;"></div>
+<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 1px;"></div>
 """
 
 ENABLED_EXTRAS = [
