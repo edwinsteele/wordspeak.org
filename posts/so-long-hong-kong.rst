@@ -1,7 +1,7 @@
 .. title: So Long Hong Kong
 .. slug: 20070815so-long-hong-kong
 .. date: 2007/08/15 22:30:13
-.. tags: Photography
+.. tags: Photography, Travel
 .. link: 
 .. description: 
 

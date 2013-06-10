@@ -1,16 +1,16 @@
-.. title: Software and Media
+.. title: Software and Photos
 .. slug: projects
 .. date: 2013/01/12 17:56:51
-.. tags: 
+.. tags: Technology, Photos
 .. link: 
 .. description: 
 
 
-Media
------
+Photos
+------
 
-* Photos are all on `My Flickr account <http://flickr.com/photos/edwin_steele>`_
-* Videos are all on `My Vimeo account <http://vimeo.com/edwinsteele/videos>`_
+* My photos are all on `Flickr <http://flickr.com/photos/edwin_steele>`_
+* And I have a few videos on `Vimeo <http://vimeo.com/edwinsteele/videos>`_
 
 .. How about a favourites album to get people started?
 
@@ -32,4 +32,4 @@ Django
 This site
 =========
 
-* An excuse to learn lots of technologies while I write. Build, deployment and source posts are in the `wordspeak repository <https://github.com/edwinsteele/wordspeak.org>`_
+* Is an excuse to learn lots of technologies while I write. Build and deployment tools and source posts are in the GitHub `wordspeak repository <https://github.com/edwinsteele/wordspeak.org>`_

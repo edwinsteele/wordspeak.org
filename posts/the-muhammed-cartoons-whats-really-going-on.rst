@@ -1,7 +1,7 @@
 .. title: The Muhammed cartoons - what's really going on?
 .. slug: 20060218the-muhammed-cartoons-whats-really-going-on
 .. date: 2006/02/18 18:41:30
-.. tags: Politics,Religion and Spirituality
+.. tags: Politics, Religion and Spirituality
 .. link: 
 .. description: 
 

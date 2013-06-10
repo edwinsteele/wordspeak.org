@@ -1,7 +1,7 @@
 .. title: Little steps: My first open source contribution
 .. slug: little-steps-my-first-open-source-contribution
 .. date: 2013/01/26 07:20:46
-.. tags: 
+.. tags: Technology, Python
 .. link: 
 .. description: 
 

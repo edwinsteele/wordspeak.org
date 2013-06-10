@@ -1,7 +1,7 @@
 .. title: My year in cities, 2006
 .. slug: 20061223my-year-in-cities-2006
 .. date: 2006/12/23 06:50:53
-.. tags: Miscellaneous
+.. tags: 
 .. link: 
 .. description: 
 

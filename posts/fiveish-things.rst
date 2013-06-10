@@ -1,7 +1,7 @@
 .. title: Five(ish) Things
 .. slug: 20070103fiveish-things
 .. date: 2007/01/03 21:47:18
-.. tags: Miscellaneous
+.. tags: 
 .. link: 
 .. description: 
 

@@ -1,7 +1,7 @@
 .. title: Preserving WordPress permalinks in Nikola
 .. slug: preserving-wordpress-permalinks-in-nikola
 .. date: 2013/02/09 16:41:29
-.. tags: 
+.. tags: Technology, UNIX
 .. link: 
 .. description: 
 

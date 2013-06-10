@@ -1,7 +1,7 @@
 .. title: Let the computer do the menial testing
 .. slug: let-the-computer-do-the-menial-testing
 .. date: 2013/03/17 15:41:31
-.. tags: Technology,Python
+.. tags: Technology, Python
 .. link: 
 .. description: 
 

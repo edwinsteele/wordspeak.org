@@ -1,6 +1,6 @@
 .. link: 
 .. description: 
-.. tags: 
+.. tags: iPad, UNIX
 .. date: 2013/06/01 07:11:18
 .. title: A more flexible publishing workflow
 .. slug: a-more-flexible-workflow

@@ -1,6 +1,6 @@
 .. link: 
 .. description: 
-.. tags: 
+.. tags: Reading
 .. date: 2013/05/03 18:09:37
 .. title: Words and Pictures - April
 .. slug: words-and-pictures-april
