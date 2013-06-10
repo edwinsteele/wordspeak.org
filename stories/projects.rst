@@ -32,4 +32,4 @@ Django
 This site
 =========
 
-* Is an excuse to learn lots of technologies while I write. Build and deployment tools and source posts are in the GitHub `wordspeak repository <https://github.com/edwinsteele/wordspeak.org>`_
+* Is an excuse to learn lots of technologies while I write. Build and deployment tools and source posts are in the github `wordspeak repository <https://github.com/edwinsteele/wordspeak.org>`_
