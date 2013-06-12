@@ -1,7 +1,7 @@
 .. title: Words and Pictures - May
 .. slug: words-and-pictures-may
 .. date: 2013/06/05 17:38:47
-.. tags: draft
+.. tags: Reading
 .. link:
 .. description:
 
