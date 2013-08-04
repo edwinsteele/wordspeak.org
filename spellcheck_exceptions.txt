@@ -169,3 +169,6 @@ iSSH
 tmux
 MySpell
 DELETE_ME_TEST
+Schettler
+Jabbar
+Yorker
