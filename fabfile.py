@@ -346,10 +346,19 @@ def post_build_cleanup():
             local("rm -f %s" % (f,))
 
 
+def check_required_modules():
+    """Make sure we have all the python modules we think we need to do the build"""
+    try:
+        import webassets
+    except ImportError as e:
+        abort("Missing module: %s" % (e,))
+
+
 def deploy():
     """Runs all the pre-deployment checks, pushing to staging and then prod"""
     repo_pull()
     maybe_add_untracked_files()
+    check_required_modules()
     nikola_build()
     post_build_cleanup()
     requirements_dump()
