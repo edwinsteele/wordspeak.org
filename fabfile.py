@@ -215,8 +215,10 @@ def _non_directive_lines(lines):
 
 def _add_to_spellcheck_exceptions(word):
     with open(SPELLCHECK_EXCEPTIONS, "r+") as exceptions_file:
-        # Make sure we're writing the exception on a new line
-        if exceptions_file.read()[-1] != "\n":
+        exceptions_file_contents = exceptions_file.read()	
+        # Make sure we're writing the exception on a new line, and that the file
+        #  isn't empty
+        if exceptions_file_contents and exceptions_file_contents[-1] != "\n":
             exceptions_file.write("\n")
         exceptions_file.write(word + "\n")
     print "Added '%s' to spell check exception list" % (word,)
