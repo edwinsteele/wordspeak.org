@@ -68,7 +68,7 @@ def _quietly_run_nikola_cmd(nikola, cmd):
               (len(result.stdout.splitlines()) - 1),
 
 
-def nikola_build():
+def build():
     """Build the site using nikola"""
     with quiet():
         if local("test '$(showvirtualenv)' == 'nikola-dev'").succeeded:
@@ -87,6 +87,7 @@ def nikola_build():
         local("rm %s/assets/js/all.js" % (OUTPUT_BASE,))
         local("rm %s/assets/js/all-nocdn.js" % (OUTPUT_BASE,))
         _quietly_run_nikola_cmd(nikola, "build")
+        _quietly_run_nikola_cmd(nikola, "mincss")
 
 
 def requirements_dump():
@@ -361,7 +362,7 @@ def deploy():
     repo_pull()
     maybe_add_untracked_files()
     check_required_modules()
-    nikola_build()
+    build()
     post_build_cleanup()
     requirements_dump()
     spellchecker()
