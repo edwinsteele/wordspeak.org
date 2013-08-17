@@ -1,6 +1,8 @@
 
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from nikola import __version__ as nikola_version
+from socket import getfqdn
 import os
 import time
 
@@ -40,6 +42,7 @@ post_compilers = {
 OUTPUT_FOLDER=os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_output')
 CACHE_FOLDER=os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_cache')
 
+HIDE_SOURCELINK = True
 USE_CDN = True
 GZIP_FILES = True
 GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
@@ -75,7 +78,8 @@ $(document).ready(function() {
     });
 });
 </script>
-"""
+<!-- Built by Nikola v.%s on host %s -->
+""" % (nikola_version, getfqdn())
 
 EXTRA_HEAD_DATA = """
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 1px;"></div>
