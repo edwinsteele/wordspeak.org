@@ -43,7 +43,7 @@ OUTPUT_FOLDER=os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_output
 CACHE_FOLDER=os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_cache')
 
 HIDE_SOURCELINK = True
-USE_CDN = True
+USE_CDN = False
 GZIP_FILES = True
 GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
 DISABLED_PLUGINS = ["render_galleries"]
