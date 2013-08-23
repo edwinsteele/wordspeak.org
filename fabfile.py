@@ -9,12 +9,20 @@ import re
 import enchant
 import enchant.checker
 import enchant.tokenize
+import socket
 import conf
 
 TILDE = os.path.expanduser("~")
 STAGING_FQDN = "staging.wordspeak.org"
-STAGING_RSYNC_DESTINATION = os.path.join(TILDE, "Sites/staging.wordspeak.org")
-PROD_RSYNC_DESTINATION = "wordspeak.org:/users/home/esteele/web/public"
+STAGING_FILESYSTEM_ROOT = "Sites/staging.wordspeak.org"
+STAGING_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, STAGING_FILESYSTEM_ROOT)
+STAGING_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
+                                   (STAGING_FQDN, STAGING_FILESYSTEM_ROOT)
+PROD_FQDN = "www.wordspeak.org"
+PROD_FILESYSTEM_ROOT = "Sites/www.wordspeak.org"
+PROD_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, PROD_FILESYSTEM_ROOT)
+PROD_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
+                                (PROD_FQDN, PROD_FILESYSTEM_ROOT)
 DEV_NIKOLA = os.path.join(TILDE,
                           "Code/nikola-edwinsteele/nikola/scripts/nikola")
 REL_NIKOLA = os.path.join(TILDE, ".virtualenvs/wordspeak/bin/nikola")
@@ -52,6 +60,18 @@ class _RstEmailFilter(enchant.tokenize.Filter):
         if self._pattern.match(word):
             return True
         return False
+
+
+def _does_this_machine_answer_for_this_hostname(dns_name):
+    try:
+        my_main_ip = socket.gethostbyname(socket.getfqdn())
+    except socket.gaierror:
+        # Can't resolve hostname to a public IP, so we're probably going to
+        #  be referring to ourselves by localhost, so let's allocate an
+        #  IP address accordingly.
+        my_main_ip = "127.0.0.1"
+
+    return my_main_ip == socket.gethostbyname(dns_name)
 
 
 def _quietly_run_nikola_cmd(nikola, cmd):
@@ -139,12 +159,18 @@ def _sync(destination_path):
 
 def staging_sync():
     """Sync the site to the staging server"""
-    _sync(STAGING_RSYNC_DESTINATION)
+    if _does_this_machine_answer_for_this_hostname(STAGING_FQDN):
+        _sync(STAGING_RSYNC_DESTINATION_LOCAL)
+    else:
+        _sync(STAGING_RSYNC_DESTINATION_REMOTE)
 
 
 def prod_sync():
     """Sync the site to the prod server"""
-    _sync(PROD_RSYNC_DESTINATION)
+    if _does_this_machine_answer_for_this_hostname(PROD_FQDN):
+        _sync(PROD_RSYNC_DESTINATION_LOCAL)
+    else:
+        _sync(PROD_RSYNC_DESTINATION_REMOTE)
 
 
 def linkchecker():
@@ -324,10 +350,10 @@ def orphans():
     os.remove(LINKCHECKER_OUTPUT)
     for dirname, file_list in \
         [(d, filter(lambda x: x[-5:] == ".html", f))
-            for d, _, f in os.walk(STAGING_RSYNC_DESTINATION)]:
+            for d, _, f in os.walk(STAGING_RSYNC_DESTINATION_LOCAL)]:
         for f in file_list:
-            path_beneath_output = \
-                os.path.join(dirname[len(STAGING_RSYNC_DESTINATION) + 1:], f)
+            path_beneath_output = os.path.join(
+                dirname[len(STAGING_RSYNC_DESTINATION_LOCAL) + 1:], f)
             if path_beneath_output not in FILESYSTEM_FILES_TO_IGNORE:
                 html_files_on_filesystem.add(path_beneath_output)
 
@@ -350,8 +376,9 @@ def post_build_cleanup():
 
 
 def check_required_modules():
-    """Make sure we have all the python modules we think we need to do the build"""
+    """Make sure we have all the python modules needed for the build"""
     try:
+        # noinspection PyUnresolvedReferences
         import webassets
     except ImportError as e:
         abort("Missing module: %s" % (e,))
