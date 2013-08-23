@@ -10,6 +10,7 @@ Unidecode==0.04.13
 Yapsy==1.10.2-pythons2n3
 configparser==3.3.0r2
 cssselect==0.8
+distribute==0.7.3
 docutils==0.11
 doit==0.22.1
 lxml==3.2.3
