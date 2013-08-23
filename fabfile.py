@@ -153,8 +153,6 @@ def _sync(destination_path):
     with cd(SITE_BASE):
         local("rsync --delete-after -a %s/ %s" %
               (OUTPUT_BASE, destination_path))
-        local("rsync --delete-after -a %s/.htaccess %s" %
-              (OUTPUT_BASE, destination_path))
 
 
 def staging_sync():
