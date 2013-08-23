@@ -169,8 +169,8 @@ def repo_push():
 
 
 def repo_pull():
-    """Get changes from git in this repo"""
-    local("git pull")
+    """Get changes from git in this repo. Deliberately uses https to avoid needing keys"""
+    local("git pull https://github.com/edwinsteele/wordspeak.org.git master")
 
 
 def clean():
