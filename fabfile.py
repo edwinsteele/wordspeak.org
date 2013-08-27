@@ -30,7 +30,8 @@ SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
 SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
-UNWANTED_BUILD_ARTIFACTS = [os.path.join(OUTPUT_BASE, "tipue_search.html")]
+UNWANTED_BUILD_ARTIFACTS = [os.path.join(OUTPUT_BASE, "tipue_search.html"),
+                            os.path.join(OUTPUT_BASE, "tipue_search.html.gz")]
 
 
 class _RstURLFilter(enchant.tokenize.Filter):
@@ -149,7 +150,7 @@ def repo_status():
                 local("git commit -a -m'%s'" % (response,))
 
 
-def _sync(destination_path):
+def _sync_site(destination_path):
     with cd(SITE_BASE):
         local("rsync --delete-after -a %s/ %s" %
               (OUTPUT_BASE, destination_path))
@@ -158,17 +159,20 @@ def _sync(destination_path):
 def staging_sync():
     """Sync the site to the staging server"""
     if _does_this_machine_answer_for_this_hostname(STAGING_FQDN):
-        _sync(STAGING_RSYNC_DESTINATION_LOCAL)
+        destination = STAGING_RSYNC_DESTINATION_LOCAL
     else:
-        _sync(STAGING_RSYNC_DESTINATION_REMOTE)
+        destination = STAGING_RSYNC_DESTINATION_REMOTE
+
+    _sync_site(destination)
+    local("rsync --delete-after -a %s/robots.txt %s" % (SITE_BASE, destination))
 
 
 def prod_sync():
     """Sync the site to the prod server"""
     if _does_this_machine_answer_for_this_hostname(PROD_FQDN):
-        _sync(PROD_RSYNC_DESTINATION_LOCAL)
+        _sync_site(PROD_RSYNC_DESTINATION_LOCAL)
     else:
-        _sync(PROD_RSYNC_DESTINATION_REMOTE)
+        _sync_site(PROD_RSYNC_DESTINATION_REMOTE)
 
 
 def linkchecker():
@@ -193,7 +197,8 @@ def repo_push():
 
 
 def repo_pull():
-    """Get changes from git in this repo. Deliberately uses https to avoid needing keys"""
+    """Get changes from git in this repo.
+     Deliberately uses https to avoid needing keys"""
     local("git pull https://github.com/edwinsteele/wordspeak.org.git master")
 
 
