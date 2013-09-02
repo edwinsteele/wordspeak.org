@@ -63,15 +63,25 @@ class Tipue(LateTask):
         dst_path = os.path.join(kw["output_folder"], "assets", "js",
                                 "tipuesearch_content.json")
 
+        def summarise_text(text):
+            summary = " ".join(text.split()[:self.site.config['TIPUE_SUMMARY_LENGTH'] + 1])
+            # all tipue matches are case insensitive
+            #  so no need to have upper and lower in our list
+            words = set([word.lower() for word in text.split()])
+            words = words.difference(self.site.config['TIPUE_STOP_WORDS'])
+            return summary + " ".join(words)
+
         def save_data():
+            import logging
             pages = []
             for lang in kw["translations"]:
                 for post in posts:
                     # Don't index drafts (Issue #387)
                     if post.is_draft:
                         continue
-                    text = post.text(lang, strip_html=True)
+                    text = summarise_text(post.text(lang, strip_html=True))
                     text = text.replace('^', '')
+                    logging.error("Text length is %s for %s" % (len(text), post.title(lang)))
 
                     data = {}
                     data["title"] = post.title(lang)

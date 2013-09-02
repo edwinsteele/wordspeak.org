@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 from nikola import __version__ as nikola_version
 from socket import getfqdn
+import json
 import os
 import time
 
@@ -66,20 +67,35 @@ SEARCH_FORM = """
 <input type="button" id="tipue_search_button">
 </span>"""
 
+TIPUE_SUMMARY_LENGTH = 25
+TIPUE_STOP_WORDS = ["and", "be", "by", "do", "for", "he", "how", "if", "is", "it", "my", "not", "of", "or", "the", "to", "up", "what", "when"]
+
 ANALYTICS = """
-<!-- <script type="text/javascript" src="/assets/js/tipuesearch_set.js"></script> -->
-<!-- <script type="text/javascript" src="/assets/js/tipuesearch.js"></script> -->
 <script type="text/javascript">
+var tipuesearch_stop_words = %s;
+
+var tipuesearch_replace = {"words": [
+     {"word": "tipua", replace_with: "tipue"},
+     {"word": "javscript", replace_with: "javascript"}
+]};
+
+var tipuesearch_stem = {"words": [
+     {"word": "e-mail", stem: "email"},
+     {"word": "javascript", stem: "script"},
+     {"word": "javascript", stem: "js"}
+]};
+
 $(document).ready(function() {
     $('#tipue_search_input').tipuesearch({
         'mode': 'json',
         'contentLocation': '/assets/js/tipuesearch_content.json',
-        'showUrl': false
+        'showUrl': false,
+        'descriptiveWords': %s
     });
 });
 </script>
 <!-- Built by Nikola v.%s on host %s -->
-""" % (nikola_version, getfqdn())
+""" % (json.JSONEncoder().encode(TIPUE_STOP_WORDS), TIPUE_SUMMARY_LENGTH, nikola_version, getfqdn())
 
 EXTRA_HEAD_DATA = """
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 1px;"></div>
