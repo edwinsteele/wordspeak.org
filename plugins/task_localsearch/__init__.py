@@ -102,7 +102,8 @@ class Tipue(LateTask):
             "name": dst_path,
             "targets": [dst_path],
             "actions": [(save_data, [])],
-            'uptodate': [config_changed(kw)]
+            'uptodate': [config_changed(kw)],
+            'task_dep': ['render_pages']
         }
 
         # Copy all the assets to the right places
