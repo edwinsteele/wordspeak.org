@@ -19,8 +19,9 @@ I like to write and I think writing concise, clear, elegant statements is a
 noble, valuable and satisfying pursuit. I spend many hours each
 week writing email yet I rarely have the luxury of crafting and polishing, so
 I choose to write and re-write the few words that appear here - it gives me a
-chance to perfect. The degree of polish given to the words is completely disproportionate to the number of
+chance to perfect the text. The degree of polish given to the words is completely disproportionate to the number of
 readers or the topic, but hobbies are rarely rational undertakings, are they?
+
 As long as it's satisfying and I have a little spare time, I'll keep writing, and if I
 have extra time, I'll even write a little less.
 
@@ -38,6 +39,7 @@ there's a real need to publish. I think I've spent more time playing with the
 process than actually writing articles - the source code to the publishing
 engine, `Nikola <http://nikola.ralsina.com.ar>`_, is easy to understand and modify
 and maintaining my own host and deployment workflow has introduced me to several great tools and platforms.
+
 Publishing this blog gives me an excuse to write and experiment with software; it gives me a small but well
 defined project where I'm in control of the scope and get to do all the fun
 bits. My most engaging software projects generally begin out my own need, yet because
@@ -53,8 +55,9 @@ site on one host instead of two without a degradation of performance, reducing
 the build time of a product from 30 to 23 seconds or reducing the time to
 render a web page from 800ms to 600ms. I find something to optimise whenever I
 look about, yet I don't optimise because I have a problem with scalability, I do
-it because I like the discipline of optimising. Optimisation
-activities expose me to tools, platforms and techniques just like my workflow
+it because I like the discipline of optimising.
+
+Optimisation activities expose me to tools, platforms and techniques just like my workflow
 improvements - I love to learn why placing particular elements at the
 top of a page allows the page to render more quickly, or how moving my site
 closer to my location improves responsiveness over cellular connections during
@@ -70,4 +73,4 @@ isn't the driving force for this little site.
 ... that said, it's really cool that you're reading it!
 
 
-.. [#] I don't mind `gifts <http://architecture.lego.com/en/architecture-studio/architectural-studio-product-info/>`_
+.. [#] I'm happy to accept `gifts <http://architecture.lego.com/en/architecture-studio/architectural-studio-product-info/>`_
