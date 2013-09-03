@@ -64,7 +64,7 @@ INDEX_DISPLAY_POST_COUNT = 5
 SEARCH_FORM = """
 <span class="navbar-form pull-right">
 <input type="text" id="tipue_search_input">
-<input type="button" id="tipue_search_button">
+<input type="button" id="tipue_search_button" value="&#160;">
 </span>"""
 
 TIPUE_SUMMARY_LENGTH = 25
