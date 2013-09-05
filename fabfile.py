@@ -100,12 +100,6 @@ def build():
     with cd(SITE_BASE):
         # local_search should run before build bundles, but isn't in 5.4.4
         _quietly_run_nikola_cmd(nikola, "local_search")
-        _quietly_run_nikola_cmd(nikola, "build_bundles")
-        # Bundles don't include other css files. Force a rebuild
-        local("rm %s/assets/css/all.css" % (OUTPUT_BASE,))
-        local("rm %s/assets/css/all-nocdn.css" % (OUTPUT_BASE,))
-        local("rm %s/assets/js/all.js" % (OUTPUT_BASE,))
-        local("rm %s/assets/js/all-nocdn.js" % (OUTPUT_BASE,))
         _quietly_run_nikola_cmd(nikola, "build")
         _quietly_run_nikola_cmd(nikola, "mincss")
 
