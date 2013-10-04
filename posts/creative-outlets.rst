@@ -37,7 +37,7 @@ enough to provide space for tinkering and streamlining, but simple enough
 that returning to a working (manual) process is always an option if
 there's a real need to publish. I think I've spent more time playing with the
 process than actually writing articles - the source code to the publishing
-engine, `Nikola <http://nikola.ralsina.com.ar>`_, is easy to understand and modify
+engine, `Nikola <http://getnikola.com>`_, is easy to understand and modify
 and maintaining my own host and deployment workflow has introduced me to several great tools and platforms.
 
 Publishing this blog gives me an excuse to write and experiment with software; it gives me a small but well

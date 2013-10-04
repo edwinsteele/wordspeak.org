@@ -37,5 +37,5 @@ Movies:
 
 
 Having just loaded a bunch of articles from Longform, and recently added the RSS feed
-from `The Browser <https://thebrowser.com>`_, I suspect I'll have some prize articles
+from `The Browser <http://thebrowser.com>`_, I suspect I'll have some prize articles
 to list next month.

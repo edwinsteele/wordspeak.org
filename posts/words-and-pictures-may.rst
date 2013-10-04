@@ -11,7 +11,7 @@ Fiction involving time-travel is inconsistent, and even some of my beloved Star 
 Reading:
 
 * `The Kirov Series <http://www.writingshop.ws/html/about_kirov.html>`_ - John Schettler. A modern naval capital ship gets transported back to World War 2. I had low expectations because of the similarity to John Birmingham's `Axis of Time <http://en.wikipedia.org/wiki/Axis_of_Time>`_ series but I found the characters to be interesting and believable and the military side had an appropriate depth of technical detail. The three books fit well together and remained interesting. Highlight of the month. 
-* `Kareem: 20 Things I Wish I’d Known When I Was 30 <http://www.esquire.com/blogs/culture/kareem-things-i-wish-i-knew>`_ - Kareem Abdul-Jabbar. My favourite: "Do one thing ever day you look forward to doing".
+* `Kareem: 20 Things I Wish I’d Known When I Was 30 <http://www.esquire.com/blogs/news/kareem-things-i-wish-i-knew>`_ - Kareem Abdul-Jabbar. My favourite: "Do one thing ever day you look forward to doing".
 * `Morning and Evening - PM September 3 <http://www.heartlight.org/spurgeon/0903-pm.html>`_ - Charles Spurgeon. God teaches us dependence on him as we go through hard times, and is with us continually in their midst.
 * `A Guide for Game Hunting in England’s Premier League <http://www.nytimes.com/2013/05/21/sports/soccer/a-guide-to-attending-a-premier-league-game.html?pagewanted=1&_r=0&hpw&pagewanted=all>`_ - New York Times. Or: "How to avoid offence even when the culture doesn't make sense"
 * `Why Your Supermarket Only Sells 5 Kinds of Apples <http://www.motherjones.com/environment/2013/04/heritage-apples-john-bunker-maine>`_ - Mother Jones Magazine. This taught me so many things apple varieties and cultivation. Very interesting.

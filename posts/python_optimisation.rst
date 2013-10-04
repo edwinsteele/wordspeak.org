@@ -38,8 +38,8 @@ Based on these results, I can't work out which version the original is using,
 so I'll run the test with 2.7.2 (I haven't quite made the jump into 3.3 yet)
 I'm also shocked at how poorly the default python interpreter performed
 
-For ease of reference, I'll *enfunctionate* the routines. All the source that
-I'm using is here:
+For ease of reference, I'll *enfunctionate* the routines. All the source is
+`available <https://github.com/edwinsteele/python-scripts/blob/master/map_vs_listcomp_comparison.py>`_:
 
 .. code-block:: python
 
