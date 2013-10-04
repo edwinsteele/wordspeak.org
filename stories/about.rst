@@ -24,7 +24,7 @@ On the desktop
 
 On the server
 *************
-* This site is built using `Nikola <http://nikola.ralsina.com.ar>`_ and is hosted by `Textdrive <http://textdrive.com>`_
+* This site is built using `Nikola <http://getnikola.com>`_ and is hosted on `AWS <http://aws.amazon.com>`_
 * Photos are hosted on `Flickr <http://www.flickr.com/photos/edwin_steele/>`_ and videos on `Vimeo <http://vimeo.com/edwinsteele/videos>`_
 * Source for this site is in my `Github repository <https://github.com/edwinsteele/wordspeak.org>`_
 
