@@ -21,7 +21,7 @@ version. As I don't have access to a bare-metal machine with CPU isolation and
 the various versions of the interpreter, I adjusted the timeit parameters so that
 it performs a smaller number of iterations per timing run (10000 instead of 1000000
 as in the original), but a performs this smaller test 100 times and uses the minimum reading in accordance
-with the `timeit doco <http://localhost/~esteele/python-2.7.3-docs-html/library/timeit.html?highlight=timeit#timeit>`_. With as
+with the `timeit documentation <http://localhost/~esteele/python-2.7.3-docs-html/library/timeit.html?highlight=timeit#timeit>`_. With as
 little running on my machine as possible, I hope this gives a reasonable indication
 of elapsed time.
 
@@ -30,7 +30,7 @@ of elapsed time.
     :header: "Version", "Source", "map time", "list comp time", Difference %"
 
     "2.6.8", "Python.org Mac x64", "1.524", "1.665", "8%"
-    "2.7.2", "OSX 10.8 default", "2.085s", "2.087s", "0%"
+    "2.7.2", "OS X 10.8 default", "2.085s", "2.087s", "0%"
     "2.7.2", "Python.org Mac x64", "1.508s", "1.642s", "9%"
     "3.3.0", "Python.org Mac x64", "1.510s", "1.615s", "7%"
 
@@ -39,26 +39,26 @@ so I'll run the test with 2.7.2 (I haven't quite made the jump into 3.3 yet)
 I'm also shocked at how poorly the default python interpreter performed
 
 For ease of reference, I'll *enfunctionate* the routines. All the source that
-I'm using is HHHHEEEERRRREEEEE:
+I'm using is here:
 
 .. code-block:: python
 
- def a():
+ def run_map():
      return set(map(str.strip, ['wat '] * 200))
 
- def b():
+ def run_listcomp():
      return set([s.strip() for s in ['wat '] * 200])
 
 
-a: 78.1 usec/loop
-b: 81.3 usec/pass
+run_map(): 78.1 usec/loop
+run_listcomp(): 81.3 usec/pass
 
-So b() is 3 micros slower per iteration. Where is it coming from?
+So run_listcomp() is 3 micros slower per iteration. Where is it coming from?
 Let's look at the bytecode for each function (bytecode is different between versions)
 
 .. csv-table:: disassemble comparison
     :widths: 50 60 30
-    :header: "a()", "b()", "Notes"
+    :header: "run_map()", "run_listcomp()", "Notes"
     :keepspace:
 
 	``0  LOAD_GLOBAL           0 (set)``   ,       ``0 LOAD_GLOBAL 0 (set)``,Load 'set' from the global namespace
@@ -84,7 +84,7 @@ Let's look at the bytecode for each function (bytecode is different between vers
 	  
 
 Much of the bytecode is shared, so we will compare execution time for
-a:3,6,9,22 vs b:16-35.
+run_map():3,6,9,22 vs run_listcomp():16-35.
 
 Setup Costs
 ===========
@@ -94,22 +94,23 @@ over an empty list:
 
 .. code:: python
  
- def a_empty_list():
+ def run_map_empty_list():
      return set(map(str.strip, []))
  
- def b_empty_list():
+ def run_listcomp_empty_list():
      return set([s.strip() for s in []])
 
 
-a_empty_list: 1.215 usec/loop.
-b_empty_list: 0.688 usec/loop.
+run_map_empty_list: 1.215 usec/loop.
+run_listcomp_empty_list: 0.688 usec/loop.
 
 So there isn't any difference of consequence, in setup costs.
 
 Runtime Costs
 =============
 
-There are two other significant differences between a and b. The list comprehension
+There are two other significant differences between run_map() and
+run_listcomp(). The list comprehension
 uses more bytecode, and the two functions are different: the str.strip()
 method descriptor vs the builtin function strip()
 
@@ -122,15 +123,15 @@ map.
  def noop(s):
      return s
 
- def a_noop():
+ def run_map_noop():
      return set(map(noop, ['wat '] * 200))
 
- def b_noop():
+ def run_listcomp_noop():
      return set([noop(s) for s in ['wat '] * 200])
 
 
-a_noop: 53.326 usec/loop.
-b_noop: 56.856 usec/loop.
+run_map_noop: 53.326 usec/loop.
+run_listcomp_noop: 56.856 usec/loop.
 
 And it looks like list comprehension is slower than map with 200 elements.
 
@@ -138,11 +139,12 @@ Remember, though, that list comprehension was faster with an empty list. What
 sort of performance do we get as we run with lists of different sizes?
 
 <comparison at different lengths. at what point do map and list comprehension
-performance become equal? Possibly make reference to the way the default OSX
+performance become equal? Possibly make reference to the way the default OS X
 python interpreter is actually quite a bit faster for list comp for large
 size>
 
-The difference between a_noop vs b_noop is the same as a vs b, in percentage
+The difference between run_map_noop vs run_listcomp_noop is the same as
+run_map vs run_listcomp, in percentage
 terms, so it's puzzling why method descriptor is slower than the builtin
 function, even once we've cached the strip lookup from bytecode line 9
 
