@@ -35,7 +35,7 @@ Minimise what you actually transfer
 
 **Compress. Compress. Compress**
 
-Retrieving compressed content from a web server is very widely supported. Without compression, there was 261KB of data transferred to show the front page of my site, but with compression enabled it dropped to 86kb, 33% of the uncompressed size. I use Nginx as my web server, so it was as simple as having the following snippet in the default http section of the nginx.conf:
+Retrieving compressed content from a web server is very widely supported. Without compression, there was 261KB of data transferred to show the front page of my site, but with compression enabled it dropped to 86KB, 33% of the uncompressed size. I use Nginx as my web server, so it was as simple as having the following snippet in the default http section of the nginx.conf:
 
 .. code:: nginx
 
