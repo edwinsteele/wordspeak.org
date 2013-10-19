@@ -26,7 +26,7 @@ Each library that is used on a site will usually involve requesting at least one
 
 `Content Delivery Networks <http://en.wikipedia.org/wiki/Content_delivery_network>`_ (CDNs) can reduce page load time under some circumstances, so I experimented with transferring (`JQuery <http://jquery.com>`_ and `Twitter Bootstrap <http://getbootstrap.com>`_) from CDNs but I observed better performance by self-hosting. I expect this was for a few reasons:
 
-#. Obtaining JQuery and Bootstrap from the CDNs added two DNS lookups and three requests to the page load if the CDN files weren't in cache. The non-CDN setup had these libraries incorporated into the single CSS and JavaScript file that was produced by webassetss so these lookups and requests weren't necessary, even though webassets-generated files were larger. 
+#. Obtaining JQuery and Bootstrap from the CDNs added two DNS lookups and three requests to the page load if the CDN files weren't in cache. The non-CDN setup had these libraries incorporated into the single CSS and JavaScript file that was produced by webassets so these lookups and requests weren't necessary, even though webassets-generated files were larger. 
 #. The Bootstrap CDN didn't compress content (yes, I double-checked. No, I don't understand why they wouldn't!)
 #. mincss meant that I didn't need to transfer most of the bootstrap CSS file anyway, so my Bootstrap was slimmer than the CDN Bootstrap.
 
