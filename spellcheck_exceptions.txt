@@ -260,3 +260,5 @@ png
 ico
 esteele
 www
+Nginx
+nginx
