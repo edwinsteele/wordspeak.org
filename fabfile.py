@@ -72,7 +72,8 @@ def _does_this_machine_answer_for_this_hostname(dns_name):
         #  IP address accordingly.
         my_main_ip = "127.0.0.1"
 
-    return my_main_ip == socket.gethostbyname(dns_name)
+    # do a round trip so that we're comparing with DNS records for AWS (if we're on AWS)
+    return my_main_ip == socket.gethostbyname(socket.gethostbyaddr(socket.gethostbyname(dns_name))[0])
 
 
 def _quietly_run_nikola_cmd(nikola, cmd):
