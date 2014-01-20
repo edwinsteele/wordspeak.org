@@ -8,4 +8,4 @@ status=0
 #checkcss=1
 
 [filtering]
-ignorewarnings=http-robots-denied,mail-unverified-address
+ignorewarnings=http-robots-denied,mail-unverified-address,https-certificate-error

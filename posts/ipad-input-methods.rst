@@ -48,7 +48,7 @@ than using the on-screen keyboard. I use a spare Apple Bluetooth job that we had
 lying around but there are also keyboards that are
 integrated into the case like the `Logitech Ultrathin <http://www.logitech.com/en-au/product/ultrathin-keyboard-cover>`_
 which makes transport easier. I prefer a full-sized keyboard, and I'm
-really fond of my `Portenzo BookCase <http://shop.portenzo.com/bookcase-for-ipad/>`_ case so I'm happy to lug
+really fond of my `Portenzo BookCase <http://shop.portenzo.com/bookcase-for-ipad-air-and-other-ipads/>`_ case so I'm happy to lug
 an extra device for the times that I plan to do a bunch of typing, at least until
 something better comes along!
 
