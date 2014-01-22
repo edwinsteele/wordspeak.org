@@ -1,7 +1,7 @@
 .. title: Creative outlets
 .. slug: creative-outlets
 .. date: 2013/09/03 18:05:00
-.. tags: 
+.. tags: Technology
 .. link:
 .. description:
 

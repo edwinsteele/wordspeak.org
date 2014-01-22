@@ -1,6 +1,6 @@
 .. link: 
 .. description: 
-.. tags: 
+.. tags: Reading
 .. date: 2014/01/22 10:48:51
 .. title: Words and Pictures - November
 .. slug: words-and-pictures-november

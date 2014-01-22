@@ -1,6 +1,6 @@
 .. link: 
 .. description: 
-.. tags: 
+.. tags: Reading
 .. date: 2014/01/20 17:09:00
 .. title: Words and Pictures - September
 .. slug: words-and-pictures-september

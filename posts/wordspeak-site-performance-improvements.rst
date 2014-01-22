@@ -1,7 +1,7 @@
 .. title: Wordspeak site performance improvements
 .. slug: wordspeak-site-performance-improvements
 .. date: 2013/10/20 10:55:47
-.. tags: 
+.. tags: Technology
 .. link:
 .. description:
 
