@@ -315,3 +315,14 @@ Stuxnet
 Bitcoin
 cryptographic
 Greaney
+rsync
+IP
+balancer
+hostname
+ip
+gethostbyname
+getfqdn
+gaierror
+localhost
+gethostbyaddr
+dns
