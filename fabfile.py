@@ -64,6 +64,15 @@ class _RstEmailFilter(enchant.tokenize.Filter):
 
 
 def _does_this_machine_answer_for_this_hostname(dns_name):
+    """Looks at DNS and local interfaces to see if this host answers for the
+     DNS name in question
+
+    Caveats:
+    - Won't work reliably if the DNS entry resolves to more than one address
+    - Assumes the interface configured with the IP associated with the host's
+      hostname is actually the interface that accepts public traffic
+      associated with DNS name in question
+    """
     try:
         my_main_ip = socket.gethostbyname(socket.getfqdn())
     except socket.gaierror:
@@ -72,8 +81,11 @@ def _does_this_machine_answer_for_this_hostname(dns_name):
         #  IP address accordingly.
         my_main_ip = "127.0.0.1"
 
-    # do a round trip so that we're comparing with DNS records for AWS (if we're on AWS)
-    return my_main_ip == socket.gethostbyname(socket.gethostbyaddr(socket.gethostbyname(dns_name))[0])
+    # do a round-trip to so that we match when the host is behind a load
+    #  balancer and doesn't have a public IP address (assumes split-horizon
+    #  DNS is configured to resolve names to internal addresses) e.g. AWS
+    return my_main_ip == socket.gethostbyname(
+        socket.gethostbyaddr(socket.gethostbyname(dns_name))[0])
 
 
 def _quietly_run_nikola_cmd(nikola, cmd):
