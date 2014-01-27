@@ -326,3 +326,12 @@ gaierror
 localhost
 gethostbyaddr
 dns
+CNAME
+ec
+ap
+amazonaws
+ze
+bxr
+mkt
+lx
+zsh
