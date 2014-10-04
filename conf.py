@@ -29,11 +29,13 @@ SIDEBAR_LINKS = {
 
 post_pages = (
     ("posts/*.rst", "posts", "post.tmpl", True),
+    ("posts/*.md", "posts", "post.tmpl", True),
     ("stories/*.rst", "pages", "story.tmpl", False),
 )
 
 post_compilers = {
     "rest": ('.rst', '.txt'),
+    "markdown": ('.md', '.mdown', '.markdown'),
 }
 
 # Specify these so we can move them outside the dropbox sync'ed area
