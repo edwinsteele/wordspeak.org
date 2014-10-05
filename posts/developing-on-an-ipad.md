@@ -6,9 +6,9 @@
 .. description:
 
 # Surely I won't need my laptop
-I choose to pack lightly when travelling so I left my laptop at home when we did a recent overseas trip to visit family. I didn't anticipate writing any code or doing anything technical on holidays because I was tired from work, so leaving my laptop at home seemed like a good choice. And then I relaxed, and found a bit of mental energy and I wanted to do exactly what I'd expected not to do. So there I was with my iPad and Bluetooth keyboard, eager to do something technical and figuring that I'd be interesting to have a go with what's at hand.
+I pack lightly when I travel so I left my laptop at home when we did a recent overseas trip to visit family. I didn't anticipate writing any code or doing anything technical on holidays because I was tired from work, so leaving my laptop at home seemed like a good choice. And then I relaxed, and found a bit of mental energy and I wanted to do exactly what I'd expected not to do. So there I was with my iPad and Bluetooth keyboard, eager to do something technical and figuring that I'd be interesting to have a go with what's at hand.
 
-# And then attempt a significant upgrade using the iPad
+# And then I attempt a significant upgrade using the iPad
 I decided to try a significant upgrade of [Nikola](http://getnikola.org), which I use to publish this site. I'd fallen behind several versions, and there were a number of non-trivial breaking changes that I'd need to work through. Most of this task was unix command-line, text-file editing, a bit of python, reviewing web pages and reading doco. I'd have normally done it offline on my Macbook, but my tools in this case were:
 
 * A 3rd gen iPad.
@@ -31,5 +31,5 @@ Here's what I found:
 * Prompt looses connectivity to the server after a couple of minutes in the background, but setting the initial session command in Prompt to: `tmux attach || tmux`, along with the ssh agent makes restoring my current state a 5 second process.
 * I miss being able to "print" PDFs of some pages, which is helpful for capturing receipts. There's no obvious solution but needing to live without something helps question its value, and I'm now less attached to capturing receipts in this manner.
 
-# I'd do it again
-I was surprised how effectively I was able to work. The experience would be better with a terminal client that supported copy-and-paste, a client that maintained connectivity for longer and a keyboard that had a physical ESC key but otherwise it was quite acceptable. It's not my work platform of choice, but if I didn't expect to do a significant amount of work, and had a stable network connection, I'd try it again.
+# And I'd do it again
+I was surprised how effectively I was able to work. The experience would be better with a terminal client that supported copy-and-paste, a client that maintained connectivity for longer and a keyboard that had a physical ESC key but otherwise it was quite acceptable. It's not my work platform of choice, but if I didn't expect to do a significant amount of work, and had a stable network connection, I'd do it again.
