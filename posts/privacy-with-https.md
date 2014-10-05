@@ -9,13 +9,13 @@
 # Privacy is a right
 Everyone has a right to read and communicate in private, without fear of eavesdropping by a person or government, but that right isn't honoured. This right is not related to the subject material and the desire for privacy should never be used to imply guilt. To make it possible to reading in private, this site can now be accessed over [HTTPS](https://www.wordspeak.org). It doesn't matter to me that this is a personal, low traffic site, nor is it important that the content is unlikely to offend; Everyone has a right to read and communicate in private.
 
-I found enabling HTTPS to be an inexpensive and reasonably simple operation that hasn't noticably affected the performance of the site.
+I found enabling HTTPS to be an inexpensive and reasonably simple operation that hasn't noticeably affected the performance of the site.
 
 # Enabling HTTPS isn't costly
-I'm using a 12-month free SSL certificate from [StartSSL](https://www.ssllabs.com/ssltest/). The reputation of certificate providers is very important, and while I found it hard to find recommendations on reputable providers, these guys seem to be ok. When renewal time comes, a 12-month single domain certificate from them is $49, and [I'm told that there are free options](https://istlsfastyet) non-commercial use.
+I'm using a 12-month free SSL certificate from [StartSSL](https://www.ssllabs.com/ssltest/). The reputation of certificate providers is very important, and while I found it hard to find recommendations on reputable providers, these guys seem to be OK. When renewal time comes, a 12-month single domain certificate from them is $49, and [I'm told that there are free options](https://istlsfastyet) non-commercial use.
 
 # Enabling HTTPS isn't that complicated
-It took a few hours to setup, but most of that was because I like this sort of change to be repeatable so I did my usual dance with version control for all the keys, certificates and artifacts and then introduced HTTPS to the site via my ansible playbooks.
+It toOK a few hours to setup, but most of that was because I like this sort of change to be repeatable so I did my usual dance with version control for all the keys, certificates and artifacts and then introduced HTTPS to the site via my ansible playbooks.
 When I started, I wasn't particularly familiar with certificate formats or signing requests but I followed a [StartSSL and nginx-oriented walkthrough](https://konklone.com/post/switch-to-https-now-for-free#register-with-startssl) which helped immensely. I used [Qualys' SSL Server Test](https://www.ssllabs.com/ssltest) to validate my setup.
 
 # HTTPS isn't slow

@@ -278,7 +278,7 @@ def _replace_in_file(input_file, old_word, new_word):
 
 
 def spellchecker():
-    """Spellcheck the ReST files on the site"""
+    """Spellcheck the Markdown and ReST files on the site"""
 
     # aspell is available on mac by default, and I don't want to manage custom
     #  word lists for both aspell and myspell so we'll just use aspell
@@ -292,10 +292,11 @@ def spellchecker():
                  _RstEmailFilter]
     )
     rst_posts = glob.glob(os.path.join(SITE_BASE, "posts", "*.rst"))
+    md_posts = glob.glob(os.path.join(SITE_BASE, "posts", "*.md"))
     rst_pages = glob.glob(os.path.join(SITE_BASE, "stories", "*.rst"))
 
-    for rst_file in rst_posts + rst_pages:
-        with open(rst_file, 'r') as f:
+    for files_to_check in rst_posts + rst_pages + md_posts:
+        with open(files_to_check, 'r') as f:
             lines = f.readlines()
 
         for line in _non_directive_lines(lines):
@@ -304,7 +305,7 @@ def spellchecker():
                 if not pwl_dictionary.check(err.word):
                     print "Not in dictionary: %s (file: %s line: %s)" % \
                           (err.word,
-                           os.path.basename(rst_file),
+                           os.path.basename(files_to_check),
                            lines.index(line) + 1)
                     print "  Suggestions: " + \
                         ", ".join(en_spellchecker.suggest(err.word))
@@ -314,7 +315,7 @@ def spellchecker():
                     if action == "add":
                         _add_to_spellcheck_exceptions(err.word)
                     else:
-                        _replace_in_file(rst_file, err.word, action)
+                        _replace_in_file(files_to_check, err.word, action)
 
 
 def orphans():
