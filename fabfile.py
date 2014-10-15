@@ -32,7 +32,8 @@ CACHE_BASE = conf.CACHE_FOLDER
 SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
 UNWANTED_BUILD_ARTIFACTS = [os.path.join(OUTPUT_BASE, "tipue_search.html"),
                             os.path.join(OUTPUT_BASE, "tipue_search.html.gz")]
-
+# An update of these files will abort a fab deploy operation
+KEY_FILES=["conf.py", "fabfile.py"]
 
 class _RstURLFilter(enchant.tokenize.Filter):
     """Filter skipping over URLs.
@@ -207,7 +208,19 @@ def repo_push():
 def repo_pull():
     """Get changes from git in this repo.
      Deliberately uses https to avoid needing keys"""
-    result = local("git pull https://github.com/edwinsteele/wordspeak.org.git master")
+    result = local("git pull https://github.com/edwinsteele/wordspeak.org.git master", capture=True)
+    print result.stderr
+    print result.stdout
+    # Something like:
+    #
+    # Updating 815b459..d9a508d
+    # Fast-forward
+    # fabfile.py       | 2 +-
+    # requirements.txt | 1 -
+    # 2 files changed, 1 insertion(+), 2 deletions(-)
+
+    # return something that evaluates to true if we updated one of the key files
+    return [k for k in KEY_FILES if k in result.stdout]
 
 
 def clean():
@@ -404,7 +417,9 @@ def check_required_modules():
 def deploy():
     """Runs all the pre-deployment checks, pushing to staging and then prod"""
     spellcheck_needed = True
-    repo_pull()
+    key_files_changed = repo_pull()
+    if key_files_changed:
+        abort("Aborting as the following key files changed: %s" % (",".join(key_files_changed),))
     maybe_add_untracked_files()
     check_required_modules()
     while spellcheck_needed:
