@@ -1,3 +1,4 @@
+files/d3-projects
 *.pyc
 .doit.db
 .DS_Store
