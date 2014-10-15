@@ -282,6 +282,8 @@ def _replace_in_file(input_file, old_word, new_word):
 def spellchecker():
     """Spellcheck the Markdown and ReST files on the site"""
 
+    replacements_performed = False
+
     # aspell is available on mac by default, and I don't want to manage custom
     #  word lists for both aspell and myspell so we'll just use aspell
     enchant._broker.set_ordering("en_GB", "aspell")
@@ -305,6 +307,7 @@ def spellchecker():
             en_spellchecker.set_text(line)
             for err in en_spellchecker:
                 if not pwl_dictionary.check(err.word):
+                    replacements_performed = True
                     print "Not in dictionary: %s (file: %s line: %s)" % \
                           (err.word,
                            os.path.basename(files_to_check),
@@ -318,6 +321,8 @@ def spellchecker():
                         _add_to_spellcheck_exceptions(err.word)
                     else:
                         _replace_in_file(files_to_check, err.word, action)
+
+    return replacements_performed
 
 
 def orphans():
@@ -398,10 +403,12 @@ def check_required_modules():
 
 def deploy():
     """Runs all the pre-deployment checks, pushing to staging and then prod"""
+    spellcheck_needed = True
     repo_pull()
     maybe_add_untracked_files()
     check_required_modules()
-    spellchecker()
+    while spellcheck_needed:
+        spellcheck_needed = spellchecker()
     build()
     post_build_cleanup()
     requirements_dump()
