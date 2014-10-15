@@ -7,6 +7,8 @@ import json
 import os
 import time
 
+# Comment to force update. Deleteme.
+
 BLOG_AUTHOR = "Edwin Steele"
 BLOG_TITLE = "Wordspeak"
 SITE_URL = "http://www.wordspeak.org"
