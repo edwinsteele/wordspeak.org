@@ -170,11 +170,13 @@ def staging_sync():
         destination = STAGING_RSYNC_DESTINATION_REMOTE
 
     _sync_site(destination)
-    local("rsync --delete-after -a %s/robots.txt %s" % (SITE_BASE, destination))
+    local("rsync --delete-after -a %s/staging_robots.txt %s/robots.txt" % (SITE_BASE, destination))
 
 
 def prod_sync():
     """Sync the site to the prod server"""
+    with cd(SITE_BASE):
+        local("rsync --delete-after -a %s/prod_robots.txt %s/robots.txt" % (SITE_BASE, OUTPUT_BASE))
     if _does_this_machine_answer_for_this_hostname(PROD_FQDN):
         _sync_site(PROD_RSYNC_DESTINATION_LOCAL)
     else:
