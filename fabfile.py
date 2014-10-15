@@ -209,8 +209,8 @@ def repo_pull():
     """Get changes from git in this repo.
      Deliberately uses https to avoid needing keys"""
     result = local("git pull https://github.com/edwinsteele/wordspeak.org.git master", capture=True)
-    print results.stderr
-    print results.stdout
+    print result.stderr
+    print result.stdout
     # Something like:
     #
     # Updating 815b459..d9a508d
@@ -220,7 +220,7 @@ def repo_pull():
     # 2 files changed, 1 insertion(+), 2 deletions(-)
 
     # return something that evaluates to true if we updated one of the key files
-    return [k for k in KEY_FILES if k in results.stdout]
+    return [k for k in KEY_FILES if k in result.stdout]
 
 
 def clean():
@@ -419,7 +419,7 @@ def deploy():
     spellcheck_needed = True
     key_files_changed = repo_pull()
     if key_files_changed:
-        abort("Aborting as the following key files changed: %s" % (",".join(key_files_changed),)
+        abort("Aborting as the following key files changed: %s" % (",".join(key_files_changed),))
     maybe_add_untracked_files()
     check_required_modules()
     while spellcheck_needed:
