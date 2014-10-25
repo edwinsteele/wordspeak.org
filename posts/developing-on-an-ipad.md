@@ -9,7 +9,7 @@
 I pack lightly when I travel so I left my laptop at home when we did a recent overseas trip to visit family. I didn't anticipate writing any code or doing anything technical on holidays because I was tired from work, so leaving my laptop at home seemed like a good choice. And then I relaxed, and found a bit of mental energy and I wanted to do exactly what I'd expected not to do. So there I was with my iPad and Bluetooth keyboard, eager to do something technical and figuring that I'd be interesting to have a go with what's at hand.
 
 # And then I attempt a significant upgrade using the iPad
-I decided to try a significant upgrade of [Nikola](http://getnikola.org), which I use to publish this site. I'd fallen behind several versions, and there were a number of non-trivial breaking changes that I'd need to work through. Most of this task was unix command-line, text-file editing, a bit of python, reviewing web pages and reading doco. I'd have normally done it offline on my Macbook, but my tools in this case were:
+I decided to try a significant upgrade of [Nikola](http://getnikola.com), which I use to publish this site. I'd fallen behind several versions, and there were a number of non-trivial breaking changes that I'd need to work through. Most of this task was unix command-line, text-file editing, a bit of python, reviewing web pages and reading doco. I'd have normally done it offline on my Macbook, but my tools in this case were:
 
 * A 3rd gen iPad.
 * A Logitech ultra-thin keyboard cover
