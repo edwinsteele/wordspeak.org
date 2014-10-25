@@ -11,7 +11,7 @@ import time
 
 BLOG_AUTHOR = "Edwin Steele"
 BLOG_TITLE = "Wordspeak"
-SITE_URL = "http://www.wordspeak.org"
+SITE_URL = "https://www.wordspeak.org"
 BLOG_EMAIL = "edwin@wordspeak.org"
 BLOG_DESCRIPTION = "Edwin's writings."
 
