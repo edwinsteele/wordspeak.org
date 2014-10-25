@@ -85,8 +85,10 @@ def _does_this_machine_answer_for_this_hostname(dns_name):
     # do a round-trip to so that we match when the host is behind a load
     #  balancer and doesn't have a public IP address (assumes split-horizon
     #  DNS is configured to resolve names to internal addresses) e.g. AWS
-    return my_main_ip == socket.gethostbyname(
-        socket.gethostbyaddr(socket.gethostbyname(dns_name))[0])
+    # If the dns_name resolves to 127.0.0.1, then whatever machine we're
+    #  on definitely answers for the hostname
+    return socket.gethostbyname(socket.gethostbyaddr(
+        socket.gethostbyname(dns_name))[0]) in (my_main_ip, '127.0.0.1')
 
 
 def _quietly_run_nikola_cmd(nikola, cmd):
