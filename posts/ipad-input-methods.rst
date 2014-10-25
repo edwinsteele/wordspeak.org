@@ -25,10 +25,10 @@ was walking to the train station).
 
 Stylus
 ------
-I learnt to use a stylus when I had a `Palm M500 <http://en.wikipedia.org/wiki/Palm_m500_series>`_ and I found it quite an
+I learnt to use a stylus when I had a `Palm M500 <https://en.wikipedia.org/wiki/Palm_m500_series>`_ and I found it quite an
 effective input method, and faster than a touch-screen keyboard. On the iPad
 I use `MyScript Notes <http://www.visionobjects.com/en/myscript/note-taking-and-forms-applications/myscript-notes-mobile/ios/>`_,
-with a  `Kensington Virtuoso <http://www.kensington.com/kensington/us/us/v/3270/1509/virtuoso%E2%84%A2-stylus-and-pen-for-tablets-.aspx>`_ stylus
+with a  `Kensington Virtuoso <http://www.kensington.com/au/au/4584/39304/virtuoso™-touch-stylus-pen>`_ stylus
 and it's working well for me.
 MyScript Notes has very good handwriting recognition and a number of easy
 gestures to erase and move text which help with the iPad's inability to easily
@@ -90,4 +90,4 @@ Table Reference Appendix Thing
       - Yes
       - No
 
-.. [#] http://www.dependentongadgets.com/2012/10/penultimate-vs-myscript-notes-vs-notability-vs-noteshelf/
+.. [#] http://www.dependentongadgets.com/dependent-on-gadgets/2012/10/penultimate-vs-myscript-notes-vs-notability-vs-noteshelf
