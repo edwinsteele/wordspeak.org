@@ -188,6 +188,7 @@ def linkchecker():
     """Checks for broken links on the staging site"""
     with settings(warn_only=True):
         result = local("linkchecker"
+                       " --check-extern"
                        " --config linkcheckerrc"
                        " http://" + STAGING_FQDN,
                        capture=True)

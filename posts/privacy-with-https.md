@@ -12,7 +12,7 @@ Everyone has a right to read and communicate in private, without fear of eavesdr
 I found enabling HTTPS to be an inexpensive and reasonably simple operation that hasn't noticeably affected the performance of the site.
 
 # Enabling HTTPS isn't costly
-I'm using a 12-month free SSL certificate from [StartSSL](https://www.ssllabs.com/ssltest/). The reputation of certificate providers is very important, and while I found it hard to find recommendations on reputable providers, these guys seem to be OK. When renewal time comes, a 12-month single domain certificate from them is $49, and [I'm told that there are free options](https://istlsfastyet) non-commercial use.
+I'm using a 12-month free SSL certificate from [StartSSL](https://www.ssllabs.com/ssltest/). The reputation of certificate providers is very important, and while I found it hard to find recommendations on reputable providers, these guys seem to be OK. When renewal time comes, a 12-month single domain certificate from them is $49, and [I'm told that there are free options](https://istlsfastyet.com) non-commercial use.
 
 # Enabling HTTPS isn't that complicated
 It took a few hours to setup, but most of that was because I like this sort of change to be repeatable so I did my usual dance with version control for all the keys, certificates and artifacts and then introduced HTTPS to the site via my ansible playbooks.
