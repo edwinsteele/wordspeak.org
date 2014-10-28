@@ -15,7 +15,7 @@ hard to write code when there's clutter, but until I find a way to cope with
 it, I'll continue to have occasional cleaning frenzies and purges. One such
 event happened last week and I'm pretty happy with the result.
 
-.. image:: http://farm9.staticflickr.com/8107/8484480837_4761530165_z.jpg
+.. image:: https://farm9.staticflickr.com/8107/8484480837_4761530165_z.jpg
    :height: 478px
    :width: 640px
    :alt: My computer setup
@@ -34,7 +34,7 @@ Enter stationary supplies:
 
 * Bulldog clips (so cables don't fall down the back of the desk when they're not in use)
 
-.. image:: http://farm9.staticflickr.com/8230/8491900366_ffdbeac598_z.jpg
+.. image:: https://farm9.staticflickr.com/8230/8491900366_ffdbeac598_z.jpg
    :height: 640px
    :width: 478px
    :alt: Wonderful bulldog clips
@@ -43,7 +43,7 @@ Enter stationary supplies:
 
 * Sticky tape (so my headphone cable doesn't run across my desk)
 
-.. image:: http://farm9.staticflickr.com/8370/8490798077_e3e6c25ffa_z.jpg
+.. image:: https://farm9.staticflickr.com/8370/8490798077_e3e6c25ffa_z.jpg
    :height: 478px
    :width: 640px
    :alt: Glorious sticky tape
@@ -52,7 +52,7 @@ Enter stationary supplies:
 
 * Cardboard (so I don't run out of sticky tape stashing a USB hub and long cables)
 
-.. image:: http://farm9.staticflickr.com/8097/8491899784_e8bd7c1440_z.jpg
+.. image:: https://farm9.staticflickr.com/8097/8491899784_e8bd7c1440_z.jpg
    :height: 478px
    :width: 640px
    :alt: Fully sick cardboard, bro

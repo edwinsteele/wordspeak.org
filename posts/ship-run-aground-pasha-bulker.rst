@@ -22,7 +22,7 @@ could wade out to if it wasn't all fenced off!).
 I present the `Pasha Bulker <http://www.flickr.com/photos/edwin_steele/sets/72157632565445286/>`_ . (In
 the same vein, you might also enjoy the shots of the `beached Guadalupe <http://www.flickr.com/photos/edwin_steele/8396336043/>`_ that I took in Mauritania in 2005)
 
-.. image:: http://farm9.staticflickr.com/8513/8396141441_05c747d9ae_m.jpg
+.. image:: https://farm9.staticflickr.com/8513/8396141441_05c747d9ae_m.jpg
 	:height: 180px
 	:width: 240px
 	:alt: Pasha Bulker run aground near Newcastle

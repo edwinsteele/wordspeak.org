@@ -32,7 +32,7 @@ panoramas are in my `Kosciuszko <http://www.flickr.com/photos/edwin_steele/sets/
 
 Oh, OK. Here's a taste... 
 
-.. image:: http://farm9.staticflickr.com/8228/8395047739_a78dd8fd53_z.jpg
+.. image:: https://farm9.staticflickr.com/8228/8395047739_a78dd8fd53_z.jpg
 	:height: 181px
 	:width: 640px
 	:align: center

@@ -32,7 +32,7 @@ Here's the `photo album <http://www.flickr.com/photos/edwin_steele/sets/72157632
 
 And here's a taste from the "Temple of Baal" cave:
 
-.. image:: http://farm9.staticflickr.com/8494/8412934156_960294fa7d_n.jpg
+.. image:: https://farm9.staticflickr.com/8494/8412934156_960294fa7d_n.jpg
 	:height: 320px
 	:width: 240px
 	:alt: Temple of Baal Cave: Another shawl feature
