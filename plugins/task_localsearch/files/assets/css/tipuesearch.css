@@ -27,7 +27,7 @@ em
      margin-top: 1px;
      border: 1px solid #dcdcdc;
      border-radius: 2px;
-     background: #f1f1f1 url('img/search.gif') no-repeat center;
+     background: #f1f1f1 url(data:image/gif;base64,R0lGODlhDAAMAIQeAGZmZmdnZ2hoaGpqamtra2xsbG9vb4WFhYeHh4iIiImJiZGRkZKSkp6enqKioqOjo6ampqenp6urq62trb29vb+/v8DAwMvLy9TU1NjY2NnZ2dvb293d3ePj4wAAAAAAACH5BAEKAB8ALAAAAAAMAAwAAAVN4PddSmEsmqhGQNsGlnoBAyVOQNCJCmCrD8BDVACoRBzAQWQwHjOAhGgBmBx7EpEmIORkGK2GqsJ1EQQAiKrjOCSymEH6SI8j6PTNJwQAOw==) no-repeat center;
 	outline: none;
 }
 #tipue_search_button:hover
