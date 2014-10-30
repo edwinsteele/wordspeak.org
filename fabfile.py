@@ -161,7 +161,7 @@ def repo_status():
 
 def _sync_site(destination_path):
     with cd(SITE_BASE):
-        local("rsync --delete-after -a %s/ %s" %
+        local("rsync --delete -delete-excluded --exclude-from rsync_exclusion_list.txt -a %s/ %s" %
               (OUTPUT_BASE, destination_path))
 
 
@@ -173,13 +173,13 @@ def staging_sync():
         destination = STAGING_RSYNC_DESTINATION_REMOTE
 
     _sync_site(destination)
-    local("rsync --delete-after -a %s/staging_robots.txt %s/robots.txt" % (SITE_BASE, destination))
+    local("rsync --delete -a %s/staging_robots.txt %s/robots.txt" % (SITE_BASE, destination))
 
 
 def prod_sync():
     """Sync the site to the prod server"""
     with cd(SITE_BASE):
-        local("rsync --delete-after -a %s/prod_robots.txt %s/robots.txt" % (SITE_BASE, OUTPUT_BASE))
+        local("rsync --delete -a %s/prod_robots.txt %s/robots.txt" % (SITE_BASE, OUTPUT_BASE))
     if _does_this_machine_answer_for_this_hostname(PROD_FQDN):
         _sync_site(PROD_RSYNC_DESTINATION_LOCAL)
     else:
