@@ -30,14 +30,14 @@ SIDEBAR_LINKS = {
     }
 
 post_pages = (
-    ("posts/*.rst", "posts", "post.tmpl", True),
     ("posts/*.md", "posts", "post.tmpl", True),
+    ("posts/*.rst", "posts", "post.tmpl", True),
     ("stories/*.rst", "pages", "story.tmpl", False),
 )
 
 post_compilers = {
-    "rest": ('.rst', '.txt'),
     "markdown": ('.md', '.mdown', '.markdown'),
+    "rest": ('.rst', '.txt'),
 }
 
 # Specify these so we can move them outside the dropbox sync'ed area
@@ -54,6 +54,7 @@ GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
 DISABLED_PLUGINS = ["render_galleries"]
 
 # Name of the theme to use. Themes are located in themes/theme_name
+#THEME = 'wordspeak_lite'
 THEME = 'wordspeak'
 
 # A small copyright notice for the page footer (in HTML)
