@@ -36,7 +36,7 @@ What I learnt along the way
 * ssh keys with passwords aren't as hard as I thought (ssh-agent with forwarding
   is brilliant)
 * `mosh <http://mosh.mit.edu>`_ is a great idea, but it doesn't support ssh-agent (which is a deal-breaker)
-* `iSSH <http://www.zinger-soft.com/iSSH_features.html>`_ looks good on the surface but lacks polish and has flaky mosh support
+* iSSH looks good on the surface but lacks polish and has flaky mosh support
 * that different spell checking tools exist, and their word list is remarkably
   different (MySpell/GNU Aspell)
 * a few of things about how to get better connectivity while commuting (I'll write
