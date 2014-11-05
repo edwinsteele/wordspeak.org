@@ -1,0 +1,98 @@
+body {
+    padding-top: 60px;
+    /* display: block; */
+    /* width: 100%; */
+    /* background: none repeat scroll 0% 0% #FFF; */
+    background-color: #FFF;
+    /* margin: 100px auto 500px; */
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.badge-info {
+    background-color: #3A87AD;
+}
+.badge {
+    padding-right: 9px;
+    padding-left: 9px;
+    border-radius: 9px;
+}
+
+.label, .badge {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #FFF;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.content {
+    border-bottom: 2px solid darkgrey;
+    margin-bottom: 12px;
+}
+
+.content > hr {
+    border-image: none;
+    border-width: 1px 0px;
+    border-style: solid none;
+    border-color: #EEE -moz-use-text-color #FFF;
+}
+
+.footerbox {
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.pager .previous > a {
+    float: left;
+}
+.pager li > a {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 15px;
+}
+.pager {
+    text-align: center;
+    list-style: outside none none;
+}
+.pager:after {
+    clear: both;
+}
+.pager:before, .pager:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.footnote-reference {
+    /* Issue 290 */
+    vertical-align: super;
+    font-size: xx-small;
+}
+
+.caption {
+    /* Issue 292 */
+    text-align: center;
+}
+
+/* previously in custom.css */
+h1 {
+	font-size: 24px !important;
+	line-height: 36px !important;
+}
+h1 small { font-size: 14px !important; }
+h2 {
+	font-size: 18px !important;
+	line-height: 27px !important;
+}
+h3 {
+	font-size: 14px !important;
+	line-height: 21px !important;
+}

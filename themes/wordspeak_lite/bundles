@@ -1,0 +1,4 @@
+assets/css/all-nocdn.css=picnic_v2.2.min.css,rst.css,code.css,theme.css,tipuesearch.css
+assets/css/all.css=picnic_v2.2.min.css,rst.css,code.css,theme.css,tipuesearch.css
+assets/js/all-nocdn.js=jquery-1.7.2.min.js,tipuesearch.js
+assets/js/all.js=tipuesearch.js

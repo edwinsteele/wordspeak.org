@@ -1,0 +1,46 @@
+## -*- coding: utf-8 -*-
+<%namespace file="base_helper.tmpl" import="*"/>
+${set_locale(lang)}
+<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    ${html_head()}
+    <%block name="extra_head">
+    </%block>
+    ${extra_head_data}
+</head>
+<body>
+<!-- Menubar -->
+<nav>
+    <a class="main" href="${abs_link('/')}">${blog_title}</a>
+
+    <!-- responsive -->
+    <input id="bmenu" class="burgercheck" type="checkbox">
+    <label for="bmenu" class="burgermenu"></label>
+    <!-- /responsive -->
+
+    <div class="menu">
+        ${html_sidebar_links()}
+        <!-- Search form -->
+        <!-- We need this to be hard right - how? -->
+        %if search_form:
+            ${search_form}
+        %endif
+        <!-- End search form -->
+    </div>
+    <%block name="belowtitle">
+    </%block>
+</nav>
+<!-- End of Menubar -->
+<!--Body content-->
+<div class="content">
+    <%block name="content"></%block>
+</div>
+<!--End of body content-->
+<div class="footerbox">
+    ${content_footer}
+</div>
+${late_load_js()}
+${analytics}
+</body>
