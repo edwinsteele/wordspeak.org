@@ -24,8 +24,8 @@ SIDEBAR_LINKS = {
     DEFAULT_LANG: (
         ('/pages/about.html', 'About'),
         ('/pages/projects.html', 'Software and Photos'),
-        ('/categories/index.html', 'Posts by Category'),
-        ('/rss.xml', 'RSS Feed'),
+        ('/categories/index.html', 'Categories'),
+        ('/rss.xml', 'RSS'),
         ),
     }
 
