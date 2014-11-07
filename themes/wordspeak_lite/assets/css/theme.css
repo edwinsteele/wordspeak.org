@@ -1,12 +1,12 @@
 body {
-    padding-top: 60px;
-    /* display: block; */
-    /* width: 100%; */
-    /* background: none repeat scroll 0% 0% #FFF; */
     background-color: #FFF;
-    /* margin: 100px auto 500px; */
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
+    color: #333;
+    /* margin: 100px auto 500px; */
+    /* font-size: 14px;
+    line-height: 20px; */
 }
 
 .badge-info {
@@ -16,6 +16,52 @@ body {
     padding-right: 9px;
     padding-left: 9px;
     border-radius: 9px;
+}
+
+.nav {
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    border: 1px solid #D4D4D4;
+    border-radius: 0px;
+    border-width: 0px 0px 1px;
+    /* min-height: 40px; */
+    background-color: #FAFAFA;
+    background-image: linear-gradient(to bottom, #FFF, #F2F2F2);
+    background-repeat: repeat-x;
+}
+
+.nav a {
+    color: #777;
+    padding: 0px 15px;
+    text-shadow: 0px 1px 0px #FFF;
+    text-decoration: none;
+}
+
+.navbar-form {
+    float: right;
+}
+
+.nav input {
+    height: 20px;
+    padding: 0px;
+}
+
+.nav .active {
+    color: #555;
+    text-decoration: none;
+    background-color: #E5E5E5;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.125) inset;
+}
+
+.brand {
+    display: block;
+    float: left;
+    padding: 10px 20px;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #777;
+    text-shadow: 0px 1px 0px #FFF;
 }
 
 .label, .badge {
@@ -30,16 +76,20 @@ body {
     vertical-align: baseline;
 }
 
-.content {
-    border-bottom: 2px solid darkgrey;
-    margin-bottom: 12px;
+ul, ol {
+    padding: 0px;
+    margin: 0px 0px 10px 25px;
 }
-
-.content > hr {
+.content hr {
     border-image: none;
     border-width: 1px 0px;
     border-style: solid none;
     border-color: #EEE -moz-use-text-color #FFF;
+}
+
+.postbox {
+    border-bottom: 2px solid #A9A9A9;
+    margin-bottom: 12px;
 }
 
 .footerbox {
@@ -48,19 +98,30 @@ body {
     margin-bottom: 15px;
 }
 
+.pager {
+    text-align: center;
+    list-style: outside none none;
+    margin: 20px 0px;
+}
+
+.pager li {
+    display: inline;
+}
+
 .pager .previous > a {
     float: left;
 }
-.pager li > a {
+
+.pager .next > a {
+    float: right;
+}
+
+.pager li a {
     display: inline-block;
     padding: 5px 14px;
     background-color: #FFF;
     border: 1px solid #DDD;
     border-radius: 15px;
-}
-.pager {
-    text-align: center;
-    list-style: outside none none;
 }
 .pager:after {
     clear: both;
@@ -71,15 +132,15 @@ body {
     content: "";
 }
 
+a {
+    color: #08C;
+    text-decoration: none;
+}
+
 .footnote-reference {
     /* Issue 290 */
     vertical-align: super;
     font-size: xx-small;
-}
-
-.caption {
-    /* Issue 292 */
-    text-align: center;
 }
 
 /* previously in custom.css */

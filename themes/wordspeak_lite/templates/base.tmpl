@@ -12,30 +12,27 @@ ${set_locale(lang)}
 </head>
 <body>
 <!-- Menubar -->
-<nav>
-    <a class="main" href="${abs_link('/')}">${blog_title}</a>
-
-    <!-- responsive -->
-    <input id="bmenu" class="burgercheck" type="checkbox">
-    <label for="bmenu" class="burgermenu"></label>
-    <!-- /responsive -->
-
-    <div class="menu">
+<nav class="nav" tabindex="-1">
+	<a class="brand" href="${abs_link('/')}">${blog_title}</a>
         ${html_sidebar_links()}
         <!-- Search form -->
-        <!-- We need this to be hard right - how? -->
         %if search_form:
             ${search_form}
         %endif
         <!-- End search form -->
-    </div>
-    <%block name="belowtitle">
-    </%block>
 </nav>
 <!-- End of Menubar -->
 <!--Body content-->
 <div class="content">
-    <%block name="content"></%block>
+    <div class="row">
+        <div class="col c2">&nbsp;</div>
+        <div class="col c8">
+             <div class="postbox">
+                 <%block name="content"></%block>
+             </div>
+        </div>
+        <div class="col c2"></div>
+    </div>
 </div>
 <!--End of body content-->
 <div class="footerbox">
