@@ -161,7 +161,7 @@ def repo_status():
 
 def _sync_site(destination_path):
     with cd(SITE_BASE):
-        local("rsync --delete -delete-excluded --exclude-from rsync_exclusion_list.txt -a %s/ %s" %
+        local("rsync --delete --delete-excluded --exclude-from rsync_exclusion_list.txt -a %s/ %s" %
               (OUTPUT_BASE, destination_path))
 
 
