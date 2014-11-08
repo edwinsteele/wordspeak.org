@@ -158,13 +158,17 @@ h1.panel-title, h2.panel-title, h3.panel-title, h4.panel-title, h5.panel-title, 
     display: inline;
 }
 
-.navbar-brand #blog-title {
-    padding: 15px 0;
-    display: inline-block;
-}
-
-.navbar-brand>img {
-    display: inline;
+.navbar {
+/*
+    display: block;
+    float: left;
+    padding: 10px 20px;
+    margin-left: -20px;
+    font-size: 20px;
+*/
+    font-weight: 200;
+    color: #777;
+    text-shadow: 0px 1px 0px #FFF;
 }
 
 .row {
