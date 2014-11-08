@@ -94,7 +94,7 @@ $(document).ready(function() {
     $('#tipue_search_input').tipuesearch({
         'mode': 'json',
         'contentLocation': '/assets/js/tipuesearch_content.json',
-        'showUrl': false,
+        'showURL': false,
         'descriptiveWords': %s
     });
 });
