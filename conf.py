@@ -54,7 +54,7 @@ GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
 DISABLED_PLUGINS = ["render_galleries"]
 
 # Name of the theme to use. Themes are located in themes/theme_name
-#THEME = 'wordspeak_lite'
+#THEME = 'wordspeak_b3'
 THEME = 'wordspeak'
 
 # A small copyright notice for the page footer (in HTML)
@@ -67,7 +67,7 @@ INDEX_DISPLAY_POST_COUNT = 5
 # RSS_TEASERS = True
 
 SEARCH_FORM = """
-<span class="navbar-form pull-right">
+<span class="navbar-form navbar-right">
 <input type="text" id="tipue_search_input">
 <input type="button" id="tipue_search_button" value="&#160;">
 </span>"""
