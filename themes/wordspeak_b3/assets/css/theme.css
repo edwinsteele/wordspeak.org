@@ -27,6 +27,12 @@ img {
     text-align: right;
 }
 
+footer {
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 td.label {
     /* Issue #290 */
     background-color: inherit;
@@ -150,20 +156,6 @@ h1.panel-title, h2.panel-title, h3.panel-title, h4.panel-title, h5.panel-title, 
 
 .metadata p {
     display: inline;
-}
-
-.posttranslations h3 {
-    display: inline;
-    font-size: 1em;
-    font-weight: bold;
-}
-
-.posttranslations h3:last-child {
-    display: none;
-}
-
-.entry-content {
-    margin-top: 1em;
 }
 
 .navbar-brand #blog-title {

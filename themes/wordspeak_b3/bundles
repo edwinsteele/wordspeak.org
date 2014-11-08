@@ -1,4 +1,4 @@
 assets/css/all-nocdn.css=bootstrap.min.css,rst.css,code.css,tipuesearch.css,theme.css
 assets/css/all.css=bootstrap.min.css,rst.css,code.css,tipuesearch.css,theme.css
-assets/js/all-nocdn.js=jquery-1.7.2.min.js,tipuesearch.js
-assets/js/all.js=tipuesearch.js
+assets/js/all-nocdn.js=jquery-1.11.1.min.js,bootstrap.min.js,tipuesearch.js
+assets/js/all.js=bootstrap.min.js,tipuesearch.js
