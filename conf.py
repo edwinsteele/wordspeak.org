@@ -73,6 +73,7 @@ SEARCH_FORM = """
 </span>"""
 
 TIPUE_SUMMARY_LENGTH = 25
+TIPUE_MIN_SEARCH_LENGTH = 3
 TIPUE_STOP_WORDS = ["and", "be", "by", "do", "for", "he", "how", "if", "is", "it", "my", "not", "of", "or", "the", "to", "up", "what", "when"]
 
 ANALYTICS = """
@@ -95,12 +96,17 @@ $(document).ready(function() {
         'mode': 'json',
         'contentLocation': '/assets/js/tipuesearch_content.json',
         'showURL': false,
+        'minimumLength': %s,
         'descriptiveWords': %s
     });
 });
 </script>
 <!-- Built by Nikola v.%s on host %s -->
-""" % (json.JSONEncoder().encode(TIPUE_STOP_WORDS), TIPUE_SUMMARY_LENGTH, nikola_version, getfqdn())
+""" % (json.JSONEncoder().encode(TIPUE_STOP_WORDS),
+       TIPUE_SUMMARY_LENGTH,
+       TIPUE_MIN_SEARCH_LENGTH,
+       nikola_version,
+       getfqdn())
 
 EXTRA_HEAD_DATA = """
 <div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 1px;"></div>

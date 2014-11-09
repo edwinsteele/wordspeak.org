@@ -26,6 +26,8 @@ from __future__ import unicode_literals
 import codecs
 import json
 import os
+import string
+import types
 
 from nikola.plugin_categories import LateTask
 from nikola.utils import config_changed, copy_tree
@@ -64,12 +66,47 @@ class Tipue(LateTask):
                                 "tipuesearch_content.json")
 
         def summarise_text(text):
+            """
+            summary is the first TIPUE_SUMMARY_LENGTH words, followed by the
+            unique words from the rest of the post, in lower case and with
+            punctuation removed. The first
+            TIPUE_SUMMARY_LENGTH words are displayed in the search results
+            """
             summary = " ".join(text.split()[:self.site.config['TIPUE_SUMMARY_LENGTH'] + 1])
-            # all tipue matches are case insensitive
-            #  so no need to have upper and lower in our list
-            words = set([word.lower() for word in text.split()])
+            # Look at the rest of the words (no need to consider summary twice
+            #  and remove punctuation (we do this before we look at string
+            #  length further down. This means that "don't" is actually a 4
+            #  letter word, as intended
+
+            # oh joy, markdown-derived posts come through as strings, and rst
+            #  come through as unicode.
+            # Helper for unicode punctuation, even though there are many more
+            #  types of unicode punctuation
+            remove_punctuation_map = dict((ord(char), None)
+                                          for char in string.punctuation)
+            # Unicode single quote
+            remove_punctuation_map[ord(u'\u2019')] = None
+            # Unicode left double quote
+            remove_punctuation_map[ord(u'\u201c')] = None
+            # Unicode right double quote
+            remove_punctuation_map[ord(u'\u201d')] = None
+
+            words = set()
+            for word in text.split()[self.site.config['TIPUE_SUMMARY_LENGTH'] + 1:]:
+                # all tipue matches are case insensitive
+                #  so no need to have upper and lower in our list
+                if isinstance(word, types.StringType):
+                    w = word.translate(None, string.punctuation).lower()
+                elif isinstance(word, types.UnicodeType):
+                    w = word.translate(remove_punctuation_map).lower()
+                else:
+                    print "Don't know how to handle word - '%s'" % (word,)
+                    w = ""
+                if len(w) >= self.site.config['TIPUE_MIN_SEARCH_LENGTH']:
+                    words.add(w)
+
             words = words.difference(self.site.config['TIPUE_STOP_WORDS'])
-            return summary + " ".join(words)
+            return summary + " " + " ".join(words)
 
         def save_data():
             import logging
