@@ -8,19 +8,14 @@ ${set_locale(lang)}
     ${html_head()}
     <%block name="extra_head">
     </%block>
-    ${extra_head_data}
 </head>
 <body>
 <!-- Menubar -->
-<nav class="nav" tabindex="-1">
+<nav class="nav" onclick="this.focus()" tabindex="-1">
 	<a class="brand" href="${abs_link('/')}">${blog_title}</a>
         ${html_sidebar_links()}
-        <!-- Search form -->
-        %if search_form:
-            ${search_form}
-        %endif
-        <!-- End search form -->
 </nav>
+<button class="btn btn-sm btn-close">×</button>
 <!-- End of Menubar -->
 <!--Body content-->
 <div class="content">
@@ -38,6 +33,4 @@ ${set_locale(lang)}
 <div class="footerbox">
     ${content_footer}
 </div>
-${late_load_js()}
-${analytics}
 </body>

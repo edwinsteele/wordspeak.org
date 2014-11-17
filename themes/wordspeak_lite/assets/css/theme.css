@@ -37,20 +37,13 @@ body {
     text-decoration: none;
 }
 
-.navbar-form {
-    float: right;
-}
-
-.nav input {
-    height: 20px;
-    padding: 0px;
-}
-
 .nav .active {
-    color: #555;
+    color: #333;
     text-decoration: none;
-    background-color: #E5E5E5;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.125) inset;
+}
+
+.btn {
+    margin: 7px 9px 7px 0px;
 }
 
 .brand {
