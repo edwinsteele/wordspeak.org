@@ -12,8 +12,10 @@ ${set_locale(lang)}
 <body>
 <!-- Menubar -->
 <nav class="nav" onclick="this.focus()" tabindex="-1">
+    <div class="container">
 	<a class="brand" href="${abs_link('/')}">${blog_title}</a>
         ${html_sidebar_links()}
+    </div>
 </nav>
 <button class="btn btn-sm btn-close">×</button>
 <!-- End of Menubar -->

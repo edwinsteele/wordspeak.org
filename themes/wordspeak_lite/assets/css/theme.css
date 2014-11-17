@@ -4,9 +4,6 @@ body {
     font-size: 14px;
     line-height: 20px;
     color: #333;
-    /* margin: 100px auto 500px; */
-    /* font-size: 14px;
-    line-height: 20px; */
 }
 
 .badge-info {
@@ -20,11 +17,9 @@ body {
 
 .nav {
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-    padding: 5px 20px;
     border: 1px solid #D4D4D4;
     border-radius: 0px;
     border-width: 0px 0px 1px;
-    /* min-height: 40px; */
     background-color: #FAFAFA;
     background-image: linear-gradient(to bottom, #FFF, #F2F2F2);
     background-repeat: repeat-x;
@@ -32,7 +27,6 @@ body {
 
 .nav a {
     color: #777;
-    padding: 0px 15px;
     text-shadow: 0px 1px 0px #FFF;
     text-decoration: none;
 }
@@ -47,10 +41,6 @@ body {
 }
 
 .brand {
-    display: block;
-    float: left;
-    padding: 10px 20px;
-    margin-left: -20px;
     font-size: 20px;
     font-weight: 200;
     color: #777;
