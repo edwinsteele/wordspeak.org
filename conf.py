@@ -54,7 +54,7 @@ GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
 DISABLED_PLUGINS = ["render_galleries"]
 
 # Name of the theme to use. Themes are located in themes/theme_name
-#THEME = 'wordspeak_b3'
+#THEME = 'wordspeak_lite'
 THEME = 'wordspeak'
 
 # A small copyright notice for the page footer (in HTML)
@@ -103,8 +103,8 @@ $(document).ready(function() {
 </script>
 <!-- Built by Nikola v.%s on host %s -->
 """ % (json.JSONEncoder().encode(TIPUE_STOP_WORDS),
-       TIPUE_SUMMARY_LENGTH,
        TIPUE_MIN_SEARCH_LENGTH,
+       TIPUE_SUMMARY_LENGTH,
        nikola_version,
        getfqdn())
 
