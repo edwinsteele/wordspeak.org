@@ -54,8 +54,8 @@ GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
 DISABLED_PLUGINS = ["render_galleries"]
 
 # Name of the theme to use. Themes are located in themes/theme_name
-#THEME = 'wordspeak_lite'
-THEME = 'wordspeak'
+THEME = 'wordspeak_lite'
+#THEME = 'wordspeak'
 
 # A small copyright notice for the page footer (in HTML)
 CONTENT_FOOTER = 'Uncopyright. No rights reserved | <a href="/pages/licensing.html">Why give it away?</a>'

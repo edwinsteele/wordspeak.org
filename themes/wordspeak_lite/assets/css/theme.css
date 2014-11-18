@@ -2,7 +2,7 @@ body {
     background-color: #FFF;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
-    line-height: 20px;
+    /* line-height: 20px; */ /* MIGHT ACTUALLY WANT THIS for other text */
     color: #333;
 }
 
@@ -13,6 +13,10 @@ body {
     padding-right: 9px;
     padding-left: 9px;
     border-radius: 9px;
+}
+
+nav {
+    display: block;
 }
 
 .nav {
@@ -34,10 +38,6 @@ body {
 .nav .active {
     color: #333;
     text-decoration: none;
-}
-
-.btn {
-    margin: 7px 9px 7px 0px;
 }
 
 .brand {
