@@ -5,6 +5,9 @@
 .. link: 
 .. description: 
 
+
+This site is run by Edwin Steele.
+
 Contact
 *******
 You can reach me at edwin@wordspeak.org.

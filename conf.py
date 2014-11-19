@@ -58,7 +58,7 @@ THEME = 'wordspeak_lite'
 #THEME = 'wordspeak'
 
 # A small copyright notice for the page footer (in HTML)
-CONTENT_FOOTER = 'Uncopyright. No rights reserved | <a href="/pages/licensing.html">Why give it away?</a>'
+CONTENT_FOOTER = 'Site by <a href="/pages/about.html">Edwin Steele</a> | Uncopyright. No rights reserved | <a href="/pages/licensing.html">Why give it away?</a>'
 
 DISQUS_FORUM = False
 ADD_THIS_BUTTONS = False
