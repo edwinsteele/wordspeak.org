@@ -28,8 +28,7 @@ Stylus
 I learnt to use a stylus when I had a `Palm M500 <https://en.wikipedia.org/wiki/Palm_m500_series>`_ and I found it quite an
 effective input method, and faster than a touch-screen keyboard. On the iPad
 I use `MyScript Notes <http://www.visionobjects.com/en/myscript/note-taking-and-forms-applications/myscript-notes-mobile/ios/>`_,
-with a  `Kensington Virtuoso <http://www.kensington.com/au/au/4584/39304/virtuoso™-touch-stylus-pen>`_ stylus
-and it's working well for me.
+with a Kensington Virtuoso stylus and it's working well for me.
 MyScript Notes has very good handwriting recognition and a number of easy
 gestures to erase and move text which help with the iPad's inability to easily
 edit text (my finger always makes it hard to place the cursor when I want to
