@@ -1,7 +1,7 @@
 <!-- 
 .. link: 
 .. description: 
-.. tags: writing
+.. tags: Writing
 .. date: 2014/11/21 05:27:16
 .. title: Write because you want to
 .. slug: write-because-you-want-to
