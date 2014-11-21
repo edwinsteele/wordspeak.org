@@ -10,6 +10,8 @@ import enchant
 import enchant.checker
 import enchant.tokenize
 import socket
+import sys
+import tempfile
 import conf
 
 TILDE = os.path.expanduser("~")
@@ -30,10 +32,10 @@ SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
 SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
-UNWANTED_BUILD_ARTIFACTS = [os.path.join(OUTPUT_BASE, "tipue_search.html"),
-                            os.path.join(OUTPUT_BASE, "tipue_search.html.gz")]
+UNWANTED_BUILD_ARTIFACTS = []
 # An update of these files will abort a fab deploy operation
-KEY_FILES=["conf.py", "fabfile.py"]
+KEY_FILES = ["conf.py", "fabfile.py"]
+
 
 class _RstURLFilter(enchant.tokenize.Filter):
     """Filter skipping over URLs.
@@ -161,8 +163,11 @@ def repo_status():
 
 def _sync_site(destination_path):
     with cd(SITE_BASE):
-        local("rsync --delete --delete-excluded --exclude-from rsync_exclusion_list.txt -a %s/ %s" %
-              (OUTPUT_BASE, destination_path))
+        local("rsync "
+              "--delete "
+              "--delete-excluded "
+              "--exclude-from rsync_exclusion_list.txt "
+              "-a %s/ %s" % (OUTPUT_BASE, destination_path))
 
 
 def staging_sync():
@@ -173,20 +178,22 @@ def staging_sync():
         destination = STAGING_RSYNC_DESTINATION_REMOTE
 
     _sync_site(destination)
-    local("rsync --delete -a %s/staging_robots.txt %s/robots.txt" % (SITE_BASE, destination))
+    local("rsync --delete -a %s/staging_robots.txt %s/robots.txt" %
+          (SITE_BASE, destination))
 
 
 def prod_sync():
     """Sync the site to the prod server"""
     with cd(SITE_BASE):
-        local("rsync --delete -a %s/prod_robots.txt %s/robots.txt" % (SITE_BASE, OUTPUT_BASE))
+        local("rsync --delete -a %s/prod_robots.txt %s/robots.txt" %
+              (SITE_BASE, OUTPUT_BASE))
     if _does_this_machine_answer_for_this_hostname(PROD_FQDN):
         _sync_site(PROD_RSYNC_DESTINATION_LOCAL)
     else:
         _sync_site(PROD_RSYNC_DESTINATION_REMOTE)
 
 
-def linkchecker():
+def linkchecker(output_fd=sys.stdout):
     """Checks for broken links on the staging site"""
     with settings(warn_only=True):
         result = local("linkchecker"
@@ -195,12 +202,12 @@ def linkchecker():
                        " http://" + STAGING_FQDN,
                        capture=True)
     if result.failed:
-        if not confirm("Failures with linkchecker:\n%s\nContinue anyway?" %
-                      ("\n".join(result.stdout.splitlines()[9:]))):
-            abort("Aborting at user request.")
+        # Failures are listed from the tenth line
+        output_fd.write("Failures with linkchecker:\n%s\n" %
+                       ("\n".join(result.stdout.splitlines()[9:])))
     else:
         # Summary is the second to last line
-        print result.stdout.splitlines()[-2]
+        output_fd.write(result.stdout.splitlines()[-2])
 
 
 def repo_push():
@@ -211,7 +218,9 @@ def repo_push():
 def repo_pull():
     """Get changes from git in this repo.
      Deliberately uses https to avoid needing keys"""
-    result = local("git pull https://github.com/edwinsteele/wordspeak.org.git master", capture=True)
+    result = local(
+        "git pull https://github.com/edwinsteele/wordspeak.org.git master",
+        capture=True)
     print result.stderr
     print result.stdout
     # Something like:
@@ -341,7 +350,7 @@ def spellchecker():
     return replacements_performed
 
 
-def orphans():
+def orphans(output_fd=sys.stdout):
     """Find html files that exist on the filesystem but aren't accessible
     via hyperlinks
     """
@@ -391,13 +400,11 @@ def orphans():
                 html_files_on_filesystem.add(path_beneath_output)
 
     orphan_list = html_files_on_filesystem.difference(html_files_checked)
-    for orphan in sorted(list(orphan_list)):
-        print "Orphaned file: " + orphan
-
     if orphan_list:
-        if not confirm("Orphaned html files exist"
-                       " (are on disk but aren't linked). Continue?"):
-            abort("Aborting at user request")
+        output_fd.write("Orphaned html files exist "
+                       "(are on disk but aren't linked).\n")
+    for orphan in sorted(list(orphan_list)):
+        output_fd.write("Orphaned file: " + orphan + "\n")
 
 
 def post_build_cleanup():
@@ -411,8 +418,10 @@ def post_build_cleanup():
 def check_required_modules():
     """Make sure we have all the python modules needed for the build"""
     try:
-        import webassets
+        import webassets  # for bundle creation
+        import squeeze  # for yuicompressor
     except ImportError as e:
+        webassets = squeeze = None
         abort("Missing module: %s" % (e,))
 
 
@@ -421,7 +430,8 @@ def deploy():
     spellcheck_needed = True
     key_files_changed = repo_pull()
     if key_files_changed:
-        abort("Aborting as the following key files changed: %s" % (",".join(key_files_changed),))
+        abort("Aborting as the following key files changed: %s" %
+              (",".join(key_files_changed),))
     maybe_add_untracked_files()
     check_required_modules()
     while spellcheck_needed:
@@ -431,13 +441,16 @@ def deploy():
     requirements_dump()
     repo_status()
     staging_sync()
-    linkchecker()
-    orphans()
     if confirm("Push to live site?"):
         prod_sync()
         repo_push()
     else:
         print "Not pushing to live site."
+
+    scratch = tempfile.TemporaryFile()
+    linkchecker(scratch)
+    orphans(scratch)
+    print scratch.read()
 
 
 if __name__ == '__main__':
