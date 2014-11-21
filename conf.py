@@ -58,7 +58,7 @@ def yui_compressor(infile):
     return runinplace(r'squeeze yuicompressor %1 -o %2', infile)
 
 FILTERS = {
-    #".css": [yui_compressor],
+    ".css": [yui_compressor],
 }
 
 # Name of the theme to use. Themes are located in themes/theme_name
