@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from nikola import __version__ as nikola_version
+from nikola import filters
 from socket import getfqdn
 import json
 import os
@@ -59,6 +60,7 @@ def yui_compressor(infile):
 
 FILTERS = {
     ".css": [yui_compressor],
+    ".html": [filters.typogrify],
 }
 
 # Name of the theme to use. Themes are located in themes/theme_name
