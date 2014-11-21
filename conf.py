@@ -53,6 +53,14 @@ GZIP_FILES = True
 GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
 DISABLED_PLUGINS = ["render_galleries"]
 
+def yui_compressor(infile):
+    from nikola.filters import apply_to_file, runinplace
+    return runinplace(r'squeeze yuicompressor %1 -o %2', infile)
+
+FILTERS = {
+    #".css": [yui_compressor],
+}
+
 # Name of the theme to use. Themes are located in themes/theme_name
 THEME = 'wordspeak_lite'
 #THEME = 'wordspeak'
@@ -66,55 +74,15 @@ INDEX_DISPLAY_POST_COUNT = 5
 # XXX - what should this be?
 # RSS_TEASERS = True
 
-SEARCH_FORM = """
-<span class="navbar-form navbar-right">
-<input type="text" id="tipue_search_input">
-<input type="button" id="tipue_search_button" value="&#160;">
-</span>"""
-
-TIPUE_SUMMARY_LENGTH = 25
-TIPUE_MIN_SEARCH_LENGTH = 3
-TIPUE_STOP_WORDS = ["and", "be", "by", "do", "for", "he", "how", "if", "is", "it", "my", "not", "of", "or", "the", "to", "up", "what", "when"]
+SEARCH_FORM = ""
 
 ANALYTICS = """
-<script type="text/javascript">
-var tipuesearch_stop_words = %s;
-
-var tipuesearch_replace = {"words": [
-     {"word": "tipua", replace_with: "tipue"},
-     {"word": "javscript", replace_with: "javascript"}
-]};
-
-var tipuesearch_stem = {"words": [
-     {"word": "e-mail", stem: "email"},
-     {"word": "javascript", stem: "script"},
-     {"word": "javascript", stem: "js"}
-]};
-
-$(document).ready(function() {
-    $('#tipue_search_input').tipuesearch({
-        'mode': 'json',
-        'contentLocation': '/assets/js/tipuesearch_content.json',
-        'showURL': false,
-        'minimumLength': %s,
-        'descriptiveWords': %s
-    });
-});
-</script>
 <!-- Built by Nikola v.%s on host %s -->
-""" % (json.JSONEncoder().encode(TIPUE_STOP_WORDS),
-       TIPUE_MIN_SEARCH_LENGTH,
-       TIPUE_SUMMARY_LENGTH,
-       nikola_version,
-       getfqdn())
+""" % (nikola_version, getfqdn())
 
-EXTRA_HEAD_DATA = """
-<div id="tipue_search_content" style="margin-left: auto; margin-right: auto; padding: 1px;"></div>
-"""
+EXTRA_HEAD_DATA = ""
 
-ENABLED_EXTRAS = [
-    "local_search",
-]
+ENABLED_EXTRAS = [ ]
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.

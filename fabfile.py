@@ -114,10 +114,10 @@ def build():
             nikola = REL_NIKOLA
 
     with cd(SITE_BASE):
-        # local_search should run before build bundles, but isn't in 5.4.4
-        _quietly_run_nikola_cmd(nikola, "local_search")
         _quietly_run_nikola_cmd(nikola, "build")
         _quietly_run_nikola_cmd(nikola, "mincss")
+        # Need to recompress css after yuicompressor has run
+        _quietly_run_nikola_cmd(nikola, "post_render_gzip")
 
 
 def requirements_dump():
@@ -411,7 +411,6 @@ def post_build_cleanup():
 def check_required_modules():
     """Make sure we have all the python modules needed for the build"""
     try:
-        # noinspection PyUnresolvedReferences
         import webassets
     except ImportError as e:
         abort("Missing module: %s" % (e,))
