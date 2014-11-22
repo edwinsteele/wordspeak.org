@@ -1,14 +1,17 @@
 from fabric.api import abort, local, settings
+from fabric.colors import green, red, yellow
 from fabric.contrib.console import confirm
-from fabric.context_managers import cd, quiet
+from fabric.context_managers import cd, hide, quiet, warn_only
 from fabric.operations import prompt
 import csv
+from email.mime.text import MIMEText
 import glob
 import os
 import re
 import enchant
 import enchant.checker
 import enchant.tokenize
+import smtplib
 import socket
 import sys
 import tempfile
@@ -35,6 +38,14 @@ SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
 UNWANTED_BUILD_ARTIFACTS = []
 # An update of these files will abort a fab deploy operation
 KEY_FILES = ["conf.py", "fabfile.py"]
+ORPHAN_WHITELIST = [
+    'd3-projects/basic_au_map/basic_au_map.html',
+    'd3-projects/census_nt_indig_lang/nt_sla_map.html',
+    'd3-projects/census_nt_indig_lang/nt_sla_scatter.html',
+    'd3-projects/index_time_series/index-line.html',
+    'd3-projects/stacked-column-ex/stacked-column-ex.html',
+    'pages/404.html',
+]
 
 
 class _RstURLFilter(enchant.tokenize.Filter):
@@ -194,20 +205,28 @@ def prod_sync():
 
 
 def linkchecker(output_fd=sys.stdout):
-    """Checks for broken links on the staging site"""
-    with settings(warn_only=True):
+    """Checks for broken links on the staging site
+
+    Returns whether the task ran successfully i.e. found no problems
+    """
+    with settings(hide('warnings'), warn_only=True):
         result = local("linkchecker"
                        " --check-extern"
                        " --config linkcheckerrc"
                        " http://" + STAGING_FQDN,
                        capture=True)
+    # Summary is the second to last line
+    summary_line = "Summary: %s" % (result.stdout.splitlines()[-2],)
     if result.failed:
+        print yellow(summary_line)
         # Failures are listed from the tenth line
         output_fd.write("Failures with linkchecker:\n%s\n" %
                        ("\n".join(result.stdout.splitlines()[9:])))
+        return False
     else:
-        # Summary is the second to last line
+        print green(summary_line)
         output_fd.write(result.stdout.splitlines()[-2])
+        return True
 
 
 def repo_push():
@@ -353,23 +372,15 @@ def spellchecker():
 def orphans(output_fd=sys.stdout):
     """Find html files that exist on the filesystem but aren't accessible
     via hyperlinks
+
+    Returns whether the task ran successfully i.e. found no problems
     """
     SIZE_OF_URL_CRUFT = len("http:///")
     URL_FIELD = 7
     LINKCHECKER_OUTPUT = "linkchecker-output.csv"
-    FILESYSTEM_FILES_TO_IGNORE = [
-        'd3-projects/basic_au_map/basic_au_map.html',
-        'd3-projects/census_nt_indig_lang/nt_sla_map.html',
-        'd3-projects/census_nt_indig_lang/nt_sla_scatter.html',
-        'd3-projects/index_time_series/index-line.html',
-        'd3-projects/stacked-column-ex/stacked-column-ex.html',
-        'galleries/index.html',
-        'pages/404.html',
-    ]
-
     html_files_on_filesystem = set()
 
-    with settings(warn_only=True):
+    with warn_only():
         local("linkchecker"
               " --config linkcheckerrc"
               " --verbose"
@@ -396,15 +407,20 @@ def orphans(output_fd=sys.stdout):
         for f in file_list:
             path_beneath_output = os.path.join(
                 dirname[len(STAGING_RSYNC_DESTINATION_LOCAL) + 1:], f)
-            if path_beneath_output not in FILESYSTEM_FILES_TO_IGNORE:
+            if path_beneath_output not in ORPHAN_WHITELIST:
                 html_files_on_filesystem.add(path_beneath_output)
 
     orphan_list = html_files_on_filesystem.difference(html_files_checked)
     if orphan_list:
+        print yellow("Orphans found (%s)." % (len(orphan_list),))
         output_fd.write("Orphaned html files exist "
-                       "(are on disk but aren't linked).\n")
-    for orphan in sorted(list(orphan_list)):
-        output_fd.write("Orphaned file: " + orphan + "\n")
+                        "(are on disk but aren't linked).\n")
+        for orphan in sorted(list(orphan_list)):
+            output_fd.write("Orphaned file: " + orphan + "\n")
+        return False
+    else:
+        print green("No orphans found.")
+        return True
 
 
 def post_build_cleanup():
@@ -421,8 +437,46 @@ def check_required_modules():
         import webassets  # for bundle creation
         import squeeze  # for yuicompressor
     except ImportError as e:
+        # noinspection PyUnusedLocal
         webassets = squeeze = None
-        abort("Missing module: %s" % (e,))
+        abort(red("Missing module: %s" % (e,)))
+
+
+def post_deploy():
+    """Runs time consuming tasks, or those that don't need to be run inline"""
+    scratch = tempfile.TemporaryFile()
+    scratch.write("Linkchecker\n")
+    scratch.write("-----------\n")
+    ran_successfully = linkchecker(scratch)
+    scratch.write("\n--- End Linkchecker output ---\n\n")
+    scratch.write("Orphans\n")
+    scratch.write("-----------\n")
+    ran_successfully = orphans(scratch) and ran_successfully
+    scratch.write("\n--- End Orphans output ---\n\n")
+    scratch.seek(os.SEEK_SET)
+    text = scratch.read()
+    subject = "[Wordspeak] Deployment complete "
+    if ran_successfully:
+        subject += "(no errors) "
+    else:
+        subject += "(with errors) "
+    subject += "from %s" % (socket.gethostname().split(".")[0],)
+
+    msg = MIMEText(text)
+    msg["Subject"] = subject
+    msg["To"] = "edwin@wordspeak.org"
+    msg["From"] = "Wordspeak Deploys <edwin@wordspeak.org>"
+    print "Sending summary mail... ",
+    try:
+        mail_server = smtplib.SMTP('localhost')
+        mail_server.sendmail("edwin@wordspeak.org",
+                             ["edwin@wordspeak.org"],
+                             msg.as_string())
+        mail_server.quit()
+    except smtplib.SMTPException, e:
+        print red("Failed.\n%s", (e,))
+    else:
+        print green("Success.")
 
 
 def deploy():
@@ -430,8 +484,8 @@ def deploy():
     spellcheck_needed = True
     key_files_changed = repo_pull()
     if key_files_changed:
-        abort("Aborting as the following key files changed: %s" %
-              (",".join(key_files_changed),))
+        abort(red("Aborting as the following key files changed: %s" %
+              (",".join(key_files_changed),)))
     maybe_add_untracked_files()
     check_required_modules()
     while spellcheck_needed:
@@ -445,12 +499,9 @@ def deploy():
         prod_sync()
         repo_push()
     else:
-        print "Not pushing to live site."
+        print red("Not pushing to live site.")
 
-    scratch = tempfile.TemporaryFile()
-    linkchecker(scratch)
-    orphans(scratch)
-    print scratch.read()
+    post_deploy()
 
 
 if __name__ == '__main__':
