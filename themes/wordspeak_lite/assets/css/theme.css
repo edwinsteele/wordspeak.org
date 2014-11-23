@@ -39,6 +39,23 @@ nav {
     background-repeat: repeat-x;
 }
 
+span.icon-nav { 
+    display: none;
+}
+
+@media(max-width:500px) {
+    span.text-nav {
+        display: none;
+    }
+    span.icon-nav {
+        display: inherit;
+    }
+    .nav a {
+        padding-right: 0.3em;
+	width: 50%;
+    }
+}
+
 .nav a {
     color: #777;
     text-shadow: 0px 1px 0px #FFF;

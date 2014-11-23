@@ -4,11 +4,7 @@ from __future__ import unicode_literals
 from nikola import __version__ as nikola_version
 from nikola import filters
 from socket import getfqdn
-import json
 import os
-import time
-
-# Comment to force update. Deleteme.
 
 BLOG_AUTHOR = "Edwin Steele"
 BLOG_TITLE = "Wordspeak"
@@ -21,14 +17,15 @@ TRANSLATIONS = {
     DEFAULT_LANG: "",
 }
 
+# XXX - NOT USED - HARD CODED IN TEMPLATE
 SIDEBAR_LINKS = {
     DEFAULT_LANG: (
         ('/pages/about.html', 'About'),
         ('/pages/projects.html', 'Projects'),
         ('/categories/index.html', 'Categories'),
         ('/rss.xml', 'RSS'),
-        ),
-    }
+    ),
+}
 
 post_pages = (
     ("posts/*.md", "posts", "post.tmpl", True),
@@ -45,17 +42,19 @@ post_compilers = {
 # MUST be absolute
 #OUTPUT_FOLDER='/Users/esteele/Code/wordspeak.org/output'
 #CACHE_FOLDER='/Users/esteele/Code/wordspeak.org/cache'
-OUTPUT_FOLDER=os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_output')
-CACHE_FOLDER=os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_cache')
+OUTPUT_FOLDER = os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_output')
+CACHE_FOLDER = os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_cache')
 
 HIDE_SOURCELINK = True
 USE_CDN = False
 GZIP_FILES = True
-GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson')
+GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson',
+                   '.eot', '.svg', '.ttf', '.woff')
 DISABLED_PLUGINS = ["render_galleries"]
 
+
 def yui_compressor(infile):
-    from nikola.filters import apply_to_file, runinplace
+    from nikola.filters import runinplace
     return runinplace(r'squeeze yuicompressor %1 -o %2', infile)
 
 FILTERS = {
@@ -68,7 +67,12 @@ THEME = 'wordspeak_lite'
 #THEME = 'wordspeak'
 
 # A small copyright notice for the page footer (in HTML)
-CONTENT_FOOTER = 'Site by <a href="/pages/about.html">Edwin Steele</a> | Uncopyright. No rights reserved | <a href="/pages/licensing.html">Why give it away?</a>'
+CONTENT_FOOTER = 'Site by <a title="About the author" ' \
+                 'href="/pages/about.html">Edwin Steele</a>' \
+                 '<a title="Email" href="mailto:edwin@wordspeak.org">' \
+                 '<span icon-mail-alt"></span></a> | ' \
+                 'Uncopyright. No rights reserved | ' \
+                 '<a href="/pages/licensing.html">Why give it away?</a>'
 
 DISQUS_FORUM = False
 ADD_THIS_BUTTONS = False
@@ -84,7 +88,7 @@ ANALYTICS = """
 
 EXTRA_HEAD_DATA = ""
 
-ENABLED_EXTRAS = [ ]
+ENABLED_EXTRAS = []
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.

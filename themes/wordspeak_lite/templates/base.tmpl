@@ -13,11 +13,14 @@ ${set_locale(lang)}
 <!-- Menubar -->
 <nav class="nav" onclick="this.focus()" tabindex="-1">
     <div class="container">
-	<a class="brand" href="${abs_link('/')}">${blog_title}</a>
-        ${html_sidebar_links()}
+	<a title="Wordspeak Homepage" class="brand" href="${abs_link('/')}">${blog_title}</a>
+        <a title="Software" href="pages/projects.html"><span class="text-nav">Software</span><span class="icon-nav icon-git"></span></a>
+        <a title="Photos" href="pages/projects.html"><span class="text-nav">Photos</span><span class="icon-nav icon-camera"></span></a>
+        <a title="Archive" href="categories/index.html"><span class="text-nav">Archive</span><span class="icon-nav icon-docs"></span></a>
+        <a title="About this site" href="pages/about.html"><span class="text-nav">About</span><span class="icon-nav icon-info"></span></a>
+        <a title="RSS Feed" href="rss.xml"><span class="text-nav">RSS</span><span class="icon-nav icon-rss"></span></a>
     </div>
 </nav>
-<button class="btn btn-sm btn-close">×</button>
 <!-- End of Menubar -->
 <!--Body content-->
 <div class="container">
@@ -35,7 +38,10 @@ ${set_locale(lang)}
 </div>
 <!--End of body content-->
 <div class="footerbox">
-    ${content_footer}
+Site by <a title="About the author" href="/pages/about.html">Edwin Steele</a>
+<a title="Email" href="mailto:edwin@wordspeak.org"><span class="icon-mail-alt"></span></a> |
+Uncopyright. No rights reserved |
+<a title="Site Licencing" href="/pages/licensing.html">Why give it away?</a>
 </div>
 ${analytics}
 </body>
