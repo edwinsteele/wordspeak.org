@@ -19,12 +19,7 @@ TRANSLATIONS = {
 
 # XXX - NOT USED - HARD CODED IN TEMPLATE
 SIDEBAR_LINKS = {
-    DEFAULT_LANG: (
-        ('/pages/about.html', 'About'),
-        ('/pages/projects.html', 'Projects'),
-        ('/categories/index.html', 'Categories'),
-        ('/rss.xml', 'RSS'),
-    ),
+    DEFAULT_LANG: (),
 }
 
 post_pages = (
@@ -64,15 +59,10 @@ FILTERS = {
 
 # Name of the theme to use. Themes are located in themes/theme_name
 THEME = 'wordspeak_lite'
-#THEME = 'wordspeak'
 
 # A small copyright notice for the page footer (in HTML)
-CONTENT_FOOTER = 'Site by <a title="About the author" ' \
-                 'href="/pages/about.html">Edwin Steele</a>' \
-                 '<a title="Email" href="mailto:edwin@wordspeak.org">' \
-                 '<span icon-mail-alt"></span></a> | ' \
-                 'Uncopyright. No rights reserved | ' \
-                 '<a href="/pages/licensing.html">Why give it away?</a>'
+# XXX - Not used. Stored in template now.
+CONTENT_FOOTER = ""
 
 DISQUS_FORUM = False
 ADD_THIS_BUTTONS = False
