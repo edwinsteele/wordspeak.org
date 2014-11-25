@@ -30,7 +30,7 @@ PROD_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
                                 (PROD_FQDN, PROD_FILESYSTEM_ROOT)
 DEV_NIKOLA = os.path.join(TILDE,
                           "Code/nikola-edwinsteele/nikola/scripts/nikola")
-REL_NIKOLA = os.path.join(TILDE, ".virtualenvs/wordspeak/bin/nikola")
+REL_NIKOLA = os.path.join(TILDE, ".virtualenvs/wordspeak_n7/bin/nikola")
 SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
@@ -114,8 +114,11 @@ def _quietly_run_nikola_cmd(nikola, cmd):
         print result.stderr
         abort("Nikola command '%s' failed." % (cmd,))
     else:
-        print "%s actions performed\n" % \
-              (len(result.stdout.splitlines()) - 1),
+        if result.stderr:
+            print "%s actions performed\n" % \
+                  (len(result.stderr.splitlines()) - 1),
+        else:
+            print "No output from command."
 
 
 def build():
@@ -130,7 +133,8 @@ def build():
         _quietly_run_nikola_cmd(nikola, "build")
         _quietly_run_nikola_cmd(nikola, "mincss")
         # Need to recompress css after yuicompressor has run
-        _quietly_run_nikola_cmd(nikola, "post_render_gzip")
+        #  Can't run post_render_gzip in N7, so let's just do build again
+        _quietly_run_nikola_cmd(nikola, "build")
 
 
 def requirements_dump():

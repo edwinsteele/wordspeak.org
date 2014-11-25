@@ -1,13 +1,14 @@
 ## -*- coding: utf-8 -*-
-<%namespace file="base_helper.tmpl" import="*"/>
+<%namespace name="base" file="base_helper.tmpl" import="*"/>
+<%namespace name="header" file="base_header.tmpl" import="*"/>
+<%namespace name="footer" file="base_footer.tmpl" import="*"/>
+<%namespace name="annotations" file="annotation_helper.tmpl"/>
 ${set_locale(lang)}
-<!DOCTYPE html>
-<html lang="${lang}">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    ${html_head()}
-    <%block name="extra_head">
-    </%block>
+${base.html_headstart()}
+<%block name="extra_head">
+### Leave this block alone.
+</%block>
+${template_hooks['extra_head']()}
 </head>
 <body>
 <!-- Menubar -->
@@ -43,5 +44,5 @@ Site by <a title="About the author" href="/pages/about.html">Edwin Steele</a>
 Uncopyright. No rights reserved |
 <a title="Site Licencing" href="/pages/licensing.html">Why give it away?</a>
 </div>
-${analytics}
+${body_end}
 </body>

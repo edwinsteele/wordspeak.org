@@ -166,6 +166,10 @@ a {
     text-decoration: none;
 }
 
+span.dateline {
+    font-size: 11px;
+}
+
 .footnote-reference {
     /* Issue 290 */
     vertical-align: super;

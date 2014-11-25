@@ -8,29 +8,37 @@ import os
 
 BLOG_AUTHOR = "Edwin Steele"
 BLOG_TITLE = "Wordspeak"
-SITE_URL = "https://www.wordspeak.org"
+SITE_URL = "https://www.wordspeak.org/"
 BLOG_EMAIL = "edwin@wordspeak.org"
 BLOG_DESCRIPTION = "Edwin's writings."
 
 DEFAULT_LANG = "en"
-TRANSLATIONS = {
-    DEFAULT_LANG: "",
-}
+#TRANSLATIONS = {
+#    DEFAULT_LANG: "en",
+#}
 
 # XXX - NOT USED - HARD CODED IN TEMPLATE
-SIDEBAR_LINKS = {
+SIDEBAR_LINKS = NAVIGATION_LINKS = {
     DEFAULT_LANG: (),
 }
 
-post_pages = (
-    ("posts/*.md", "posts", "post.tmpl", True),
-    ("posts/*.rst", "posts", "post.tmpl", True),
-    ("stories/*.rst", "pages", "story.tmpl", False),
+POSTS = (
+    ("posts/*.md", "posts", "post.tmpl"),
+    ("posts/*.rst", "posts", "post.tmpl"),
 )
 
-post_compilers = {
+PAGES = (
+    ("stories/*.md", "pages", "story.tmpl"),
+    ("stories/*.rst", "pages", "story.tmpl"),
+)
+
+COMPILERS = {
     "markdown": ('.md', '.mdown', '.markdown'),
     "rest": ('.rst', '.txt'),
+}
+
+FAVICONS = {
+    ("icon", "/favicon.ico", "16x16"),
 }
 
 # Specify these so we can move them outside the dropbox sync'ed area
@@ -40,11 +48,12 @@ post_compilers = {
 OUTPUT_FOLDER = os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_output')
 CACHE_FOLDER = os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_cache')
 
-HIDE_SOURCELINK = True
+COPY_SOURCES = False
+SHOW_SOURCELINK = False
 USE_CDN = False
 GZIP_FILES = True
 GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson',
-                   '.eot', '.svg', '.ttf', '.woff')
+                   '.eot', '.svg', '.ttf', '.woff', '.xml')
 DISABLED_PLUGINS = ["render_galleries"]
 
 
@@ -64,31 +73,33 @@ THEME = 'wordspeak_lite'
 # XXX - Not used. Stored in template now.
 CONTENT_FOOTER = ""
 
-DISQUS_FORUM = False
-ADD_THIS_BUTTONS = False
+COMMENT_SYSTEM = False
 INDEX_DISPLAY_POST_COUNT = 5
 # XXX - what should this be?
 # RSS_TEASERS = True
 
+# XXX - Want this once we've migrated and settled
+CREATE_SINGLE_ARCHIVE = True
+
 SEARCH_FORM = ""
 
-ANALYTICS = """
+BODY_END = """
 <!-- Built by Nikola v.%s on host %s -->
 """ % (nikola_version, getfqdn())
 
 EXTRA_HEAD_DATA = ""
 
-ENABLED_EXTRAS = []
+TIMEZONE = 'Australia/Sydney'
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {
-    'blog_author': BLOG_AUTHOR,
-    'blog_title': BLOG_TITLE,
-    'blog_desc': BLOG_DESCRIPTION,
-    'translations': TRANSLATIONS,
-    'disqus_forum': DISQUS_FORUM,
-    'content_footer': CONTENT_FOOTER,
-    'site_url': SITE_URL,
-    'sidebar_links': SIDEBAR_LINKS,
-}
+#GLOBAL_CONTEXT = {
+#    'blog_author': BLOG_AUTHOR,
+#    'blog_title': BLOG_TITLE,
+#    'blog_desc': BLOG_DESCRIPTION,
+#    'translations': TRANSLATIONS,
+#    'disqus_forum': DISQUS_FORUM,
+#    'content_footer': CONTENT_FOOTER,
+#    'site_url': SITE_URL,
+#    'sidebar_links': SIDEBAR_LINKS,
+#}
