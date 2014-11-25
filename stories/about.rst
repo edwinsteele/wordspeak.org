@@ -37,4 +37,5 @@ See `Licensing </pages/licensing.html>`_
 
 Archives
 ********
-See `Archives by Year </archive.html>`_
+See `Archives by Date </archive.html>`_
+See `Archives by Tag </categories/index.html>`_
