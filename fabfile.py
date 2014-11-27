@@ -233,6 +233,23 @@ def linkchecker(output_fd=sys.stdout):
         return True
 
 
+def check_mixed_content(output_fd=sys.stdout):
+    """looks for mixed http/https content"""
+    with quiet():
+        if local("test '$(showvirtualenv)' == 'nikola-dev'").succeeded:
+            nikola = DEV_NIKOLA
+        else:
+            nikola = REL_NIKOLA
+
+    result = local("%s check -l" % (nikola,))
+    if result.failed:
+        output_fd.write("Failures with mixed content check: %s" % (result.stdout,))
+        return False
+    else:
+        output_fd.write("No problems with mixed HTTP/HTTPS content")
+        return True
+
+
 def repo_push():
     """Push the wordspeak repo to github"""
     local("git push")
@@ -457,6 +474,7 @@ def post_deploy():
     scratch.write("-----------\n")
     ran_successfully = orphans(scratch) and ran_successfully
     scratch.write("\n--- End Orphans output ---\n\n")
+    ran_successfully = check_mixed_content(scratch) and ran_successfully
     scratch.seek(os.SEEK_SET)
     text = scratch.read()
     subject = "[Wordspeak] Deployment complete "
