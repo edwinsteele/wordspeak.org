@@ -75,10 +75,6 @@ CONTENT_FOOTER = ""
 
 COMMENT_SYSTEM = False
 INDEX_DISPLAY_POST_COUNT = 5
-# XXX - what should this be?
-# RSS_TEASERS = True
-
-# XXX - Want this once we've migrated and settled
 CREATE_SINGLE_ARCHIVE = True
 
 SEARCH_FORM = ""
