@@ -362,6 +362,7 @@ def strip_markdown_directives(line):
 
     # Remove URL
     line = re.sub(r'\[(.+?)]\(http[^\)]+\)', r'\1', line)
+    line = re.sub(r'<http:.+?>', r'', line)
     return line
 
 
