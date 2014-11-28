@@ -5,7 +5,6 @@
 .. tags: Photography
 .. link: 
 .. description: 
-.. _pasha_Bulker_image_page: http://www.flickr.com/photos/edwin_steele/sets/72157632565445286/
 -->
 
 
@@ -15,5 +14,5 @@ So, armed with the 5mp camera on my new Nokia N95 and with some excellent compan
 
 I present the [Pasha Bulker](http://www.flickr.com/photos/edwin_steele/sets/72157632565445286/) . (In the same vein, you might also enjoy the shots of the [beached Guadalupe](http://www.flickr.com/photos/edwin_steele/8396336043/) that I took in Mauritania in 2005)
 
-[![Pasha Bulker run aground near Newcastle](https://farm9.staticflickr.com/8513/8396141441_05c747d9ae_m.jpg)](pasha_Bulker_image_page_)
+[![Pasha Bulker run aground near Newcastle](https://farm9.staticflickr.com/8513/8396141441_05c747d9ae_m.jpg)](http://www.flickr.com/photos/edwin_steele/sets/72157632565445286/)
 

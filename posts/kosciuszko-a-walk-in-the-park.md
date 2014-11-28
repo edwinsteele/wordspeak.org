@@ -17,5 +17,5 @@ Now, would it surprise you that I took photos? Honestly, I'm really thrilled wit
 
 Oh, OK. Here's a taste...
 
-[![From the Charlotte's Pass viewing platform](https://farm9.staticflickr.com/8228/8395047739_a78dd8fd53_z.jpg)](Charlotte_pass_image_page_)
+[![From the Charlotte's Pass viewing platform](https://farm9.staticflickr.com/8228/8395047739_a78dd8fd53_z.jpg)](http://www.flickr.com/photos/edwin_steele/8395047739/)
 

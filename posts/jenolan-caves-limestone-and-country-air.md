@@ -5,7 +5,6 @@
 .. tags: Photography, Travel
 .. link: 
 .. description: 
-.. _Temple_of_Baal_image_page: http://www.flickr.com/photos/edwin_steele/8412934156/
 -->
 
 
@@ -27,5 +26,5 @@ Here's the [photo album](http://www.flickr.com/photos/edwin_steele/sets/72157632
 
 And here's a taste from the "Temple of Baal" cave:
 
-[![Temple of Baal Cave: Another shawl feature](https://farm9.staticflickr.com/8494/8412934156_960294fa7d_n.jpg)](Temple_of_Baal_image_page_)
+[![Temple of Baal Cave: Another shawl feature](https://farm9.staticflickr.com/8494/8412934156_960294fa7d_n.jpg)](http://www.flickr.com/photos/edwin_steele/8412934156/)
 
