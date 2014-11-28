@@ -282,11 +282,21 @@ def clean():
 
 
 def _non_directive_lines(lines):
-    """filters out all the rst directives
+    """filters out all the rst/markdown directives
 
     so the spell checker doesn't get confused"""
     blank_lines_til_spellcheck_starts = 0
+    in_code_directive = False
     for line in lines:
+        if line.startswith("```"):
+            if in_code_directive:
+                in_code_directive = False
+            else:
+                in_code_directive = True
+
+        if in_code_directive:
+            continue
+                
         if blank_lines_til_spellcheck_starts > 0:
             if len(line.strip()) == 0:
                 # rst directive ends with blank line
