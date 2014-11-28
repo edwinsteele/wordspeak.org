@@ -344,6 +344,12 @@ def _replace_in_file(input_file, old_word, new_word):
     print "Replaced %s with %s in %s" % (old_word, new_word, input_file)
 
 
+def strip_markdown_directives(line):
+    # Remove URL
+    line = re.sub(r'\[(.+?)]\(http[^\)]+\)', r'\1', line)
+    return line
+
+
 def spellchecker():
     """Spellcheck the Markdown and ReST files on the site"""
 
@@ -369,7 +375,7 @@ def spellchecker():
             lines = f.readlines()
 
         for line in _non_directive_lines(lines):
-            en_spellchecker.set_text(line)
+            en_spellchecker.set_text(strip_markdown_directives(line))
             for err in en_spellchecker:
                 if not pwl_dictionary.check(err.word):
                     replacements_performed = True
