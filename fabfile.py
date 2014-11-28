@@ -345,6 +345,11 @@ def _replace_in_file(input_file, old_word, new_word):
 
 
 def strip_markdown_directives(line):
+    line = line.strip()
+    if line.startswith("<") and line.endswith(">"):
+        # Let's assume it's inline HTML and skip it
+        return ""
+
     # Remove URL
     line = re.sub(r'\[(.+?)]\(http[^\)]+\)', r'\1', line)
     return line
