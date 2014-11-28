@@ -24,17 +24,14 @@ SIDEBAR_LINKS = NAVIGATION_LINKS = {
 
 POSTS = (
     ("posts/*.md", "posts", "post.tmpl"),
-    ("posts/*.rst", "posts", "post.tmpl"),
 )
 
 PAGES = (
     ("stories/*.md", "pages", "story.tmpl"),
-    ("stories/*.rst", "pages", "story.tmpl"),
 )
 
 COMPILERS = {
     "markdown": ('.md', '.mdown', '.markdown'),
-    "rest": ('.rst', '.txt'),
 }
 
 FAVICONS = {
