@@ -48,5 +48,5 @@ Table Reference Appendix Thing
   </tbody>
 </table>
 
-[^1]: <http://www.dependentongadgets.com/dependent-on-gadgets/2012/10/penultimate-vs-myscript-notes-vs-notability-vs-noteshelf>
+[^1]: [PenUltimate vs MyScript Notes vs Notability vs Noteshelf](http://www.dependentongadgets.com/dependent-on-gadgets/2012/10/penultimate-vs-myscript-notes-vs-notability-vs-noteshelf)
 

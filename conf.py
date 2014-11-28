@@ -48,7 +48,7 @@ FAVICONS = {
 OUTPUT_FOLDER = os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_output')
 CACHE_FOLDER = os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_cache')
 
-MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'footnotes', 'tables']
+MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'footnotes', 'tables', 'def_list']
 
 COPY_SOURCES = False
 SHOW_SOURCELINK = False
