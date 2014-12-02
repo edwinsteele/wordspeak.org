@@ -190,3 +190,9 @@ h3 {
 	font-size: 14px !important;
 	line-height: 21px !important;
 }
+
+*/ from rst.css */
+pre.literal-block,pre.code {
+    margin-left:2em;
+    margin-right:2em
+}
