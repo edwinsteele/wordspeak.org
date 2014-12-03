@@ -59,7 +59,11 @@
         ${html_title()}
         <hr>
         <div class="metadata">
-            <span class="dateline">Posted: <time class="published dt-published" datetime="${post.date.isoformat()}" itemprop="datePublished" title="${post.formatted_date(date_format)}">${post.formatted_date(date_format)}</time> | More posts about ${html_tags(post)}</span>
+            <span class="dateline">Posted: <time class="published dt-published" datetime="${post.date.isoformat()}" itemprop="datePublished" title="${post.formatted_date(date_format)}">${post.formatted_date(date_format)}</time>
+            % if post.tags:
+| More posts about ${html_tags(post)}
+            % endif
+</span>
             % if not post.meta('nocomments') and site_has_comments:
                 <p class="commentline">${comments.comment_link(post.permalink(), post._base_path)}
             % endif
