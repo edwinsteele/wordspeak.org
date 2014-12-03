@@ -243,7 +243,8 @@ def check_mixed_content(output_fd=sys.stdout):
 
     result = local("%s check -l" % (nikola,))
     if result.failed:
-        output_fd.write("Failures with mixed content check: %s" % (result.stdout,))
+        output_fd.write("Failures with mixed content check: %s" %
+                        (result.stdout,))
         return False
     else:
         output_fd.write("No problems with mixed HTTP/HTTPS content")
@@ -251,8 +252,21 @@ def check_mixed_content(output_fd=sys.stdout):
 
 
 def repo_push():
-    """Push the wordspeak repo to github"""
-    local("git push")
+    """Push the wordspeak repo to github if there's anything to push"""
+    with quiet():
+        head_result = local(
+            "git --no-pager log -1 --oneline HEAD", capture=True)
+        orig_head_result = local(
+            "git --no-pager log -1 --oneline origin/master", capture=True)
+    # As we did a pull at the start of the deployment process, we can
+    #  be sure that the ORIG_HEAD reflects the upstream repo.
+    # If head_result and orig_head_result are the same, we don't need
+    #  to do a push (and can thus save being prompted for the password
+    #  on any keys that aren't already known
+    if head_result.stdout != orig_head_result.stdout:
+        local("git push")
+    else:
+        print "No git push necessary (no local commits need pushing)"
 
 
 def repo_pull():
