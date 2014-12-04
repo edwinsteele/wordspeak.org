@@ -1,3 +1,4 @@
+import urllib
 from fabric.api import abort, local, settings
 from fabric.colors import green, red, yellow
 from fabric.contrib.console import confirm
@@ -15,6 +16,7 @@ import smtplib
 import socket
 import sys
 import tempfile
+import requests
 import conf
 
 TILDE = os.path.expanduser("~")
@@ -45,6 +47,24 @@ ORPHAN_WHITELIST = [
     'd3-projects/index_time_series/index-line.html',
     'd3-projects/stacked-column-ex/stacked-column-ex.html',
     'pages/404.html',
+]
+W3C_HTML_VALIDATION_URL = 'http://validator.w3.org/check?uri=%s&' \
+                          'charset=%%28detect+automatically%%29&' \
+                          'doctype=Inline&group=0&output=%s'
+W3C_HTML_VALIDATION_TARGETS = [
+    'https://www.wordspeak.org/index.html',
+    'https://www.wordspeak.org/pages/about.html',
+    'https://www.wordspeak.org/posts/write-because-you-want-to.html',
+]
+W3C_CSS_VALIDATION_URL = 'http://jigsaw.w3.org/css-validator/validator?' \
+                         'uri=%s&profile=css3&usermedium=all&warning=1&' \
+                         'vextwarning=&lang=en&output=%s'
+W3C_CSS_VALIDATION_TARGETS = [
+    'https://www.wordspeak.org/assets/css/all-nocdn.css',
+]
+W3C_RSS_VALIDATION_URL = 'http://validator.w3.org/feed/check.cgi?url=%s'
+W3C_RSS_VALIDATION_TARGETS = [
+    'https://www.wordspeak.org/rss.xml',
 ]
 
 
@@ -480,6 +500,47 @@ def orphans(output_fd=sys.stdout):
         return True
 
 
+def w3c_checks(output_fd=sys.stdout):
+    for url in W3C_HTML_VALIDATION_TARGETS:
+        r = requests.get(W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url),
+                                                    "json"))
+        if r.json()["messages"]:
+            print "messages is ->%s<-" % (r.json()["messages"],)
+            output_fd.write("HTML has W3C validation errors (%s):\n" % (url,))
+            for message in r.json()["messages"]:
+                output_fd.write("- %s" % (message,))
+            output_fd.write("\n")
+            output_fd.write("Full details: %s\n" % (W3C_HTML_VALIDATION_URL %
+                                                    (urllib.quote_plus(url),
+                                                     "html")))
+        else:
+            output_fd.write("HTML validates (%s)\n" % (url,))
+    output_fd.write("\n")
+    for url in W3C_CSS_VALIDATION_TARGETS:
+        r = requests.get(W3C_CSS_VALIDATION_URL % (urllib.quote_plus(url),
+                                                   "text"))
+        summary = [l.strip() for l in r.text.split('\n') if l.strip()][1]
+        if "Congratulations" in summary:
+            output_fd.write("CSS validates (%s)\n" % (url,))
+        else:
+            output_fd.write("CSS validation failures for %s\n" % (url,))
+            output_fd.write("%s\n" % (summary,))
+            output_fd.write("Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
+                                                    (urllib.quote_plus(url),
+                                                     "html")))
+    output_fd.write("\n")
+    for url in W3C_RSS_VALIDATION_TARGETS:
+        r = requests.get(W3C_RSS_VALIDATION_URL % (urllib.quote_plus(url),))
+        # UGLY, and fragile but there's no machine readable output available
+        if "This is a valid RSS feed" in r.text:
+            output_fd.write("RSS validates (%s)\n" % (url,))
+        else:
+            output_fd.write("RSS validation failures for %s\n")
+            output_fd.write("Full details: %s\n" % (W3C_RSS_VALIDATION_URL %
+                                                    (urllib.quote_plus(url))))
+    output_fd.write("\n")
+
+
 def post_build_cleanup():
     """Get rid of the stuff that we don't want to push but was built
     (and can't easily be disabled"""
@@ -505,12 +566,18 @@ def post_deploy():
     scratch.write("Linkchecker\n")
     scratch.write("-----------\n")
     ran_successfully = linkchecker(scratch)
-    scratch.write("\n--- End Linkchecker output ---\n\n")
-    scratch.write("Orphans\n")
+    scratch.write("\nOrphans\n")
     scratch.write("-----------\n")
     ran_successfully = orphans(scratch) and ran_successfully
-    scratch.write("\n--- End Orphans output ---\n\n")
+    scratch.write("\nHTTP/HTTPS Mixed Content\n")
+    scratch.write("-----------\n")
     ran_successfully = check_mixed_content(scratch) and ran_successfully
+    scratch.write("\nW3C Validations\n")
+    scratch.write("-----------\n")
+    ran_successfully = w3c_checks(scratch) and ran_successfully
+    scratch.write("--- Post deploy checks complete ---\n")
+
+    # Re-read the file and mail it
     scratch.seek(os.SEEK_SET)
     text = scratch.read()
     subject = "[Wordspeak] Deployment complete "
