@@ -563,14 +563,14 @@ def check_required_modules():
 def post_deploy():
     """Runs time consuming tasks, or those that don't need to be run inline"""
     scratch = tempfile.TemporaryFile()
-    scratch.write("Linkchecker\n")
-    scratch.write("-----------\n")
+    scratch.write("\nLinkchecker")
+    scratch.write("\n-----------")
     ran_successfully = linkchecker(scratch)
-    scratch.write("\nOrphans\n")
-    scratch.write("-----------\n")
+    scratch.write("\nOrphans")
+    scratch.write("\n-------")
     ran_successfully = orphans(scratch) and ran_successfully
-    scratch.write("\nHTTP/HTTPS Mixed Content\n")
-    scratch.write("-----------\n")
+    scratch.write("\nHTTP/HTTPS Mixed Content")
+    scratch.write("\n-----------")
     ran_successfully = check_mixed_content(scratch) and ran_successfully
     scratch.write("\nW3C Validations\n")
     scratch.write("-----------\n")
