@@ -497,6 +497,7 @@ def orphans(output_fd=sys.stdout):
         return False
     else:
         print green("No orphans found.")
+        output_fd.write("No orphans found.\n")
         return True
 
 
@@ -515,7 +516,7 @@ def w3c_checks(output_fd=sys.stdout):
                                                      "html")))
         else:
             output_fd.write("HTML validates (%s)\n" % (url,))
-    output_fd.write("\n")
+
     for url in W3C_CSS_VALIDATION_TARGETS:
         r = requests.get(W3C_CSS_VALIDATION_URL % (urllib.quote_plus(url),
                                                    "text"))
@@ -528,7 +529,6 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
                                                     (urllib.quote_plus(url),
                                                      "html")))
-    output_fd.write("\n")
     for url in W3C_RSS_VALIDATION_TARGETS:
         r = requests.get(W3C_RSS_VALIDATION_URL % (urllib.quote_plus(url),))
         # UGLY, and fragile but there's no machine readable output available
@@ -538,7 +538,6 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("RSS validation failures for %s\n")
             output_fd.write("Full details: %s\n" % (W3C_RSS_VALIDATION_URL %
                                                     (urllib.quote_plus(url))))
-    output_fd.write("\n")
 
 
 def post_build_cleanup():
@@ -566,14 +565,8 @@ def post_deploy():
     scratch.write("\nLinkchecker")
     scratch.write("\n-----------")
     ran_successfully = linkchecker(scratch)
-    scratch.write("\nOrphans")
-    scratch.write("\n-------")
     ran_successfully = orphans(scratch) and ran_successfully
-    scratch.write("\nHTTP/HTTPS Mixed Content")
-    scratch.write("\n-----------")
     ran_successfully = check_mixed_content(scratch) and ran_successfully
-    scratch.write("\nW3C Validations\n")
-    scratch.write("-----------\n")
     ran_successfully = w3c_checks(scratch) and ran_successfully
     scratch.write("--- Post deploy checks complete ---\n")
 
