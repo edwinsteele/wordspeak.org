@@ -250,6 +250,7 @@ def linkchecker(output_fd=sys.stdout):
     else:
         print green(summary_line)
         output_fd.write(result.stdout.splitlines()[-2])
+        output_fd.write("\n")
         return True
 
 
@@ -502,11 +503,11 @@ def orphans(output_fd=sys.stdout):
 
 
 def w3c_checks(output_fd=sys.stdout):
+    has_errors = False
     for url in W3C_HTML_VALIDATION_TARGETS:
         r = requests.get(W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url),
                                                     "json"))
         if r.json()["messages"]:
-            print "messages is ->%s<-" % (r.json()["messages"],)
             output_fd.write("HTML has W3C validation errors (%s):\n" % (url,))
             for message in r.json()["messages"]:
                 output_fd.write("- %s" % (message,))
@@ -514,6 +515,7 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("Full details: %s\n" % (W3C_HTML_VALIDATION_URL %
                                                     (urllib.quote_plus(url),
                                                      "html")))
+            has_errors = True
         else:
             output_fd.write("HTML validates (%s)\n" % (url,))
 
@@ -529,6 +531,7 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
                                                     (urllib.quote_plus(url),
                                                      "html")))
+            has_errors = True
     for url in W3C_RSS_VALIDATION_TARGETS:
         r = requests.get(W3C_RSS_VALIDATION_URL % (urllib.quote_plus(url),))
         # UGLY, and fragile but there's no machine readable output available
@@ -538,6 +541,9 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("RSS validation failures for %s\n")
             output_fd.write("Full details: %s\n" % (W3C_RSS_VALIDATION_URL %
                                                     (urllib.quote_plus(url))))
+            has_errors = True
+
+    return has_errors
 
 
 def post_build_cleanup():
@@ -562,8 +568,8 @@ def check_required_modules():
 def post_deploy():
     """Runs time consuming tasks, or those that don't need to be run inline"""
     scratch = tempfile.TemporaryFile()
-    scratch.write("\nLinkchecker")
-    scratch.write("\n-----------")
+    scratch.write("\nLinkchecker\n")
+    scratch.write("-----------\n")
     ran_successfully = linkchecker(scratch)
     ran_successfully = orphans(scratch) and ran_successfully
     ran_successfully = check_mixed_content(scratch) and ran_successfully
