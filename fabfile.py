@@ -503,7 +503,7 @@ def orphans(output_fd=sys.stdout):
 
 
 def w3c_checks(output_fd=sys.stdout):
-    has_errors = False
+    all_checks_pass = True
     for url in W3C_HTML_VALIDATION_TARGETS:
         r = requests.get(W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url),
                                                     "json"))
@@ -515,7 +515,7 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("Full details: %s\n" % (W3C_HTML_VALIDATION_URL %
                                                     (urllib.quote_plus(url),
                                                      "html")))
-            has_errors = True
+            all_checks_pass = False
         else:
             output_fd.write("HTML validates (%s)\n" % (url,))
 
@@ -531,7 +531,7 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
                                                     (urllib.quote_plus(url),
                                                      "html")))
-            has_errors = True
+            all_checks_pass = False
     for url in W3C_RSS_VALIDATION_TARGETS:
         r = requests.get(W3C_RSS_VALIDATION_URL % (urllib.quote_plus(url),))
         # UGLY, and fragile but there's no machine readable output available
@@ -541,9 +541,9 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("RSS validation failures for %s\n")
             output_fd.write("Full details: %s\n" % (W3C_RSS_VALIDATION_URL %
                                                     (urllib.quote_plus(url))))
-            has_errors = True
+            all_checks_pass = False
 
-    return has_errors
+    return all_checks_pass
 
 
 def post_build_cleanup():
