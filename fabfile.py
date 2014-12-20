@@ -263,11 +263,11 @@ def check_mixed_content(output_fd=sys.stdout):
 
     result = local("%s check -l" % (nikola,))
     if result.failed:
-        output_fd.write("Failures with mixed content check: %s" %
+        output_fd.write("Failures with mixed content check: %s\n" %
                         (result.stdout,))
         return False
     else:
-        output_fd.write("No problems with mixed HTTP/HTTPS content")
+        output_fd.write("No problems with mixed HTTP/HTTPS content\n")
         return True
 
 
