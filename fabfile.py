@@ -18,6 +18,7 @@ import sys
 import tempfile
 import requests
 import conf
+from pushover import Client
 
 TILDE = os.path.expanduser("~")
 STAGING_FQDN = "staging.wordspeak.org"
@@ -240,7 +241,8 @@ def linkchecker(output_fd=sys.stdout):
                        " http://" + STAGING_FQDN,
                        capture=True)
     # Summary is the second to last line
-    summary_line = "Summary: %s" % (result.stdout.splitlines()[-2],)
+    summary_line = result.stdout.splitlines()[-2].replace(
+        "That's it.", "Linkchecker summary:")
     if result.failed:
         print yellow(summary_line)
         # Failures are listed from the tenth line
@@ -249,7 +251,7 @@ def linkchecker(output_fd=sys.stdout):
         return False
     else:
         print green(summary_line)
-        output_fd.write(result.stdout.splitlines()[-2])
+        output_fd.write(summary_line)
         output_fd.write("\n")
         return True
 
@@ -554,7 +556,16 @@ def post_build_cleanup():
             local("rm -f %s" % (f,))
 
 
-def check_required_modules():
+def get_env_variable(var_name):
+    """ Get the environment variable or return exception """
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = "Set the %s env variable" % var_name
+        raise RuntimeError(error_msg)
+
+
+def _initialise():
     """Make sure we have all the python modules needed for the build"""
     try:
         import webassets  # for bundle creation
@@ -563,44 +574,53 @@ def check_required_modules():
         # noinspection PyUnusedLocal
         webassets = squeeze = None
         abort(red("Missing module: %s" % (e,)))
+    get_env_variable("WORDSPEAK_PUSHOVER_USER")
+    get_env_variable("WORDSPEAK_PUSHOVER_API_TOKEN")
+
+
+def _send_pushover_summary(message, title):
+    client = Client(get_env_variable("WORDSPEAK_PUSHOVER_USER"),
+                    api_token=get_env_variable("WORDSPEAK_PUSHOVER_API_TOKEN"))
+    return client.send_message(message, title=title)
 
 
 def post_deploy():
     """Runs time consuming tasks, or those that don't need to be run inline"""
+    _initialise()
     scratch = tempfile.TemporaryFile()
-    scratch.write("\nLinkchecker\n")
-    scratch.write("-----------\n")
     ran_successfully = linkchecker(scratch)
     ran_successfully = orphans(scratch) and ran_successfully
     ran_successfully = check_mixed_content(scratch) and ran_successfully
     ran_successfully = w3c_checks(scratch) and ran_successfully
-    scratch.write("--- Post deploy checks complete ---\n")
 
     # Re-read the file and mail it
     scratch.seek(os.SEEK_SET)
     text = scratch.read()
-    subject = "[Wordspeak] Deployment complete "
+    subject = "Wordspeak deployment complete "
     if ran_successfully:
         subject += "(no errors) "
     else:
         subject += "(with errors) "
     subject += "from %s" % (socket.gethostname().split(".")[0],)
 
-    msg = MIMEText(text)
-    msg["Subject"] = subject
-    msg["To"] = "edwin@wordspeak.org"
-    msg["From"] = "Wordspeak Deploys <edwin@wordspeak.org>"
-    print "Sending summary mail... ",
-    try:
-        mail_server = smtplib.SMTP('localhost')
-        mail_server.sendmail("edwin@wordspeak.org",
-                             ["edwin@wordspeak.org"],
-                             msg.as_string())
-        mail_server.quit()
-    except smtplib.SMTPException, e:
-        print red("Failed.\n%s", (e,))
-    else:
-        print green("Success.")
+    _send_pushover_summary(text[:1000], subject)
+    if not ran_successfully:
+        # Also send an email
+        msg = MIMEText(text)
+        msg["Subject"] = subject
+        msg["To"] = "edwin@wordspeak.org"
+        msg["From"] = "Wordspeak Deploys <edwin@wordspeak.org>"
+        print "Sending summary mail... ",
+        try:
+            mail_server = smtplib.SMTP('localhost')
+            mail_server.sendmail("edwin@wordspeak.org",
+                                 ["edwin@wordspeak.org"],
+                                 msg.as_string())
+            mail_server.quit()
+        except smtplib.SMTPException, e:
+            print red("Failed.\n%s", (e,))
+        else:
+            print green("Success.")
 
 
 def deploy():
@@ -611,7 +631,7 @@ def deploy():
         abort(red("Aborting as the following key files changed: %s" %
               (",".join(key_files_changed),)))
     maybe_add_untracked_files()
-    check_required_modules()
+    _initialise()
     while spellcheck_needed:
         spellcheck_needed = spellchecker()
     build()
