@@ -655,7 +655,7 @@ def deploy(is_interactive_deploy=True):
 def non_interactive_deploy():
     """Helper method to trigger non-interactive deployment"""
     if sys.stdin.isatty():
-        if not confirm("Simulate a non-interactive deploy?"):
+        if not confirm("Simulate a non-interactive deploy?", default=False):
             abort("Aborting")
     else:
         print "Running non-interactive deploy"
