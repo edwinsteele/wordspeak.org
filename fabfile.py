@@ -168,33 +168,41 @@ def requirements_dump():
               "> requirements.txt")
 
 
-def maybe_add_untracked_files():
+def maybe_add_untracked_files(is_interactive_deploy):
     """Look for untracked files in the repo and give option to add"""
     with cd(SITE_BASE):
         result = local("git status --porcelain", capture=True)
 
     for line in result.stdout.splitlines():
-        if line[0:2] == "??" and \
-                confirm("Add untracked file '%s'?" % (line[3:],)):
+        if line[0:2] == "??":
+            if is_interactive_deploy:
+                if not confirm("Add untracked file '%s'?" % (line[3:],)):
+                    continue
+            else:
+                print "Adding untracked file '%s' during non-interactive" \
+                      " deploy" % (line[3:],)
+
             with cd(SITE_BASE):
                 local("git add '%s'" % (line[3:],))
 
 
-def repo_status():
+def repo_status(is_interactive_deploy):
     """Check whether there are any uncommitted/untracked files in the repo"""
     with cd(SITE_BASE):
         result = local("git status --porcelain", capture=True)
     if result.stdout:
         print result.stdout
-        response = prompt("Repo has uncommitted/untracked files. "
-                          "'abort' to abort or type a commit message",
-                          default="abort").strip()
-
-        if response == "abort":
-            abort("Aborting at user request.")
+        if is_interactive_deploy:
+            response = prompt("Repo has uncommitted/untracked files. "
+                              "'abort' to abort or type a commit message",
+                              default="abort").strip()
+            if response == "abort":
+                abort("Aborting at user request.")
         else:
-            with cd(SITE_BASE):
-                local("git commit -a -m'%s'" % (response,))
+            response = "Auto-commit during non-interactive deploy"
+
+        with cd(SITE_BASE):
+            local("git commit -a -m'%s'" % (response,))
 
 
 def _sync_site(destination_path):
@@ -391,10 +399,10 @@ def strip_markdown_directives(line):
     return line
 
 
-def spellchecker():
+def spellchecker(is_interactive_deploy):
     """Spellcheck the Markdown and ReST files on the site"""
 
-    replacements_performed = False
+    spelling_errors_found = False
 
     # aspell is available on mac by default, and I don't want to manage custom
     #  word lists for both aspell and myspell so we'll just use aspell
@@ -418,22 +426,26 @@ def spellchecker():
             en_spellchecker.set_text(strip_markdown_directives(line))
             for err in en_spellchecker:
                 if not pwl_dictionary.check(err.word):
-                    replacements_performed = True
+                    spelling_errors_found = True
                     print "Not in dictionary: %s (file: %s line: %s)" % \
                           (err.word,
                            os.path.basename(files_to_check),
                            lines.index(line) + 1)
                     print "  Suggestions: " + \
                         ", ".join(en_spellchecker.suggest(err.word))
-                    action = prompt("Add '%s' to dictionary [add] or "
-                                    "replace [type replacement]?" % (err.word,),
-                                    default="add").strip()
-                    if action == "add":
-                        _add_to_spellcheck_exceptions(err.word)
+                    if is_interactive_deploy:
+                        action = prompt("Add '%s' to dictionary [add] or "
+                                        "replace [type replacement]?"
+                                        % (err.word,), default="add").strip()
+                        if action == "add":
+                            _add_to_spellcheck_exceptions(err.word)
+                        else:
+                            _replace_in_file(files_to_check, err.word, action)
                     else:
-                        _replace_in_file(files_to_check, err.word, action)
+                        print "Not doing spellcheck substitutions during" \
+                              " non-interactive deploy"
 
-    return replacements_performed
+    return spelling_errors_found
 
 
 def orphans(output_fd=sys.stdout):
@@ -610,23 +622,28 @@ def post_deploy():
             print green("Success.")
 
 
-def deploy():
+def deploy(is_interactive_deploy=True):
     """Runs all the pre-deployment checks, pushing to staging and then prod"""
     spellcheck_needed = True
     key_files_changed = repo_pull()
     if key_files_changed:
         abort(red("Aborting as the following key files changed: %s" %
               (",".join(key_files_changed),)))
-    maybe_add_untracked_files()
+    maybe_add_untracked_files(is_interactive_deploy)
     _initialise()
     while spellcheck_needed:
-        spellcheck_needed = spellchecker()
+        # Re-run spellchecker if changes were found, but only if we're doing
+        #  an interactive deployment
+        spellcheck_needed = spellchecker(is_interactive_deploy)
+        if not is_interactive_deploy:
+            abort("Spellcheck errors during non-interactive deploy."
+                  " Unable to proceed")
     build()
     post_build_cleanup()
     requirements_dump()
-    repo_status()
+    repo_status(is_interactive_deploy)
     staging_sync()
-    if confirm("Push to live site?"):
+    if not is_interactive_deploy or confirm("Push to live site?"):
         prod_sync()
         repo_push()
     else:
@@ -635,5 +652,12 @@ def deploy():
     post_deploy()
 
 
-if __name__ == '__main__':
-    spellchecker()
+def non_interactive_deploy():
+    """Helper method to trigger non-interactive deployment"""
+    if sys.stdin.isatty():
+        if not confirm("Simulate a non-interactive deploy?"):
+            abort("Aborting")
+    else:
+        print "Running non-interactive deploy"
+
+    deploy(is_interactive_deploy=False)
