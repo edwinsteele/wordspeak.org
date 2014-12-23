@@ -3,6 +3,7 @@
 .. description: 
 .. tags: Writing
 .. date: 2014/11/21 05:27:16
+.. spellcheck_exceptions: Joneses
 .. title: Write because you want to
 .. slug: write-because-you-want-to
 -->

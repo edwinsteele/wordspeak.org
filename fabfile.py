@@ -313,6 +313,15 @@ def clean():
         local("rm -rf %s %s" % (OUTPUT_BASE, CACHE_BASE))
 
 
+def _get_spellcheck_exceptions(lines):
+    for line in lines:
+        if line.startswith(".. spellcheck_exceptions:"):
+            # Use filter(None so that we don't crash if there aren't any
+            #  words specified, even though the tag is there
+            return filter(None, line.split(":")[1].strip().split(","))
+    return []
+
+
 def _non_directive_lines(lines):
     """filters out all the rst/markdown directives
 
@@ -399,7 +408,7 @@ def strip_markdown_directives(line):
     return line
 
 
-def spellchecker(is_interactive_deploy):
+def spellchecker(is_interactive_deploy=True):
     """Spellcheck the Markdown and ReST files on the site"""
 
     spelling_errors_found = False
@@ -422,6 +431,8 @@ def spellchecker(is_interactive_deploy):
         with open(files_to_check, 'r') as f:
             lines = f.readlines()
 
+        e = _get_spellcheck_exceptions(lines)
+        map(pwl_dictionary.add_to_session, e)
         for line in _non_directive_lines(lines):
             en_spellchecker.set_text(strip_markdown_directives(line))
             for err in en_spellchecker:

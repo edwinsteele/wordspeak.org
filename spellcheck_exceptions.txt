@@ -395,9 +395,6 @@ millis
 Dyn
 NSone
 ourself
-Joneses
-marco
-blogging
 primeness
 thebigquestions
 flickr
