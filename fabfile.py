@@ -635,7 +635,7 @@ def deploy(is_interactive_deploy=True):
         # Re-run spellchecker if changes were found, but only if we're doing
         #  an interactive deployment
         spellcheck_needed = spellchecker(is_interactive_deploy)
-        if not is_interactive_deploy:
+        if spellcheck_needed and not is_interactive_deploy:
             abort("Spellcheck errors during non-interactive deploy."
                   " Unable to proceed")
     build()
