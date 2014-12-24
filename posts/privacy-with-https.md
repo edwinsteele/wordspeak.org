@@ -2,6 +2,7 @@
 .. description: 
 .. tags: Technology, UNIX, Privacy
 .. date: 2014/10/01 17:00:27
+.. spellcheck_exceptions: 
 .. title: Privacy with HTTPS
 .. slug: privacy-with-https
 

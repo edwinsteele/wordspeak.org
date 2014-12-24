@@ -2,6 +2,7 @@
 .. title: Videos on Vimeo
 .. slug: videos-on-Vimeo
 .. date: 2013/01/31 05:09:26
+.. spellcheck_exceptions: 
 .. tags: Photography
 .. link: 
 .. description: 

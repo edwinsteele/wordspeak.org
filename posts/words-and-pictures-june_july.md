@@ -2,6 +2,7 @@
 .. title: Words and Pictures - June and July
 .. slug: words-and-picture-june_july
 .. date: 2013/08/14 17:31:00
+.. spellcheck_exceptions: 
 .. tags: Reading
 .. link:
 .. description:

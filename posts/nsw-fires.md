@@ -3,6 +3,7 @@
 .. description: 
 .. tags: 
 .. date: 2013/10/24 18:24:09
+.. spellcheck_exceptions: 
 .. title: NSW Fires
 .. slug: nsw-fires
 .. _smoke_page: http://www.flickr.com/photos/edwin_steele/10391713355/

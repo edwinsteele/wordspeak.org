@@ -2,6 +2,7 @@
 .. title: My year in cities, 2006
 .. slug: 20061223my-year-in-cities-2006
 .. date: 2006/12/23 06:50:53
+.. spellcheck_exceptions: 
 .. tags: 
 .. link: 
 .. description: 

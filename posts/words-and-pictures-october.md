@@ -3,6 +3,7 @@
 .. description: 
 .. tags: Reading
 .. date: 2014/01/21 08:57:22
+.. spellcheck_exceptions: 
 .. title: Words and Pictures - October
 .. slug: words-and-pictures-october
 -->

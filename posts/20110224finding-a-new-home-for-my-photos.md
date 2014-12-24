@@ -2,6 +2,7 @@
 .. title: Finding a new home for my photos
 .. slug: 20110224finding-a-new-home-for-my-photos
 .. date: 2011/02/24 09:38:31
+.. spellcheck_exceptions: 
 .. tags: Photography
 .. link: 
 .. description: 

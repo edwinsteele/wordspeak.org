@@ -2,6 +2,7 @@
 .. title: Jenolan Caves - Limestone and Country Air
 .. slug: 20060728jenolan-caves-limestone-and-country-air
 .. date: 2006/07/28 07:48:31
+.. spellcheck_exceptions: 
 .. tags: Photography, Travel
 .. link: 
 .. description: 

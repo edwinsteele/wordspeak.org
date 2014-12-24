@@ -3,6 +3,7 @@
 .. description: 
 .. tags: Technology
 .. date: 2014/11/24 17:24:52
+.. spellcheck_exceptions: 
 .. title: Troubleshooting: don't be too quick to zoom in
 .. slug: dont-be-too-quick-to-zoom-in
 -->

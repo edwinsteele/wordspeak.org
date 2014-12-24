@@ -2,6 +2,7 @@
 .. title: Kosciuszko - A walk in the park
 .. slug: 20060130kosciuszko
 .. date: 2006/01/30 22:30:35
+.. spellcheck_exceptions: 
 .. tags: Photography, Travel
 .. link: 
 .. description: 

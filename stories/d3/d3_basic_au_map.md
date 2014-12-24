@@ -2,6 +2,7 @@
 .. title: d3 Australian Map Demo (States by Awesomeness)
 .. slug: d3-australian-map-demo
 .. date: 2013/03/08 18:24:23
+.. spellcheck_exceptions: 
 .. tags: Technology, Visualisation
 .. link: 
 .. description: 

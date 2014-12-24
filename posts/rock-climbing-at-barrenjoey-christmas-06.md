@@ -2,6 +2,7 @@
 .. title: Rock Climbing at Barrenjoey (Christmas '06)
 .. slug: 20070104rock-climbing-at-barrenjoey-christmas-06
 .. date: 2007/01/04 22:36:06
+.. spellcheck_exceptions: 
 .. tags: Photography, Rock Climbing
 .. link: 
 .. description: 

@@ -2,6 +2,7 @@
 .. title: Ship Run Aground - Pasha Bulker
 .. slug: 20070617ship-run-aground-pasha-Bulker
 .. date: 2007/06/17 22:05:22
+.. spellcheck_exceptions: 
 .. tags: Photography
 .. link: 
 .. description: 

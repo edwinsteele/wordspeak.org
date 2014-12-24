@@ -3,6 +3,7 @@
 .. description: 
 .. tags: iPad, UNIX
 .. date: 2013/06/01 07:11:18
+.. spellcheck_exceptions: 
 .. title: A more flexible publishing workflow
 .. slug: a-more-flexible-workflow
 -->

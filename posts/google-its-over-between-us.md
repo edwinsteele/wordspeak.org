@@ -3,6 +3,7 @@
 .. description: 
 .. tags: Technology
 .. date: 2014/01/22 16:23:15
+.. spellcheck_exceptions: 
 .. title: Google, it's over between us
 .. slug: google-its-over-between-us
 -->

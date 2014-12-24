@@ -3,6 +3,7 @@
 .. description: 
 .. tags: 
 .. date: 2014/01/23 16:29:35
+.. spellcheck_exceptions: 
 .. title: Words and Pictures - December
 .. slug: words-and-pictures-december
 -->

@@ -3,6 +3,7 @@
 .. description: 
 .. tags: UNIX, Python, Technology
 .. date: 2014/01/25 19:00:23
+.. spellcheck_exceptions: 
 .. title: Finding out whether a machine answers for a DNS name (including EC2)
 .. slug: finding-out-whether-a-machine-answers-for-a-dns-name
 -->

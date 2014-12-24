@@ -3,6 +3,7 @@
 .. description:  Words and Pictures - August
 .. tags: Reading
 .. date: 2013/11/01 17:37:46
+.. spellcheck_exceptions: 
 .. title: Words and Pictures - August
 .. slug: words-and-pictures-august
 -->

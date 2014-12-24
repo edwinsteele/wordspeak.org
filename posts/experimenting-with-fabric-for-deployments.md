@@ -2,6 +2,7 @@
 .. title: Experimenting with fabric for deployments
 .. slug: experimenting-with-fabric-for-deployments
 .. date: 2013/02/24 16:50:06
+.. spellcheck_exceptions: 
 .. tags: Python, UNIX
 .. link: 
 .. description: 

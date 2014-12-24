@@ -2,6 +2,7 @@
 .. title: Four Things
 .. slug: 20060204four-things
 .. date: 2006/02/04 19:33:29
+.. spellcheck_exceptions: 
 .. tags: 
 .. link: 
 .. description: 

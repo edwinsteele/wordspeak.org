@@ -2,6 +2,7 @@
 .. title: Reducing cable clutter with stationary supplies
 .. slug: reducing-cable-clutter-with-stationary-supplies
 .. date: 2013/02/20 07:37:27
+.. spellcheck_exceptions: 
 .. tags: Technology
 .. link: 
 .. description: 

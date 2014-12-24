@@ -2,6 +2,7 @@
 .. title: Map of Spoken English Language Proficiency for Indigenous Australians in the NT
 .. slug: d3-nt-sla-map
 .. date: 2013/03/10 17:56:01
+.. spellcheck_exceptions: 
 .. tags: Technology, Visualisation
 .. link: 
 .. description: 

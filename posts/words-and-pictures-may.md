@@ -2,6 +2,7 @@
 .. title: Words and Pictures - May
 .. slug: words-and-pictures-may
 .. date: 2013/06/05 17:38:47
+.. spellcheck_exceptions: 
 .. tags: Reading
 .. link:
 .. description:

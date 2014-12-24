@@ -3,6 +3,7 @@
 .. description: 
 .. tags: Reading
 .. date: 2014/02/10 16:54:57
+.. spellcheck_exceptions: 
 .. title: Words and Pictures - Jan 2014
 .. slug: words-and-pictures-jan-2014
 -->

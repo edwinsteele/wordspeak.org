@@ -2,6 +2,7 @@
 .. title: Farewell Wireless Broadband
 .. slug: 20060402farewell-wireless-broadband
 .. date: 2006/04/02 08:26:33
+.. spellcheck_exceptions: 
 .. tags: Technology
 .. link: 
 .. description: 

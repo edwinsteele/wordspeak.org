@@ -2,6 +2,7 @@
 .. title: Creative outlets
 .. slug: creative-outlets
 .. date: 2013/09/03 18:05:00
+.. spellcheck_exceptions: 
 .. tags: Technology
 .. link:
 .. description:

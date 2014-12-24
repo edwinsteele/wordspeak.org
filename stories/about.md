@@ -2,6 +2,7 @@
 .. title: About the author and the site
 .. slug: about
 .. date: 2013/01/12 16:29:40
+.. spellcheck_exceptions: 
 .. tags: 
 .. link: 
 .. description: 

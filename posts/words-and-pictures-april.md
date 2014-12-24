@@ -3,6 +3,7 @@
 .. description: 
 .. tags: Reading
 .. date: 2013/05/03 18:09:37
+.. spellcheck_exceptions: 
 .. title: Words and Pictures - April
 .. slug: words-and-pictures-april
 -->
