@@ -3,7 +3,7 @@
 
 INCOMING_DIRECTORY="${HOME}/Dropbox/WordspeakIncoming";
 DESTINATION_DIRECTORY="${HOME}/Code/wordspeak.org/posts";
-FABRIC_EXECUTABLE="/Users/esteele/.virtualenvs/wordspeak_n7/bin/fab";
+FABRIC_EXECUTABLE="${HOME}/.virtualenvs/wordspeak_n7/bin/fab";
 SLEEP_TIME_SECS=5;
 LOGGING_FREQ_SECS=1000;
 
