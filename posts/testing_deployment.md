@@ -4,6 +4,7 @@
 .. tags: draft,Technology
 .. date: 2014/12/24 14:11:00
 .. spellcheck_exceptions: 
+.. is_orphan: False
 .. title: Testing deployment
 .. slug: testing_deployment
 -->

@@ -38,17 +38,15 @@ SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
 SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
-UNWANTED_BUILD_ARTIFACTS = []
-# An update of these files will abort a fab deploy operation
-KEY_FILES = ["conf.py", "fabfile.py"]
-ORPHAN_WHITELIST = [
+UNWANTED_BUILD_ARTIFACTS = [
     'd3-projects/basic_au_map/basic_au_map.html',
     'd3-projects/census_nt_indig_lang/nt_sla_map.html',
     'd3-projects/census_nt_indig_lang/nt_sla_scatter.html',
     'd3-projects/index_time_series/index-line.html',
     'd3-projects/stacked-column-ex/stacked-column-ex.html',
-    'pages/404.html',
 ]
+# An update of these files will abort a fab deploy operation
+KEY_FILES = ["conf.py", "fabfile.py"]
 W3C_HTML_VALIDATION_URL = 'http://validator.w3.org/check?uri=%s&' \
                           'charset=%%28detect+automatically%%29&' \
                           'doctype=Inline&group=0&output=%s'
@@ -156,6 +154,8 @@ def build():
         # Need to recompress css after yuicompressor has run
         #  Can't run post_render_gzip in N7, so let's just do build again
         _quietly_run_nikola_cmd(nikola, "build")
+
+    post_build_cleanup()
 
 
 def requirements_dump():
@@ -320,6 +320,26 @@ def _get_spellcheck_exceptions(lines):
             #  words specified, even though the tag is there
             return filter(None, line.split(":")[1].strip().split(","))
     return []
+
+
+def _is_tagged_as_orphan(filename):
+    """takes an html filename and checks whether the markdown identifies the
+    page as an orphan. Assumes slug and filename (sans suffix) are the same"""
+    md_file = ".".join([filename.rsplit(".")[0], "md"])
+    # Source for pages lives in stories
+    md_file = md_file.replace("pages/", "stories/")
+    # Check if there's a markdown equivalent, given the transpositions
+    #  that we're aware of
+    if os.path.exists(md_file):
+        with open(md_file, "r") as w:
+            for line in w:
+                if line.startswith(".. is_orphan:"):
+                    return line.split(":")[1].strip().lower() == "true"
+
+    # Nasty hack because post_build_cleanup doesn't seem to remove d3 stuff
+    # Change this to "return False" once that's cleaned up, or d3 stuff has
+    #  been removed from the tree
+    return filename in UNWANTED_BUILD_ARTIFACTS
 
 
 def _non_directive_lines(lines):
@@ -489,15 +509,15 @@ def orphans(output_fd=sys.stdout):
              len(row) == 17 and  # legit check rows have 17 fields
              row[URL_FIELD][-5:] == ".html"]
         )
-
     os.remove(LINKCHECKER_OUTPUT)
+
     for dirname, file_list in \
         [(d, filter(lambda x: x[-5:] == ".html", f))
             for d, _, f in os.walk(STAGING_RSYNC_DESTINATION_LOCAL)]:
         for f in file_list:
             path_beneath_output = os.path.join(
                 dirname[len(STAGING_RSYNC_DESTINATION_LOCAL) + 1:], f)
-            if path_beneath_output not in ORPHAN_WHITELIST:
+            if not _is_tagged_as_orphan(path_beneath_output):
                 html_files_on_filesystem.add(path_beneath_output)
 
     orphan_list = html_files_on_filesystem.difference(html_files_checked)
@@ -650,7 +670,6 @@ def deploy(is_interactive_deploy=True):
             abort("Spellcheck errors during non-interactive deploy."
                   " Unable to proceed")
     build()
-    post_build_cleanup()
     requirements_dump()
     repo_status(is_interactive_deploy)
     staging_sync()
