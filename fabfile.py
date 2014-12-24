@@ -638,13 +638,12 @@ def post_deploy():
         # Also send an email
         msg = MIMEText(text)
         msg["Subject"] = subject
-        msg["To"] = "edwin@wordspeak.org"
-        msg["From"] = "Wordspeak Deploys <edwin@wordspeak.org>"
+        msg["To"] = conf.BLOG_EMAIL
+        msg["From"] = "%s Deployment <%s>" % (conf.BLOG_TITLE, conf.BLOG_EMAIL,)
         print "Sending summary mail... ",
         try:
             mail_server = smtplib.SMTP('localhost')
-            mail_server.sendmail("edwin@wordspeak.org",
-                                 ["edwin@wordspeak.org"],
+            mail_server.sendmail(conf.BLOG_EMAIL, [conf.BLOG_EMAIL],
                                  msg.as_string())
             mail_server.quit()
         except smtplib.SMTPException, e:

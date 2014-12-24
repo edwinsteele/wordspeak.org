@@ -9,4 +9,4 @@
 .. slug: testing_deployment
 -->
 
-This is a *test* post, designed to facilitate testing of automated deployment
+This is a *test* post, dresigned to facilitate testing of automated deployment

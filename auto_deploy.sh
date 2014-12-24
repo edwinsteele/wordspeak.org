@@ -51,7 +51,7 @@ function do_deployment {
 }
 
 # Activate virtualenv
-source ${FABRIC_EXECUTABLE}/../../bin/activate
+source $(dirname ${FABRIC_EXECUTABLE})/activate
 do_log "Starting automated deployment process for wordspeak";
 while true; do
     incoming_md_files=$(find ${INCOMING_DIRECTORY} -name "*.md" -print);
@@ -64,7 +64,13 @@ while true; do
                 send_pushover_message "Deploying newly uploaded and valid file: ${md_file}" "Deploying new file"
                 do_log "Deploying newly uploaded and valid file: ${md_file}"
                 mv ${md_file} ${DESTINATION_DIRECTORY};
-                do_deployment;
+                dep_output=$(do_deployment);
+                deployment_exit=$?;
+                if [ "${deployment_exit}" -ne "0" ]; then
+                    send_pushover_message "Deployment exited with non-zero status ${deployment_exit}" "Deployment failed"
+                    do_log "Deployment exited with non-zero status ${deployment_exit}";
+                    echo $dep_output | mail -s "Wordspeak Deployment failure" edwin@wordspeak.org;
+                fi
             else
                 send_pushover_message "Deleting newly uploaded but invalid file: ${md_file}" "Deleting new file (invalid)"
                 do_log "$(date): Deleting newly uploaded but invalid file ${md_file}";
