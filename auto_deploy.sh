@@ -30,14 +30,14 @@ function validate_md_file {
 
 function do_log {
     # Don't clobber the builtin shell command, log
-    echo "$(date): $1";
+    echo "$(date): $@";
 }
 
 function possibly_log {
     # log this message at most once every LOGGING_FREQ_SECS, assuming this is
     #  only called once in every SLEEP_TIME_SECS
     if [ $(($(date +%s) % ${LOGGING_FREQ_SECS})) -gt $((${LOGGING_FREQ_SECS} - ${SLEEP_TIME_SECS})) ]; then
-        do_log $1;
+        do_log $@;
     fi
 }
 
