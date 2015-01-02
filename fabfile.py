@@ -346,7 +346,6 @@ def _non_directive_lines(lines):
     """filters out all the rst/markdown directives
 
     so the spell checker doesn't get confused"""
-    blank_lines_til_spellcheck_starts = 0
     in_code_directive = False
     for line in lines:
         if line.startswith("```"):
@@ -358,30 +357,9 @@ def _non_directive_lines(lines):
         if in_code_directive:
             continue
                 
-        if blank_lines_til_spellcheck_starts > 0:
-            if len(line.strip()) == 0:
-                # rst directive ends with blank line
-                blank_lines_til_spellcheck_starts -= 1
-
-            continue
-
         if line.startswith("..") and not line.startswith(".. title:"):
-            # rst directive starts with ^.. and is terminated with one
-            #  blank line
-            # except code-block which has a blank line after the directive
-            #  and is terminated with one blank line
-            # we want to spellcheck the title directive
-            if line.startswith(".. code-block"):
-                blank_lines_til_spellcheck_starts = 2
-            else:
-                blank_lines_til_spellcheck_starts = 1
-            continue
-
-        if line.startswith("::"):
-            # block directive starts with ^::
-            # it's immediately followed by a blank line and is terminated
-            #  by another blank line
-            blank_lines_til_spellcheck_starts = 2
+            # rst directive starts with ^.. but these are only single-line
+            #  directives used in the header
             continue
 
         yield line
