@@ -1,6 +1,6 @@
 .. link: 
 .. description: 
-.. tags: Technology, UNIX, Privacy
+.. tags: Technology
 .. date: 2014/10/01 17:00:27
 .. spellcheck_exceptions: 
 .. title: Privacy with HTTPS

@@ -3,7 +3,7 @@
 .. slug: let-the-computer-do-the-menial-testing
 .. date: 2013/03/17 15:41:31
 .. spellcheck_exceptions: 
-.. tags: Technology, Python
+.. tags: Technology
 .. link: 
 .. description: 
 -->

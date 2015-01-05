@@ -3,7 +3,7 @@
 .. slug: preserving-wordpress-permalinks-in-nikola
 .. date: 2013/02/09 16:41:29
 .. spellcheck_exceptions: 
-.. tags: Technology, UNIX
+.. tags: Technology
 .. link: 
 .. description: 
 -->

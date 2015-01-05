@@ -3,7 +3,7 @@
 .. slug: projects
 .. date: 2013/01/12 17:56:51
 .. spellcheck_exceptions: 
-.. tags: Technology, Photos
+.. tags: Technology, Photography
 .. link: 
 .. description: 
 -->

@@ -3,7 +3,7 @@
 .. slug: little-steps-my-first-open-source-contribution
 .. date: 2013/01/26 07:20:46
 .. spellcheck_exceptions: 
-.. tags: Technology, Python
+.. tags: Technology
 .. link: 
 .. description: 
 -->

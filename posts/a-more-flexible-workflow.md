@@ -1,7 +1,7 @@
 <!--
 .. link: 
 .. description: 
-.. tags: iPad, UNIX
+.. tags: Technology
 .. date: 2013/06/01 07:11:18
 .. spellcheck_exceptions: 
 .. title: A more flexible publishing workflow

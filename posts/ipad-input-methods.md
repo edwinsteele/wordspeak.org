@@ -3,7 +3,7 @@
 .. slug: ipad-input-methods
 .. date: 2013/04/11 16:24:20
 .. spellcheck_exceptions: 
-.. tags: Technology, iPad
+.. tags: Technology
 .. link: 
 .. description: 
 -->
