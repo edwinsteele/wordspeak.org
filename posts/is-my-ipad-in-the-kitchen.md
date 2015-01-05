@@ -5,7 +5,7 @@
 .. tags: Technology
 .. link: 
 .. is_orphan: False
-.. spellcheck_exceptions: geolocation,WiFi,APs,SSID,SNMP,OIDs,wirelessTimeAssociated,wirelessLastRefreshTime,wirelessNumTX,wirelessStrength,snmpwalk,MIBs,usr,snmp,mibs,BASESTATION,MIB,txt,SolarWinds,SSIDs,DHCP,NATing,TCP,multicast,mDNS,HostAP,adapters,BeagleBone,Ardiuno
+.. spellcheck_exceptions: geolocation,WiFi,APs,SSID,SNMP,OIDs,wirelessTimeAssociated,wirelessLastRefreshTime,wirelessNumTX,wirelessStrength,snmpwalk,MIBs,usr,snmp,mibs,BASESTATION,MIB,txt,SolarWinds,SSIDs,DHCP,NATing,TCP,multicast,mDNS,HostAP,adapters,BeagleBone,Ardiuno,GHz
 .. description: 
 .. type: text
 -->
