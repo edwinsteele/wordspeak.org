@@ -1,6 +1,7 @@
 files/d3-projects
 *.pyc
 .doit.db
+.doit.db.db
 .DS_Store
 .idea
 cache
