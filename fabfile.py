@@ -577,10 +577,10 @@ def _initialise():
     """Make sure we have all the python modules needed for the build"""
     try:
         import webassets  # for bundle creation
-        import squeeze  # for yuicompressor
+        import rcssmin # for css minifaction
     except ImportError as e:
         # noinspection PyUnusedLocal
-        webassets = squeeze = None
+        webassets = rcssmin = None
         abort(red("Missing module: %s" % (e,)))
     get_env_variable("WORDSPEAK_PUSHOVER_USER")
     get_env_variable("WORDSPEAK_PUSHOVER_API_TOKEN")
