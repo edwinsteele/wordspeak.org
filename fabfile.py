@@ -164,7 +164,13 @@ def requirements_dump():
         # pyinotify and MacFSEvents only build on their particular platform
         #  so exclude them. They'll get pulled in when a pip install doit
         #  is done so there's no loss.
-        local("pip freeze | egrep -v '(pyinotify|MacFSEvents)'"
+        # bsddb3 is only necessary on MacOS and is a pain to build, so we
+        #  don't list it as a global dependency.
+        # To build on MacOS, read http://marc-abramowitz.com/archives/2007/11/28/hacking-os-xs-python-dbhash-and-bsddb-modules-to-work/ 
+        # make sure berkeley-db has been installed with brew, download the
+        # module from pip, unpack and then from that directory run:
+        # python setup.py --berkeley-db=/usr/local/Cellar/berkeley-db/5.3.28 install
+        local("pip freeze | egrep -v '(pyinotify|MacFSEvents|bsddb3)'"
               "> requirements.txt")
 
 
