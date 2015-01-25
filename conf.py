@@ -5,6 +5,7 @@ from nikola import __version__ as nikola_version
 from nikola import filters
 from socket import getfqdn
 import os
+import rcssmin
 
 BLOG_AUTHOR = "Edwin Steele"
 BLOG_TITLE = "Wordspeak"
@@ -55,13 +56,8 @@ GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson',
                    '.eot', '.svg', '.ttf', '.woff', '.xml')
 DISABLED_PLUGINS = ["render_galleries"]
 
-
-def yui_compressor(infile):
-    from nikola.filters import runinplace
-    return runinplace(r'squeeze yuicompressor %1 -o %2', infile)
-
 FILTERS = {
-    ".css": [yui_compressor],
+    ".css": [filters.apply_to_text_file(rcssmin.cssmin)],
     ".html": [filters.typogrify],
 }
 
