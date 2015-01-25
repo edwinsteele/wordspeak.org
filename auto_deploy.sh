@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-INCOMING_DIRECTORY="${HOME}/Dropbox/WordspeakIncoming";
+INCOMING_DIRECTORY="${HOME}/WordspeakIncoming";
 DESTINATION_DIRECTORY="${HOME}/Code/wordspeak.org/posts";
 FABRIC_EXECUTABLE="${HOME}/.virtualenvs/wordspeak_n7/bin/fab";
 SLEEP_TIME_SECS=5;
