@@ -156,7 +156,7 @@ nofiles(descriptors) 512
 processes            128
 ```
 
-And an attempt to increase it fails because the user is in the default login class (I'd not come across BSD login classesbefore so I'd chosen the default when creating the account).
+And an attempt to increase it fails because the user is in the default login class (I'd not come across BSD login classes before so I'd chosen the default when creating the account).
 
 ```.bash
 $ ulimit -Sd 1000000
