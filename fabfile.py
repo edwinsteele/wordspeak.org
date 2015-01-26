@@ -324,7 +324,7 @@ def _get_spellcheck_exceptions(lines):
         if line.startswith(".. spellcheck_exceptions:"):
             # Use filter(None so that we don't crash if there aren't any
             #  words specified, even though the tag is there
-            return filter(None, line.split(":")[1].strip().split(","))
+            return filter(None, [s.strip() for s in line.split(":")[1].strip().split(",")])
     return []
 
 
