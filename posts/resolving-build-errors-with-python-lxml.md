@@ -86,7 +86,7 @@ Swap:       499992          0     499992
 And now it installs:
 
 ```
-(test27)[esteele@localhost ~]$ pip install lxml
+$ pip install lxml
 Collecting lxml
   Using cached lxml-3.4.1.tar.gz
     /usr/local/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'bugtrack_url'
@@ -138,7 +138,6 @@ Installing collected packages: lxml
 
     ----------------------------------------
     Command "/home/esteele/.virtualenvs/test27/bin/python2.7 -c "import setuptools, tokenize;__file__='/tmp/pip-build-YCP0o0/lxml/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n'), __file__, 'exec'))" install --record /tmp/pip-TRArBR-record/install-record.txt --single-version-externally-managed --compile --install-headers /home/esteele/.virtualenvs/test27/include/site/python2.7" failed with error code 1 in /tmp/pip-build-YCP0o0/lxml
-$
 ```
 
 After a bit of troubleshooting, it's clear that we have a different situation from Linux; we're not being killed by the OOM killer, we're hitting resource limits on the data area.
