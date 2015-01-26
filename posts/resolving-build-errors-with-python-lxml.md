@@ -13,7 +13,7 @@ I use the Python lxml module regularly and it's one of the few modules where I'v
 
 Here's how it manifests on on a CentOS6 VM with 512Mb RAM and no swap (this is how an EC2 t1.micro comes when you use the official CentOS 6 AMI and how a Rackspace 512Mb Standard instance comes when you use their CentOS6 image)
 
-```.bash
+```
 $ pip install lxml
 Collecting lxml
   Using cached lxml-3.4.1.tar.gz
@@ -57,7 +57,7 @@ Installing collected packages: lxml
 
 The error messages didn't help much, so let me help by saying that this is because the system ran out of memory. You can confirm this easily:
 
-```.bash
+```
 $ sudo tail /var/log/messages | grep -B1 Killed
 Jan 25 15:45:49 localhost kernel: Out of memory: Kill process 6979 (cc1) score 676 or sacrifice child
 Jan 25 15:45:49 localhost kernel: Killed process 6979, UID 1003, (cc1) total-vm:456244kB, anon-rss:338792kB, file-rss:8kB
@@ -65,7 +65,7 @@ Jan 25 15:45:49 localhost kernel: Killed process 6979, UID 1003, (cc1) total-vm:
 
 So I added 512Mb swap:
 
-```.bash
+```
 $ sudo dd if=/dev/zero of=/swapfile bs=1024 count=500000
 500000+0 records in
 500000+0 records out
@@ -85,7 +85,7 @@ Swap:       499992          0     499992
 
 And now it installs:
 
-```.bash
+```
 (test27)[esteele@localhost ~]$ pip install lxml
 Collecting lxml
   Using cached lxml-3.4.1.tar.gz
@@ -102,7 +102,7 @@ Successfully installed lxml-3.4.1
 
 However on a OpenBSD 5.6 machine with the same 512 Mb RAM and even more swap (768Mb), it still wouldn't install - there's something else going on.
 
-```.bash
+```
 $ sysctl -a | grep -i physmem; pstat -sk
 hw.physmem=520028160
 Device      1K-blocks     Used    Avail Capacity  Priority
@@ -143,7 +143,7 @@ $
 
 After a bit of troubleshooting, it's clear that we have a different situation from Linux; we're not being killed by the OOM killer, we're hitting resource limits on the data area.
 
-```.bash
+```
 $ ulimit -a
 time(cpu-seconds)    unlimited
 file(blocks)         unlimited
@@ -158,7 +158,7 @@ processes            128
 
 And an attempt to increase it fails because the user is in the default login class (I'd not come across BSD login classes before so I'd chosen the default when creating the account).
 
-```.bash
+```
 $ ulimit -Sd 1000000
 ksh: ulimit: bad -d limit: Invalid argument
 $ ulimit -aH | grep data
@@ -167,13 +167,13 @@ data(kbytes)         524288
 
 So I changed the login class and restarted the shell:
 
-```.bash
+```
 $ sudo usermod -L staff esteele
 ```
 
 At that point limits can be increased (I put this in my ```.profile```).
 
-```.bash
+```
 $ ulimit -Sd 1000000
 $ ulimit -a | grep data
 data(kbytes)         1000000
@@ -181,7 +181,7 @@ data(kbytes)         1000000
 
 And it builds fine:
 
-```.bash
+```
 $ pip install lxml
 Collecting lxml
   Using cached lxml-3.4.1.tar.gz
