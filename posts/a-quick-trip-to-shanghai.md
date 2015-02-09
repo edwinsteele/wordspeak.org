@@ -2,7 +2,7 @@
 .. title: A quick trip to Shanghai
 .. slug: a-quick-trip-to-shanghai
 .. date: 2015-02-09 08:40:44 UTC+11:00
-.. tags: 
+.. tags: Photography, Travel
 .. link: 
 .. spellcheck_exceptions: μg,Bund,Pudong,Maglev
 .. description: 
