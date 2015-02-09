@@ -246,11 +246,13 @@ def prod_sync():
 def linkchecker(output_fd=sys.stdout):
     """Checks for broken links on the staging site
 
+    Ignores posts because the links all appear in the index pages
     Returns whether the task ran successfully i.e. found no problems
     """
     with settings(hide('warnings'), warn_only=True):
         result = local("linkchecker"
                        " --check-extern"
+                       " --ignore-url .*posts.*"
                        " --config linkcheckerrc"
                        " http://" + STAGING_FQDN,
                        capture=True)
