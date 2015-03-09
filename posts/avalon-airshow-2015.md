@@ -21,6 +21,7 @@ Here's a few shots to give you a feel for the day. The [whole album is on flickr
 as is the [2011 Airshow Album](https://www.flickr.com/photos/edwin_steele/sets/72157632559155988/) (33 photos).
 
 An F-22 static display:
+
 <a href="https://www.flickr.com/photos/edwin_steele/16533949260" title="F-22"><img src="https://farm9.staticflickr.com/8675/16533949260_1e890bdba6_z.jpg" width="640" height="480" alt="F-22"></a>
 
 Formation flying by F-16s from the Singapore Air Force:
@@ -28,6 +29,3 @@ Formation flying by F-16s from the Singapore Air Force:
 
 The KC-30 aerial refuelling plane (that flew later in the day):
 <a href="https://www.flickr.com/photos/edwin_steele/16695450286" title="KC-30 Tanker"><img src="https://farm9.staticflickr.com/8573/16695450286_023d719a18_z.jpg" width="640" height="480" alt="KC-30 Tanker"></a>
-
-
-
