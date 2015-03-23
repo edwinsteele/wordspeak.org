@@ -9,7 +9,7 @@
 .. description:
 -->
 
-I shared a few takeaways on IT projects in the [recent Reid Hoffman post](/posts/10000-hours-with-reid-hofmann.html) and I've just come across some more gems in a post by Astro Teller, the guy who runs the Google[x] group. Here they are:
+I shared a few takeaways on IT projects in the [recent Reid Hoffman post](/posts/10000-hours-with-reid-hoffman.html) and I've just come across some more gems in a post by Astro Teller, the guy who runs the Google[x] group. Here they are:
 
 Speaking of self-driving cars,
 
