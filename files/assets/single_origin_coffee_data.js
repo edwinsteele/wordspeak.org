@@ -1,0 +1,45 @@
+function addPoints() {
+  L.marker([14.5580983, -90.7262654]).addTo(map).bindPopup("Guatemala El Aguajal (New Oriente, Guatemala)");
+  L.marker([-1.0366485, 37.0775228]).addTo(map).bindPopup("Kenya AA Top Igamba (Thika, Kenya)");
+  L.marker([-3.0764631, 37.3539751]).addTo(map).bindPopup("Tanzania Kilimanjaro Peaberries (Kilimanjaro, Tanzania)");
+  L.marker([3.8702948, 116.6508114]).addTo(map).bindPopup("Indonesia Sumatra Blue Batak (Lintong, Indonesia)");
+  L.marker([1.1787184, 38.6025801]).addTo(map).bindPopup("Kenya AB Ngomano (Eastern Kenya, Kenya)");
+  L.marker([-28.6434398, 153.6140262]).addTo(map).bindPopup("Australia Byron Blue (Byron Bay, Australia)");
+  L.marker([11.5823614, 107.8767713]).addTo(map).bindPopup("Vietnam Blue Lagoon (Lam Dong, Vietnam)");
+  L.marker([6.161754, 38.2049446]).addTo(map).bindPopup("Ethiopia Yirgacheffe (Yirgacheffe, Ethiopia)");
+  L.marker([-15.8337933, -67.5658641]).addTo(map).bindPopup("Bolivia Union Pro-Agro FTO (Caranavi, Bolivia)");
+  L.marker([-9.0666542, 33.1385097]).addTo(map).bindPopup("Tanzania Iyula AA (Iyula Village, Mbozi, Tanzania)");
+  L.marker([19.4325301, -99.1332102]).addTo(map).bindPopup("Mexico Kassandra Peaberries, Huatusco region (, Mexico)");
+  L.marker([-6.8891692, 107.6404716]).addTo(map).bindPopup("Indonesia Jawa Sunda Sri Galuh (West Java, Indonesia)");
+  L.marker([-0.152707, 37.3092138]).addTo(map).bindPopup("Kenya Lena Peaberries (Mount Kenya, Kenya)");
+  L.marker([13.4210884, 75.7606996]).addTo(map).bindPopup("India Ratnagiri Peaberries (Baba Budangiri, India)");
+  L.marker([10.6916755, -84.7561318]).addTo(map).bindPopup("Costa-Rica Las Pintas (Alajuela, Costa-Rica)");
+  L.marker([10.2116702, 38.6521203]).addTo(map).bindPopup("Ethiopia Kochere (South Ethiopia, Ethiopia)");
+  L.marker([-2.20085995, 30.4675684696]).addTo(map).bindPopup("Rwanda Ngoma (Ngoma, Rwanda)");
+  L.marker([-6.8891692, 107.6404716]).addTo(map).bindPopup("Indonesia Java Tilu Geisha (West Java, Indonesia)");
+  L.marker([-5.7998015, 144.6283045]).addTo(map).bindPopup("Papua-New-Guinea Kimel Peaberries (Banz, Papua-New-Guinea)");
+  L.marker([-2.80816645, 30.3741851586]).addTo(map).bindPopup("Burundi Ngogomo Micosa (Muyinga, Burundi)");
+  L.marker([15.6634185, -91.5839796]).addTo(map).bindPopup("Guatemala Pena Roja (Huehuetenango, Guatemala)");
+  L.marker([6.161754, 38.2049446]).addTo(map).bindPopup("Ethiopia Yirgacheffe Dumerso (Yirgacheffe, Ethiopia)");
+  L.marker([-0.3167547, 36.9310063699]).addTo(map).bindPopup("Kenya Kirimara (Nyeri, Kenya)");
+  L.marker([-20.39130615, -43.4386676384]).addTo(map).bindPopup("Brazil Monte Allegre Honey (South Minas, Brazil)");
+  L.marker([-9.6999156, 33.2723315]).addTo(map).bindPopup("Malawi AA Misuku Hills (Chitipa, Malawi)");
+  L.marker([20.9448032, -78.2203684]).addTo(map).bindPopup("Cuba Serrano Superior (Sierra Maestra, Cuba)");
+  L.marker([7.85, 36.08333]).addTo(map).bindPopup("Ethiopia Sidamo Haile Sellasie (Sidamo, Ethiopia)");
+  L.marker([14.5635954, -90.7328438]).addTo(map).bindPopup("Guatemala Pastores Mill (Antigua, Guatemala)");
+  L.marker([25.6695798, -100.455138]).addTo(map).bindPopup("Mexico Terrano Nayarita Reserve (Nayarita, Mexico)");
+  L.marker([2.1120744, 98.6361936]).addTo(map).bindPopup("Indonesia Sumatra Blue Bianca (Onan Ganjang, Indonesia)");
+  L.marker([-24.0469624, -49.3478448]).addTo(map).bindPopup("Brazil Daterra Buena Vista (Cerrado, Brazil)");
+  L.marker([10.0975558, -84.3792486]).addTo(map).bindPopup("Costa-Rica Aquaries (Naranjo, Costa-Rica)");
+  L.marker([13.5303638, -85.6569759]).addTo(map).bindPopup("Nicaragua La Bastilla (Jinotega, Nicaragua)");
+  L.marker([-2.35801955, 29.1545909245]).addTo(map).bindPopup("Rwanda Karengera Cyiya (Nyamasheke, Rwanda)");
+  L.marker([15.178161, 44.049783]).addTo(map).bindPopup("Yemen Matari (Bani Matar, Yemen)");
+  L.marker([-1.03587345, 36.8889097389]).addTo(map).bindPopup("Kenya AA KIama (Kiambu, Kenya)");
+  L.marker([-19.1809999, -48.2561117881]).addTo(map).bindPopup("Brazil Meloso Fino (Alto Paranaiba, Brazil)");
+  L.marker([-2.3997645, 29.4819288049]).addTo(map).bindPopup("Rwanda Kamigeri (Nyamagabe, Rwanda)");
+  L.marker([14.5203896, 75.7223521]).addTo(map).bindPopup("India monsoon Malabar (Karnataka, India)");
+  L.marker([-5.8986742, 144.1532332]).addTo(map).bindPopup("Papua-New-Guinea Nebilyer Valley (Togoba, Papua-New-Guinea)");
+  L.marker([12.9636599, -85.5006141]).addTo(map).bindPopup("Nicaragua El Suspiro (Matagalpa, Nicaragua)");
+};
+
+
