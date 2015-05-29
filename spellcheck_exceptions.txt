@@ -405,3 +405,17 @@ nikola
 PyCoder's
 PenUltimate
 Noteshelf
+geolocated
+OpenStreetMap
+geolocation
+programatically
+geo
+py
+px
+tileLayer
+osm
+href
+addTo
+setView
+LatLng
+addPoints

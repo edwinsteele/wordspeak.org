@@ -1,7 +1,7 @@
 from geopy.geocoders import Nominatim
 import json
 
-SINGLE_ORIGIN_DEF_FILE = "single_origin_coffee.txt"
+SINGLE_ORIGIN_DEF_FILE = "files/assets/single_origin_coffee_data.txt"
 
 
 class SingleOriginCoffee:

@@ -14,7 +14,7 @@ function addPoints() {
   L.marker([-0.152707, 37.3092138]).addTo(map).bindPopup("Kenya Lena Peaberries (Mount Kenya, Kenya)");
   L.marker([13.4210884, 75.7606996]).addTo(map).bindPopup("India Ratnagiri Peaberries (Baba Budangiri, India)");
   L.marker([10.6916755, -84.7561318]).addTo(map).bindPopup("Costa-Rica Las Pintas (Alajuela, Costa-Rica)");
-  L.marker([10.2116702, 38.6521203]).addTo(map).bindPopup("Ethiopia Kochere (South Ethiopia, Ethiopia)");
+  L.marker([5.91667, 38.25]).addTo(map).bindPopup("Ethiopia Kochere (Gedeb, Ethiopia)");
   L.marker([-2.20085995, 30.4675684696]).addTo(map).bindPopup("Rwanda Ngoma (Ngoma, Rwanda)");
   L.marker([-6.8891692, 107.6404716]).addTo(map).bindPopup("Indonesia Java Tilu Geisha (West Java, Indonesia)");
   L.marker([-5.7998015, 144.6283045]).addTo(map).bindPopup("Papua-New-Guinea Kimel Peaberries (Banz, Papua-New-Guinea)");

@@ -18,11 +18,12 @@ Photos
 Software Projects
 =================
 
-d3 JavaScript library
----------------------
+JavaScript
+----------
 
--   [Australian Map Demo](/pages/d3/d3-australian-map-demo.html). Shows a GeoJSON map and colour scales
--   [Experiments with Census data](/pages/d3/d3-nt-sla-map.html). Multi-dimensional scatter-plot and GeoJSON map based on Australian 2006 Census data.
+-   [Australian Map Demo](/pages/d3/d3-australian-map-demo.html). Shows a GeoJSON map and colour scales using D3
+-   [Experiments with Census data](/pages/d3/d3-nt-sla-map.html). Multi-dimensional scatter-plot and GeoJSON map based on Australian 2006 Census data using D3
+-   [Single-origin coffee locations](/pages/single-origin-coffee-sources.html). Mapping of geolocated points using Leaflet.
 
 Django
 ------
