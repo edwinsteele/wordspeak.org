@@ -1,23 +1,8 @@
 /* Some styles lifted from mincss - Copyright 2014 Owen Versteeg; MIT licensed */
-.container{margin:0 1.25em;width:auto}
-.col{float:left}
-.c12{width:100%}
-.c11{width:91.66%}
-.c10{width:83.33%}
-.c9{width:75%}
-.c8{width:66.66%}
-.c7{width:58.33%}
-.c6{width:50%}
-.c5{width:41.66%}
-.c4{width:33.33%}
-.c3{width:25%}
-.c2{width:16.66%}
-.c1{width:8.33%}
-/* start theme */
-.amp {
-    font-size: 1.05em;
-    font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",serif;
-    font-style: italic;
+
+a {
+    color: #08C;
+    text-decoration: none;
 }
 
 body {
@@ -31,28 +16,114 @@ body {
     color: #333;
 }
 
-.badge-info {
-    background-color: #3A87AD;
-}
-.badge {
-    padding-right: 9px;
-    padding-left: 9px;
-    border-radius: 9px;
-}
-
 blockquote {
     margin-left: 0px;
     border-left: 2px solid #CCC;
     padding-left: 1em;
 }
 
+h1 {
+    font-size: 1.8em !important;
+    line-height: 1.5em !important;
+}
+
+h2 {
+    font-size: 1.3em !important;
+    line-height: 1.5em !important;
+}
+
+h3 {
+    font-size: 1em !important;
+    line-height: 1.5em !important;
+}
+
 nav {
     display: block;
 }
 
-.nav,.nav .current,.nav a:hover{color:#333}
-.nav a{text-decoration:none;color:#aaa;padding-right:1em;position:relative;top:-1px}
-.nav .pagename{font-size:1.4em;top:1px}
+/* from rst.css */
+pre.literal-block, pre.code {
+    margin-left: 2em;
+    margin-right: 2em
+}
+
+span.dateline {
+    font-size: 0.8em;
+}
+
+span.icon-nav { 
+    display: none;
+}
+
+ul, ol {
+    padding: 0px;
+    margin: 0px 0px 0.625em 1.5em;
+}
+
+.amp {
+    font-size: 1.05em;
+    font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",serif;
+    font-style: italic;
+}
+.badge {
+    padding-right: 9px;
+    padding-left: 9px;
+    border-radius: 9px;
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 0.75em;
+    font-weight: bold;
+    line-height: 1em;
+    color: #FFF;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+    vertical-align: baseline;
+}
+
+.badge-info {
+    background-color: #3A87AD;
+}
+
+.brand {
+    font-size: 1.4em;
+    font-weight: 200;
+    color: #777;
+    text-shadow: 0px 1px 0px #FFF;
+}
+
+.c12{width:100%}
+.c11{width:91.66%}
+.c10{width:83.33%}
+.c9{width:75%}
+.c8{width:66.66%}
+.c7{width:58.33%}
+.c6{width:50%}
+.c5{width:41.66%}
+.c4{width:33.33%}
+.c3{width:25%}
+.c2{width:16.66%}
+.c1{width:8.33%}
+
+.col{
+	float:left;
+}
+.container{
+	margin:0 1.25em;
+	width:auto;
+}
+
+.content hr {
+    border-image: none;
+    border-width: 1px 0px;
+    border-style: solid none;
+    border-color: #EEE -moz-use-text-color #FFF;
+}
+
+.footerbox {
+    padding: 0.25em 0.95em;
+    text-align: center;
+    margin-bottom: 0.625em;
+}
 
 .nav {
     outline:0;
@@ -68,41 +139,14 @@ nav {
     background-repeat: repeat-x;
 }
 
-span.icon-nav { 
-    display: none;
+.nav,.nav .current,.nav a:hover{
+	color:#333;
 }
 
-@media(max-width:30em) {
-    .nav{overflow:hidden}
-    .pagename{margin-top:-0.625em}
-    .nav:active,.nav:focus{height:auto}
-    span.text-nav {
-        display: none;
-    }
-    span.icon-nav {
-        display: inherit;
-    }
-    .nav a {
-        padding-right: 0.3em;
-    width: 50%;
-    }
-    .c2 {
-        display: none;
-    }
-}
-
-@media(max-width:50em) {
-    .row .col{width:100%}
-    .c2 {
-        display: none;
-    }
-}
-
-@media(min-width:80em){
-    .container{margin:auto;width:77em}
-}
-
-.nav a {
+.nav a{
+    padding-right:1em;
+    position:relative;
+    top:-1px;
     color: #777;
     text-shadow: 0px 1px 0px #FFF;
     text-decoration: none;
@@ -113,45 +157,9 @@ span.icon-nav {
     text-decoration: none;
 }
 
-.brand {
-    font-size: 1.4em;
-    font-weight: 200;
-    color: #777;
-    text-shadow: 0px 1px 0px #FFF;
-}
-
-.badge {
-    display: inline-block;
-    padding: 2px 4px;
-    font-size: 0.75em;
-    font-weight: bold;
-    line-height: 1em;
-    color: #FFF;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
-    white-space: nowrap;
-    vertical-align: baseline;
-}
-
-ul, ol {
-    padding: 0px;
-    margin: 0px 0px 0.625em 1.5em;
-}
-.content hr {
-    border-image: none;
-    border-width: 1px 0px;
-    border-style: solid none;
-    border-color: #EEE -moz-use-text-color #FFF;
-}
-
-.postbox {
-    border-bottom: 2px solid #A9A9A9;
-    margin-bottom: 0.75em;
-}
-
-.footerbox {
-    padding: 0.25em 0.95em;
-    text-align: center;
-    margin-bottom: 0.625em;
+.nav .pagename{
+    font-size:1.4em;
+    top:1px;
 }
 
 .pager {
@@ -160,16 +168,18 @@ ul, ol {
     margin: 1.25em 0px;
 }
 
+.pager:after {
+    clear: both;
+}
+
+.pager:before, .pager:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
 .pager li {
     display: inline;
-}
-
-.pager .previous > a {
-    float: left;
-}
-
-.pager .next > a {
-    float: right;
 }
 
 .pager li a {
@@ -179,57 +189,75 @@ ul, ol {
     border: 1px solid #DDD;
     border-radius: 0.95em;
 }
-.pager:after {
-    clear: both;
+
+.pager .next > a {
+    float: right;
 }
-.pager:before, .pager:after {
-    display: table;
-    line-height: 0;
-    content: "";
+
+.pager .previous > a {
+    float: left;
+}
+
+.postbox {
+    border-bottom: 2px solid #A9A9A9;
+    margin-bottom: 0.75em;
 }
 
 .row {
     margin: 0% 0px;
-	overflow:auto;
-}
-
-a {
-    color: #08C;
-    text-decoration: none;
-}
-
-span.dateline {
-    font-size: 0.8em;
+    overflow:auto;
 }
 
 .table{
-	width:100%;
+    width:100%;
 }
+
 .table th,.table td{
-	padding:.5em;
-	text-align:left;
-}
-.table tbody>:nth-child(2n-1){background:#ddd}
+    padding:.5em;
+    text-align:left;
 
-/* previously in custom.css */
-h1 {
-    font-size: 1.8em !important;
-    line-height: 1.5em !important;
 }
-h1 small {
-    font-size: 1em !important;
- }
-h2 {
-    font-size: 1.3em !important;
-    line-height: 1.5em !important;
-}
-h3 {
-    font-size: 1em !important;
-    line-height: 1.5em !important;
+.table tbody>:nth-child(2n-1){
+    background:#ddd;
 }
 
-/* from rst.css */
-pre.literal-block, pre.code {
-    margin-left: 2em;
-    margin-right: 2em
+@media(max-width:30em) {
+    span.icon-nav {
+        display: inherit;
+    }
+    span.text-nav {
+        display: none;
+    }
+    .c2 {
+        display: none;
+    }
+    .nav{
+        overflow:hidden;
+    }
+    .nav:active,.nav:focus{
+        height:auto;
+    }
+    .nav a {
+        padding-right: 0.3em;
+        width: 50%;
+    }
+    .pagename{
+        margin-top:-0.625em;
+    }
+}
+
+@media(max-width:50em) {
+    .c2 {
+        display: none;
+    }
+    .row .col{
+        width:100%;
+    }
+}
+
+@media(min-width:80em){
+    .container{
+        margin:auto;
+        width:77em;
+    }
 }
