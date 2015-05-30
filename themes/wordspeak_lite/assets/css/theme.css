@@ -1,26 +1,7 @@
 /* Some styles lifted from mincss - Copyright 2014 Owen Versteeg; MIT licensed */
-body,textarea,input,select{background:0;border-radius:0;font:1em sans-serif;margin:0}
-.smooth{transition:all .2s}
-.btn,.nav a{text-decoration:none}
 .container{margin:0 1.25em;width:auto}
-label>*{display:inline}
-form>*{display:block;margin-bottom:0.625em}
-.btn{background:#999;border-radius:0.25em;border:0;color:#fff;cursor:pointer;display:inline-block;margin:2px 0;padding:0.75em 2em 0.875em}
-.btn:hover{background:#888}
-.btn:active,.btn:focus{background:#777}
-.btn-a{background:#0ae}
-.btn-a:hover{background:#09d}
-.btn-a:active,.btn-a:focus{background:#08b}
-.btn-b{background:#3c5}
-.btn-b:hover{background:#2b4}
-.btn-b:active,.btn-b:focus{background:#2a4}
-.btn-c{background:#d33}
-.btn-c:hover{background:#c22}
-.btn-c:active,.btn-c:focus{background:#b22}
-.btn-sm{border-radius:4px;padding:0.625em 0.875em 0.625em}
-.row{margin:1% 0;overflow:auto}
 .col{float:left}
-.table,.c12{width:100%}
+.c12{width:100%}
 .c11{width:91.66%}
 .c10{width:83.33%}
 .c9{width:75%}
@@ -32,35 +13,6 @@ form>*{display:block;margin-bottom:0.625em}
 .c3{width:25%}
 .c2{width:16.66%}
 .c1{width:8.33%}
-h1{font-size:3em}
-.btn,h2{font-size:2em}
-.ico{font:2em Arial Unicode MS,Lucida Sans Unicode}
-.addon,.btn-sm,.nav,textarea,input,select{outline:0;font-size:0.875em}
-textarea,input,select{padding:0.5em;border:1px solid #ccc}
-textarea:focus,input:focus,select:focus{border-color:#5ab}
-textarea,input[type=text]{-webkit-appearance:none;width:13em}
-.addon{padding:0.5em 0.75em;box-shadow:0 0 0 1px #ccc}
-.nav,.nav .current,.nav a:hover{color:#333}
-.nav{height:1.5em;padding:0.625em 0 0.95em}
-.nav a{color:#aaa;padding-right:1em;position:relative;top:-1px}
-.nav .pagename{font-size:1.4em;top:1px}
-.btn.btn-close{background:#000;float:right;font-size:1.5em;margin:-3.5em 0.5em;display:none}
-@media(min-width:80em){.container{margin:auto;width:77em}
-}
-@media(max-width:50em){.row .col{width:100%}
-}
-@media(max-width:30em){.btn.btn-close{display:block}
-.nav{overflow:hidden}
-.pagename{margin-top:-0.625em}
-.nav:active,.nav:focus{height:auto}
-/*
-.nav div:before{background:#000;border-bottom:0.625em double;border-top:3px solid;content:'';float:right;height:4px;position:relative;right:3px;top:0.875em;width:1.25em}
-.nav a{padding:.5em 0;display:block;width:50%}
-*/
-}
-.table th,.table td{padding:.5em;text-align:left}
-.table tbody>:nth-child(2n-1){background:#ddd}
-.msg{padding:1.5em;background:#def;border-left:0.25em solid #59d}
 /* start theme */
 .amp {
     font-size: 1.05em;
@@ -69,9 +21,12 @@ textarea,input[type=text]{-webkit-appearance:none;width:13em}
 }
 
 body {
+    background:0;
+    border-radius:0;
+    font:1em sans-serif;
+    margin:0;
     background-color: #FFF;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    /*font-size: 0.875em;*/
     font-size: 1em;
     color: #333;
 }
@@ -91,15 +46,19 @@ blockquote {
     padding-left: 1em;
 }
 
-.caps {
-    font-size: 0.92em;
-}
-
 nav {
     display: block;
 }
 
+.nav,.nav .current,.nav a:hover{color:#333}
+.nav a{text-decoration:none;color:#aaa;padding-right:1em;position:relative;top:-1px}
+.nav .pagename{font-size:1.4em;top:1px}
+
 .nav {
+    outline:0;
+    font-size:0.875em;
+    height:1.5em;
+    padding:0.625em 0 0.95em;
     box-shadow: 0px 1px 0.625em rgba(0, 0, 0, 0.1);
     border: 1px solid #D4D4D4;
     border-radius: 0px;
@@ -114,6 +73,9 @@ span.icon-nav {
 }
 
 @media(max-width:30em) {
+    .nav{overflow:hidden}
+    .pagename{margin-top:-0.625em}
+    .nav:active,.nav:focus{height:auto}
     span.text-nav {
         display: none;
     }
@@ -122,7 +84,7 @@ span.icon-nav {
     }
     .nav a {
         padding-right: 0.3em;
-	width: 50%;
+    width: 50%;
     }
     .c2 {
         display: none;
@@ -130,9 +92,14 @@ span.icon-nav {
 }
 
 @media(max-width:50em) {
+    .row .col{width:100%}
     .c2 {
         display: none;
     }
+}
+
+@media(min-width:80em){
+    .container{margin:auto;width:77em}
 }
 
 .nav a {
@@ -153,7 +120,7 @@ span.icon-nav {
     text-shadow: 0px 1px 0px #FFF;
 }
 
-.label, .badge {
+.badge {
     display: inline-block;
     padding: 2px 4px;
     font-size: 0.75em;
@@ -223,6 +190,7 @@ ul, ol {
 
 .row {
     margin: 0% 0px;
+	overflow:auto;
 }
 
 a {
@@ -233,6 +201,15 @@ a {
 span.dateline {
     font-size: 0.8em;
 }
+
+.table{
+	width:100%;
+}
+.table th,.table td{
+	padding:.5em;
+	text-align:left;
+}
+.table tbody>:nth-child(2n-1){background:#ddd}
 
 /* previously in custom.css */
 h1 {
