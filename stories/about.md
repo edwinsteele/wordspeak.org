@@ -2,7 +2,7 @@
 .. title: About the author and the site
 .. slug: about
 .. date: 2013/01/12 16:29:40
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Fontello,Iconfont,Aristeides,Stathopoulos,Dave,Gandy,SIL,OFL
 .. tags: 
 .. link: 
 .. description: 
@@ -40,7 +40,7 @@ Acknowledgements
 ================
 
 The icons on this site are used under licence, and were obtained via the fantastic [Fontello](http://fontello.com):
-- camera and git icons from [Elusive-Iconfont by Aristeides Stathopoulos](https://github.com/reduxframework/elusive-iconfont). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+- camera and git icons from [Elusive-Iconfont by Aristeides :q](https://github.com/reduxframework/elusive-iconfont). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 - document, info, mail and RSS icons from [Font Awesome by Dave Gandy](http://fortawesome.github.io/Font-Awesome/). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 
 Licensing
