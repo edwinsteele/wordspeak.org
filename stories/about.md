@@ -36,6 +36,13 @@ On the server
 -   Photos are hosted on [Flickr](http://www.flickr.com/photos/edwin_steele/) and videos on [Vimeo](http://vimeo.com/edwinsteele/videos)
 -   Source for this site is in my [Github repository](https://github.com/edwinsteele/wordspeak.org)
 
+Acknowledgements
+================
+
+The icons on this site are used under licence, and were obtained via the fantastic [Fontello](http://fontello.com):
+- camera and git icons from [Elusive-Iconfont by Aristeides Stathopoulos](https://github.com/reduxframework/elusive-iconfont). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+- document, info, mail and RSS icons from [Font Awesome by Dave Gandy](http://fortawesome.github.io/Font-Awesome/). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
 Licensing
 =========
 
