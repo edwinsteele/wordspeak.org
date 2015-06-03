@@ -17,24 +17,24 @@ body {
 }
 
 blockquote {
-    margin-left: 0px;
-    border-left: 2px solid #CCC;
+    margin-left: 0;
+    border-left: 0.2em solid #CCC;
     padding-left: 1em;
 }
 
 h1 {
-    font-size: 1.8em !important;
-    line-height: 1.5em !important;
+    font-size: 1.8em;
+    line-height: 1.5em;
 }
 
 h2 {
-    font-size: 1.3em !important;
-    line-height: 1.5em !important;
+    font-size: 1.3em;
+    line-height: 1.5em;
 }
 
 h3 {
-    font-size: 1em !important;
-    line-height: 1.5em !important;
+    font-size: 1em;
+    line-height: 1.5em;
 }
 
 nav {
@@ -56,8 +56,8 @@ span.icon-nav {
 }
 
 ul, ol {
-    padding: 0px;
-    margin: 0px 0px 0.625em 1.5em;
+    padding: 0;
+    margin: 0 0 0.625em 1.5em;
 }
 
 .amp {
@@ -66,16 +66,14 @@ ul, ol {
     font-style: italic;
 }
 .badge {
-    padding-right: 9px;
-    padding-left: 9px;
-    border-radius: 9px;
+    border-radius: 0.5em;
     display: inline-block;
-    padding: 2px 4px;
+    padding: 0.2em 0.5em;
     font-size: 0.75em;
     font-weight: bold;
     line-height: 1em;
     color: #FFF;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     white-space: nowrap;
     vertical-align: baseline;
 }
@@ -88,7 +86,6 @@ ul, ol {
     font-size: 1.4em;
     font-weight: 200;
     color: #777;
-    text-shadow: 0px 1px 0px #FFF;
 }
 
 .c12{width:100%}
@@ -114,7 +111,6 @@ ul, ol {
 
 .content hr {
     border-image: none;
-    border-width: 1px 0px;
     border-style: solid none;
     border-color: #EEE -moz-use-text-color #FFF;
 }
@@ -130,10 +126,10 @@ ul, ol {
     font-size:0.875em;
     height:1.5em;
     padding:0.625em 0 0.95em;
-    box-shadow: 0px 1px 0.625em rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.1em 0.625em rgba(0, 0, 0, 0.1);
     border: 1px solid #D4D4D4;
-    border-radius: 0px;
-    border-width: 0px 0px 1px;
+    border-radius: 0;
+    border-width: 0 0 1px;
     background-color: #FAFAFA;
     background-image: linear-gradient(to bottom, #FFF, #F2F2F2);
     background-repeat: repeat-x;
@@ -146,9 +142,7 @@ ul, ol {
 .nav a{
     padding-right:1em;
     position:relative;
-    top:-1px;
     color: #777;
-    text-shadow: 0px 1px 0px #FFF;
     text-decoration: none;
 }
 
@@ -165,7 +159,7 @@ ul, ol {
 .pager {
     text-align: center;
     list-style: outside none none;
-    margin: 1.25em 0px;
+    margin: 1.25em 0;
 }
 
 .pager:after {
@@ -199,12 +193,11 @@ ul, ol {
 }
 
 .postbox {
-    border-bottom: 2px solid #A9A9A9;
+    border-bottom: 0.1em solid #A9A9A9;
     margin-bottom: 0.75em;
 }
 
 .row {
-    margin: 0% 0px;
     overflow:auto;
 }
 
