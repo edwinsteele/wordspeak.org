@@ -420,3 +420,6 @@ setView
 LatLng
 addPoints
 clickable
+srcset
+img
+src
