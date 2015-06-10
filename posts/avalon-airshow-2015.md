@@ -11,7 +11,18 @@
 
 Recently, my wife and I took our boys to the [Avalon Airshow](http://www.airshow.com.au/airshow2015/PUBLIC/index.asp) and we had a great time. We stayed in South Yarra, which had lovely views of Melbourne City.
 
-<a href="https://www.flickr.com/photos/edwin_steele/16101389873" title="Early morning hot air balloons"><img src="https://farm9.staticflickr.com/8604/16101389873_123ea1bfea_z.jpg" width="640" height="480" alt="Early morning hot air balloons"></a>
+<a href="https://www.flickr.com/photos/edwin_steele/16101389873"     title="Early morning hot air balloons">
+<picture>
+ <source media="(max-width=50em)"
+     srcset="%s/small_250.jpg 1x, %s/medium_500.jpg 2x">
+ <source media="(min-width=50em)"
+     srcset="%s/medium_500.jpg 1x, %s/large_1024.jpg 2x">
+ <img srcset="/assets/pictures/16101389873/medium_500.jpg 1x,
+         /assets/pictures/16101389873/large_1024.jpg 2x"
+     src="/assets/pictures/16101389873/medium_500.jpg"
+     alt="Early morning hot air balloons">
+</picture>
+</a>
 
 The food was wonderful too - the best coffee was from Elephant Stamp Espresso (Yarra St, South Yarra), my favourite food was a Kong Pau from Dainty Sichuan (Toorak Rd, South Yarra) that transported me back to Shanghai. My wife loved the Carbonara from [Versachi's](http://www.versachis.com.au).
 
@@ -22,10 +33,43 @@ as is the [2011 Airshow Album](https://www.flickr.com/photos/edwin_steele/sets/7
 
 An F-22 static display:
 
-<a href="https://www.flickr.com/photos/edwin_steele/16533949260" title="F-22"><img src="https://farm9.staticflickr.com/8675/16533949260_1e890bdba6_z.jpg" width="640" height="480" alt="F-22"></a>
+<a href="https://www.flickr.com/photos/edwin_steele/16533949260" title="F-22">
+<picture>
+ <source media="(max-width=30em)"
+     srcset="%s/small_250.jpg 1x, %s/medium_500.jpg 2x">
+ <source media="(min-width=30em)"
+     srcset="%s/medium_500.jpg 1x, %s/large_1024.jpg 2x">
+ <img srcset="/assets/pictures/16533949260/medium_500.jpg 1x,
+         /assets/pictures/16533949260/large_1024.jpg 2x"
+     src="/assets/pictures/16533949260/medium_500.jpg"
+     alt="F-22">
+</picture>
+</a>
 
 Formation flying by F-16s from the Singapore Air Force:
-<a href="https://www.flickr.com/photos/edwin_steele/16533922280" title="F-16 formation flying (Singapore Air Force)"><img src="https://farm9.staticflickr.com/8574/16533922280_f659db4b04_z.jpg" width="640" height="480" alt="F-16 formation flying (Singapore Air Force)"></a>
+<a href="https://www.flickr.com/photos/edwin_steele/16533922280" title="F-16 formation flying (Singapore Air Force)">
+<picture>
+ <source media="(max-width=30em)"
+     srcset="%s/small_250.jpg 1x, %s/medium_500.jpg 2x">
+ <source media="(min-width=30em)"
+     srcset="%s/medium_500.jpg 1x, %s/large_1024.jpg 2x">
+ <img srcset="/assets/pictures/16533922280/medium_500.jpg 1x,
+         /assets/pictures/16533922280/large_1024.jpg 2x"
+     src="/assets/pictures/16533922280/medium_500.jpg"
+     alt="F-16 formation flying (Singapore Air Force)">
+</picture>
+</a>
 
 The KC-30 aerial refuelling plane (that flew later in the day):
-<a href="https://www.flickr.com/photos/edwin_steele/16695450286" title="KC-30 Tanker"><img src="https://farm9.staticflickr.com/8573/16695450286_023d719a18_z.jpg" width="640" height="480" alt="KC-30 Tanker"></a>
+<a href="https://www.flickr.com/photos/edwin_steele/16695450286" title="KC-30 Tanker">
+<picture>
+ <source media="(max-width=30em)"
+     srcset="%s/small_250.jpg 1x, %s/medium_500.jpg 2x">
+ <source media="(min-width=30em)"
+     srcset="%s/medium_500.jpg 1x, %s/large_1024.jpg 2x">
+ <img srcset="/assets/pictures/16695450286/medium_500.jpg 1x,
+         /assets/pictures/16695450286/large_1024.jpg 2x"
+     src="/assets/pictures/16695450286/medium_500.jpg"
+     alt="KC-30 Tanker">
+</picture>
+</a>

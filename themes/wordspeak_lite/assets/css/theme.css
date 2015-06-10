@@ -41,10 +41,14 @@ nav {
     display: block;
 }
 
+picture img {
+    width: 100%;	
+}
+
 /* from rst.css */
 pre.literal-block, pre.code {
     margin-left: 2em;
-    margin-right: 2em
+    margin-right: 2em;
 }
 
 span.dateline {
