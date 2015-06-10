@@ -45,7 +45,7 @@ Hawkesbury
    src="/assets/pictures/8412781158/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/8412781158/small_250.jpg 250w,
+   srcset="/assets/pictures/8412781158/small_240.jpg 240w,
          /assets/pictures/8412781158/medium_500.jpg 500w,
          /assets/pictures/8412781158/large_1024.jpg 1024w"
          /assets/pictures/8412781158/large_2048-2048.jpg 2048w"
@@ -57,7 +57,7 @@ Hawkesbury
    src="/assets/pictures/8412777254/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/8412777254/small_250.jpg 250w,
+   srcset="/assets/pictures/8412777254/small_240.jpg 240w,
          /assets/pictures/8412777254/medium_500.jpg 500w,
          /assets/pictures/8412777254/large_1024.jpg 1024w"
          /assets/pictures/8412777254/large_2048-2048.jpg 2048w"
@@ -69,7 +69,7 @@ Hawkesbury
    src="/assets/pictures/8411679059/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/8411679059/small_250.jpg 250w,
+   srcset="/assets/pictures/8411679059/small_240.jpg 240w,
          /assets/pictures/8411679059/medium_500.jpg 500w,
          /assets/pictures/8411679059/large_1024.jpg 1024w"
          /assets/pictures/8411679059/large_2048-2048.jpg 2048w"

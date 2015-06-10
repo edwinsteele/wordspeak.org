@@ -16,7 +16,7 @@ Recently, my wife and I took our boys to the [Avalon Airshow](http://www.airshow
    src="/assets/pictures/16101389873/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/16101389873/small_250.jpg 250w,
+   srcset="/assets/pictures/16101389873/small_240.jpg 240w,
          /assets/pictures/16101389873/medium_500.jpg 500w,
          /assets/pictures/16101389873/large_1024.jpg 1024w"
          /assets/pictures/16101389873/large_2048-2048.jpg 2048w"
@@ -37,7 +37,7 @@ An F-22 static display:
    src="/assets/pictures/16533949260/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/16533949260/small_250.jpg 250w,
+   srcset="/assets/pictures/16533949260/small_240.jpg 240w,
          /assets/pictures/16533949260/medium_500.jpg 500w,
          /assets/pictures/16533949260/large_1024.jpg 1024w"
          /assets/pictures/16533949260/large_2048-2048.jpg 2048w"
@@ -50,7 +50,7 @@ Formation flying by F-16s from the Singapore Air Force:
    src="/assets/pictures/16533922280/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/16533922280/small_250.jpg 250w,
+   srcset="/assets/pictures/16533922280/small_240.jpg 240w,
          /assets/pictures/16533922280/medium_500.jpg 500w,
          /assets/pictures/16533922280/large_1024.jpg 1024w"
          /assets/pictures/16533922280/large_2048-2048.jpg 2048w"
@@ -64,7 +64,7 @@ The KC-30 aerial refuelling plane (that flew later in the day):
    src="/assets/pictures/16695450286/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/16695450286/small_250.jpg 250w,
+   srcset="/assets/pictures/16695450286/small_240.jpg 240w,
          /assets/pictures/16695450286/medium_500.jpg 500w,
          /assets/pictures/16695450286/large_1024.jpg 1024w"
          /assets/pictures/16695450286/large_2048-2048.jpg 2048w"
