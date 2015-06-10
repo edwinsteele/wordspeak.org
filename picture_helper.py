@@ -3,7 +3,7 @@ import argparse
 import os
 
 
-PHOTO_SIZES = ("Small", "Medium", "Large")
+PHOTO_SIZES = ("Small", "Medium", "Large", "Large 2048")
 REPO_ASSETS_LOCATION = "/Users/esteele/Code/wordspeak.org/files"
 WEBSERVER_PICTURE_PREFIX = "/assets/pictures/%s"
 
@@ -31,23 +31,21 @@ def main(photo_id, desired_sizes, api_key, api_secret):
         print "%spx (%s)," % (px_width, name),
 
     print
-    print "Anchor with Picture tag follows:\n\n"
+    print "Anchor with reponsive img tag follows:\n"
     print '<a href="https://www.flickr.com/photos/edwin_steele/%s"' \
           ' title="%s">' % (photo_id, p.title)
-    print '<picture>'
-    # XXX - should be the same as my min media breakpoint
-    print ' <source media="(max-width=30em)"\n' \
-          '     srcset="%s/small_250.jpg 1x, %s/medium_500.jpg 2x">'
-    print ' <source media="(min-width=30em)"\n' \
-          '     srcset="%s/medium_500.jpg 1x, %s/large_1024.jpg 2x">'
     # If the browser can't understand source and picture tags, let's
     #  give a regularly sized image
-    print ' <img srcset="%s/medium_500.jpg 1x,\n' \
-          '         %s/large_1024.jpg 2x"\n' \
-          '     src="%s/medium_500.jpg"\n' \
-          '     alt="%s">' % (wpp, wpp, wpp, wpp, p.title,)
-    print '</picture>'
-    print '</a>'
+    print ' <img class="ri"\n' \
+          '   src="%s/medium_500.jpg"\n' \
+          '   sizes="(max-width: 50em) 100vw,\n' \
+          '          (min-width: 50em) 66vw"\n' \
+          '   srcset="%s/small_250.jpg 250w,\n' \
+          '         %s/medium_500.jpg 500w,\n' \
+          '         %s/large_1024.jpg 1024w"\n' \
+          '         %s/large_2048.jpg 2048w"\n' \
+          '  alt="%s">' % (wpp, wpp, wpp, wpp, wpp, p.title)
+    print '</a>\n'
 
     # Always make sure the directory exists
     # Don't use os.path.join, as it doesn't work with two absolute paths
@@ -60,7 +58,7 @@ def main(photo_id, desired_sizes, api_key, api_secret):
 
         output_file = os.path.join(picture_output_dir,
                                    "%s_%s.jpg" %
-                                   (desired_size.lower(), sizes[desired_size]["width"]))
+                                   (desired_size.replace(" ", "-").lower(), sizes[desired_size]["width"]))
         print "Saving %s version to %s" % (desired_size, output_file),
         p.save(output_file, size_label=desired_size)
         print " - Done. (%s bytes)" % os.stat(output_file).st_size

@@ -37,12 +37,12 @@ h3 {
     line-height: 1.5em;
 }
 
-nav {
-    display: block;
+img.ri {
+    width: 100%;	
 }
 
-picture img {
-    width: 100%;	
+nav {
+    display: block;
 }
 
 /* from rst.css */
