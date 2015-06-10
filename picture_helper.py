@@ -37,14 +37,18 @@ def main(photo_id, desired_sizes, api_key, api_secret):
     # If the browser can't understand source and picture tags, let's
     #  give a regularly sized image
     print ' <img class="ri"\n' \
-          '   src="%s/medium_500.jpg"\n' \
+          '   src="%s/medium_%s.jpg"\n' \
           '   sizes="(max-width: 50em) 100vw,\n' \
-          '          (min-width: 50em) 66vw"\n' \
-          '   srcset="%s/small_250.jpg 250w,\n' \
-          '         %s/medium_500.jpg 500w,\n' \
-          '         %s/large_1024.jpg 1024w"\n' \
-          '         %s/large_2048.jpg 2048w"\n' \
-          '  alt="%s">' % (wpp, wpp, wpp, wpp, wpp, p.title)
+          '          (min-width: 50em) 66vw"\n' % (wpp, sizes["Medium"]["width"]),
+
+    srcset_images = []
+    for desired_size in desired_sizes:
+        srcset_images.append('%s/%s_%s.jpg %sw' % (wpp,
+                                     desired_size.replace(" ", "-").lower(),
+                                     sizes[desired_size]["width"],
+                                     sizes[desired_size]["width"]))
+    print '   srcset="%s"' % (", ".join(srcset_images))
+    print '   alt="%s">' % (p.title,)
     print '</a>\n'
 
     # Always make sure the directory exists

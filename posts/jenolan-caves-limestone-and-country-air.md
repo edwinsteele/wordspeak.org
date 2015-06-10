@@ -27,5 +27,12 @@ Here's the [photo album](http://www.flickr.com/photos/edwin_steele/sets/72157632
 
 And here's a taste from the "Temple of Baal" cave:
 
-[![Temple of Baal Cave: Another shawl feature](https://farm9.staticflickr.com/8494/8412934156_960294fa7d_n.jpg)](http://www.flickr.com/photos/edwin_steele/8412934156/)
+<a href="https://www.flickr.com/photos/edwin_steele/8412934156" title="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
+ <img class="ri"
+   src="/assets/pictures/8412934156/medium_375.jpg"
+   sizes="(max-width: 50em) 100vw,
+          (min-width: 50em) 66vw"
 
+   srcset="/assets/pictures/8412934156/small_180.jpg 180w, /assets/pictures/8412934156/medium_375.jpg 375w, /assets/pictures/8412934156/large_768.jpg 768w, /assets/pictures/8412934156/large-2048_1536.jpg 1536w"
+   alt="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
+</a>
