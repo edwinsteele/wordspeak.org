@@ -20,7 +20,7 @@ I present the [Pasha Bulker](http://www.flickr.com/photos/edwin_steele/sets/7215
    src="/assets/pictures/8396141441/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/8396141441/small_250.jpg 250w,
+   srcset="/assets/pictures/8396141441/small_240.jpg 240w,
          /assets/pictures/8396141441/medium_500.jpg 500w,
          /assets/pictures/8396141441/large_1024.jpg 1024w"
          /assets/pictures/8396141441/large_2048-2048.jpg 2048w"

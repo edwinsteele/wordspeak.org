@@ -19,7 +19,7 @@ The [Rural Fire Service](http://www.rfs.nsw.gov.au) are amazing. We've had tempe
    src="/assets/pictures/10391713355/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/10391713355/small_250.jpg 250w,
+   srcset="/assets/pictures/10391713355/small_240.jpg 240w,
          /assets/pictures/10391713355/medium_500.jpg 500w,
          /assets/pictures/10391713355/large_1024.jpg 1024w"
          /assets/pictures/10391713355/large_2048-2048.jpg 2048w"
@@ -31,7 +31,7 @@ The [Rural Fire Service](http://www.rfs.nsw.gov.au) are amazing. We've had tempe
    src="/assets/pictures/10398767634/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/10398767634/small_250.jpg 250w,
+   srcset="/assets/pictures/10398767634/small_240.jpg 240w,
          /assets/pictures/10398767634/medium_500.jpg 500w,
          /assets/pictures/10398767634/large_1024.jpg 1024w"
   alt="Smoke from the Linksview fire">
