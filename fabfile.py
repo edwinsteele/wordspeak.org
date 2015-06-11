@@ -48,13 +48,13 @@ UNWANTED_BUILD_ARTIFACTS = [
 ]
 # An update of these files will abort a fab deploy operation
 KEY_FILES = ["conf.py", "fabfile.py"]
-W3C_HTML_VALIDATION_URL = 'http://validator.w3.org/check?uri=%s&' \
-                          'charset=%%28detect+automatically%%29&' \
-                          'doctype=Inline&group=0&output=%s'
+W3C_HTML_VALIDATION_URL = 'https://validator.w3.org/nu/?doc=%s&' \
+                          'useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices'
 W3C_HTML_VALIDATION_TARGETS = [
     'https://www.wordspeak.org/index.html',
     'https://www.wordspeak.org/pages/about.html',
     'https://www.wordspeak.org/posts/write-because-you-want-to.html',
+    'https://www.wordspeak.org/posts/nsw-fires.html',
 ]
 W3C_CSS_VALIDATION_URL = 'http://jigsaw.w3.org/css-validator/validator?' \
                          'uri=%s&profile=css3&usermedium=all&warning=1&' \

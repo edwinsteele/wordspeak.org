@@ -116,7 +116,7 @@ ul, ol {
 .content hr {
     border-image: none;
     border-style: solid none;
-    border-color: #EEE -moz-use-text-color #FFF;
+    border-color: #EEE;
 }
 
 .footerbox {
@@ -208,7 +208,6 @@ ul, ol {
 .svg-icon {
   width: 1em;
   height: 1.3em;
-  fill: #777;
 }
 
 .table{
