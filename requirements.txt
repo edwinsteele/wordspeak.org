@@ -16,10 +16,12 @@ cssselect==0.9.1
 docutils==0.12
 doit==0.26.0
 ecdsa==0.11
+flickr-api==0.5
 geopy==1.10.0
 lxml==3.4.1
 mincss==0.8.1
 natsort==3.5.1
+oauth==1.0.1
 paramiko==1.15.1
 pycrypto==2.6.1
 pyenchant==1.6.5
