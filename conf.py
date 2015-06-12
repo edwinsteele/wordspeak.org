@@ -3,9 +3,9 @@
 from __future__ import unicode_literals
 from nikola import __version__ as nikola_version
 from nikola import filters
-from socket import getfqdn
 import os
 import rcssmin
+import socket
 
 BLOG_AUTHOR = "Edwin Steele"
 BLOG_TITLE = "Wordspeak"
@@ -76,7 +76,7 @@ SEARCH_FORM = ""
 
 BODY_END = """
 <!-- Built by Nikola v.%s on host %s -->
-""" % (nikola_version, getfqdn())
+""" % (nikola_version, socket.gethostname())
 
 EXTRA_HEAD_DATA = ""
 
