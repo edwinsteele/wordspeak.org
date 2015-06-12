@@ -48,8 +48,7 @@ UNWANTED_BUILD_ARTIFACTS = [
 ]
 # An update of these files will abort a fab deploy operation
 KEY_FILES = ["conf.py", "fabfile.py"]
-W3C_HTML_VALIDATION_URL = 'https://validator.w3.org/nu/?doc=%s&' \
-                          'useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices'
+W3C_HTML_VALIDATION_URL = 'https://validator.w3.org/nu/?doc=%s&out=%s'
 W3C_HTML_VALIDATION_TARGETS = [
     'https://www.wordspeak.org/index.html',
     'https://www.wordspeak.org/pages/about.html',
@@ -528,16 +527,17 @@ def orphans(output_fd=sys.stdout):
 def w3c_checks(output_fd=sys.stdout):
     all_checks_pass = True
     for url in W3C_HTML_VALIDATION_TARGETS:
-        r = requests.get(W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url),
-                                                    "json"))
-        if r.json()["messages"]:
+        r = requests.get(W3C_HTML_VALIDATION_URL %
+                (urllib.quote_plus(url), "json"))
+        # messages key in JSON output always exists
+        error_messages = [m["message"] for m in r.json()["messages"] if m["type"] != "info"]
+        if error_messages:
             output_fd.write("HTML has W3C validation errors (%s):\n" % (url,))
-            for message in r.json()["messages"]:
+            for message in error_messages:
                 output_fd.write("- %s" % (message,))
             output_fd.write("\n")
-            output_fd.write("Full details: %s\n" % (W3C_HTML_VALIDATION_URL %
-                                                    (urllib.quote_plus(url),
-                                                     "html")))
+            output_fd.write("Full details: %s\n" % 
+                    (W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url), "html"),))
             all_checks_pass = False
         else:
             output_fd.write("HTML validates (%s)\n" % (url,))
