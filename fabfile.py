@@ -452,9 +452,9 @@ def spellchecker(is_interactive_deploy=True):
                           (err.word,
                            os.path.basename(files_to_check),
                            lines.index(line) + 1)
-                    print "  Suggestions: " + \
-                        ", ".join(en_spellchecker.suggest(err.word))
                     if is_interactive_deploy:
+                        print "  Suggestions: " + \
+                            ", ".join(en_spellchecker.suggest(err.word))
                         action = prompt("Add '%s' to dictionary [add] or "
                                         "replace [type replacement]?"
                                         % (err.word,), default="add").strip()
@@ -462,9 +462,9 @@ def spellchecker(is_interactive_deploy=True):
                             _add_to_spellcheck_exceptions(err.word)
                         else:
                             _replace_in_file(files_to_check, err.word, action)
-                    else:
-                        print "Not doing spellcheck substitutions during" \
-                              " non-interactive deploy\n\n"
+    if spelling_errors_found and not is_interactive_deploy:
+        print "Not doing spellcheck substitutions during" \
+              " non-interactive deploy\n"
 
     return spelling_errors_found
 
