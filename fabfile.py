@@ -464,7 +464,7 @@ def spellchecker(is_interactive_deploy=True):
                             _replace_in_file(files_to_check, err.word, action)
                     else:
                         print "Not doing spellcheck substitutions during" \
-                              " non-interactive deploy"
+                              " non-interactive deploy\n\n"
 
     return spelling_errors_found
 
