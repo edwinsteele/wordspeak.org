@@ -102,6 +102,7 @@ def _does_this_machine_answer_for_this_hostname(dns_name):
 
     Caveats:
     - Won't work reliably if the DNS entry resolves to more than one address
+    - Won't work if there are no PTR entries
     - Assumes the interface configured with the IP associated with the host's
       hostname is actually the interface that accepts public traffic
       associated with DNS name in question
