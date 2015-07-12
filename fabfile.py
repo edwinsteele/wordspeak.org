@@ -534,8 +534,7 @@ def w3c_checks(output_fd=sys.stdout):
         if error_messages:
             output_fd.write("HTML has W3C validation errors (%s):\n" % (url,))
             for message in error_messages:
-                print message
-                output_fd.write("- %s" % (message,))
+                output_fd.write("- %s" % (message.encode('utf-8'),))
             output_fd.write("\n")
             output_fd.write("Full details: %s\n" % 
                     (W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url), "html"),))
@@ -551,7 +550,7 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("CSS validates (%s)\n" % (url,))
         else:
             output_fd.write("CSS validation failures for %s\n" % (url,))
-            output_fd.write("%s\n" % (summary,))
+            output_fd.write("%s\n" % (summary.encode('utf-8'),))
             output_fd.write("Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
                                                     (urllib.quote_plus(url),
                                                      "html")))
@@ -562,7 +561,7 @@ def w3c_checks(output_fd=sys.stdout):
         if "This is a valid RSS feed" in r.text:
             output_fd.write("RSS validates (%s)\n" % (url,))
         else:
-            output_fd.write("RSS validation failures for %s\n")
+            output_fd.write("RSS validation failures for %s\n" % (url,))
             output_fd.write("Full details: %s\n" % (W3C_RSS_VALIDATION_URL %
                                                     (urllib.quote_plus(url))))
             all_checks_pass = False
