@@ -2,7 +2,7 @@
 .. title: Coffee at home
 .. slug: coffee-at-home
 .. date: 2015/05/26 15:55:47
-.. tags: draft
+.. tags: 
 .. spellcheck_exceptions: Karabinos, AeroPress, Zokoko, SampleCoffee, Porlex, EK
 .. is_orphan: False
 .. link:
@@ -42,7 +42,7 @@ The only other thing worth mentioning is that I preheat my mug, lest I have beau
 
 ## Simple, right?
 
-Coffee preparation can be as simple or as complex as you want to make it. This is my sweet spot at the moment, where preparation and consumption remain enjoyable - hobbies should always be enjoyable, and this certainly is for me. If it looks like it's stopped being enjoyable, please slap me.
+Coffee preparation can be as simple or as complex as you want to make it. This is my sweet spot at the moment, where preparation and consumption remain enjoyable - hobbies should always be enjoyable, and this certainly is for me. If it looks like it's not, a gentle reminder is most welcome!
 
 
 [^1]: An *emergency* involving a lack of coffee. A first-world problem if ever I saw one
