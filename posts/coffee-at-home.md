@@ -1,7 +1,7 @@
 <!--
 .. title: Coffee at home
 .. slug: coffee-at-home
-.. date: 2015/05/26 15:55:47
+.. date: 2015/07/12 15:55:47
 .. tags: 
 .. spellcheck_exceptions: Karabinos, AeroPress, Zokoko, SampleCoffee, Porlex, EK
 .. is_orphan: False

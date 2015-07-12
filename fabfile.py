@@ -534,6 +534,7 @@ def w3c_checks(output_fd=sys.stdout):
         if error_messages:
             output_fd.write("HTML has W3C validation errors (%s):\n" % (url,))
             for message in error_messages:
+                print message
                 output_fd.write("- %s" % (message,))
             output_fd.write("\n")
             output_fd.write("Full details: %s\n" % 
