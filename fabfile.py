@@ -120,9 +120,15 @@ def _does_this_machine_answer_for_this_hostname(dns_name):
     #  DNS is configured to resolve names to internal addresses) e.g. AWS
     # If the dns_name resolves to 127.0.0.1, then whatever machine we're
     #  on definitely answers for the hostname
-    return socket.gethostbyname(socket.gethostbyaddr(
-        socket.gethostbyname(dns_name))[0]) in (my_main_ip, '127.0.0.1')
+    try:
+        ptr_lookup_result = socket.gethostbyaddr(
+                socket.gethostbyname(dns_name))[0]
+    except socket.herror:
+        # No PTR records available and nothing in local /etc/hosts to help.
+        # Let's be conservative and say that we don't answer for it.
+        return False
 
+    return socket.gethostbyname(ptr_lookup_result) in (my_main_ip, '127.0.0.1')
 
 def _quietly_run_nikola_cmd(nikola, cmd):
     result = local("%s %s" % (nikola, cmd), capture=True)
@@ -170,11 +176,12 @@ def requirements_dump():
         #  so exclude them. They'll get pulled in when a pip install doit
         #  is done so there's no loss.
         # bsddb3 is only necessary on MacOS and is a pain to build, so we
-        #  don't list it as a global dependency.
-        # To build on MacOS, read http://marc-abramowitz.com/archives/2007/11/28/hacking-os-xs-python-dbhash-and-bsddb-modules-to-work/ 
-        # make sure berkeley-db has been installed with brew, download the
-        # module from pip, unpack and then from that directory run:
-        # python setup.py --berkeley-db=/usr/local/Cellar/berkeley-db/5.3.28 install
+        #  don't use it. This requires a quick change in doit
+        # /Users/esteele/.virtualenvs/wordspeak_n7/lib/python2.7/site-packages/doit/dependency.py
+        #
+        # Uncomment the following line in that file (this might require nuking the doit db file):
+        # 
+        # import gdbm as ddbm
         local("pip freeze | egrep -v '(pyinotify|MacFSEvents|bsddb3)'"
               "> requirements.txt")
 
