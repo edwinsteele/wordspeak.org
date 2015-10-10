@@ -62,8 +62,11 @@ W3C_CSS_VALIDATION_TARGETS = [
     'https://www.wordspeak.org/assets/css/all-nocdn.css',
 ]
 W3C_RSS_VALIDATION_URL = 'http://validator.w3.org/feed/check.cgi?url=%s'
+# RSS validator chokes on https, so we use staging, which has an http
+#  URL, even though it will be out of date if the deployment is done
+#  from a machine that has a local staging instance
 W3C_RSS_VALIDATION_TARGETS = [
-    'https://www.wordspeak.org/rss.xml',
+    'http://staging.wordspeak.org/rss.xml',
 ]
 LANGUAGE_EXPLORER_DIRNAME="language_explorer"
 
