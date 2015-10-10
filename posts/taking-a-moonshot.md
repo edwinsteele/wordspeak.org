@@ -3,7 +3,7 @@
 .. slug: taking-a-moonshot
 .. date: 2015/03/24 05:51:47
 .. tags: Technology
-.. spellcheck_exceptions: Astro,
+.. spellcheck_exceptions: Astro,,Google
 .. is_orphan: False
 .. link:
 .. description:

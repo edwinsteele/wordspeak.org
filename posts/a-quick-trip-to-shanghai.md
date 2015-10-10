@@ -4,7 +4,7 @@
 .. date: 2015-02-09 08:40:44 UTC+11:00
 .. tags: Photography, Travel
 .. link: 
-.. spellcheck_exceptions: μg,Bund,Pudong,Maglev
+.. spellcheck_exceptions: μg,Bund,Pudong,Maglev,Flickr,edwin,flickr,href,https,img,jpg,ri,src,srcset,steele,vw,www
 .. description: 
 .. type: text
 -->

@@ -2,7 +2,7 @@
 .. title: Experimenting with fabric for deployments
 .. slug: experimenting-with-fabric-for-deployments
 .. date: 2013/02/24 16:50:06
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: PyCoder's,fabfile,fabfiles,rm'ed,unix
 .. tags: Technology
 .. link: 
 .. description: 

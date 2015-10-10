@@ -3,7 +3,7 @@
 .. slug: the-night-sky
 .. date: 2015/09/05 08:00:00
 .. tags: the night sky
-.. spellcheck_exceptions: SkySafari,Andrews,Bintel,Glebe,GSO,Dobsonian,brainer,rebranded,DSOs,SkippySky,SkyWalk,th
+.. spellcheck_exceptions: SkySafari,Andrews,Bintel,Glebe,GSO,Dobsonian,brainer,rebranded,DSOs,SkippySky,SkyWalk,th,Optimizing,iPad
 .. is_orphan: False
 .. link:
 .. description:

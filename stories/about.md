@@ -2,7 +2,7 @@
 .. title: About the author and the site
 .. slug: about
 .. date: 2013/01/12 16:29:40
-.. spellcheck_exceptions: Fontello,Iconfont,Aristeides,Stathopoulos,Dave,Gandy,SIL,OFL
+.. spellcheck_exceptions: Fontello,Iconfont,Aristeides,Stathopoulos,Dave,Gandy,SIL,OFL,DMC,Flickr,Github,IIs,ImagineNations,Ixus,MacBook,PyCharm,RSS,Rackspace,TZ,Vimeo,edwin,iPad,iPhone,wordspeak
 .. tags: 
 .. link: 
 .. description: 

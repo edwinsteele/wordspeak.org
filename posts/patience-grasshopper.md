@@ -2,7 +2,7 @@
 .. title: Patience, grasshopper
 .. slug: 20051121patience-grasshopper
 .. date: 2005/11/21 12:45:29
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: QTVR,QuickTime,WordPress,cha,ching,plugin
 .. tags: Technology
 .. link: 
 .. description: 

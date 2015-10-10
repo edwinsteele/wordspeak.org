@@ -2,7 +2,7 @@
 .. title: Let the computer do the menial testing
 .. slug: let-the-computer-do-the-menial-testing
 .. date: 2013/03/17 15:41:31
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: JavaScript,RSS,fabfile,github,linkchecker,pyenchant,versioned,versioning,wordspeak
 .. tags: Technology
 .. link: 
 .. description: 

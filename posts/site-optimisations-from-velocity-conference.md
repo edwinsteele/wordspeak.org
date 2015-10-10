@@ -4,7 +4,7 @@
 .. date: 2015-06-29 15:54:28 UTC+10:00
 .. tags: 
 .. link: 
-.. spellcheck_exceptions: webby,Grigorik's,SVG,SVGs,ImageOptim,JPEGs,filesize,Flickr's,Firefox,Inline,inline,navbar,Dao
+.. spellcheck_exceptions: webby,Grigorik's,SVG,SVGs,ImageOptim,JPEGs,filesize,Flickr's,Firefox,Inline,inline,navbar,Dao,CDN,CSS,Cloudflare,DNS,Flickr,Ilya,SSL,flickr,img,lookup,nginx,px,srcset
 .. is_orphan: false
 .. description: 
 .. type: text

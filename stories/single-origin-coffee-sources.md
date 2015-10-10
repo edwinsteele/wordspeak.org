@@ -2,7 +2,7 @@
 .. title: Single-origin coffee sources
 .. slug: single-origin-coffee-sources
 .. date: 2015-05-29 13:50:11 UTC+10:00
-.. spellcheck_exceptions: geolocated
+.. spellcheck_exceptions: geolocated,Javascript,LatLng,OpenStreetMap,addPoints,addTo,clickable,geo,geolocation,href,http,osm,png,programatically,px,py,setView,tileLayer
 .. tags: 
 .. link: 
 .. description: 

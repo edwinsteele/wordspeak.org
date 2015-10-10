@@ -1,7 +1,7 @@
 .. title: Developing on an iPad
 .. slug: developing-on-an-ipad
 .. date: 2014/10/05 12:55:47
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Bluetooth,CentOS,ESC,Logitech,Macbook,PDFs,doco,dotfiles,filename,github,iOS,iPad,iSSH,tmux,unix
 .. tags: Technology
 .. link:
 .. description:

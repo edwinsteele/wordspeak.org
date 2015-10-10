@@ -2,7 +2,7 @@
 .. description: 
 .. tags: Technology
 .. date: 2014/11/04 04:56:49
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: AWS,CDN,CloudFlare,Cloudflare,DNS,DNSSEC,Dyn,NSone,SSL,WebPageTest,millis
 .. title: DNS with Cloudflare
 .. slug: dns-with-cloudflare
 

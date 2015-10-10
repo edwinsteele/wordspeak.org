@@ -2,7 +2,7 @@
 .. title: Reducing cable clutter with stationary supplies
 .. slug: reducing-cable-clutter-with-stationary-supplies
 .. date: 2013/02/20 07:37:27
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Ikea,MacBook,USB,aging,edwin,flickr,href,https,img,jpg,ri,src,srcset,steele,vw,www
 .. tags: Technology
 .. link: 
 .. description: 

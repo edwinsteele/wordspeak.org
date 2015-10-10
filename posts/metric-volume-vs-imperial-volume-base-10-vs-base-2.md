@@ -5,7 +5,7 @@
 .. tags: 
 .. link: 
 .. description: 
-.. spellcheck_exceptions: Data's
+.. spellcheck_exceptions: Data's,Wikipedia
 .. type: text
 -->
 

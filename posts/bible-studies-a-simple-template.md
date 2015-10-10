@@ -3,7 +3,7 @@
 .. description: 
 .. tags: Christianity, Religion and Spirituality
 .. date: 2014/11/18 16:57:21
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: ourself
 .. title: Bible studies - a simple template
 .. slug: bible-studies-a-simple-template
 -->

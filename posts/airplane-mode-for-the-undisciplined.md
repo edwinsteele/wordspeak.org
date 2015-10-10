@@ -2,7 +2,7 @@
 .. slug: airplane-mode-for-the-undisciplined
 .. date: 2015/03/09 06:55:47
 .. tags: Technology
-.. spellcheck_exceptions: Airplane,online,Evernote,Textastic,iCloud,WiFi
+.. spellcheck_exceptions: Airplane,online,Evernote,Textastic,iCloud,WiFi,Bluetooth,Instapaper,RSS,blog,iOS,iPad,internet,workflow
 .. is_orphan: False
 .. link:
 .. description:

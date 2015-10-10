@@ -2,7 +2,7 @@
 .. title: Four Things
 .. slug: 20060204four-things
 .. date: 2006/02/04 19:33:29
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Battlestar,CommSecure,Croydon,Entigen,Galactica,Moonarie,Plov,Rockclimbing,Slashdot,Vindaloo,bloggers,macchiato
 .. tags: 
 .. link: 
 .. description: 

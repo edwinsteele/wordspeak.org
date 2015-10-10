@@ -3,7 +3,7 @@
 .. description: 
 .. tags: Reading
 .. date: 2014/01/22 10:48:51
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Dullaway,Essmaker,Feyerke,Instapaper,Lex,MechWarrior,Sanna,TGD,Valéry
 .. title: Words and Pictures - November
 .. slug: words-and-pictures-november
 -->

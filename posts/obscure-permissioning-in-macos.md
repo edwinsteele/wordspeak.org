@@ -3,7 +3,7 @@
 .. slug: a-journey-in-obscure-macos-permissions.md
 .. date: 2015/07/11 05:29:47
 .. tags: 
-.. spellcheck_exceptions: skool, filesystem, OpenBSD, MacOS, xattr, ACLs, chflags
+.. spellcheck_exceptions: skool, filesystem, OpenBSD, MacOS, xattr, ACLs, chflags,USB
 .. is_orphan: False
 .. link:
 .. description:

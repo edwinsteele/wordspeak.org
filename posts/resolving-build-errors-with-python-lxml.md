@@ -4,7 +4,7 @@
 .. date: 2015-01-27 06:23:57 UTC+11:00
 .. tags: Technology
 .. link: 
-.. spellcheck_exceptions: lxml, OpenBSD, VM, AMI, OOM, login
+.. spellcheck_exceptions: lxml, OpenBSD, VM, AMI, OOM, login,CentOS,Rackspace
 .. description: 
 .. type: text
 -->

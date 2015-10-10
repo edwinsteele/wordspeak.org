@@ -3,7 +3,7 @@
 .. description: 
 .. tags: Technology
 .. date: 2013/06/01 07:11:18
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Linode,MySpell,blog,iPad,iSSH,internet,tmux,unix,workflow
 .. title: A more flexible publishing workflow
 .. slug: a-more-flexible-workflow
 -->

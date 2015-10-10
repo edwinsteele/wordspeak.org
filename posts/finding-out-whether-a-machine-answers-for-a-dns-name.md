@@ -3,7 +3,7 @@
 .. description: 
 .. tags: Technology
 .. date: 2014/01/25 19:00:23
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: CNAME,DNS,IP,amazonaws,ap,balancer,bxr,ec,lookup,lx,mkt,rsync,wordspeak,www,ze,zsh
 .. title: Finding out whether a machine answers for a DNS name (including EC2)
 .. slug: finding-out-whether-a-machine-answers-for-a-dns-name
 -->

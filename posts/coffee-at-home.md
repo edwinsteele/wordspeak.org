@@ -3,7 +3,7 @@
 .. slug: coffee-at-home
 .. date: 2015/07/12 15:55:47
 .. tags: 
-.. spellcheck_exceptions: Karabinos, AeroPress, Zokoko, SampleCoffee, Porlex, EK
+.. spellcheck_exceptions: Karabinos, AeroPress, Zokoko, SampleCoffee, Porlex, EK,iPhone
 .. is_orphan: False
 .. link:
 .. description:

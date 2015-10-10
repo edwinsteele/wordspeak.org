@@ -2,7 +2,7 @@
 .. title: Words and Pictures - March
 .. slug: words-and-pictures-march
 .. date: 2013/04/08 17:57:34
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Affleck,Fi,Hertzfeld,Obama's
 .. tags: Reading
 .. link: 
 .. description: 

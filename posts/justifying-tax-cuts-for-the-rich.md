@@ -2,7 +2,7 @@
 .. title: Justifying tax cuts for the rich?
 .. slug: 20060527justifying-tax-cuts-for-the-rich
 .. date: 2006/05/27 20:40:42
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Kamerschen,NSW,Porchetta's,everybody's
 .. tags: Politics
 .. link: 
 .. description: 

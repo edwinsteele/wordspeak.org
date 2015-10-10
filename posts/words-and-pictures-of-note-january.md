@@ -2,7 +2,7 @@
 .. title: Words and Pictures (of note) - January
 .. slug: words-and-pictures-of-note-january
 .. date: 2013/02/07 17:58:20
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Madoff,whingey
 .. tags: Reading
 .. link: 
 .. description: 

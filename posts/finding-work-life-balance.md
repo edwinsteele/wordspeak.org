@@ -3,7 +3,7 @@
 .. slug: finding-work-life-balance
 .. date: 2015/09/29 06:55:47
 .. tags: 
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Google
 .. is_orphan: False
 .. link:
 .. description:

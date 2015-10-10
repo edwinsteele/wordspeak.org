@@ -2,7 +2,7 @@
 .. title: iPad Input Methods
 .. slug: ipad-input-methods
 .. date: 2013/04/11 16:24:20
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Bluetooth,BookCase,Kensington,Logitech,MyScript,Noteshelf,PenUltimate,Portenzo,Siri,Siri's,Ultrathin,blog,iOS,iPad,iPad's
 .. tags: Technology
 .. link: 
 .. description: 

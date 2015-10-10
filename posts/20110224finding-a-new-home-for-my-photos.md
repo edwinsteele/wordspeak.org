@@ -2,7 +2,7 @@
 .. title: Finding a new home for my photos
 .. slug: 20110224finding-a-new-home-for-my-photos
 .. date: 2011/02/24 09:38:31
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Angelfire,Facebook,Flickr,Google,Meh,MobileMe,MySpace,Photobucket,Picasa,Smugmug,Vimeo,YouTube,cha,ching,der,geotagged,geotagging,iMovie,internets,spoiled
 .. tags: Photography
 .. link: 
 .. description: 

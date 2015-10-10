@@ -2,7 +2,7 @@
 .. title: Little steps: My first open source contribution
 .. slug: little-steps-my-first-open-source-contribution
 .. date: 2013/01/26 07:20:46
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: Fredrik,GitHub,Haard's,Hynek,Kukreti,Noller's,Preet,Schlawack's,github,headspace,https,nikola,ralsina,workflow
 .. tags: Technology
 .. link: 
 .. description: 

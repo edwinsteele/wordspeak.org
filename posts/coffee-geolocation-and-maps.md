@@ -3,7 +3,7 @@
 .. slug: coffee-geolocation-and-maps
 .. date: 2015-05-30 01:42:57 UTC+10:00
 .. tags: 
-.. spellcheck_exceptions: outlier
+.. spellcheck_exceptions: outlier,Geolocation,html
 .. link: 
 .. description: 
 .. type: text

@@ -2,7 +2,7 @@
 .. title: Our Chicago video and photos are up
 .. slug: 20111113our-chicago-video-and-photos-are-up
 .. date: 2011/11/13 06:38:47
-.. spellcheck_exceptions: 
+.. spellcheck_exceptions: geotag,one's
 .. tags: Photography, Travel
 .. link: 
 .. description: 
