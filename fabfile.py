@@ -26,7 +26,7 @@ STAGING_FILESYSTEM_ROOT = "Sites/staging.wordspeak.org"
 STAGING_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, STAGING_FILESYSTEM_ROOT)
 STAGING_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
                                    (STAGING_FQDN, STAGING_FILESYSTEM_ROOT)
-PROD_FQDN = "www.wordspeak.org"
+PROD_FQDN = "origin.wordspeak.org"
 PROD_FILESYSTEM_ROOT = "Sites/www.wordspeak.org"
 PROD_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, PROD_FILESYSTEM_ROOT)
 PROD_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
@@ -159,7 +159,9 @@ def requirements_dump():
         # import gdbm as ddbm
         #
         # It might be necessary to nuke the doit db file after this change:
-        local("pip freeze | egrep -v '(pyinotify|MacFSEvents|bsddb3)'"
+        local("pip freeze | "
+              "egrep -v '(pyinotify|MacFSEvents|bsddb3)' | "
+              "sort -f "
               "> requirements.txt")
 
 
