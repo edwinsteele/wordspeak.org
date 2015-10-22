@@ -2,7 +2,7 @@
 .. title: Stone Churches in Western Sydney and Blue Mountains
 .. slug: 20080204stone-churches-in-western-sydney-and-blue-mountains
 .. date: 2008/02/04 14:06:06
-.. spellcheck_exceptions: Alban's,Blackheath,Hawkesbury,Lapstone,Leura,Moreton,Mulgoa,Penrith,Springwood,UBD,Wentworth,img,ish,jpg,ri,src,srcset,vw
+.. spellcheck_exceptions: Ebenezer,Stephen's,Alban's,Blackheath,Hawkesbury,Lapstone,Leura,Moreton,Mulgoa,Penrith,Springwood,UBD,Wentworth,img,ish,jpg,ri,src,srcset,vw
 .. tags: Photography
 .. link: 
 .. description: 

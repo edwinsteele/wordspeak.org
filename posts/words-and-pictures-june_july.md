@@ -2,7 +2,7 @@
 .. title: Words and Pictures - June and July
 .. slug: words-and-picture-june_july
 .. date: 2013/08/14 17:31:00
-.. spellcheck_exceptions: Ars,Facebook,Finkel,Google,Healy,Kieran,Metadata,Pullum,Technica,qeadzcwrsfxv
+.. spellcheck_exceptions: Hayley,Ars,Facebook,Finkel,Google,Healy,Kieran,Metadata,Pullum,Technica,qeadzcwrsfxv
 .. tags: Reading
 .. link:
 .. description:

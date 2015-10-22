@@ -3,7 +3,7 @@
 .. slug: favourite-reading-of-2014
 .. date: 2015/10/21 17:01:30
 .. tags: 
-.. spellcheck_exceptions: Evernote,Slouka,RAM,Technica,color,XKCD,Nobody's,Google,Ars,Tellerrand,Stapp,Scutts,Lapham's,Muyueh,ve
+.. spellcheck_exceptions: Cegłowski,Maciej,Geoff,Yorker,Yorker,Munroe,Evernote,Slouka,RAM,Technica,color,XKCD,Nobody's,Google,Ars,Tellerrand,Stapp,Scutts,Lapham's,Muyueh,ve
 .. is_orphan: False
 .. link:
 .. description:

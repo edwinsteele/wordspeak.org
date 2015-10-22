@@ -2,7 +2,7 @@
 .. description: 
 .. tags: Technology
 .. date: 2014/10/01 17:00:27
-.. spellcheck_exceptions: CentOS,Grikorik,HTTPS,Ilya,NGINX,OCSP,Optimizing,Qualys,Rackspace,SSL,StartSSL,TCP,TLS,TTTFB,Webpagetest,ansible,config,datacentre,http,nginx,repo,walkthrough,webpage
+.. spellcheck_exceptions: optimisations,optimisations,optimisations,artifacts,CentOS,Grikorik,HTTPS,Ilya,NGINX,OCSP,Optimizing,Qualys,Rackspace,SSL,StartSSL,TCP,TLS,TTTFB,Webpagetest,ansible,config,datacentre,http,nginx,repo,walkthrough,webpage
 .. title: Privacy with HTTPS
 .. slug: privacy-with-https
 

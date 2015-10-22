@@ -2,7 +2,7 @@
 .. title: Farewell Wireless Broadband
 .. slug: 20060402farewell-wireless-broadband
 .. date: 2006/04/02 08:26:33
-.. spellcheck_exceptions: ADSL,Battlestar,BitTorrent,Galactica,Google,PCMCIA,PowerBook,Silverwater,Skype,SkypeOut,Unwired,VOIP,iTunes,internet,kbps,mortem
+.. spellcheck_exceptions: DVDs,gamers,eons,ADSL,Battlestar,BitTorrent,Galactica,Google,PCMCIA,PowerBook,Silverwater,Skype,SkypeOut,Unwired,VOIP,iTunes,internet,kbps,mortem
 .. tags: Technology
 .. link: 
 .. description: 

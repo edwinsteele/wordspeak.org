@@ -2,7 +2,7 @@
 .. title: Words and Pictures - Feb
 .. slug: words-and-pictures-feb
 .. date: 2013/03/04 17:58:12
-.. spellcheck_exceptions: Ars,CPUs,Drepper,Facebook,IEEE,Spurgeon,Technica,pdf
+.. spellcheck_exceptions: storyline,Ulrich,Ars,CPUs,Drepper,Facebook,IEEE,Spurgeon,Technica,pdf
 .. tags: Reading
 .. link: 
 .. description: 

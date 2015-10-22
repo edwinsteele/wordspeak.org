@@ -3,7 +3,7 @@
 .. description: 
 .. tags: Technology
 .. date: 2014/01/22 16:23:15
-.. spellcheck_exceptions: DuckDuckGo,Facebook,FastMail,Gmail,Google,Grigorik,Ilya,Souders,Vimeo,YouTube,blog,iOS,internet
+.. spellcheck_exceptions: Bing,natured,DuckDuckGo,Facebook,FastMail,Gmail,Google,Grigorik,Ilya,Souders,Vimeo,YouTube,blog,iOS,internet
 .. title: Google, it's over between us
 .. slug: google-its-over-between-us
 -->

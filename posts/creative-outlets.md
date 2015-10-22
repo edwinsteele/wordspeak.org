@@ -2,7 +2,7 @@
 .. title: Creative outlets
 .. slug: creative-outlets
 .. date: 2013/09/03 18:05:00
-.. spellcheck_exceptions: blog,workflow
+.. spellcheck_exceptions: scalability,blog,workflow
 .. tags: Technology
 .. link:
 .. description:

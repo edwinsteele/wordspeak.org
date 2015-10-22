@@ -2,7 +2,7 @@
 .. title: Information security in action (or not) after theft
 .. slug: 0060927information-security-in-action-or-not-after-theft
 .. date: 2006/09/27 00:35:51
-.. spellcheck_exceptions: CBA,Optus,else's,hmm,iPod
+.. spellcheck_exceptions: SIM,SIM,Nada,SIM,SIM,SIM,SIM,CBA,Optus,else's,hmm,iPod
 .. tags: Technology
 .. link: 
 .. description: 

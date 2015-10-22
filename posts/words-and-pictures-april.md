@@ -3,7 +3,7 @@
 .. description: 
 .. tags: Reading
 .. date: 2013/05/03 18:09:37
-.. spellcheck_exceptions: AAVE,Arment's,Bullitt,Instapaper,Lex,Longform,RSS,Rififi,Skyfall,iPad,prize
+.. spellcheck_exceptions: centric,AAVE,Arment's,Bullitt,Instapaper,Lex,Longform,RSS,Rififi,Skyfall,iPad,prize
 .. title: Words and Pictures - April
 .. slug: words-and-pictures-april
 -->

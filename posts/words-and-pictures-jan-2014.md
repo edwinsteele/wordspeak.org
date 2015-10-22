@@ -3,7 +3,7 @@
 .. description: 
 .. tags: Reading
 .. date: 2014/02/10 16:54:57
-.. spellcheck_exceptions: Dearing,Hanssen,IMAX,NSA,NSA's,Phillippe,Schlosser,USA's
+.. spellcheck_exceptions: Rands,Dearing,Hanssen,IMAX,NSA,NSA's,Phillippe,Schlosser,USA's
 .. title: Words and Pictures - Jan 2014
 .. slug: words-and-pictures-jan-2014
 -->
