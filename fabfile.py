@@ -12,7 +12,6 @@ import re
 import enchant
 import enchant.checker
 import enchant.tokenize
-import shutil
 import smtplib
 import socket
 import sys
@@ -68,36 +67,7 @@ W3C_RSS_VALIDATION_URL = 'http://validator.w3.org/feed/check.cgi?url=%s'
 W3C_RSS_VALIDATION_TARGETS = [
     'http://staging.wordspeak.org/rss.xml',
 ]
-LANGUAGE_EXPLORER_DIRNAME="language_explorer"
-
-
-class _RstURLFilter(enchant.tokenize.Filter):
-    """Filter skipping over URLs.
-    This filter skips any words matching the following regular expression:
-
-           ^<[a-zA-z]+:\/\/[^\s].*>`_
-
-    That is, any words that are RST defined URLs.
-    """
-    _DOC_ERRORS = ["zA"]
-    _pattern = re.compile(r"^<([a-zA-z]+:/)?/[^\s].*>`_")
-
-    def _skip(self, word):
-        if self._pattern.match(word):
-            return True
-        return False
-
-
-class _RstEmailFilter(enchant.tokenize.Filter):
-    """Filter skipping over restructure text directives
-    """
-    _DOC_ERRORS = ["zA"]
-    _pattern = re.compile(r"^<mailto:.+@[^\.].*\.[a-z]{2,}>`_$")
-
-    def _skip(self, word):
-        if self._pattern.match(word):
-            return True
-        return False
+LANGUAGE_EXPLORER_DIRNAME = "language_explorer"
 
 
 def _does_this_machine_answer_for_this_hostname(dns_name):
@@ -126,13 +96,14 @@ def _does_this_machine_answer_for_this_hostname(dns_name):
     #  on definitely answers for the hostname
     try:
         ptr_lookup_result = socket.gethostbyaddr(
-                socket.gethostbyname(dns_name))[0]
+            socket.gethostbyname(dns_name))[0]
     except socket.herror:
         # No PTR records available and nothing in local /etc/hosts to help.
         # Let's be conservative and say that we don't answer for it.
         return False
 
     return socket.gethostbyname(ptr_lookup_result) in (my_main_ip, '127.0.0.1')
+
 
 def _quietly_run_nikola_cmd(nikola, cmd):
     result = local("%s %s" % (nikola, cmd), capture=True)
@@ -165,7 +136,8 @@ def build():
         # Need to recopy the leaflet.css file as mincss optimises it away
         #  because it can't find any leaflet classes in use (they're inserted
         #  at runtime by the js library
-        local("cp %s/files/assets/leaflet-0.7.3/leaflet.css %s/assets/leaflet-0.7.3/leaflet.css" % (SITE_BASE, OUTPUT_BASE))
+        local("cp %s/files/assets/leaflet-0.7.3/leaflet.css "
+              "%s/assets/leaflet-0.7.3/leaflet.css" % (SITE_BASE, OUTPUT_BASE))
         # Need to recompress css after yuicompressor has run
         #  Can't run post_render_gzip in N7, so let's just do build again
         _quietly_run_nikola_cmd(nikola, "build")
@@ -180,12 +152,13 @@ def requirements_dump():
         #  so exclude them. They'll get pulled in when a pip install doit
         #  is done so there's no loss.
         # bsddb3 is only necessary on MacOS and is a pain to build, so we
-        #  don't use it. This requires a quick change in doit
-        # /Users/esteele/.virtualenvs/wordspeak_n7/lib/python2.7/site-packages/doit/dependency.py
+        #  don't use it. This requires a quick change in doit.
         #
-        # Uncomment the following line in that file (this might require nuking the doit db file):
-        # 
+        # Uncomment the following line in site-packages/doit/dependency.py
+        #
         # import gdbm as ddbm
+        #
+        # It might be necessary to nuke the doit db file after this change:
         local("pip freeze | egrep -v '(pyinotify|MacFSEvents|bsddb3)'"
               "> requirements.txt")
 
@@ -234,7 +207,8 @@ def _sync_site(destination_path):
               '--filter="protect %s" '
               '--filter="exclude *.md" '
               '--filter="exclude *.md.gz" '
-              '-a %s/ %s' % (LANGUAGE_EXPLORER_DIRNAME, OUTPUT_BASE, destination_path))
+              '-a %s/ %s' %
+              (LANGUAGE_EXPLORER_DIRNAME, OUTPUT_BASE, destination_path))
 
 
 def staging_sync():
@@ -343,7 +317,9 @@ def _get_spellcheck_exceptions(lines):
         if line.startswith(".. spellcheck_exceptions:"):
             # Use filter(None so that we don't crash if there aren't any
             #  words specified, even though the tag is there
-            return filter(None, [s.strip() for s in line.split(":")[1].strip().split(",")])
+            word_list = [s.strip() for s in
+                         line.split(":")[1].strip().split(",")]
+            return filter(None, word_list)
     return []
 
 
@@ -445,10 +421,7 @@ def spellchecker(is_interactive_deploy=True):
     pwl_dictionary = enchant.request_pwl_dict(SPELLCHECK_EXCEPTIONS)
     en_spellchecker = enchant.checker.SpellChecker(
         "en_GB",
-        filters=[enchant.tokenize.EmailFilter,
-                 enchant.tokenize.URLFilter,
-                 _RstURLFilter,
-                 _RstEmailFilter]
+        filters=[enchant.tokenize.EmailFilter, enchant.tokenize.URLFilter]
     )
     md_posts = glob.glob(os.path.join(SITE_BASE, "posts", "*.md"))
     md_pages = glob.glob(os.path.join(SITE_BASE, "stories", "*.md"))
@@ -545,16 +518,18 @@ def w3c_checks(output_fd=sys.stdout):
     all_checks_pass = True
     for url in W3C_HTML_VALIDATION_TARGETS:
         r = requests.get(W3C_HTML_VALIDATION_URL %
-                (urllib.quote_plus(url), "json"))
+                         (urllib.quote_plus(url), "json"))
         # messages key in JSON output always exists
-        error_messages = [m["message"] for m in r.json()["messages"] if m["type"] != "info"]
+        error_messages = [m["message"] for m in r.json()["messages"]
+                          if m["type"] != "info"]
         if error_messages:
             output_fd.write("HTML has W3C validation errors (%s):\n" % (url,))
             for message in error_messages:
                 output_fd.write("- %s" % (message.encode('utf-8'),))
             output_fd.write("\n")
-            output_fd.write("Full details: %s\n" % 
-                    (W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url), "html"),))
+            output_fd.write(
+                "Full details: %s\n" %
+                (W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url), "html"),))
             all_checks_pass = False
         else:
             output_fd.write("HTML validates (%s)\n" % (url,))
@@ -607,7 +582,7 @@ def _initialise():
     """Make sure we have all the python modules needed for the build"""
     try:
         import webassets  # for bundle creation
-        import rcssmin # for css minifaction
+        import rcssmin  # for css minifaction
     except ImportError as e:
         # noinspection PyUnusedLocal
         webassets = rcssmin = None
