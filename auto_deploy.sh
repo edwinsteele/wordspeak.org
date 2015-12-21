@@ -51,7 +51,7 @@ function do_deployment {
 }
 
 # Activate virtualenv
-source $(dirname ${FABRIC_EXECUTABLE})/activate
+. $(dirname ${FABRIC_EXECUTABLE})/activate
 do_log "Starting automated deployment process for wordspeak";
 while true; do
     incoming_md_files=$(find ${INCOMING_DIRECTORY} -name "*.md" -print);
