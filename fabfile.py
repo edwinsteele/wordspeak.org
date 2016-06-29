@@ -245,7 +245,6 @@ def linkchecker(output_fd=sys.stdout):
     with settings(hide('warnings'), warn_only=True):
         result = local("linkchecker"
                        " --check-extern"
-                       " --ignore-url .*posts.*"
                        " --config linkcheckerrc"
                        " http://" + STAGING_FQDN,
                        capture=True)

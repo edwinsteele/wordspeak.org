@@ -9,4 +9,6 @@ status=0
 
 [filtering]
 ignorewarnings=http-robots-denied,mail-unverified-address,https-certificate-error
-ignore=mailto:
+ignore=
+  .*posts.*
+  mailto:
