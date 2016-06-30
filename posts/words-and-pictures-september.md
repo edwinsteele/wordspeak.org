@@ -13,7 +13,7 @@ After work provided the most hectic half-year of my career, I'm finally reclaimi
 
 Reading:
 
--   [The Weirdest Languages](http://idibon.com/the-weirdest-languages/) - Tyler Schnoebelen. Mining the [World Atlas of Language Structures (WALS)](http://wals.info/) for common linguistic structures and behaviours. Kudos to the database maintainers, and to the author for some great storytelling.
+-   The Weirdest Languages (http://idibon.com/the-weirdest-languages/) - Tyler Schnoebelen. Mining the [World Atlas of Language Structures (WALS)](http://wals.info/) for common linguistic structures and behaviours. Kudos to the database maintainers, and to the author for some great storytelling.
 -   [In Chișinău](http://www.lrb.co.uk/blog/2013/09/11/james-meek/in-chisinau/) - James Meek (London Review of Books). Perceptive analysis of a few cultural traits brought about by a lost passport in Romania.
 -   [What Is the Icelandic Word for "Four"](http://www.slate.com/articles/arts/the_good_word/2013/07/cultural_differences_in_counting_numbers_and_math_icelandic_numbers_and.html) - Daniel Tammet (Slate) - Language never ceases to amaze, and frustrate!
 -   [How to Write About the Balkans](http://balkanist.net/how-to-write-about-the-balkans/) - Lily Lynch (The Balkanist). You'll recognise the format - very funny.

@@ -29,7 +29,7 @@ Setting up the Linode forced my to brush the cobwebs off the unix sysadmin part 
 What I learnt along the way
 ===========================
 
--   [tmux](http://tmux.sourceforge.net) is awesome.
+-   [tmux](https://tmux.github.io) is awesome.
 -   ssh keys with passwords aren't as hard as I thought (ssh-agent with forwarding is brilliant)
 -   [mosh](http://mosh.mit.edu) is a great idea, but it doesn't support ssh-agent (which is a deal-breaker)
 -   iSSH looks good on the surface but lacks polish and has flaky mosh support

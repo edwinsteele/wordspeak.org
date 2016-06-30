@@ -38,5 +38,5 @@ So while many would be disappointed to spend time writing without the knowledge 
 
 ... that said, it's really cool that you're reading it!
 
-[^1]: I'm happy to accept [gifts](http://architecture.lego.com/en/architecture-studio/architectural-studio-product-info/)
+[^1]: I'm happy to accept [gifts](http://shop.lego.com/en-US/Studio-21050)
 
