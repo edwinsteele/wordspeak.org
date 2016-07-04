@@ -444,8 +444,8 @@ def spellchecker(is_interactive_deploy=True):
                                      lines.index(line) + 1,
                                      ", ".join(en_spellchecker.suggest(err.word))
                     )
+                    print spelling_error
                     if is_interactive_deploy:
-                        print spelling_error
                         action = prompt("Add '%s' to dictionary [add] or "
                                         "replace [type replacement]?"
                                         % (err.word,), default="add").strip()
@@ -456,10 +456,6 @@ def spellchecker(is_interactive_deploy=True):
                             _replace_in_file(file_to_check, err.word, action)
                     else:
                         _send_pushover_summary(spelling_error, "Spelling error: %s" % (err.word,))
-
-    if spelling_errors_found and not is_interactive_deploy:
-        print "Not doing spellcheck substitutions during" \
-              " non-interactive deploy\n"
 
     return spelling_errors_found
 
