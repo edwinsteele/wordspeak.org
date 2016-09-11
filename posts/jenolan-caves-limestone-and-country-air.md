@@ -2,7 +2,7 @@
 .. title: Jenolan Caves - Limestone and Country Air
 .. slug: 20060728jenolan-caves-limestone-and-country-air
 .. date: 2006/07/28 07:48:31
-.. spellcheck_exceptions: Jenolan,Pre,img,jpg,pre,ri,src,srcset,vw,cloudinary,IMG,gykmv
+.. spellcheck_exceptions: Jenolan,pre,Pre
 .. tags: Photography, Travel
 .. link: 
 .. description: 
@@ -27,7 +27,6 @@ Here's the [photo album](http://www.flickr.com/photos/edwin_steele/sets/72157632
 
 And here's a taste from the "Temple of Baal" cave:
 
-<!-- https://res.cloudinary.com/wordspeak/image/upload/v1473577315/IMG_1970_gykmv0.jpg -->
 <a href="https://www.flickr.com/photos/edwin_steele/8412934156" title="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
  <img class="ri"
    src="https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_375/v1473577315/IMG_1970_gykmv0.jpg"
