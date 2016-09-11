@@ -23,7 +23,6 @@ Oh, OK. Here's a taste...
    src="/assets/pictures/8395047739/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-
    srcset="/assets/pictures/8395047739/small_240.jpg 240w, /assets/pictures/8395047739/medium_500.jpg 500w, /assets/pictures/8395047739/large_1024.jpg 1024w, /assets/pictures/8395047739/large-2048_2048.jpg 2048w"
    alt="From the Charlotte's Pass viewing platform. - 2006-01-23 at 01-56-25">
 </a>
