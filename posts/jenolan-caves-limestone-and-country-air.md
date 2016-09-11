@@ -2,7 +2,7 @@
 .. title: Jenolan Caves - Limestone and Country Air
 .. slug: 20060728jenolan-caves-limestone-and-country-air
 .. date: 2006/07/28 07:48:31
-.. spellcheck_exceptions: Jenolan,Pre,img,jpg,pre,ri,src,srcset,vw
+.. spellcheck_exceptions: Jenolan,Pre,img,jpg,pre,ri,src,srcset,vw,cloudinary,IMG,gykmv
 .. tags: Photography, Travel
 .. link: 
 .. description: 
@@ -27,11 +27,15 @@ Here's the [photo album](http://www.flickr.com/photos/edwin_steele/sets/72157632
 
 And here's a taste from the "Temple of Baal" cave:
 
+<!-- https://res.cloudinary.com/wordspeak/image/upload/v1473577315/IMG_1970_gykmv0.jpg -->
 <a href="https://www.flickr.com/photos/edwin_steele/8412934156" title="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
  <img class="ri"
-   src="/assets/pictures/8412934156/medium_375.jpg"
+   src="https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_375/v1473577315/IMG_1970_gykmv0.jpg"
    sizes="(max-width: 50em) 100vw,
           (min-width: 50em) 66vw"
-   srcset="/assets/pictures/8412934156/small_180.jpg 180w, /assets/pictures/8412934156/medium_375.jpg 375w, /assets/pictures/8412934156/large_768.jpg 768w, /assets/pictures/8412934156/large-2048_1536.jpg 1536w"
+   srcset="https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_180/v1473577315/IMG_1970_gykmv0.jpg 180w,
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_375/v1473577315/IMG_1970_gykmv0.jpg 375w,
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_768/v1473577315/IMG_1970_gykmv0.jpg 768w,
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_1536/v1473577315/IMG_1970_gykmv0.jpg 1536w"
    alt="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
 </a>
