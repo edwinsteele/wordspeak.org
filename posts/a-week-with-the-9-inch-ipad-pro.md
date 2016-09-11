@@ -3,7 +3,7 @@
 .. slug: a-week-with-the-9-inch-ipad-pro
 .. date: 2016/04/11 17:40:00
 .. tags:
-.. spellcheck_exceptions: hoc,podcasts
+.. spellcheck_exceptions: Gb,Ultrathin,Logitech,hoc,podcasts
 .. is_orphan: False
 .. link:
 .. description:
