@@ -3,13 +3,13 @@
 .. slug: making-ansible-doas-and-openbsd-play-nicely
 .. date: 2016/06/29 18:50:00
 .. tags:
-.. spellcheck_exceptions:OpenBSD,sudo,doas,Ansible,auditable,securable,Doas
+.. spellcheck_exceptions: unintuitive,OpenBSD,sudo,doas,Ansible,auditable,securable,Doas
 .. is_orphan: False
 .. link:
 .. description:
 -->
 
-A little while ago, OpenBSD replaced sudo in the base system with [doas](http://www.tedunangst.com/flak/post/doas). This transition follows a typical path in the OpenBSD community where a large, difficult to audit daemon or key application is replaced by an auditable and securable alternate implementation. At the same time, features are pruned if they add significant complexity. I don't need all the features of sudo and I like the simplicity and security of doas so I wanted to switch. I use Ansible to provision and manage my small collection of servers and when version 2.0 added support for privilege escalation via doas (via the [become](http://docs.ansible.com/ansible/become.html) keyword) I started to make my switch. The main use-case in my ansible playbooks is where I run as root and `become` my non-admin user so that permissions are set correctly by default, and in this case doas behaves differently...
+A little while ago, OpenBSD replaced sudo in the base system with [doas](http://www.tedunangst.com/flak/post/doas). This transition follows a typical path in the OpenBSD community where a large, difficult to audit daemon or key application is replaced by an auditable and securable alternate implementation. At the same time, features are pruned if they add significant complexity. I don't need all the features of sudo and I like the simplicity and security of doas so I wanted to switch. I use Ansible to provision and manage my small collection of servers and when version 2.0 added support for privilege escalation via doas (via the [become](http://docs.ansible.com/ansible/become.html) keyword) I started to make my switch. The main use-case in my Ansible playbooks is where I run as root and `become` my non-admin user so that permissions are set correctly by default, and in this case doas behaves differently...
 
 ```shell
 # /usr/bin/env | grep -E '^(HOME|USER)='
