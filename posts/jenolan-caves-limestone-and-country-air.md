@@ -29,12 +29,12 @@ And here's a taste from the "Temple of Baal" cave:
 
 <a href="https://www.flickr.com/photos/edwin_steele/8412934156" title="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
  <img class="ri"
-   src="https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_375/v1473577315/IMG_1970_gykmv0.jpg"
-   sizes="(max-width: 50em) 100vw,
+   src="https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_375/v1473577315/IMG_1970_gykmv0.jpg"
+   sizes="(max-width: 50em) 100vw%2C
           (min-width: 50em) 66vw"
-   srcset="https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_180/v1473577315/IMG_1970_gykmv0.jpg 180w,
-           https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_375/v1473577315/IMG_1970_gykmv0.jpg 375w,
-           https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_768/v1473577315/IMG_1970_gykmv0.jpg 768w,
-           https://res.cloudinary.com/wordspeak/image/upload/f_auto,q_auto,w_1536/v1473577315/IMG_1970_gykmv0.jpg 1536w"
+   srcset="https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_180/v1473577315/IMG_1970_gykmv0.jpg 180w%2C
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_375/v1473577315/IMG_1970_gykmv0.jpg 375w%2C
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_768/v1473577315/IMG_1970_gykmv0.jpg 768w%2C
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_1536/v1473577315/IMG_1970_gykmv0.jpg 1536w"
    alt="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
 </a>
