@@ -11,4 +11,4 @@
 
 Recently, I've had a bit of fun combining coffee, programming and geography to plot the locations of single-origin beans that I've tasted in the last year or so.
 
-Here's the result: [Single-origin coffee sources](/pages/single-origin-coffee-sources.html). Note the clustering around the few areas that are [suited for coffee growth](http://www.coffeeresearch.org/agriculture/environment.htm), with Australia as the outlier!
+Here's the result: [Single-origin coffee sources](/pages/single-origin-coffee-sources.html). Note the clustering around the few areas that are [suited for coffee growth](https://web.archive.org/web/20160404133434/http://www.coffeeresearch.org/agriculture/environment.htm), with Australia as the outlier!
