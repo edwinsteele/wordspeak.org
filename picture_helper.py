@@ -1,11 +1,17 @@
-import flickr_api
 import argparse
 import os
+import flickr_api
 
+EXAMPLE_DEFINITION = \
+    "<!-- image: flickr=8412934156,cloudinary=IMG_1970_gykmv0 -->"
 
-PHOTO_SIZES = ("Small", "Medium", "Large", "Large 2048")
+PHOTO_SIZES_PX = (180, 375, 768, 1536)
+DEFAULT_PHOTO_SIZE = 375
 REPO_ASSETS_LOCATION = "/Users/esteele/Code/wordspeak.org/files"
-WEBSERVER_PICTURE_PREFIX = "/assets/pictures/%s"
+FLICKR_URL_TEMPLATE = "https://www.flickr.com/photos/edwin_steele/%s"
+CLOUDINARY_URL_TEMPLATE = \
+    "https://res.cloudinary.com/wordspeak/image/upload/" \
+    "f_auto%%2Cq_auto%%2Cw_%s/%s"
 
 
 def get_env_variable(var_name):
@@ -17,62 +23,54 @@ def get_env_variable(var_name):
         raise RuntimeError(error_msg)
 
 
-def main(photo_id, desired_sizes, api_key, api_secret):
-    flickr_api.set_keys(api_key=api_key, api_secret=api_secret)
-    p = flickr_api.Photo(id=photo_id)
-
-    sizes = p.getSizes()
-    size_descs = sorted([(x, int(sizes[x]["width"])) for x in p.getSizes()],
-                        key=lambda x: int(x[1]))
-
-    wpp = WEBSERVER_PICTURE_PREFIX % (photo_id,)
-    print "Widths available: ",
-    for name, px_width in size_descs:
-        print "%spx (%s)," % (px_width, name),
-
-    print
+def generate_image_markup(img_title, flickr_img_id, cloudinary_img_id):
     print "Anchor with reponsive img tag follows:\n"
-    print '<a href="https://www.flickr.com/photos/edwin_steele/%s"' \
-          ' title="%s">' % (photo_id, p.title)
+    markup_lines = []
+    markup_lines.append('<a href="' +
+                        FLICKR_URL_TEMPLATE % (flickr_img_id,) +
+                        '" title="%s">' % (img_title,))
     # If the browser can't understand source and picture tags, let's
     #  give a regularly sized image
-    print ' <img class="ri"\n' \
-          '   src="%s/medium_%s.jpg"\n' \
-          '   sizes="(max-width: 50em) 100vw,\n' \
-          '          (min-width: 50em) 66vw"\n' % (wpp, sizes["Medium"]["width"]),
+    markup_lines.append(' <img class="ri"')
+    markup_lines.append('   alt="%s"' % (img_title,))
+    markup_lines.append(
+        '   src="' +
+        CLOUDINARY_URL_TEMPLATE % (DEFAULT_PHOTO_SIZE, cloudinary_img_id) +
+        '"'
+    )
+    markup_lines.append('   sizes="(max-width: 50em) 100vw%2C')
+    markup_lines.append('          (min-width: 50em) 66vw"')
 
     srcset_images = []
-    for desired_size in desired_sizes:
-        srcset_images.append('%s/%s_%s.jpg %sw' % (wpp,
-                                     desired_size.replace(" ", "-").lower(),
-                                     sizes[desired_size]["width"],
-                                     sizes[desired_size]["width"]))
-    print '   srcset="%s"' % (", ".join(srcset_images))
-    print '   alt="%s">' % (p.title,)
-    print '</a>\n'
+    for photo_size in PHOTO_SIZES_PX:
+        srcset_images.append(
+            CLOUDINARY_URL_TEMPLATE % (photo_size, cloudinary_img_id) +
+            ' %sw' % (photo_size,)
+        )
+    markup_lines.append('   srcset="%s"' % ("%2C\n".join(srcset_images),))
+    markup_lines.append('</a>')
+    return "\n".join(markup_lines)
 
-    # Always make sure the directory exists
-    # Don't use os.path.join, as it doesn't work with two absolute paths
-    picture_output_dir = REPO_ASSETS_LOCATION + wpp
-    if not os.path.exists(picture_output_dir):
-        print "Making picture output directory: %s" % (picture_output_dir,)
-        os.mkdir(picture_output_dir)
 
-    for desired_size in desired_sizes:
+def main(flickr_img_id, cloudinary_img_id, api_key, api_secret):
+    flickr_api.set_keys(api_key=api_key, api_secret=api_secret)
+    p = flickr_api.Photo(id=flickr_img_id)
 
-        output_file = os.path.join(picture_output_dir,
-                                   "%s_%s.jpg" %
-                                   (desired_size.replace(" ", "-").lower(), sizes[desired_size]["width"]))
-        print "Saving %s version to %s" % (desired_size, output_file),
-        p.save(output_file, size_label=desired_size)
-        print " - Done. (%s bytes)" % os.stat(output_file).st_size
+    img_markup = generate_image_markup(p.title,
+                                       flickr_img_id,
+                                       cloudinary_img_id)
+    print img_markup
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process photos from flickr")
-    parser.add_argument('photo_id', type=int,
+    parser = argparse.ArgumentParser(
+        description="Generate responsive image markup")
+    parser.add_argument('flickr_img_id', type=int,
                         help="Flickr photo ID (usually an 11 digit number")
-    api_key = get_env_variable("FLICKR_API_KEY")
-    api_secret = get_env_variable("FLICKR_API_SECRET")
+    parser.add_argument('cloudinary_img_id',
+                        help="Cloudinary photo ID")
+    flickr_api_key = get_env_variable("FLICKR_API_KEY")
+    flickr_api_secret = get_env_variable("FLICKR_API_SECRET")
     args = parser.parse_args()
-    main(args.photo_id, PHOTO_SIZES, api_key, api_secret)
+    main(args.flickr_img_id, args.cloudinary_img_id,
+         flickr_api_key, flickr_api_secret)
