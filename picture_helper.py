@@ -1,9 +1,6 @@
 import argparse
+import ast
 import os
-import flickr_api
-
-EXAMPLE_DEFINITION = \
-    "<!-- image: flickr=8412934156,cloudinary=IMG_1970_gykmv0 -->"
 
 PHOTO_SIZES_PX = (180, 375, 768, 1536)
 DEFAULT_PHOTO_SIZE = 375
@@ -52,25 +49,51 @@ def generate_image_markup(img_title, flickr_img_id, cloudinary_img_id):
     return "\n".join(markup_lines)
 
 
-def main(flickr_img_id, cloudinary_img_id, api_key, api_secret):
-    flickr_api.set_keys(api_key=api_key, api_secret=api_secret)
-    p = flickr_api.Photo(id=flickr_img_id)
+def extract_image_params(wordspeak_image_element):
+    """Return dictionary of parameters that define a wordspeak image
 
-    img_markup = generate_image_markup(p.title,
-                                       flickr_img_id,
-                                       cloudinary_img_id)
+    <!-- image: {"flickr_id":8412934156,"cloudinary_id":"IMG_1970_gykmv0",
+                 "title":"Temple of Baal Cave: Another shawl feature"} -->
+    """
+    # Ignore enclosing whitespace
+    wsie = wordspeak_image_element.strip()
+    # Opening HTML comment
+    if wsie[:4] != '<!--':
+        return {}
+    wsie = wsie[4:]
+    # Closing HTML comment
+    if wsie[-3:] != '-->':
+        return {}
+    wsie = wsie[:-3]
+    # Ignore enclosing whitespace
+    wsie = wsie.strip()
+    # image: literal
+    if wsie[:6] != 'image:':
+        return {}
+    wsie = wsie[6:]
+    # Remove enclosing whitespace (required by ast.literal_eval)
+    wsie = wsie.strip()
+    try:
+        d = ast.literal_eval(wsie)
+        if isinstance(d, dict):
+            return d
+        return {}
+    except ValueError:
+        return {}
+
+
+def main(element_string):
+    image_params = extract_image_params(element_string)
+    img_markup = generate_image_markup(image_params["title"],
+                                       image_params["flickr_id"],
+                                       image_params["cloudinary_id"])
     print img_markup
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Generate responsive image markup")
-    parser.add_argument('flickr_img_id', type=int,
-                        help="Flickr photo ID (usually an 11 digit number")
-    parser.add_argument('cloudinary_img_id',
-                        help="Cloudinary photo ID")
-    flickr_api_key = get_env_variable("FLICKR_API_KEY")
-    flickr_api_secret = get_env_variable("FLICKR_API_SECRET")
+    parser.add_argument('img_element',
+                        help="Image Element string")
     args = parser.parse_args()
-    main(args.flickr_img_id, args.cloudinary_img_id,
-         flickr_api_key, flickr_api_secret)
+    main(args.img_element)
