@@ -15,6 +15,7 @@ So, armed with the 5mp camera on my new Nokia N95 and with some excellent compan
 
 I present the [Pasha Bulker](http://www.flickr.com/photos/edwin_steele/sets/72157632565445286/) . (In the same vein, you might also enjoy the shots of the [beached Guadalupe](http://www.flickr.com/photos/edwin_steele/8396336043/) that I took in Mauritania in 2005)
 
+<!-- image: {"flickr_id":72157632565445286,"cloudinary_id":"16062007005_omoomb","title":"Pasha Bulker run aground near Newcastle"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/sets/72157632565445286/" title="Pasha Bulker run aground near Newcastle">
  <img class="ri"
    src="/assets/pictures/8396141441/medium_500.jpg"

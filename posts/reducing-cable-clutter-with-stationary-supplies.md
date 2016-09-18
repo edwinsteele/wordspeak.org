@@ -4,13 +4,14 @@
 .. date: 2013/02/20 07:37:27
 .. spellcheck_exceptions: workspace,workspace,Ikea,MacBook,USB,aging,edwin,flickr,href,https,img,jpg,ri,src,srcset,steele,vw,www
 .. tags: Technology
-.. link: 
-.. description: 
+.. link:
+.. description:
 -->
 
 
 The state of my workspace affects my state of mind. Perhaps I shouldn't find it hard to write code when there's clutter, but until I find a way to cope with it, I'll continue to have occasional cleaning frenzies and purges. One such event happened last week and I'm pretty happy with the result.
 
+<!-- image: {"flickr_id":8484480837,"cloudinary_id":"IMG_0452_c7dnyk","title":"My computer setup"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/8484480837" title="My computer setup">
  <img class="ri"
    src="/assets/pictures/8484480837/medium_500.jpg"
@@ -26,6 +27,7 @@ Enter stationary supplies:
 
 -   Bulldog clips (so cables don't fall down the back of the desk when they're not in use)
 
+<!-- image: {"flickr_id":8491900366,"cloudinary_id":"IMG_0455_ds7ege","title":"A bulldog clip holding cables in place"} -->
 a href="https://www.flickr.com/photos/edwin_steele/8491900366" title="A bulldog clip holding cables in place">
  <img class="ri"
    src="/assets/pictures/8491900366/medium_374.jpg"
@@ -37,6 +39,7 @@ a href="https://www.flickr.com/photos/edwin_steele/8491900366" title="A bulldog 
 
 -   Sticky tape (so my headphone cable doesn't run across my desk)
 
+<!-- image: {"flickr_id":8490798077,"cloudinary_id":"IMG_0453_ebnfoq","title":"Sticky tape to hold the headphone extension cable"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/8490798077" title="Sticky tape to hold the headphone extension cable">
  <img class="ri"
    src="/assets/pictures/8490798077/medium_500.jpg"
@@ -48,6 +51,7 @@ a href="https://www.flickr.com/photos/edwin_steele/8491900366" title="A bulldog 
 
 -   Cardboard (so I don't run out of sticky tape stashing a USB hub and long cables)
 
+<!-- image: {"flickr_id":8491899784,"cloudinary_id":"IMG_0454_bn4hco","title":"Cardboard to hold the USB hub and long cables"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/8491899784" title="Cardboard to hold the USB hub and long cables">
  <img class="ri"
    src="/assets/pictures/8491899784/medium_500.jpg"

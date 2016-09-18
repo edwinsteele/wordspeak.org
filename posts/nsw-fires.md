@@ -13,7 +13,7 @@
 
 The [Rural Fire Service](http://www.rfs.nsw.gov.au) are amazing. We've had temperatures in the mid-30 degrees Celsius, winds gusting up to 100km/h and humidity below 20% and they've worked incredibly hard to protect people and properties. Thank you. Please [support them](http://www.rfs.nsw.gov.au/dsp_content.cfm?cat_id=4541) or consider joining up.
 
-
+<!-- image: {"flickr_id":10391713355,"cloudinary_id":"IMG_0015_jebkzi","title":"Smoke from the Linksview fire"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/10391713355" title="Smoke from the Linksview Fire">
  <img class="ri"
    src="/assets/pictures/10391713355/medium_500.jpg"
@@ -26,6 +26,7 @@ The [Rural Fire Service](http://www.rfs.nsw.gov.au) are amazing. We've had tempe
   alt="Smoke from the Linksview Fire">
 </a>
 
+<!-- image: {"flickr_id":10398767634,"cloudinary_id":"IMG_0014_rudkss","title":"Smoke from the Linksview fire"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/10398767634" title="Smoke from the Linksview fire">
  <img class="ri"
    src="/assets/pictures/10398767634/medium_500.jpg"

@@ -1,11 +1,11 @@
-<!-- 
+<!--
 .. title: A quick trip to Shanghai
 .. slug: a-quick-trip-to-shanghai
 .. date: 2015-02-09 08:40:44 UTC+11:00
 .. tags: Photography, Travel
-.. link: 
+.. link:
 .. spellcheck_exceptions: μg,Bund,Pudong,Maglev,Flickr,edwin,flickr,href,https,img,jpg,ri,src,srcset,steele,vw,www
-.. description: 
+.. description:
 .. type: text
 -->
 
@@ -13,7 +13,8 @@ My employer is hiring in Shanghai, so I did a quick trip to conduct a bunch of i
 
 A view from the office on a relatively unpolluted day. The fine particulate matter reading, PM<sub>2.5</sub>, was 90μg/m<sup>3</sup> when this photo was taken.
 
-a href="https://www.flickr.com/photos/edwin_steele/15838260803" title="View from the office">
+<!-- image: {"flickr_id":15838260803,"cloudinary_id":"IMG_1358_fuewfa","title":"View from the office"} -->
+<a href="https://www.flickr.com/photos/edwin_steele/15838260803" title="View from the office">
  <img class="ri"
    src="/assets/pictures/15838260804/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
@@ -27,6 +28,7 @@ a href="https://www.flickr.com/photos/edwin_steele/15838260803" title="View from
 
 The same view 2 days later, with PM<sub>2.5</sub> at 146μg/m<sup>3</sup>. It peaked at 271μg/m<sup>3</sup> with a corresponding Air Quality Index of [321](https://twitter.com/CGShanghaiAir/status/562977673056886784). This level is deemed [Hazardous](http://shanghai.usembassy-china.org.cn/airmonitor.html) - _"Everyone should avoid all physical activity outdoors; people with heart or lung disease, older adults, and children should remain indoors and keep activity levels low"_. Ugh...
 
+<!-- image: {"flickr_id":16274542269,"cloudinary_id":"IMG_1363_zeyums","title":"View from the office, with bonus pollution"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/16274542269" title="View from the office">
  <img class="ri"
    src="/assets/pictures/16274542269/medium_500.jpg"
@@ -39,9 +41,9 @@ The same view 2 days later, with PM<sub>2.5</sub> at 146μg/m<sup>3</sup>. It pe
   alt="View from the office">
 </a>
 
-A panorama from the Bund, looking back to downtown Pudong. 
+A panorama from the Bund, looking back to downtown Pudong.
 
-
+<!-- image: {"flickr_id":16273077108,"cloudinary_id":"IMG_1405_ye9hsg","title":"Pudong from the Bund"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/16273077108" title="Pudong from the Bund">
  <img class="ri"
    src="/assets/pictures/16273077108/medium_500.jpg"
@@ -56,7 +58,7 @@ A panorama from the Bund, looking back to downtown Pudong.
 
 The [Shanghai Maglev Train](https://en.wikipedia.org/wiki/Shanghai_Maglev_Train), just before we boarded. We caught a _slow_ service, which ran at 300 km/h; the fast service runs at 431km/h. I loved the ride.
 
-
+<!-- image: {"flickr_id":16274535609,"cloudinary_id":"IMG_1425_dvpmhq","title":"Shanghai Maglev Train"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/16274535609" title="Shanghai Maglev Train">
  <img class="ri"
    src="/assets/pictures/16274535609/medium_500.jpg"

@@ -11,6 +11,7 @@
 
 Recently, my wife and I took our boys to the [Avalon Airshow](http://www.airshow.com.au/airshow2015/PUBLIC/index.asp) and we had a great time. We stayed in South Yarra, which had lovely views of Melbourne City.
 
+<!-- image: {"flickr_id":16101389873,"cloudinary_id":"P1070845_wbt1wx","title":"Early morning hot air balloons"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/16101389873" title="Early morning hot air balloons">
  <img class="ri"
    src="/assets/pictures/16101389873/medium_500.jpg"
@@ -32,6 +33,7 @@ as is the [2011 Airshow Album](https://www.flickr.com/photos/edwin_steele/sets/7
 
 An F-22 static display:
 
+<!-- image: {"flickr_id":16533949260,"cloudinary_id":"P1070987_spyojb","title":"F-22"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/16533949260" title="F-22">
  <img class="ri"
    src="/assets/pictures/16533949260/medium_500.jpg"
@@ -45,6 +47,8 @@ An F-22 static display:
 </a>
 
 Formation flying by F-16s from the Singapore Air Force:
+
+<!-- image: {"flickr_id":16533922280,"cloudinary_id":"P1070870_usq3yn","title":"F-16 formation flying (Singapore Air Force)"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/16533922280" title="F-16 formation flying (Singapore Air Force)">
  <img class="ri"
    src="/assets/pictures/16533922280/medium_500.jpg"
@@ -59,6 +63,7 @@ Formation flying by F-16s from the Singapore Air Force:
 
 The KC-30 aerial refuelling plane (that flew later in the day):
 
+<!-- image: {"flickr_id":16695450286,"cloudinary_id":"P1070959_q5ohwl","title":"KC-30 tanker"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/16695450286" title="KC-30 Tanker">
  <img class="ri"
    src="/assets/pictures/16695450286/medium_500.jpg"
@@ -70,3 +75,4 @@ The KC-30 aerial refuelling plane (that flew later in the day):
          /assets/pictures/16695450286/large_2048-2048.jpg 2048w"
   alt="KC-30 Tanker">
 </a>
+

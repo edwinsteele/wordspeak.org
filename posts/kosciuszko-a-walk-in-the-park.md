@@ -18,6 +18,7 @@ Now, would it surprise you that I took photos? Honestly, I'm really thrilled wit
 
 Oh, OK. Here's a taste...
 
+<!-- image: {"flickr_id":8395047739,"cloudinary_id":"char_viewing_1_r571xy","title":"View from the Charlotte's pass viewing platform"} -->
 <a href="https://www.flickr.com/photos/edwin_steele/8395047739" title="From the Charlotte's Pass viewing platform. - 2006-01-23 at 01-56-25">
  <img class="ri"
    src="/assets/pictures/8395047739/medium_500.jpg"
