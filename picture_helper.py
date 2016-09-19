@@ -21,6 +21,8 @@ def get_env_variable(var_name):
 
 
 def generate_image_markup(img_title, flickr_img_id, cloudinary_img_id):
+    # XXX - need to differentiate between a link to a set, and to a
+    #       specific photo e.g. pasha bulker is a set
     print "Anchor with reponsive img tag follows:\n"
     markup_lines = []
     markup_lines.append('<a href="' +
@@ -82,18 +84,26 @@ def extract_image_params(wordspeak_image_element):
         return {}
 
 
-def main(element_string):
-    image_params = extract_image_params(element_string)
-    img_markup = generate_image_markup(image_params["title"],
-                                       image_params["flickr_id"],
-                                       image_params["cloudinary_id"])
-    print img_markup
+def replace_image_info_in_file(filename):
+    with open(filename, "rw+") as f:
+        for line in f:
+            image_params = extract_image_params(line)
+            if image_params:
+                img_markup = generate_image_markup(
+                    image_params["title"],
+                    image_params["flickr_id"],
+                    image_params["cloudinary_id"]
+                )
+                print img_markup
+
+
+def main(markdown_filename):
+    replace_image_info_in_file(markdown_filename)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Generate responsive image markup")
-    parser.add_argument('img_element',
-                        help="Image Element string")
+    parser.add_argument('markdown_filename')
     args = parser.parse_args()
-    main(args.img_element)
+    main(args.markdown_filename)
