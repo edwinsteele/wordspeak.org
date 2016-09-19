@@ -15,7 +15,7 @@ geopy==1.10.0
 husl==4.0.3
 idna==2.1
 ipaddress==1.0.17
-LinkChecker==9.3
+LinkChecker==9.2
 Logbook==1.0.0
 lxml==3.6.4
 Mako==1.0.4
