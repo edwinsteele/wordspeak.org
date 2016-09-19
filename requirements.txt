@@ -7,9 +7,9 @@ cryptography==1.5
 cssselect==0.9.1
 docutils==0.12
 doit==0.29.0
-ecdsa==0.11
+ecdsa==0.13
 enum34==1.1.6
-Fabric==1.7.0
+Fabric==1.12.0
 flickr-api==0.5
 geopy==1.10.0
 husl==4.0.3
@@ -25,7 +25,7 @@ mincss==0.8.1
 natsort==5.0.1
 Nikola==7.8.0
 oauth==1.0.1
-paramiko==2.0.2
+paramiko==1.17.2
 piexif==1.0.7
 Pillow==2.6.1
 pyasn1==0.1.9
