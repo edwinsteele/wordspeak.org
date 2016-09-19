@@ -14,7 +14,7 @@ My employer is hiring in Shanghai, so I did a quick trip to conduct a bunch of i
 A view from the office on a relatively unpolluted day. The fine particulate matter reading, PM<sub>2.5</sub>, was 90μg/m<sup>3</sup> when this photo was taken.
 
 <!-- image: {"flickr_id":15838260803,"cloudinary_id":"IMG_1358_fuewfa","title":"View from the office"} -->
-<a href="https://www.flickr.com/photos/edwin_steele/15838260803" title="View from the office">
+<a href="https://www.flickr.com/photos/edwin_steele/15838260804" title="View from the office">
  <img class="ri"
    src="/assets/pictures/15838260804/medium_500.jpg"
    sizes="(max-width: 50em) 100vw,
