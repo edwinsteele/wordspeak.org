@@ -27,15 +27,4 @@ Here's the [photo album](http://www.flickr.com/photos/edwin_steele/sets/72157632
 
 And here's a taste from the "Temple of Baal" cave:
 
-<!-- image: {"flickr_id":8412934156,"cloudinary_id":"IMG_1970_gykmv0","title":"Temple of Baal Cave: Another shawl feature"} -->
-<a href="https://www.flickr.com/photos/edwin_steele/8412934156" title="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
- <img class="ri"
-   src="https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_375/IMG_1970_gykmv0"
-   sizes="(max-width: 50em) 100vw,
-          (min-width: 50em) 66vw"
-   srcset="https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_180/IMG_1970_gykmv0 180w,
-           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_375/IMG_1970_gykmv0 375w,
-           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_768/IMG_1970_gykmv0 768w,
-           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_1536/IMG_1970_gykmv0 1536w"
-   alt="Temple of Baal Cave: Another shawl feature - 2006-06-12 at 05-54-44">
-</a>
+{{% wordspeak_image flickr_id=8412934156 cloudinary_id=IMG_1970_gykmv0 title="Temple of Baal Cave: A shawl feature" %}}
