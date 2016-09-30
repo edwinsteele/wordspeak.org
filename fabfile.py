@@ -349,7 +349,6 @@ def _non_directive_lines(lines):
 
     so the spell checker doesn't get confused"""
     in_code_directive = False
-    in_img_tag = False
     for line in lines:
         if line.startswith("```"):
             if in_code_directive:
@@ -365,23 +364,8 @@ def _non_directive_lines(lines):
             #  directives used in the header
             continue
 
-        # Hacky, but effective. Large image tags are split over several
-        #  lines for readability, but we don't care about other tag types
-        # Markdown directives are only valid at the start of the line, but
-        #  html can be enclosed in spaces and still be valid, so we need
-        #  to strip it.
-        # We can't strip the whole line, at the start of each loop, however
-        #  because we need to yield it unmodified
-        if line.strip().startswith("<img"):
-            if not line.strip().endswith(">"):
-                in_img_tag = True
-            continue
-
-        if line.strip().endswith(">"):
-            in_img_tag = False
-            continue
-
-        if in_img_tag:
+        if line.startswith("{{%"):
+            # is a Nikola shortcode... ignore
             continue
 
         yield line

@@ -39,44 +39,11 @@ Hawkesbury
 -   *St Matthew's Anglican, Windsor*. Very large, regal, red-brick church. Building dates from mid-1800's. Surrounded by a cemetery. Very large windows, bell-tower and high roof.
 -   *Uniting Church, Ebenezer*: This was too distant for us to bother seeing but is worth mentioning anyway. Apparently it's Australia's oldest church building, is stone and is very picturesque.
 
-<!-- image: {"flickr_id":8412781158,"cloudinary_id":"05012008217_lw1ddn","title":"Leura Catholic"} -->
-<a href="https://www.flickr.com/photos/edwin_steele/8412781158" title="Leura Catholic">
- <img class="ri"
-   src="/assets/pictures/8412781158/medium_500.jpg"
-   sizes="(max-width: 50em) 100vw,
-          (min-width: 50em) 66vw"
-   srcset="/assets/pictures/8412781158/small_240.jpg 240w,
-         /assets/pictures/8412781158/medium_500.jpg 500w,
-         /assets/pictures/8412781158/large_1024.jpg 1024w"
-         /assets/pictures/8412781158/large_2048-2048.jpg 2048w"
-  alt="Leura Catholic">
-</a>
+{{% wordspeak_image flickr_id=8412781158 cloudinary_id="05012008217_lw1ddn" title="Leura Catholic" %}}
 
-<!-- image: {"flickr_id":8412777254,"cloudinary_id":"05012008297_noh5fi","title":"St Peter's Anglican, Mount Victoria"} -->
-<a href="https://www.flickr.com/photos/edwin_steele/8412777254" title="St Peter's Anglican, Mount Victoria">
- <img class="ri"
-   src="/assets/pictures/8412777254/medium_500.jpg"
-   sizes="(max-width: 50em) 100vw,
-          (min-width: 50em) 66vw"
-   srcset="/assets/pictures/8412777254/small_240.jpg 240w,
-         /assets/pictures/8412777254/medium_500.jpg 500w,
-         /assets/pictures/8412777254/large_1024.jpg 1024w"
-         /assets/pictures/8412777254/large_2048-2048.jpg 2048w"
-  alt="St Peter's Anglican, Mount Victoria">
-</a>
+{{% wordspeak_image flickr_id=8412777254 cloudinary_id="05012008297_noh5fi" title="St Peter's Anglican, Mount Victoria" %}}
 
-<!-- image: {"flickr_id":8411679059,"cloudinary_id":"12012008337_halati","title":"St James' Anglican, Pitt Town"} -->
-<a href="https://www.flickr.com/photos/edwin_steele/8411679059" title="St James' Anglican Pitt Town">
- <img class="ri"
-   src="/assets/pictures/8411679059/medium_500.jpg"
-   sizes="(max-width: 50em) 100vw,
-          (min-width: 50em) 66vw"
-   srcset="/assets/pictures/8411679059/small_240.jpg 240w,
-         /assets/pictures/8411679059/medium_500.jpg 500w,
-         /assets/pictures/8411679059/large_1024.jpg 1024w"
-         /assets/pictures/8411679059/large_2048-2048.jpg 2048w"
-  alt="St James' Anglican Pitt Town">
-</a>
+{{% wordspeak_image flickr_id=8411679059 cloudinary_id="12012008337_halati" title="St James' Anglican, Pitt Town" %}}
 
 **In order:** Catholic church (Leura), St Peters Anglican (Mt. Victoria), St James Anglican (Pitt Town)
 

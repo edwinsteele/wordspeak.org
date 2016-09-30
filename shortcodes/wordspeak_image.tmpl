@@ -1,0 +1,16 @@
+## XXX Generalise...
+% if flickr_id=="72157632565445286":
+<a href="https://www.flickr.com/photos/edwin_steele/sets/${flickr_id}" title="${title}">
+% else:
+<a href="https://www.flickr.com/photos/edwin_steele/${flickr_id}" title="${title}">
+% endif
+ <img class="ri"
+   src="https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_375/${cloudinary_id}"
+   sizes="(max-width: 50em) 100vw,
+          (min-width: 50em) 66vw"
+   srcset="https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_180/${cloudinary_id} 180w,
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_375/${cloudinary_id} 375w,
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_768/${cloudinary_id} 768w,
+           https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_1536/${cloudinary_id} 1536w"
+   alt="${title}">
+</a>
