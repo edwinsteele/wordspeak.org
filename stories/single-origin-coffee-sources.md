@@ -2,7 +2,7 @@
 .. title: Single-origin coffee sources
 .. slug: single-origin-coffee-sources
 .. date: 2015-05-29 13:50:11 UTC+10:00
-.. spellcheck_exceptions: geolocated,Javascript,LatLng,OpenStreetMap,addPoints,addTo,clickable,geo,geolocation,href,http,osm,png,programatically,px,py,setView,tileLayer
+.. spellcheck_exceptions: geolocated,Javascript,LatLng,OpenStreetMap,addPoints,addTo,clickable,geo,geolocation,href,https,openstreetmap,png,programatically,px,py,setView,tileLayer
 .. tags: 
 .. link: 
 .. description: 
@@ -36,8 +36,8 @@ The location markers are clickable to show more information about the beans.
 <script src="/assets/single_origin_coffee_data.js"></script>
 <script>
 var map = L.map('map');
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 map.setView(new L.LatLng(0, 0), 1);
 addPoints();
