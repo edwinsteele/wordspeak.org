@@ -20,37 +20,8 @@ In technical terms the map provided an opportunity to:
 -   learn how to zoom and scroll the map, which was surprisingly easy (if you're willing to tolerate a few glitches)
 -   implement mouse-overs to show another dimension of data, even though it requires the user to interact with the graph to extract that data. There doesn't seem to be a clean way to do mouse-overs as the SVG spec doesn't offer z-positioning, so the method feels a bit dirty.
 
+<link rel="stylesheet" href="/assets/d3_nt_sla_map.css" />
 <div id="d3_top_level_div_map"></div>
-<style type="text/css">
-
-    .sla path {
-      stroke: #fff;
-      stroke-width: 0.1px;
-    }
-
-    .axis path {
-      fill: none;
-      stroke: #C0C0C0;
-    }
-
-    .axis text {
-      font-size: 9px;
-    }
-
-    .legendtext {
-      font-size: 10px;
-      stroke-width: 0.75px;
-    }
-
-    #tooltip {
-      position: absolute;
-      z-index: 10;
-      visibility: hidden;
-      background-color: yellow;
-      font-size: 12px;
-    }
-
-</style>
 
 This scatterplot attempts to help answer the following question:
 

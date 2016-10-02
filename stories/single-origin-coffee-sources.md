@@ -19,28 +19,9 @@ The script and the Javascript are quick-and-dirty jobs - this was definitely mor
 The location markers are clickable to show more information about the beans.
 
 <link rel="stylesheet" href="/assets/leaflet-0.7.3/leaflet.css" />
-<style>
-@media(min-width:870px) {
-	#map { height: 416px; width: 555px; }
-}
-@media(max-width:870px) {
-	#map { height: 337px; width: 450px; }
-}
-@media(max-width:500px) {
-	#map { height: 300px; width: 400px; }
-}
-</style>
+<link rel="stylesheet" href="/assets/single_origin_coffee.css" />
 <div id="map"></div>
-
 <script src="/assets/leaflet-0.7.3/leaflet.js"></script>
-<script src="/assets/single_origin_coffee_data.js"></script>
-<script>
-var map = L.map('map');
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-map.setView(new L.LatLng(0, 0), 1);
-addPoints();
-</script>
+<script src="/assets/single_origin_coffee.js"></script>
 
 
