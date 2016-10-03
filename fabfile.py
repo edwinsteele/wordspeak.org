@@ -49,23 +49,20 @@ UNWANTED_BUILD_ARTIFACTS = [
 KEY_FILES = ["conf.py", "fabfile.py"]
 W3C_HTML_VALIDATION_URL = 'https://validator.w3.org/nu/?doc=%s&out=%s'
 W3C_HTML_VALIDATION_TARGETS = [
-    'https://www.wordspeak.org/index.html',
-    'https://www.wordspeak.org/pages/about.html',
-    'https://www.wordspeak.org/posts/write-because-you-want-to.html',
-    'https://www.wordspeak.org/posts/nsw-fires.html',
+    'https://origin.wordspeak.org/index.html',
+    'https://origin.wordspeak.org/pages/about.html',
+    'https://origin.wordspeak.org/posts/write-because-you-want-to.html',
+    'https://origin.wordspeak.org/posts/nsw-fires.html',
 ]
 W3C_CSS_VALIDATION_URL = 'http://jigsaw.w3.org/css-validator/validator?' \
                          'uri=%s&profile=css3&usermedium=all&warning=1&' \
                          'vextwarning=&lang=en&output=%s'
 W3C_CSS_VALIDATION_TARGETS = [
-    'https://www.wordspeak.org/assets/css/all-nocdn.css',
+    'https://origin.wordspeak.org/assets/css/all-nocdn.css',
 ]
 W3C_RSS_VALIDATION_URL = 'http://validator.w3.org/feed/check.cgi?url=%s'
-# RSS validator chokes on https, so we use staging, which has an http
-#  URL, even though it will be out of date if the deployment is done
-#  from a machine that has a local staging instance
 W3C_RSS_VALIDATION_TARGETS = [
-    'http://staging.wordspeak.org/rss.xml',
+    'https://origin.wordspeak.org/rss.xml',
 ]
 LANGUAGE_EXPLORER_DIRNAME = "language_explorer"
 
@@ -470,7 +467,7 @@ def orphans(output_fd=sys.stdout):
 
     Returns whether the task ran successfully i.e. found no problems
     """
-    SIZE_OF_URL_CRUFT = len("http:///")
+    SIZE_OF_URL_CRUFT = len("https:///")
     URL_FIELD = 7
     LINKCHECKER_OUTPUT = "linkchecker-output.csv"
     html_files_on_filesystem = set()
@@ -482,7 +479,7 @@ def orphans(output_fd=sys.stdout):
               " --file-output=csv/" + LINKCHECKER_OUTPUT + ""
               " --no-status"
               " --ignore-url '!(" + STAGING_FQDN + ")'"
-              " http://" + STAGING_FQDN,
+              " https://" + STAGING_FQDN,
               capture=True)
 
     with open(LINKCHECKER_OUTPUT) as f:
