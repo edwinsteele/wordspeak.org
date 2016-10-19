@@ -23,7 +23,7 @@ Markdown==2.6.6
 MarkupSafe==0.23
 mincss==0.8.1
 natsort==5.0.1
-Nikola==7.8.0
+Nikola==7.8.1
 oauth==1.0.1
 paramiko==1.17.2
 piexif==1.0.7
