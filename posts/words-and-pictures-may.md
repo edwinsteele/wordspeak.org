@@ -2,14 +2,14 @@
 .. title: Words and Pictures - May
 .. slug: words-and-pictures-may
 .. date: 2013/06/05 17:38:47
-.. spellcheck_exceptions: Jabbar,Schettler,Spurgeon
+.. spellcheck_exceptions: wapm,Jabbar,Schettler,Spurgeon
 .. tags: Reading
 .. link:
 .. description:
 -->
 
 
-Fiction involving time-travel is inconsistent, and even some of my beloved Star Trek Voyager episodes have plot holes big enough for a truck, so I was surprised to find myself buying and devouring three volumes [^1] of the time-travel series "Kirov" last month. It was great reading, as were a number of other articles.
+Fiction involving time-travel is inconsistent, and even some of my beloved Star Trek Voyager episodes have plot holes big enough for a truck, so I was surprised to find myself buying and devouring three volumes [^wapm-1] of the time-travel series "Kirov" last month. It was great reading, as were a number of other articles.
 
 Reading:
 
@@ -24,5 +24,5 @@ Video:
 
 -   [This Is Water - Full Commencement Speech at Kenyon College](https://www.youtube.com/watch?v=SFt7EzpsZQo) - David Foster Wallace. ([transcript](http://moreintelligentlife.com/story/david-foster-wallace-in-his-own-words)). So insightful, and relevant quite apart from age and education.
 
-[^1]: Can a series of e-books be a volume, or is there another collective noun?
+[^wapm-1]: Can a series of e-books be a volume, or is there another collective noun?
 

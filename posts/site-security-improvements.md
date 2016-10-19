@@ -3,7 +3,7 @@
 .. slug: site-security-improvements
 .. date: 2016/10/07 07:01:00
 .. tags:
-.. spellcheck_exceptions: CSP,HSTS,XSS,evaluator,validator,SecurityHeaders,io,Helme's,Qualys,JavaScript
+.. spellcheck_exceptions: ssi,CSP,HSTS,XSS,evaluator,validator,SecurityHeaders,io,Helme's,Qualys,JavaScript
 .. is_orphan: False
 .. link:
 .. description:
@@ -23,6 +23,6 @@ I already had a reasonable SSL setup but while looking at the [Mozilla web secur
 https://www.ssllabs.com/ssltest/analyze.html)
 
 # Outcome
-It took about 4 hours to make the changes, and after the changes were applied, this site [^1] moved from an A to an A+ on the Qualys SSL Report. The Mozilla Observatory tool gives the site an A+ and the SecurityHeaders.io validator gives it an A. My [nginx config is available on GitHub](https://github.com/edwinsteele/setup-scripts/tree/master/ansible/roles/webhost/files).
+It took about 4 hours to make the changes, and after the changes were applied, this site [^ssi-1] moved from an A to an A+ on the Qualys SSL Report. The Mozilla Observatory tool gives the site an A+ and the SecurityHeaders.io validator gives it an A. My [nginx config is available on GitHub](https://github.com/edwinsteele/setup-scripts/tree/master/ansible/roles/webhost/files).
  
-[^1]: Actually, I use Cloudflare as a CDN, so I ran the tests against [my origin server](https://origin.wordspeak.org). 
+[^ssi-1]: Actually, I use Cloudflare as a CDN, so I ran the tests against [my origin server](https://origin.wordspeak.org). 

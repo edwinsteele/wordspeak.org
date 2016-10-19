@@ -14,7 +14,7 @@ This blog often reads like a diary, so one might ask why I bother to publish it 
 Writing is a creative outlet
 ============================
 
-I think everyone benefits from having creative outlets. Some people play a musical instrument or sing, some paint and some build big Lego models. [^1] I like to write and I think writing concise, clear, elegant statements is a noble, valuable and satisfying pursuit. I spend many hours each week writing email yet I rarely have the luxury of crafting and polishing, so I choose to write and re-write the few words that appear here - it gives me a chance to perfect the text. The degree of polish given to the words is completely disproportionate to the number of readers or the topic, but hobbies are rarely rational undertakings, are they?
+I think everyone benefits from having creative outlets. Some people play a musical instrument or sing, some paint and some build big Lego models. [^co-1] I like to write and I think writing concise, clear, elegant statements is a noble, valuable and satisfying pursuit. I spend many hours each week writing email yet I rarely have the luxury of crafting and polishing, so I choose to write and re-write the few words that appear here - it gives me a chance to perfect the text. The degree of polish given to the words is completely disproportionate to the number of readers or the topic, but hobbies are rarely rational undertakings, are they?
 
 As long as it's satisfying and I have a little spare time, I'll keep writing, and if I have extra time, I'll even write a little less.
 
@@ -38,5 +38,5 @@ So while many would be disappointed to spend time writing without the knowledge 
 
 ... that said, it's really cool that you're reading it!
 
-[^1]: I'm happy to accept [gifts](http://shop.lego.com/en-US/Studio-21050)
+[^co-1]: I'm happy to accept [gifts](http://shop.lego.com/en-US/Studio-21050)
 

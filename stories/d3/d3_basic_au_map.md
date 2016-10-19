@@ -12,7 +12,7 @@
 Australian States coloured by Awesomeness
 =========================================
 
-This was one of my first d3 experiments. I wanted to see a d3 map showing something other than the USA, which meant that I needed to work out how to generate GeoJSON files [^1] and get my head around the projection mechanisms in d3. It also gave me an opportunity to play with colour scales.
+This was one of my first d3 experiments. I wanted to see a d3 map showing something other than the USA, which meant that I needed to work out how to generate GeoJSON files [^d3amd-1] and get my head around the projection mechanisms in d3. It also gave me an opportunity to play with colour scales.
 
 <link rel="stylesheet" href="/assets/d3_basic_au_map.css" />
 <div id="d3_top_level_div"></div>
@@ -26,5 +26,5 @@ I made the GeoJSON file by converting ESRI Shapefiles from the [2006 Australian 
 <script type="text/javascript" src="/d3-projects/lib/d3.v2.js"></script>
 <script type="text/javascript" src="/assets/d3_basic_au_map.js"</script>
 
-[^1]: Please let me know of a source of Australian maps in geojson format, if you're aware of one
+[^d3amd-1]: Please let me know of a source of Australian maps in geojson format, if you're aware of one
 

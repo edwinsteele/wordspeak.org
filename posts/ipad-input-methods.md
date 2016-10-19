@@ -2,7 +2,7 @@
 .. title: iPad Input Methods
 .. slug: ipad-input-methods
 .. date: 2013/04/11 16:24:20
-.. spellcheck_exceptions: Bluetooth,BookCase,Kensington,Logitech,MyScript,Noteshelf,PenUltimate,Portenzo,Siri,Siri's,Ultrathin,blog,iOS,iPad,iPad's
+.. spellcheck_exceptions: iim,Bluetooth,BookCase,Kensington,Logitech,MyScript,Noteshelf,PenUltimate,Portenzo,Siri,Siri's,Ultrathin,blog,iOS,iPad,iPad's
 .. tags: Technology
 .. link: 
 .. description: 
@@ -19,7 +19,7 @@ I snickered at Siri's foibles when it was released but it's definitely improved 
 Stylus
 ======
 
-I learnt to use a stylus when I had a [Palm M500](https://en.wikipedia.org/wiki/Palm_m500_series) and I found it quite an effective input method, and faster than a touch-screen keyboard. On the iPad I use [MyScript Notes](http://www.visionobjects.com/en/myscript/note-taking-and-forms-applications/myscript-notes-mobile/ios/), with a Kensington Virtuoso stylus and it's working well for me. MyScript Notes has very good handwriting recognition and a number of easy gestures to erase and move text which help with the iPad's inability to easily edit text (my finger always makes it hard to place the cursor when I want to correct a spelling mistake). It also exports the text to other applications but I see that as a workaround because it's an App and not a system-wide service , like it was on the Palm Pilot. I do wish stylus input were available for all applications in the way that Siri is; I can live in hope. There are other iOS applications that support stylus input, including Penultimate, but they didn't have the features that I was looking for. There are reviews out there that compare them, so I won't bother [^1].
+I learnt to use a stylus when I had a [Palm M500](https://en.wikipedia.org/wiki/Palm_m500_series) and I found it quite an effective input method, and faster than a touch-screen keyboard. On the iPad I use [MyScript Notes](http://www.visionobjects.com/en/myscript/note-taking-and-forms-applications/myscript-notes-mobile/ios/), with a Kensington Virtuoso stylus and it's working well for me. MyScript Notes has very good handwriting recognition and a number of easy gestures to erase and move text which help with the iPad's inability to easily edit text (my finger always makes it hard to place the cursor when I want to correct a spelling mistake). It also exports the text to other applications but I see that as a workaround because it's an App and not a system-wide service , like it was on the Palm Pilot. I do wish stylus input were available for all applications in the way that Siri is; I can live in hope. There are other iOS applications that support stylus input, including Penultimate, but they didn't have the features that I was looking for. There are reviews out there that compare them, so I won't bother [^iim-1].
 
 External Keyboards
 ==================
@@ -49,5 +49,5 @@ Table Reference Appendix Thing
   </tbody>
 </table>
 
-[^1]: [PenUltimate vs MyScript Notes vs Notability vs Noteshelf](http://www.dependentongadgets.com/dependent-on-gadgets/2012/10/penultimate-vs-myscript-notes-vs-notability-vs-noteshelf)
+[^iim-1]: [PenUltimate vs MyScript Notes vs Notability vs Noteshelf](http://www.dependentongadgets.com/dependent-on-gadgets/2012/10/penultimate-vs-myscript-notes-vs-notability-vs-noteshelf)
 
