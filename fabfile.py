@@ -453,6 +453,7 @@ def spellchecker(is_interactive_deploy=True):
                         if action == "add":
                             _add_to_spellcheck_exceptions(file_to_check,
                                                           err.word)
+                            pwl_dictionary.add(err.word)
                         else:
                             _replace_in_file(file_to_check, err.word, action)
                     else:
