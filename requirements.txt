@@ -9,7 +9,7 @@ docutils==0.12
 doit==0.29.0
 ecdsa==0.13
 enum34==1.1.6
-Fabric==1.12.0
+Fabric3==1.12.post1
 geopy==1.10.0
 husl==4.0.3
 idna==2.1
