@@ -18,7 +18,7 @@ import sys
 import tempfile
 import requests
 import conf
-from pushover import Client
+from chump import Application
 
 TILDE = os.path.expanduser("~")
 STAGING_FQDN = "staging.wordspeak.org"
@@ -595,9 +595,9 @@ def _initialise():
 
 
 def _send_pushover_summary(message, title):
-    client = Client(get_env_variable("WORDSPEAK_PUSHOVER_USER"),
-                    api_token=get_env_variable("WORDSPEAK_PUSHOVER_API_TOKEN"))
-    return client.send_message(message, title=title)
+    app = Application(get_env_variable("WORDSPEAK_PUSHOVER_API_TOKEN"))
+    user = app.get_user(get_env_variable("WORDSPEAK_PUSHOVER_USER"))
+    return user.send_message(message=message, title=title)
 
 
 def post_deploy():
