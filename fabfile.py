@@ -31,6 +31,7 @@ PROD_FILESYSTEM_ROOT = "Sites/www.wordspeak.org"
 PROD_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, PROD_FILESYSTEM_ROOT)
 PROD_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
                                 (PROD_FQDN, PROD_FILESYSTEM_ROOT)
+PATH_TO_LINKCHECKER = "/home/esteele/.virtualenvs/linkchecker/bin/linkchecker"
 DEV_NIKOLA = os.path.join(TILDE,
                           "Code/nikola-edwinsteele/nikola/scripts/nikola")
 REL_NIKOLA = os.path.join(TILDE, ".virtualenvs/wordspeak_n7/bin/nikola")
@@ -240,7 +241,7 @@ def linkchecker(output_fd=sys.stdout):
     Returns whether the task ran successfully i.e. found no problems
     """
     with settings(hide('warnings'), warn_only=True):
-        result = local("linkchecker"
+        result = local(PATH_TO_LINKCHECKER +
                        " --check-extern"
                        " --config linkcheckerrc"
                        " http://" + STAGING_FQDN,
