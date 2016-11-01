@@ -1,3 +1,7 @@
+from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+from builtins import map
 import csv
 import glob
 import os
@@ -6,7 +10,7 @@ import smtplib
 import socket
 import sys
 import tempfile
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from email.mime.text import MIMEText
 from fabric.api import abort, local, settings
 from fabric.colors import green, red, yellow
@@ -107,17 +111,17 @@ def _quietly_run_nikola_cmd(nikola, cmd):
     result = local("%s %s" % (nikola, cmd), capture=True)
     if "TaskFailed" in result.stdout or \
             "WARNING" in result.stderr:
-        print "Stdout:"
-        print result.stdout
-        print "Stderr:"
-        print result.stderr
+        print("Stdout:")
+        print(result.stdout)
+        print("Stderr:")
+        print(result.stderr)
         abort("Nikola command '%s' failed." % (cmd,))
     else:
         if result.stderr:
-            print "%s actions performed\n" % \
-                  (len(result.stderr.splitlines()) - 1),
+            print("%s actions performed\n" % \
+                  (len(result.stderr.splitlines()) - 1), end=' ')
         else:
-            print "No output from command."
+            print("No output from command.")
 
 
 def build():
@@ -174,8 +178,8 @@ def maybe_add_untracked_files(is_interactive_deploy):
                 if not confirm("Add untracked file '%s'?" % (line[3:],)):
                     continue
             else:
-                print "Adding untracked file '%s' during non-interactive" \
-                      " deploy" % (line[3:],)
+                print("Adding untracked file '%s' during non-interactive" \
+                      " deploy" % (line[3:],))
 
             with cd(SITE_BASE):
                 local("git add '%s'" % (line[3:],))
@@ -186,7 +190,7 @@ def repo_status(is_interactive_deploy):
     with cd(SITE_BASE):
         result = local("git status --porcelain", capture=True)
     if result.stdout:
-        print result.stdout
+        print(result.stdout)
         if is_interactive_deploy:
             response = prompt("Repo has uncommitted/untracked files. "
                               "'abort' to abort or type a commit message",
@@ -250,13 +254,13 @@ def linkchecker(output_fd=sys.stdout):
     summary_line = result.stdout.splitlines()[-2].replace(
         "That's it.", "Linkchecker summary:")
     if result.failed:
-        print yellow(summary_line)
+        print(yellow(summary_line))
         # Failures are listed from the tenth line
         output_fd.write("Failures with linkchecker:\n%s\n" %
                         ("\n".join(result.stdout.splitlines()[9:])))
         return False
     else:
-        print green(summary_line)
+        print(green(summary_line))
         output_fd.write(summary_line)
         output_fd.write("\n")
         return True
@@ -291,8 +295,8 @@ def repo_pull():
     result = local(
         "git pull https://github.com/edwinsteele/wordspeak.org.git master",
         capture=True)
-    print result.stderr
-    print result.stdout
+    print(result.stderr)
+    print(result.stdout)
     # Something like:
     #
     # Updating 815b459..d9a508d
@@ -318,7 +322,7 @@ def _get_spellcheck_exceptions(lines):
             #  words specified, even though the tag is there
             word_list = [s.strip() for s in
                          line.split(":")[1].strip().split(",")]
-            return filter(None, word_list)
+            return [_f for _f in word_list if _f]
     return []
 
 
@@ -379,8 +383,8 @@ def _add_to_spellcheck_exceptions(input_file, word):
 
     with open(input_file, "w") as f:
         f.write(contents)
-    print "Added '%s' to spell check exception list for file %s" % \
-          (word, input_file)
+    print("Added '%s' to spell check exception list for file %s" % \
+          (word, input_file))
 
 
 def _replace_in_file(input_file, old_word, new_word):
@@ -397,7 +401,7 @@ def _replace_in_file(input_file, old_word, new_word):
                           contents)  # word at start of file
     with open(input_file, "w") as f:
         f.write(contents)
-    print "Replaced %s with %s in %s" % (old_word, new_word, input_file)
+    print("Replaced %s with %s in %s" % (old_word, new_word, input_file))
 
 
 def strip_markdown_directives(line):
@@ -434,7 +438,7 @@ def spellchecker(is_interactive_deploy=True):
             lines = f.readlines()
 
         e = _get_spellcheck_exceptions(lines)
-        map(pwl_dictionary.add_to_session, e)
+        list(map(pwl_dictionary.add_to_session, e))
         for line in _non_directive_lines(lines):
             en_spellchecker.set_text(strip_markdown_directives(line))
             for err in en_spellchecker:
@@ -446,7 +450,7 @@ def spellchecker(is_interactive_deploy=True):
                                       lines.index(line) + 1,
                                       ", ".join(en_spellchecker.suggest(err.word))
                                      )
-                    print spelling_error
+                    print(spelling_error)
                     if is_interactive_deploy:
                         action = prompt("Add '%s' to dictionary [add] or "
                                         "replace [type replacement]?"
@@ -496,7 +500,7 @@ def orphans(output_fd=sys.stdout):
     os.remove(LINKCHECKER_OUTPUT)
 
     for dirname, file_list in \
-        [(d, filter(lambda x: x[-5:] == ".html", f))
+        [(d, [x for x in f if x[-5:] == ".html"])
          for d, _, f in os.walk(STAGING_RSYNC_DESTINATION_LOCAL)]:
         for f in file_list:
             path_beneath_output = os.path.join(
@@ -506,14 +510,14 @@ def orphans(output_fd=sys.stdout):
 
     orphan_list = html_files_on_filesystem.difference(html_files_checked)
     if orphan_list:
-        print yellow("Orphans found (%s)." % (len(orphan_list),))
+        print(yellow("Orphans found (%s)." % (len(orphan_list),)))
         output_fd.write("Orphaned html files exist "
                         "(are on disk but aren't linked).\n")
         for orphan in sorted(list(orphan_list)):
             output_fd.write("Orphaned file: " + orphan + "\n")
         return False
     else:
-        print green("No orphans found.")
+        print(green("No orphans found."))
         output_fd.write("No orphans found.\n")
         return True
 
@@ -522,7 +526,7 @@ def w3c_checks(output_fd=sys.stdout):
     all_checks_pass = True
     for url in W3C_HTML_VALIDATION_TARGETS:
         r = requests.get(W3C_HTML_VALIDATION_URL %
-                         (urllib.quote_plus(url), "json"))
+                         (urllib.parse.quote_plus(url), "json"))
         # messages key in JSON output always exists
         error_messages = [m["message"] for m in r.json()["messages"]
                           if m["type"] != "info"]
@@ -533,13 +537,13 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("\n")
             output_fd.write(
                 "Full details: %s\n" %
-                (W3C_HTML_VALIDATION_URL % (urllib.quote_plus(url), "html"),))
+                (W3C_HTML_VALIDATION_URL % (urllib.parse.quote_plus(url), "html"),))
             all_checks_pass = False
         else:
             output_fd.write("HTML validates (%s)\n" % (url,))
 
     for url in W3C_CSS_VALIDATION_TARGETS:
-        r = requests.get(W3C_CSS_VALIDATION_URL % (urllib.quote_plus(url),
+        r = requests.get(W3C_CSS_VALIDATION_URL % (urllib.parse.quote_plus(url),
                                                    "text"))
         summary = [l.strip() for l in r.text.split('\n') if l.strip()][1]
         if "Congratulations" in summary:
@@ -548,18 +552,18 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("CSS validation failures for %s\n" % (url,))
             output_fd.write("%s\n" % (summary.encode('utf-8'),))
             output_fd.write("Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
-                                                    (urllib.quote_plus(url),
+                                                    (urllib.parse.quote_plus(url),
                                                      "html")))
             all_checks_pass = False
     for url in W3C_RSS_VALIDATION_TARGETS:
-        r = requests.get(W3C_RSS_VALIDATION_URL % (urllib.quote_plus(url),))
+        r = requests.get(W3C_RSS_VALIDATION_URL % (urllib.parse.quote_plus(url),))
         # UGLY, and fragile but there's no machine readable output available
         if "This is a valid RSS feed" in r.text:
             output_fd.write("RSS validates (%s)\n" % (url,))
         else:
             output_fd.write("RSS validation failures for %s\n" % (url,))
             output_fd.write("Full details: %s\n" % (W3C_RSS_VALIDATION_URL %
-                                                    (urllib.quote_plus(url))))
+                                                    (urllib.parse.quote_plus(url))))
             all_checks_pass = False
 
     return all_checks_pass
@@ -627,16 +631,16 @@ def post_deploy():
         msg["Subject"] = subject
         msg["To"] = conf.BLOG_EMAIL
         msg["From"] = "%s Deployment <%s>" % (conf.BLOG_TITLE, conf.BLOG_EMAIL,)
-        print "Sending summary mail... ",
+        print("Sending summary mail... ", end=' ')
         try:
             mail_server = smtplib.SMTP('localhost')
             mail_server.sendmail(conf.BLOG_EMAIL, [conf.BLOG_EMAIL],
                                  msg.as_string())
             mail_server.quit()
-        except smtplib.SMTPException, e:
-            print red("Failed.\n%s", (e,))
+        except smtplib.SMTPException as e:
+            print(red("Failed.\n%s", (e,)))
         else:
-            print green("Success.")
+            print(green("Success."))
 
 
 def deploy(is_interactive_deploy=True):
@@ -663,7 +667,7 @@ def deploy(is_interactive_deploy=True):
         prod_sync()
         repo_push()
     else:
-        print red("Not pushing to live site.")
+        print(red("Not pushing to live site."))
 
     post_deploy()
 
@@ -674,6 +678,6 @@ def non_interactive_deploy():
         if not confirm("Simulate a non-interactive deploy?", default=False):
             abort("Aborting")
     else:
-        print "Running non-interactive deploy"
+        print("Running non-interactive deploy")
 
     deploy(is_interactive_deploy=False)

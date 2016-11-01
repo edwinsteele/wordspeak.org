@@ -11,6 +11,7 @@ doit==0.29.0
 ecdsa==0.13
 enum34==1.1.6
 Fabric3==1.12.post1
+future==0.16.0
 geopy==1.10.0
 husl==4.0.3
 idna==2.1
