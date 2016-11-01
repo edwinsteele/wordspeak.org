@@ -1,21 +1,21 @@
+import csv
+import glob
+import os
+import re
+import smtplib
+import socket
+import sys
+import tempfile
 import urllib
+from email.mime.text import MIMEText
 from fabric.api import abort, local, settings
 from fabric.colors import green, red, yellow
 from fabric.contrib.console import confirm
 from fabric.context_managers import cd, hide, quiet, warn_only
 from fabric.operations import prompt
-import csv
-from email.mime.text import MIMEText
-import glob
-import os
-import re
 import enchant
 import enchant.checker
 import enchant.tokenize
-import smtplib
-import socket
-import sys
-import tempfile
 import requests
 import conf
 from chump import Application
@@ -253,7 +253,7 @@ def linkchecker(output_fd=sys.stdout):
         print yellow(summary_line)
         # Failures are listed from the tenth line
         output_fd.write("Failures with linkchecker:\n%s\n" %
-                       ("\n".join(result.stdout.splitlines()[9:])))
+                        ("\n".join(result.stdout.splitlines()[9:])))
         return False
     else:
         print green(summary_line)
@@ -442,10 +442,10 @@ def spellchecker(is_interactive_deploy=True):
                     spelling_errors_found = True
                     spelling_error = "Not in dictionary: %s (file: %s line: %s). Suggestions: %s" % \
                                      (err.word,
-                                     os.path.basename(file_to_check),
-                                     lines.index(line) + 1,
-                                     ", ".join(en_spellchecker.suggest(err.word))
-                    )
+                                      os.path.basename(file_to_check),
+                                      lines.index(line) + 1,
+                                      ", ".join(en_spellchecker.suggest(err.word))
+                                     )
                     print spelling_error
                     if is_interactive_deploy:
                         action = prompt("Add '%s' to dictionary [add] or "
@@ -497,7 +497,7 @@ def orphans(output_fd=sys.stdout):
 
     for dirname, file_list in \
         [(d, filter(lambda x: x[-5:] == ".html", f))
-            for d, _, f in os.walk(STAGING_RSYNC_DESTINATION_LOCAL)]:
+         for d, _, f in os.walk(STAGING_RSYNC_DESTINATION_LOCAL)]:
         for f in file_list:
             path_beneath_output = os.path.join(
                 dirname[len(STAGING_RSYNC_DESTINATION_LOCAL) + 1:], f)
@@ -645,7 +645,7 @@ def deploy(is_interactive_deploy=True):
     key_files_changed = repo_pull()
     if key_files_changed:
         abort(red("Aborting as the following key files changed: %s" %
-              (",".join(key_files_changed),)))
+                  (",".join(key_files_changed),)))
     maybe_add_untracked_files(is_interactive_deploy)
     _initialise()
     while spellcheck_needed:
