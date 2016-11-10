@@ -3,10 +3,10 @@ sudo: required
 python:
 - '3.4'
 install:
-- pip install -r requirements.txt
-- mkdir -p .virtualenvs/linkchecker/bin && ln -s /usr/bin/linkchecker .virtualenvs/linkchecker/bin
 - sudo apt-get install enchant
 - sudo apt-get install linkchecker
+- pip install -r requirements.txt
+- mkdir -p .virtualenvs/linkchecker/bin && ln -s /usr/bin/linkchecker .virtualenvs/linkchecker/bin
 script:
 - fab orphans
 - fab check_mixed_content
