@@ -8,11 +8,11 @@ addons:
 install:
 - pip install -r requirements.txt
 script:
-- fab orphans
-- fab check_mixed_content
 - fab w3c_checks
 notifications:
   pushover:
+    on_success: always
+    on_failure: always
     api_key:
       secure: jY+5phdWA9VAAw/uCPN2XAPmsdP6tXK2fD8hEYf7ggjmT9usZ55syBlROlurP3kPBSE7eU2IM64RCTJ6QEQXXOz3oQmCypsTXFq1vvtQgWyDsCN/kUgJZc24LBW0dDCidOtB/yPLuyvvzXqTF/T3CQCYC2V1MWTMWCrxRnL3Xvvq+4eX6gv7tXCF1K1OFOooavJDKSVk8Yj2XqAOYfZ5nVsIQ4YcqDmlGqDWhk0RTphY4AvCoJB7CGYKRPz+JIkRZc/zyR/0eLQ+7XqcE0MlPqRJ4lrLY35K6Kl6qO63pKIpEZss2tv8MQ0TqwieWQBU/y1mSNCL4p3nvQGZ4Fi+wHOaa6iOCz9o0fkKhxj5BRLhhy17TdZ06uriKvPxQn6aEOeXB3fPlq4xYsKhXJ55PsAyC7sJTDmqpiJbIJ7ZOocw4LqjVU6rQ4wxKVqeKpv+OLpkghF6+YVr3JupOXK/xMexDCYDA6kQmcZUNVBqZV0DZeZG2p3A31Bx5olyPtD5ChKprpNE9ZQshXMYsnmzZcgrZ/IiXx5ch+xm55af8Tlz1uDfpPteA0Nddnk187dKVpFl8rWzAOOQdlCGAMnu9DwZcfnIh3uxX0zYCP6pyNJjUdOyPGlD2innNz+NMhrWi5LLaQ4UAfpGLsqJsmlSF0mQKp9PcdJwGHki9U1RHiE=
     users:
