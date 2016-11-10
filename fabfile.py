@@ -461,7 +461,7 @@ def orphans(output_fd=sys.stdout):
     """
     SIZE_OF_URL_CRUFT = len("https:///")
     URL_FIELD = 7
-    LINKCHECKER_OUTPUT = "linkchecker-output.csv"
+    LINKCHECKER_OUTPUT = os.path.join(TILDE, "linkchecker-output.csv")
     html_files_on_filesystem = set()
 
     with warn_only():
