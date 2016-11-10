@@ -465,7 +465,7 @@ def orphans(output_fd=sys.stdout):
     html_files_on_filesystem = set()
 
     with warn_only():
-        local("linkchecker"
+        local(PATH_TO_LINKCHECKER +
               " --config linkcheckerrc"
               " --verbose"
               " --file-output=csv/" + LINKCHECKER_OUTPUT + ""
