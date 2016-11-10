@@ -1,0 +1,28 @@
+language: python
+python:
+- '3.4'
+addons:
+  apt:
+    packages:
+    - enchant
+    - linkchecker
+install:
+- pip install -r requirements.txt
+- mkdir -p .virtualenvs/linkchecker/bin && ln -s /usr/bin/linkchecker .virtualenvs/linkchecker/bin
+script:
+- fab orphans
+- fab check_mixed_content
+- fab w3c_checks
+notifications:
+  email:
+    on_success: always
+    on_failure: always
+    recipients:
+      - edwin@wordspeak.org
+  pushover:
+    on_success: always
+    on_failure: always
+    api_key:
+      secure: jY+5phdWA9VAAw/uCPN2XAPmsdP6tXK2fD8hEYf7ggjmT9usZ55syBlROlurP3kPBSE7eU2IM64RCTJ6QEQXXOz3oQmCypsTXFq1vvtQgWyDsCN/kUgJZc24LBW0dDCidOtB/yPLuyvvzXqTF/T3CQCYC2V1MWTMWCrxRnL3Xvvq+4eX6gv7tXCF1K1OFOooavJDKSVk8Yj2XqAOYfZ5nVsIQ4YcqDmlGqDWhk0RTphY4AvCoJB7CGYKRPz+JIkRZc/zyR/0eLQ+7XqcE0MlPqRJ4lrLY35K6Kl6qO63pKIpEZss2tv8MQ0TqwieWQBU/y1mSNCL4p3nvQGZ4Fi+wHOaa6iOCz9o0fkKhxj5BRLhhy17TdZ06uriKvPxQn6aEOeXB3fPlq4xYsKhXJ55PsAyC7sJTDmqpiJbIJ7ZOocw4LqjVU6rQ4wxKVqeKpv+OLpkghF6+YVr3JupOXK/xMexDCYDA6kQmcZUNVBqZV0DZeZG2p3A31Bx5olyPtD5ChKprpNE9ZQshXMYsnmzZcgrZ/IiXx5ch+xm55af8Tlz1uDfpPteA0Nddnk187dKVpFl8rWzAOOQdlCGAMnu9DwZcfnIh3uxX0zYCP6pyNJjUdOyPGlD2innNz+NMhrWi5LLaQ4UAfpGLsqJsmlSF0mQKp9PcdJwGHki9U1RHiE=
+    users:
+      secure: vfq0mb3BO/JSS/MVyGRjxM+POnb2aRtnaXp3LUVEqIffLvG8zcn8AgaUxfhoKe+DARcdIpBvbetsaIRO9NIwxgmZh4F0mU9fsKgI3ed3XQ7ATiQbGc3wncn0PXjyfDAB9ivGSCb/glgzxqt3gAqJC+92XYQZXetQo6eAIhMAkRn+XSUvFBiZ1WAPKzJmsbrD9vmbmdoqIjxDj/FUl65PRpTmjFjXEX4UY91mPtn6nfX+Bj3c4JoRmTKjNuzi3xtq9B+5rkO5BroEwzVqFKh4CsB1dxOUkO+ObznzEay1Wh72oMvfebQdoVc4Ee7VFHYl4eB1aRb7LM/bZDklB19MjEgxoXLve0xsSZUgO9Itdau6wniI0dRMadReuUpKlhLOtO2YoXst68+1uc1mcqUHzCGFrE300dLOUb2DPg6Hs0YxsxRs2yW9nQO6FGTvRWtZfROkAA+AnejNDPwomELs7OuiP6ezDHg/UFs4MJhYVTr2d4Fu/Bz6m50KZ//737stQRKzb77qfl3SQth7ShdG6qFHoK5DaesdpuwKgFsf1gK/iJEaG/PLYpFHABzaP1pmV38AUtRhEmQQd3gi6lFr1VulYqA+V0HPtLzqCm/+iTg0fpMWW+bbMojS3H9REW8a4QP92X26Wq73tgMGeyxxq6alSSMbV+yYqzc7E1bSeqI=
