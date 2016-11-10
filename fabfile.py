@@ -335,7 +335,7 @@ def _is_tagged_as_orphan(filename):
     # Check if there's a markdown equivalent, given the transpositions
     #  that we're aware of
     if os.path.exists(md_file):
-        with open(md_file, "r") as w:
+        with open(md_file, "r", encoding="utf-8") as w:
             for line in w:
                 if line.startswith(".. is_orphan:"):
                     return line.split(":")[1].strip().lower() == "true"
@@ -434,7 +434,7 @@ def spellchecker(is_interactive_deploy=True):
     md_pages = glob.glob(os.path.join(SITE_BASE, "stories", "*.md"))
 
     for file_to_check in md_pages + md_posts:
-        with open(file_to_check, 'r') as f:
+        with open(file_to_check, 'r', encoding="utf-8") as f:
             lines = f.readlines()
 
         e = _get_spellcheck_exceptions(lines)
