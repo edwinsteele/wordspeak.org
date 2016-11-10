@@ -5,11 +5,10 @@ python:
 install:
 - sudo apt-get install enchant
 - sudo apt-get install linkchecker
-- which linkchecker
 - pip install -r requirements.txt
 - mkdir -p .virtualenvs/linkchecker/bin && ln -s /usr/bin/linkchecker .virtualenvs/linkchecker/bin/linkchecker
+- ls -l .virtualenvs/linkchecker/bin/linkchecker
 script:
-- env
 - fab orphans
 - fab check_mixed_content
 - fab w3c_checks
