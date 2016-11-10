@@ -5,12 +5,19 @@ addons:
   apt:
     packages:
     - enchant
+    - linkchecker
 install:
 - pip install -r requirements.txt
+- mkdir -p .virtualenvs/linkchecker/bin && ln -s /usr/bin/linkchecker .virtualenvs/linkchecker/bin
 script:
 - fab orphans
+- fab check_mixed_content
 - fab w3c_checks
 notifications:
+  email:
+    on_success: always
+    on_failure: always
+    - edwin@wordspeak.org
   pushover:
     on_success: always
     on_failure: always

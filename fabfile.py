@@ -35,7 +35,8 @@ PROD_FILESYSTEM_ROOT = "Sites/www.wordspeak.org"
 PROD_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, PROD_FILESYSTEM_ROOT)
 PROD_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
                                 (PROD_FQDN, PROD_FILESYSTEM_ROOT)
-PATH_TO_LINKCHECKER = "/home/esteele/.virtualenvs/linkchecker/bin/linkchecker"
+PATH_TO_LINKCHECKER = os.path.join(
+    TILDE, ".virtualenvs/linkchecker/bin/linkchecker")
 SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
