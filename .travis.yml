@@ -17,7 +17,8 @@ notifications:
   email:
     on_success: always
     on_failure: always
-    - edwin@wordspeak.org
+    recipients:
+      - edwin@wordspeak.org
   pushover:
     on_success: always
     on_failure: always
