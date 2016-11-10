@@ -7,8 +7,8 @@ install:
 - sudo apt-get install linkchecker
 - pip install -r requirements.txt
 - mkdir -p .virtualenvs/linkchecker/bin && ln -s /usr/bin/linkchecker .virtualenvs/linkchecker/bin/linkchecker
-- ls -l .virtualenvs/linkchecker/bin/linkchecker
 script:
+- fab linkchecker
 - fab orphans
 - fab check_mixed_content
 - fab w3c_checks
