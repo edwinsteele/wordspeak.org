@@ -461,29 +461,27 @@ def orphans(output_fd=sys.stdout):
     """
     SIZE_OF_URL_CRUFT = len("https:///")
     URL_FIELD = 7
-    LINKCHECKER_OUTPUT = os.path.join(TILDE, "linkchecker-output.csv")
     html_files_on_filesystem = set()
 
     with warn_only():
-        local(PATH_TO_LINKCHECKER +
+        result = local(PATH_TO_LINKCHECKER +
               " --config linkcheckerrc"
               " --verbose"
-              " --file-output=csv/" + LINKCHECKER_OUTPUT + ""
+              " --output=csv"
               " --no-status"
               " --ignore-url '!(" + STAGING_FQDN + ")'"
               " https://" + STAGING_FQDN,
               capture=True)
 
-    with open(LINKCHECKER_OUTPUT) as f:
-        linkchecker_output = csv.reader(f, delimiter=";")
-        html_files_checked = set(
-            [row[URL_FIELD][SIZE_OF_URL_CRUFT + len(STAGING_FQDN):]
-             for row in linkchecker_output
-             if row[0][0] != "#" and  # comments start with a hash
-             len(row) == 17 and  # legit check rows have 17 fields
-             row[URL_FIELD][-5:] == ".html"]
-        )
-    os.remove(LINKCHECKER_OUTPUT)
+  
+    linkchecker_output = csv.reader(result.stdout.splitlines(), delimiter=";")
+    html_files_checked = set(
+        [row[URL_FIELD][SIZE_OF_URL_CRUFT + len(STAGING_FQDN):]
+         for row in linkchecker_output
+         if row[0][0] != "#" and  # comments start with a hash
+         len(row) == 17 and  # legit check rows have 17 fields
+         row[URL_FIELD][-5:] == ".html"]
+    )
 
     for dirname, file_list in \
         [(d, [x for x in f if x[-5:] == ".html"])
