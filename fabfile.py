@@ -36,9 +36,6 @@ PROD_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, PROD_FILESYSTEM_ROOT)
 PROD_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
                                 (PROD_FQDN, PROD_FILESYSTEM_ROOT)
 PATH_TO_LINKCHECKER = "/home/esteele/.virtualenvs/linkchecker/bin/linkchecker"
-DEV_NIKOLA = os.path.join(TILDE,
-                          "Code/nikola-edwinsteele/nikola/scripts/nikola")
-REL_NIKOLA = os.path.join(TILDE, ".virtualenvs/wordspeak_n7/bin/nikola")
 SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
@@ -126,15 +123,9 @@ def _quietly_run_nikola_cmd(nikola, cmd):
 
 def build():
     """Build the site using nikola"""
-    with quiet():
-        if local("test '$(showvirtualenv)' == 'nikola-dev'").succeeded:
-            nikola = DEV_NIKOLA
-        else:
-            nikola = REL_NIKOLA
-
     with cd(SITE_BASE):
-        _quietly_run_nikola_cmd(nikola, "build")
-        _quietly_run_nikola_cmd(nikola, "mincss")
+        _quietly_run_nikola_cmd("nikola", "build")
+        _quietly_run_nikola_cmd("nikola", "mincss")
         # Need to recopy the leaflet.css file as mincss optimises it away
         #  because it can't find any leaflet classes in use (they're inserted
         #  at runtime by the js library
@@ -142,7 +133,7 @@ def build():
               "%s/assets/leaflet-0.7.3/leaflet.css" % (SITE_BASE, OUTPUT_BASE))
         # Need to recompress css after yuicompressor has run
         #  Can't run post_render_gzip in N7, so let's just do build again
-        _quietly_run_nikola_cmd(nikola, "build")
+        _quietly_run_nikola_cmd("nikola", "build")
 
     post_build_cleanup()
 
@@ -268,13 +259,7 @@ def linkchecker(output_fd=sys.stdout):
 
 def check_mixed_content(output_fd=sys.stdout):
     """looks for mixed http/https content"""
-    with quiet():
-        if local("test '$(showvirtualenv)' == 'nikola-dev'").succeeded:
-            nikola = DEV_NIKOLA
-        else:
-            nikola = REL_NIKOLA
-
-    result = local("%s check -l" % (nikola,))
+    result = local("nikola check -l")
     if result.failed:
         output_fd.write("Failures with mixed content check: %s\n" %
                         (result.stdout,))
