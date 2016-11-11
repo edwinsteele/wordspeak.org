@@ -237,21 +237,10 @@ def linkchecker(output_fd=sys.stdout):
     with cd(SITE_BASE):
         output = local("nikola check -l -r --find-sources", capture=True)
 
-    # Filter out info lines
-    output = [line for line in output.stderr.splitlines()
-              if 'INFO: requests.packages.urllib3.connectionpool' not in line]
-    # Notification about problems in index files are duplicates
-    # Let's go with the notifications in the files themselves, as they will
-    #  likely have the md source location.
-    is_an_index_page = re.compile('index-[0-9]+.html:')
-    output = [line for line in output
-              if not is_an_index_page.search(line)]
-    broken_links = [line for line in output
+    broken_links = [line for line in output.stderr.splitlines()
                     if 'Error 404' in line]
-    # We're interested in the remaining text, regardless of whether it's
-    #  formally categorised as warning by nikola or not
-    warning_lines = [line for line in output
-                     if 'Error 404' not in line]
+    warning_lines = [line for line in output.stderr.splitlines()
+                     if 'WARNING' in line]
 
     def print_warning_lines(lines, output_fd=output_fd):
         output_fd.write(yellow("Warnings found:\n"))
