@@ -8,6 +8,12 @@ addons:
 install:
 - pip install -r requirements.txt
 script:
+- pwd
+- ls -l
+- ls -l ~/Code/wordspeak.org
+- ln -s ~/Code/wordspeak.org .
+- fab clean
+- fab build
 - fab linkchecker
 - fab w3c_checks
 notifications:
