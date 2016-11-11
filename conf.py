@@ -61,6 +61,8 @@ FILTERS = {
     ".html": [filters.typogrify],
 }
 
+LINK_CHECK_WHITELIST = ["index-[0-9]+.html"]
+
 # Name of the theme to use. Themes are located in themes/theme_name
 THEME = 'wordspeak_lite'
 

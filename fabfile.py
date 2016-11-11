@@ -35,8 +35,6 @@ PROD_FILESYSTEM_ROOT = "Sites/www.wordspeak.org"
 PROD_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, PROD_FILESYSTEM_ROOT)
 PROD_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
                                 (PROD_FQDN, PROD_FILESYSTEM_ROOT)
-PATH_TO_LINKCHECKER = os.path.join(
-    TILDE, ".virtualenvs/linkchecker/bin/linkchecker")
 SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
@@ -234,39 +232,44 @@ def linkchecker(output_fd=sys.stdout):
     """Checks for broken links on the staging site
 
     Ignores posts because the links all appear in the index pages
-    Returns whether the task ran successfully i.e. found no problems
+    Returns whether the task found any 404s
     """
-    with settings(hide('warnings'), warn_only=True):
-        result = local(PATH_TO_LINKCHECKER +
-                       " --check-extern"
-                       " --config linkcheckerrc"
-                       " http://" + STAGING_FQDN,
-                       capture=True)
-    # Summary is the second to last line
-    summary_line = result.stdout.splitlines()[-2].replace(
-        "That's it.", "Linkchecker summary:")
-    if result.failed:
-        print(yellow(summary_line))
-        # Failures are listed from the tenth line
-        output_fd.write("Failures with linkchecker:\n%s\n" %
-                        ("\n".join(result.stdout.splitlines()[9:])))
+    with cd(SITE_BASE):
+        output = local("nikola check -l -r --find-sources", capture=True)
+
+    # Filter out info lines
+    output = [line for line in output.stderr.splitlines()
+              if "INFO: requests.packages.urllib3.connectionpool" not in line]
+    # Notification about problems in index files are duplicates
+    # Let's go with the notifications in the files themselves, as they will
+    #  likely have the md source location.
+    output = [line for line in output
+              if not re.search("index-[0-9]+.html:", line)]
+    broken_links = [line for line in output
+                    if "Error 404" in line]
+    # We're interested in the remaining text, regardless of whether it's
+    #  formally categorised as warning by nikola or not
+    warning_lines = [line for line in output
+                     if "Error 404" not in line]
+
+    def print_warning_lines(lines, output_fd=output_fd):
+        output_fd.write(yellow("Warnings found:\n"))
+        for line in lines:
+            output_fd.write(line + "\n")
+
+    # We want to fail on broken links, but not on 500 errors or timeouts
+    # The rationale is that they're most likely to be transient, and not
+    #  something indicative of a failure on our end, so we wouldn't want
+    #  to fail the build
+    if broken_links:
+        output_fd.write(yellow("Broken links found:\n"))
+        for line in broken_links:
+            output_fd.write(line + "\n")
+        print_warning_lines(warning_lines, output_fd)
         return False
     else:
-        print(green(summary_line))
-        output_fd.write(summary_line)
-        output_fd.write("\n")
-        return True
-
-
-def check_mixed_content(output_fd=sys.stdout):
-    """looks for mixed http/https content"""
-    result = local("nikola check -l")
-    if result.failed:
-        output_fd.write("Failures with mixed content check: %s\n" %
-                        (result.stdout,))
-        return False
-    else:
-        output_fd.write("No problems with mixed HTTP/HTTPS content\n")
+        output_fd.write(green("No broken links found.\n"))
+        print_warning_lines(warning_lines, output_fd)
         return True
 
 
@@ -310,26 +313,6 @@ def _get_spellcheck_exceptions(lines):
                          line.split(":")[1].strip().split(",")]
             return [_f for _f in word_list if _f]
     return []
-
-
-def _is_tagged_as_orphan(filename):
-    """takes an html filename and checks whether the markdown identifies the
-    page as an orphan. Assumes slug and filename (sans suffix) are the same"""
-    md_file = ".".join([filename.rsplit(".")[0], "md"])
-    # Source for pages lives in stories
-    md_file = md_file.replace("pages/", "stories/")
-    # Check if there's a markdown equivalent, given the transpositions
-    #  that we're aware of
-    if os.path.exists(md_file):
-        with open(md_file, "r", encoding="utf-8") as w:
-            for line in w:
-                if line.startswith(".. is_orphan:"):
-                    return line.split(":")[1].strip().lower() == "true"
-
-    # Nasty hack because post_build_cleanup doesn't seem to remove d3 stuff
-    # Change this to "return False" once that's cleaned up, or d3 stuff has
-    #  been removed from the tree
-    return filename in UNWANTED_BUILD_ARTIFACTS
 
 
 def _non_directive_lines(lines):
@@ -453,59 +436,6 @@ def spellchecker(is_interactive_deploy=True):
     return spelling_errors_found
 
 
-def orphans(output_fd=sys.stdout):
-    """Find html files that exist on the filesystem but aren't accessible
-    via hyperlinks
-
-    Returns whether the task ran successfully i.e. found no problems
-    """
-    SIZE_OF_URL_CRUFT = len("https:///")
-    URL_FIELD = 7
-    html_files_on_filesystem = set()
-
-    with warn_only():
-        result = local(PATH_TO_LINKCHECKER +
-              " --config linkcheckerrc"
-              " --verbose"
-              " --output=csv"
-              " --no-status"
-              " --ignore-url '!(" + STAGING_FQDN + ")'"
-              " https://" + STAGING_FQDN,
-              capture=True)
-
-  
-    linkchecker_output = csv.reader(result.stdout.splitlines(), delimiter=";")
-    html_files_checked = set(
-        [row[URL_FIELD][SIZE_OF_URL_CRUFT + len(STAGING_FQDN):]
-         for row in linkchecker_output
-         if row[0][0] != "#" and  # comments start with a hash
-         len(row) == 17 and  # legit check rows have 17 fields
-         row[URL_FIELD][-5:] == ".html"]
-    )
-
-    for dirname, file_list in \
-        [(d, [x for x in f if x[-5:] == ".html"])
-         for d, _, f in os.walk(STAGING_RSYNC_DESTINATION_LOCAL)]:
-        for f in file_list:
-            path_beneath_output = os.path.join(
-                dirname[len(STAGING_RSYNC_DESTINATION_LOCAL) + 1:], f)
-            if not _is_tagged_as_orphan(path_beneath_output):
-                html_files_on_filesystem.add(path_beneath_output)
-
-    orphan_list = html_files_on_filesystem.difference(html_files_checked)
-    if orphan_list:
-        print(yellow("Orphans found (%s)." % (len(orphan_list),)))
-        output_fd.write("Orphaned html files exist "
-                        "(are on disk but aren't linked).\n")
-        for orphan in sorted(list(orphan_list)):
-            output_fd.write("Orphaned file: " + orphan + "\n")
-        return False
-    else:
-        print(green("No orphans found."))
-        output_fd.write("No orphans found.\n")
-        return True
-
-
 def w3c_checks(output_fd=sys.stdout):
     all_checks_pass = True
     for url in W3C_HTML_VALIDATION_TARGETS:
@@ -594,8 +524,6 @@ def post_deploy():
     _initialise()
     scratch = tempfile.TemporaryFile()
     ran_successfully = linkchecker(scratch)
-    ran_successfully = orphans(scratch) and ran_successfully
-    ran_successfully = check_mixed_content(scratch) and ran_successfully
     ran_successfully = w3c_checks(scratch) and ran_successfully
 
     # Re-read the file and mail it
