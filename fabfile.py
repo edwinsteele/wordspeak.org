@@ -243,8 +243,9 @@ def linkchecker(output_fd=sys.stdout):
     # Notification about problems in index files are duplicates
     # Let's go with the notifications in the files themselves, as they will
     #  likely have the md source location.
+    is_an_index_page = re.compile(b'index-[0-9]+.html:')
     output = [line for line in output
-              if not re.search("index-[0-9]+.html:", line)]
+              if not is_an_index_page.search(line)]
     broken_links = [line for line in output
                     if "Error 404" in line]
     # We're interested in the remaining text, regardless of whether it's
