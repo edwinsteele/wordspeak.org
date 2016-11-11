@@ -31,7 +31,7 @@ What I learnt along the way
 
 -   [tmux](https://tmux.github.io) is awesome.
 -   ssh keys with passwords aren't as hard as I thought (ssh-agent with forwarding is brilliant)
--   [mosh](http://mosh.mit.edu) is a great idea, but it doesn't support ssh-agent (which is a deal-breaker)
+-   [mosh](https://mosh.org) is a great idea, but it doesn't support ssh-agent (which is a deal-breaker)
 -   iSSH looks good on the surface but lacks polish and has flaky mosh support
 -   that different spell checking tools exist, and their word list is remarkably different (MySpell/GNU Aspell)
 -   a few of things about how to get better connectivity while commuting (I'll write about that later)
@@ -39,7 +39,7 @@ What I learnt along the way
 What's left to do
 =================
 
--   try mosh again once it supports ssh-agent (if the [pull request](https://github.com/keithw/mosh/pull/423) is accepted)
+-   try mosh again once it supports ssh-agent (if the [pull request](https://github.com/mobile-shell/mosh/pull/423) is accepted)
 -   get tmux working with ssh agent forwarding
 -   streamline my publishing script now that I'll be running it remotely.
 -   clean up the way I manage my dot files now that I have them on several machines

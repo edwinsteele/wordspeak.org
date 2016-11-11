@@ -23,10 +23,10 @@ And for you, Dear Reader
 Here's my plan on the off-chance that you feel the same way:
 
 -   Search: I'll use DuckDuckGo, and I expect to get slightly poorer results, and I'm OK with that. I'm using the [Safari Keyword Search extension](http://safarikeywordsearch.aurlien.net) to set the default search engine on my Mac, and I use Atomic Web as my browser on iOS, which allows me to set DuckDuckGo as the default search.
--   Maps: Yep, It'll be Apple Maps even though it might route me via Timbuktu from time to time. ([Alfred v2](http://www.alfredapp.com) has a sparkly new Apple Maps shortcut which helps)
+-   Maps: Yep, It'll be Apple Maps even though it might route me via Timbuktu from time to time. ([Alfred v2](https://www.alfredapp.com) has a sparkly new Apple Maps shortcut which helps)
 -   Translate: I'll use [Microsoft (Bing) Translator](http://www.bing.com/translator/) on the few occasions that I need it.
 -   YouTube: Stuff often appears on Vimeo too, and if I can't find it anywhere else something tells me that life will go on if I go without watching it.
--   My mail is hosted on [FastMail](https://www.fastmail.fm/) under my own domain - I've never used Gmail because I don't like vendor lock-in, particularly on email.
+-   My mail is hosted on [FastMail](https://www.fastmail.com/) under my own domain - I've never used Gmail because I don't like vendor lock-in, particularly on email.
 -   Say no to Google+ and Facebook. My replacement is point-to-point messaging and a self-hosted blog... but I'm an introvert.
 
 I think the change will work out just fine.

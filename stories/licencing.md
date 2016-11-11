@@ -24,12 +24,12 @@ More specifically
 
 To the extent possible under law, the author, Edwin Steele, waives all copyright and related or neighbouring rights to this blog, the written contents of the wordspeak.org sites as well as photos and videos hosted on wordspeak.org.
 
-My Flickr photos and videos, and videos hosted on Vimeo have licensing information visible on that sites. All my personal images and videos are labelled as being released under the most liberal licence available on that site, the [Creative Commons Attribution licence](http://creativecommons.org/licenses/by/3.0/) . The few images that aren't mine are labelled as All rights reserved.
+My Flickr photos and videos, and videos hosted on Vimeo have licensing information visible on that sites. All my personal images and videos are labelled as being released under the most liberal licence available on that site, the [Creative Commons Attribution licence](https://creativecommons.org/licenses/by/3.0/) . The few images that aren't mine are labelled as All rights reserved.
 
 That said, you can do whatever you want with my Flickr and Vimeo images and videos. I waive all copyright and related and neighbouring rights to them too - you don't need to give me credit, though it's appreciated if you choose to do so.
 
 Useful resources
 ================
 
-The Creative Commons group have made it easy to licence your creations, to whatever extent you're comfortable. I like the [Creative Commons Zero licence](http://creativecommons.org/about/cc0) best and there are many more available at <http://creativecommons.org/licenses/>
+The Creative Commons group have made it easy to licence your creations, to whatever extent you're comfortable. I like the [Creative Commons Zero licence](https://creativecommons.org/share-your-work/public-domain/cc0/) best and there are many more available at <https://creativecommons.org/licenses/>
 

@@ -38,5 +38,5 @@ So while many would be disappointed to spend time writing without the knowledge 
 
 ... that said, it's really cool that you're reading it!
 
-[^co-1]: I'm happy to accept [gifts](http://shop.lego.com/en-US/Studio-21050)
+[^co-1]: I'm happy to accept [gifts](https://shop.lego.com/en-US/Studio-21050)
 

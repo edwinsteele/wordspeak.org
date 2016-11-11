@@ -9,7 +9,7 @@
 -->
 
 
-[Fabric](http://fabfile.org) has caught my eye as a deployment tool several times over the last year or so. Each time I've seen it, my thought has been that it's a attempt to replace something that doesn't need replacing, namely the venerable unix shell script.
+[Fabric](http://www.fabfile.org) has caught my eye as a deployment tool several times over the last year or so. Each time I've seen it, my thought has been that it's a attempt to replace something that doesn't need replacing, namely the venerable unix shell script.
 
 Fabric came up again this week in an [article](http://blog.apps.npr.org/2013/02/14/app-template-redux.html) by the NPR application team [^ewffd-1] and on this occasion I saw that they were solving a similar problem to one that I recently solved with a shell script. The authors seemed clear-headed and not prone to fads so I thought I'd take the opportunity to duplicate my shell script functionality in a fabric fabfile.
 
