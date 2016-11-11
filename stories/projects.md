@@ -13,7 +13,7 @@ Photos
 ======
 
 -   My photos are all on [Flickr](http://flickr.com/photos/edwin_steele)
--   And I have a few videos on [Vimeo](http://vimeo.com/edwinsteele/videos)
+-   And I have a few videos on [Vimeo](https://vimeo.com/edwinsteele/videos)
 
 Software Projects
 =================

@@ -19,7 +19,7 @@ You can reach me at <edwin@wordspeak.org>.
 Behind the keyboard
 ===================
 
-I live in Sydney, Australia, and am happily married with two children. I'm a follower of Jesus and am a part of [ImagineNations Church](http://www.imaginenationschurch.com) in western Sydney. My day job is in IT Operations but I also love writing software in Python in my spare time.
+I live in Sydney, Australia, and am happily married with two children. I'm a follower of Jesus and am a part of [ImagineNations Church](https://inchurch.com.au) in western Sydney. My day job is in IT Operations but I also love writing software in Python in my spare time.
 
 On the desktop
 ==============
@@ -32,8 +32,8 @@ On the desktop
 On the server
 =============
 
--   This site is built using [Nikola](http://getnikola.com) and is hosted on [Rackspace](http://www.rackspace.com.au)
--   Photos are hosted on [Flickr](http://www.flickr.com/photos/edwin_steele/) and videos on [Vimeo](http://vimeo.com/edwinsteele/videos)
+-   This site is built using [Nikola](http://getnikola.com) and is hosted on [Rackspace](https://www.rackspace.com/en-au)
+-   Photos are hosted on [Flickr](http://www.flickr.com/photos/edwin_steele/) and videos on [Vimeo](https://vimeo.com/edwinsteele/videos)
 -   Source for this site is in my [Github repository](https://github.com/edwinsteele/wordspeak.org)
 
 Acknowledgements
@@ -41,7 +41,7 @@ Acknowledgements
 
 The icons on this site are used under licence, and were obtained via the fantastic [Fontello](http://fontello.com):
 - camera and git icons from [Elusive-Iconfont by Aristeides :q](https://github.com/reduxframework/elusive-iconfont). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-- document, info, mail and RSS icons from [Font Awesome by Dave Gandy](http://fortawesome.github.io/Font-Awesome/). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+- document, info, mail and RSS icons from [Font Awesome by Dave Gandy](http://fontawesome.io/). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 
 Licensing
 =========

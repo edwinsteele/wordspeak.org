@@ -9,14 +9,14 @@
 -->
 
 
-The content and spread of this fun "Four Things" post is most interesting. I first saw it at [Eric Meyer's site](http://meyerweb.com/eric/thoughts/2006/01/24/four-things/) but it's right throughout the web development community. Has anyone studied the [phylogeny](http://en.wikipedia.org/wiki/Phylogeny) of these contagious little chronicles?
+The content and spread of this fun "Four Things" post is most interesting. I first saw it at [Eric Meyer's site](http://meyerweb.com/eric/thoughts/2006/01/24/four-things/) but it's right throughout the web development community. Has anyone studied the [phylogeny](https://en.wikipedia.org/wiki/Phylogeny) of these contagious little chronicles?
 
 Four Things
 ===========
 
 Four jobs I've had:
 
-1.  Software sales at [The Games Wizards](http://en.wikipedia.org/wiki/Gameswizards)
+1.  Software sales at [The Games Wizards](https://en.wikipedia.org/wiki/Gameswizards)
 2.  Computer Science tutor at the University of Sydney
 3.  Software Developer with Entigen.com
 4.  Unix System Administrator with [CommSecure](http://www.commsecure.com.au)
@@ -58,9 +58,9 @@ Four of my favourite dishes:
 
 Four sites I visit daily:
 
-1.  [Slashdot](http://slashdot.org)
+1.  [Slashdot](https://slashdot.org)
 2.  [Sydney Morning Herald](http://www.smh.com.au)
-3.  [Dilbert](http://www.dilbert.com)
+3.  [Dilbert](https://www.dilbert.com)
 4.  [Rockclimbing.com photos](http://www.rockclimbing.com/photos/)
 
 Four places I would rather be right now:
