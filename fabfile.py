@@ -114,7 +114,7 @@ def _quietly_run_nikola_cmd(nikola, cmd):
         abort("Nikola command '%s' failed." % (cmd,))
     else:
         if result.stderr:
-            print("%s actions performed\n" % \
+            print("%s actions performed\n" %
                   (len(result.stderr.splitlines()) - 1), end=' ')
         else:
             print("No output from command.")
@@ -168,7 +168,7 @@ def maybe_add_untracked_files(is_interactive_deploy):
                 if not confirm("Add untracked file '%s'?" % (line[3:],)):
                     continue
             else:
-                print("Adding untracked file '%s' during non-interactive" \
+                print("Adding untracked file '%s' during non-interactive"
                       " deploy" % (line[3:],))
 
             with cd(SITE_BASE):
@@ -243,9 +243,9 @@ def linkchecker(output_fd=sys.stdout):
     # Notification about problems in index files are duplicates
     # Let's go with the notifications in the files themselves, as they will
     #  likely have the md source location.
-    is_an_index_page = re.compile(b'index-[0-9]+.html:')
-    output = [line for line in output
-              if not is_an_index_page.search(line)]
+    #is_an_index_page = re.compile(b'index-[0-9]+.html:')
+    #output = [line for line in output
+    #          if not is_an_index_page.search(line)]
     broken_links = [line for line in output
                     if "Error 404" in line]
     # We're interested in the remaining text, regardless of whether it's
@@ -295,7 +295,7 @@ def repo_pull():
     # requirements.txt | 1 -
     # 2 files changed, 1 insertion(+), 2 deletions(-)
 
-    # return something that evaluates to true if we updated one of the key files
+    # return something that evaluates to true if we updated a key file
     return [k for k in KEY_FILES if k in result.stdout]
 
 
@@ -353,7 +353,7 @@ def _add_to_spellcheck_exceptions(input_file, word):
 
     with open(input_file, "w") as f:
         f.write(contents)
-    print("Added '%s' to spell check exception list for file %s" % \
+    print("Added '%s' to spell check exception list for file %s" %
           (word, input_file))
 
 
@@ -414,12 +414,14 @@ def spellchecker(is_interactive_deploy=True):
             for err in en_spellchecker:
                 if not pwl_dictionary.check(err.word):
                     spelling_errors_found = True
-                    spelling_error = "Not in dictionary: %s (file: %s line: %s). Suggestions: %s" % \
-                                     (err.word,
-                                      os.path.basename(file_to_check),
-                                      lines.index(line) + 1,
-                                      ", ".join(en_spellchecker.suggest(err.word))
-                                     )
+                    spelling_error = \
+                        "Not in dictionary: %s (file: %s " \
+                        "line: %s). Suggestions: %s" % \
+                        (err.word,
+                         os.path.basename(file_to_check),
+                         lines.index(line) + 1,
+                         ", ".join(en_spellchecker.suggest(err.word))
+                         )
                     print(spelling_error)
                     if is_interactive_deploy:
                         action = prompt("Add '%s' to dictionary [add] or "
@@ -432,7 +434,8 @@ def spellchecker(is_interactive_deploy=True):
                         else:
                             _replace_in_file(file_to_check, err.word, action)
                     else:
-                        _send_pushover_summary(spelling_error, "Spelling error: %s" % (err.word,))
+                        _send_pushover_summary(
+                            spelling_error, "Spelling error: %s" % (err.word,))
 
     return spelling_errors_found
 
@@ -452,26 +455,33 @@ def w3c_checks(output_fd=sys.stdout):
             output_fd.write("\n")
             output_fd.write(
                 "Full details: %s\n" %
-                (W3C_HTML_VALIDATION_URL % (urllib.parse.quote_plus(url), "html"),))
+                (W3C_HTML_VALIDATION_URL %
+                 (urllib.parse.quote_plus(url), "html"),)
+            )
             all_checks_pass = False
         else:
             output_fd.write("HTML validates (%s)\n" % (url,))
 
     for url in W3C_CSS_VALIDATION_TARGETS:
-        r = requests.get(W3C_CSS_VALIDATION_URL % (urllib.parse.quote_plus(url),
-                                                   "text"))
+        r = requests.get(W3C_CSS_VALIDATION_URL %
+                         (urllib.parse.quote_plus(url), "text"))
         summary = [l.strip() for l in r.text.split('\n') if l.strip()][1]
         if "Congratulations" in summary:
             output_fd.write("CSS validates (%s)\n" % (url,))
         else:
             output_fd.write("CSS validation failures for %s\n" % (url,))
             output_fd.write("%s\n" % (summary.encode('utf-8'),))
-            output_fd.write("Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
-                                                    (urllib.parse.quote_plus(url),
-                                                     "html")))
+            output_fd.write(
+                "Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
+                                        (urllib.parse.quote_plus(url),
+                                         "html")
+                                        )
+            )
             all_checks_pass = False
     for url in W3C_RSS_VALIDATION_TARGETS:
-        r = requests.get(W3C_RSS_VALIDATION_URL % (urllib.parse.quote_plus(url),))
+        r = requests.get(W3C_RSS_VALIDATION_URL %
+                         (urllib.parse.quote_plus(url),)
+                         )
         # UGLY, and fragile but there's no machine readable output available
         if "This is a valid RSS feed" in r.text:
             output_fd.write("RSS validates (%s)\n" % (url,))
