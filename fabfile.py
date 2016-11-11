@@ -239,7 +239,7 @@ def linkchecker(output_fd=sys.stdout):
 
     # Filter out info lines
     output = [line for line in output.stderr.splitlines()
-              if b'INFO: requests.packages.urllib3.connectionpool' not in line]
+              if 'INFO: requests.packages.urllib3.connectionpool' not in line]
     # Notification about problems in index files are duplicates
     # Let's go with the notifications in the files themselves, as they will
     #  likely have the md source location.
