@@ -1,8 +1,11 @@
 language: python
 python:
 - '3.4'
+addons:
+  apt:
+    packages:
+    - enchant
 install:
-- sudo apt-get install enchant
 - pip install -r requirements.txt
 script:
 - fab linkchecker
