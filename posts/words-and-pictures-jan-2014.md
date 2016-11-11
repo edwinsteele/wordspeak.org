@@ -20,6 +20,6 @@ Reading:
 
 Watching:
 
--   [Breach](http://en.wikipedia.org/wiki/Breach_film) - The story behind Robert Hanssen, an FBI agent convicted of spying for the Soviet Union. Ryan Phillippe and Chris Cooper are incredibly good.
--   [Gravity](http://en.wikipedia.org/wiki/Gravity_(film)) - Seeing this at IMAX was a totally captivating experience. Brilliant.
+-   [Breach](https://en.wikipedia.org/wiki/Breach_film) - The story behind Robert Hanssen, an FBI agent convicted of spying for the Soviet Union. Ryan Phillippe and Chris Cooper are incredibly good.
+-   [Gravity](https://en.wikipedia.org/wiki/Gravity_(film)) - Seeing this at IMAX was a totally captivating experience. Brilliant.
 

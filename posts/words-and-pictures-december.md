@@ -19,5 +19,5 @@ Reading:
 
 Watching:
 
--   [The Amazing Race, Season 23](http://en.wikipedia.org/wiki/The_Amazing_Race_23) - After all these seasons, it's still a great way to veg out after work.
+-   [The Amazing Race, Season 23](https://en.wikipedia.org/wiki/The_Amazing_Race_23) - After all these seasons, it's still a great way to veg out after work.
 

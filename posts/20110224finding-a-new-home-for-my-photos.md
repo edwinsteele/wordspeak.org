@@ -16,7 +16,7 @@ The most enjoyable way sharing these clips is with a cup of tea in our lounge ro
 My requirements:
 
 1.  Photo sharing (der!) for many hundreds of images, grouped into tens of separate galleries
-2.  Support for displaying [geotagged](http://en.wikipedia.org/wiki/Geotagging) images on a map, automatically
+2.  Support for displaying [geotagged](https://en.wikipedia.org/wiki/Geotagging) images on a map, automatically
 3.  Sharing of videos of a few minutes in length, preferably at up to a reasonable resolution (720p)
 4.  Sharing videos where I'm using a soundtrack from an album in the background
 5.  Photos and video in the same place, not on two different sites

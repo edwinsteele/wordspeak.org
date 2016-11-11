@@ -20,6 +20,6 @@ Reading:
 
 Pictures:
 
--   [Pacific Rim](http://en.wikipedia.org/wiki/Pacific_Rim_(film)) - MechWarrior comes to life. What an absolute cracker!
+-   [Pacific Rim](https://en.wikipedia.org/wiki/Pacific_Rim_(film)) - MechWarrior comes to life. What an absolute cracker!
 -   [Sanna Dullaway injects colour into historic photographs](http://www.dailymail.co.uk/news/article-2088611/Swedish-artist-Sanna-Dullaway-injected-colour-host-historic-photographs.html) - John Hutchinson (Daily Mail). These photos seem more relevant and accessible when viewed in colour, even though they speak volumes in their original form.
 
