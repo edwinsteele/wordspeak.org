@@ -256,11 +256,11 @@ def linkchecker(output_fd=sys.stdout):
         for line in broken_links:
             output_fd.write(line + "\n")
         print_warning_lines(warning_lines, output_fd)
-        return False
+        sys.exit(1)
     else:
         output_fd.write(green("No broken links found.\n"))
         print_warning_lines(warning_lines, output_fd)
-        return True
+        sys.exit(0)
 
 
 def repo_push():
@@ -480,7 +480,10 @@ def w3c_checks(output_fd=sys.stdout):
                                                     (urllib.parse.quote_plus(url))))
             all_checks_pass = False
 
-    return all_checks_pass
+    if all_checks_pass:
+        sys.exit(0)
+    else:
+        sys.exit(1)
 
 
 def post_build_cleanup():
@@ -519,42 +522,6 @@ def _send_pushover_summary(message, title):
     return user.send_message(message=message, title=title)
 
 
-def post_deploy():
-    """Runs time consuming tasks, or those that don't need to be run inline"""
-    _initialise()
-    scratch = tempfile.TemporaryFile()
-    ran_successfully = linkchecker(scratch)
-    ran_successfully = w3c_checks(scratch) and ran_successfully
-
-    # Re-read the file and mail it
-    scratch.seek(os.SEEK_SET)
-    text = scratch.read()
-    subject = "Wordspeak deployment complete "
-    if ran_successfully:
-        subject += "(no errors) "
-    else:
-        subject += "(with errors) "
-    subject += "from %s" % (socket.gethostname().split(".")[0],)
-
-    _send_pushover_summary(text[:1000], subject)
-    if not ran_successfully:
-        # Also send an email
-        msg = MIMEText(text)
-        msg["Subject"] = subject
-        msg["To"] = conf.BLOG_EMAIL
-        msg["From"] = "%s Deployment <%s>" % (conf.BLOG_TITLE, conf.BLOG_EMAIL,)
-        print("Sending summary mail... ", end=' ')
-        try:
-            mail_server = smtplib.SMTP('localhost')
-            mail_server.sendmail(conf.BLOG_EMAIL, [conf.BLOG_EMAIL],
-                                 msg.as_string())
-            mail_server.quit()
-        except smtplib.SMTPException as e:
-            print(red("Failed.\n%s", (e,)))
-        else:
-            print(green("Success."))
-
-
 def deploy(is_interactive_deploy=True):
     """Runs all the pre-deployment checks, pushing to staging and then prod"""
     spellcheck_needed = True
@@ -580,8 +547,6 @@ def deploy(is_interactive_deploy=True):
         repo_push()
     else:
         print(red("Not pushing to live site."))
-
-    post_deploy()
 
 
 def non_interactive_deploy():
