@@ -124,7 +124,7 @@ def build():
     """Build the site using nikola"""
     with cd(SITE_BASE):
         _quietly_run_nikola_cmd("nikola", "build")
-        _quietly_run_nikola_cmd("nikola", "mincss")
+        #_quietly_run_nikola_cmd("nikola", "mincss")
         # Need to recopy the leaflet.css file as mincss optimises it away
         #  because it can't find any leaflet classes in use (they're inserted
         #  at runtime by the js library
@@ -152,7 +152,7 @@ def requirements_dump():
         #
         # It might be necessary to nuke the doit db file after this change:
         local("pip freeze | "
-              "egrep -v '(pyinotify|MacFSEvents|bsddb3)' | "
+              "egrep -v '(pyinotify|MacFSEvents|bsddb3|wheel)' | "
               "sort -f "
               "> requirements.txt")
 

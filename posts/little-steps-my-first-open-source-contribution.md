@@ -2,14 +2,14 @@
 .. title: Little steps: My first open source contribution
 .. slug: little-steps-my-first-open-source-contribution
 .. date: 2013/01/26 07:20:46
-.. spellcheck_exceptions: Fredrik,GitHub,Haard's,Hynek,Kukreti,Noller's,Preet,Schlawack's,github,headspace,https,nikola,ralsina,workflow
+.. spellcheck_exceptions: Fredrik,GitHub,Haard's,Hynek,Kukreti,Noller's,Preet,Schlawack's,github,headspace,https,nikola,getnikola,workflow
 .. tags: Technology
 .. link: 
 .. description: 
 -->
 
 
-I made my first open source contribution today and I'm pretty stoked. The change itself is almost inconsequential (<https://github.com/ralsina/nikola/pull/245>) but there have been a series of events that have helped me get here, including:
+I made my first open source contribution today and I'm pretty stoked. The change itself is almost inconsequential (<https://github.com/getnikola/nikola/pull/245>) but there have been a series of events that have helped me get here, including:
 
 -   rediscovering my love for writing code (thanks Preet Kukreti)
 -   deciding to publish my code after reading Fredrik Haard's [Dare to show your code](http://css.dzone.com/articles/rant-dare-show-your-code)

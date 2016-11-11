@@ -4,7 +4,6 @@ from __future__ import unicode_literals
 from nikola import __version__ as nikola_version
 from nikola import filters
 import os
-import rcssmin
 import socket
 
 BLOG_AUTHOR = "Edwin Steele"
@@ -57,7 +56,6 @@ GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson',
 DISABLED_PLUGINS = ["render_galleries"]
 
 FILTERS = {
-    ".css": [filters.apply_to_text_file(rcssmin.cssmin)],
     ".html": [filters.typogrify],
 }
 
