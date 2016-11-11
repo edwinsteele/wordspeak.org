@@ -251,7 +251,7 @@ def linkchecker(output_fd=sys.stdout):
     # We're interested in the remaining text, regardless of whether it's
     #  formally categorised as warning by nikola or not
     warning_lines = [line for line in output
-                     if b'Error 404' not in line]
+                     if 'Error 404' not in line]
 
     def print_warning_lines(lines, output_fd=output_fd):
         output_fd.write(yellow("Warnings found:\n"))
