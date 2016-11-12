@@ -21,5 +21,5 @@ Movies:
 -   [Skyfall](http://www.imdb.com/title/tt1074638/). If it weren't for the last 15 minutes and the rooftop bike scene, I'd have forgotten it already. Pithy, explosive enjoyment.
 -   [Bullitt](http://www.imdb.com/title/tt0062765/). Come for the car chase, stay for the cinematography. My only expectations were of the green Mustang Fastback so I was surprised to find myself captivated by the scenes without dialogue and the periods of silence, which reminded me of the amazing safe-cracking scene in [Rififi](http://www.imdb.com/title/tt0048021/). Far more artsy than I expected, and very enjoyable.
 
-Having just loaded a bunch of articles from Longform, and recently added the RSS feed from [The Browser](http://thebrowser.com), I suspect I'll have some prize articles to list next month.
+Having just loaded a bunch of articles from Longform, and recently added the RSS feed from [The Browser](https://thebrowser.com), I suspect I'll have some prize articles to list next month.
 

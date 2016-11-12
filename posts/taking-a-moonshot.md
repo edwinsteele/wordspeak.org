@@ -27,4 +27,4 @@ My first reaction to this quote was to start justifying why I should keep my pro
 Sharing and honestly seeking feedback makes you vulnerable. Allowing yourself to become vulnerable is hard. We (developers, ops engineers, product managers, designers etc) are in the business of creating, and creating is a personal thing and few people enjoy giving others an chance to *not like* something they've created. It's easy to get offended when someone gives feedback, but we can't afford to if we're truly going to be effective in producing a product that actually helps others.
 
 
-Here's the full article, [How to Make Moonshots](https://medium.com/backchannel/how-to-make-moonshots-65845011a277) - it's an interesting 10-15 minute read.
+Here's the full article, [How to Make Moonshots](https://backchannel.com/how-to-make-moonshots-65845011a277) - it's an interesting 10-15 minute read.

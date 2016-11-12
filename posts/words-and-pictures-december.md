@@ -11,7 +11,7 @@
 
 Reading:
 
--   [Professor, You're Dividing My Nation](http://chronicle.com/article/Professor-Youre-Dividing-My/139893/) - Sophie Hardach (Chronicle Review). The political complexities in defining a national language (in this case, Kurdish). If you enjoyed the Urdu piece last month, you'll enjoy this too.
+-   [Professor, You're Dividing My Nation](http://www.chronicle.com/article/Professor-Youre-Dividing-My/139893/) - Sophie Hardach (Chronicle Review). The political complexities in defining a national language (in this case, Kurdish). If you enjoyed the Urdu piece last month, you'll enjoy this too.
 -   [Pursuing the Platypus](http://idlewords.com/2013/12/pursuing_the_platypus.htm) - Maciej Cegłowski. A funny and entertaining narrative that introduces you to Australia's native fauna as the author has a holiday in Queensland.
 -   [Stuxnet's Secret Twin](http://foreignpolicy.com/2013/11/19/stuxnets-secret-twin/) - Ralph Langner (Foreign Policy). A very readable technical explanation of how Stuxnet damaged the Iranian nuclear program. (Reading in Instapaper bypasses the free registration requirement)
 -   [How the Bitcoin protocol actually works](http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works/) - Michael Nielsen. Informative and easy to follow. It's technical, but if you understand public key cryptography and cryptographic hashing, you'll be fine.

@@ -32,7 +32,7 @@ There's lots of advice about buying and using telescopes and eyepieces. I found 
 # Extra References and Equipment
 After a few sessions viewing the night sky, I learnt a few things and made a few changes. You can go nuts and spend a fortune, but I'm trying to use what I have until I know better.
 
-* Stay warm: ski pants, my [Icebreaker base layers](http://au.icebreaker.com/en/mens-layering-baselayers), gloves and a small blanket (it's winter, after all)
+* Stay warm: ski pants, my [Icebreaker base layers](http://au.icebreaker.com/en/mens-baselayers), gloves and a small blanket (it's winter, after all)
 * Viewing is better when you're sitting: a chair (when looking at objects that are low in the sky) and a bar stool (when objects are overhead)
 * Standard eyepieces are OK for deep space objects (DSOs), but not so good for planetary viewing: A [5mm Orion Edge-On-Planetary eyepiece](http://www.bintel.com.au/Eyepieces-and-Barlows/Orion/Edge-On/Orion-Edge-On-Planetary-5mm/303/productview.aspx)
 * Deep Space Objects are fun, and seeing more stars on a map helps with navigation: [SkySafari Plus](http://www.skysafariastronomy.com/products/skysafari/versions.html) (more DSOs and stars to about mag 12)

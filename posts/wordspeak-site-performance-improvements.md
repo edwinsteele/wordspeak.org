@@ -11,7 +11,7 @@
 
 Improving the performance of this site has been a fun journey. I don't think the principles of optimisation change much from domain to domain so the challenge is learning how to apply those principles to a new domain (and learning which ones are going to have the most impact). So these improvements aren't novel, but the process of discovering and implementing them was enjoyable. With no loss of functionality, I was able to significantly improve page load time for all visitors to the site and make additional improvements for those that read the site from Eastern Australia.
 
-The optimisations below were made over the space of about 6 months the improvements to page load time aren't quantified. I did look at [waterfall graphs](http://developers.google.com/chrome-developer-tools/docs/network#network_panel_overview) and get feedback from [WebPagetest](http://www.webpagetest.org) but I wanted to have fun with optimisation instead of baselining and measuring at each stage:
+The optimisations below were made over the space of about 6 months the improvements to page load time aren't quantified. I did look at [waterfall graphs](https://developers.google.com/chrome-developer-tools/docs/network#network_panel_overview) and get feedback from [WebPagetest](http://www.webpagetest.org) but I wanted to have fun with optimisation instead of baselining and measuring at each stage:
 
 Minimise geographical distances
 ===============================
@@ -25,7 +25,7 @@ Minimise what you need to transfer
 
 **Reduce Page Weight and Request Count**
 
-Each library that is used on a site will usually involve requesting at least one extra JavaScript or CSS file. It takes time to initiate those requests and it takes time to download the content in those requests. My improvements came from removing unused libraries that my site builder, Nikola, includes by default and then using [webassets bundles](http://webassets.readthedocs.org/en/latest/bundles.html) to concatenate like files so I have a single CSS and a single JavaScript file instead of 12 files. Even though the JavaScript and CSS were already minified, I was further able to reduce the amount of data in the CSS files by removing redundant selectors using [mincss](https://github.com/peterbe/mincss).
+Each library that is used on a site will usually involve requesting at least one extra JavaScript or CSS file. It takes time to initiate those requests and it takes time to download the content in those requests. My improvements came from removing unused libraries that my site builder, Nikola, includes by default and then using [webassets bundles](http://webassets.readthedocs.io/en/latest/bundles.html) to concatenate like files so I have a single CSS and a single JavaScript file instead of 12 files. Even though the JavaScript and CSS were already minified, I was further able to reduce the amount of data in the CSS files by removing redundant selectors using [mincss](https://github.com/peterbe/mincss).
 
 [Content Delivery Networks](https://en.wikipedia.org/wiki/Content_delivery_network) (CDNs) can reduce page load time under some circumstances, so I experimented with transferring ([JQuery](http://jquery.com) and [Twitter Bootstrap](http://getbootstrap.com)) from CDNs but I observed better performance by self-hosting. I expect this was for a few reasons:
 

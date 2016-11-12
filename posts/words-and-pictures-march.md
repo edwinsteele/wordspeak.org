@@ -19,7 +19,7 @@ The movies:
 And the best reading of the month:
 
 -   [Folklore - Andy Hertzfeld](http://www.folklore.org/index.py) - Life inside a start-up. Making history might be fun, but it's generally hard work. The background behind the hardware was fascinating, and took me back to 1990.
--   [Michael Lewis - Obama's Way](http://www.vanityfair.com/politics/2012/10/michael-lewis-profile-barack-obama) - It's Michael Lewis. What's not to like? Just read it.
--   [Sci-Fi Structures Found on Earth Get Transported to Alien World](http://www.wired.com/rawfile/2013/03/adam-ryder-ancient-sci-fi/) - Some people are incredibly creative. I'd happily move into Atmospheric observation outpost Omicron (the third picture) - hopefully one will appear for sale in my local real-estate agent.
+-   [Michael Lewis - Obama's Way](http://www.vanityfair.com/news/2012/10/michael-lewis-profile-barack-obama) - It's Michael Lewis. What's not to like? Just read it.
+-   [Sci-Fi Structures Found on Earth Get Transported to Alien World](https://www.wired.com/rawfile/2013/03/adam-ryder-ancient-sci-fi/) - Some people are incredibly creative. I'd happily move into Atmospheric observation outpost Omicron (the third picture) - hopefully one will appear for sale in my local real-estate agent.
 -   [The Real Cuban Missile Crisis](http://www.theatlantic.com/magazine/archive/2013/01/the-real-cuban-missile-crisis/309190/?single_page=true) - I didn't realise that my view of the crisis was so heavily influenced by the writings of a pro-Kennedy hawk. Bias is most dangerous when you don't even realise it's there.
 

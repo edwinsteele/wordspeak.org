@@ -32,7 +32,7 @@ On the desktop
 On the server
 =============
 
--   This site is built using [Nikola](http://getnikola.com) and is hosted on [Rackspace](https://www.rackspace.com/en-au)
+-   This site is built using [Nikola](https://getnikola.com) and is hosted on [Rackspace](https://www.rackspace.com/en-au)
 -   Photos are hosted on [Flickr](http://www.flickr.com/photos/edwin_steele/) and videos on [Vimeo](https://vimeo.com/edwinsteele/videos)
 -   Source for this site is in my [Github repository](https://github.com/edwinsteele/wordspeak.org)
 
