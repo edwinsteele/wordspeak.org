@@ -2,7 +2,7 @@
 .. title: Licensing
 .. slug: licensing
 .. date: 2013/01/29 07:23:17
-.. spellcheck_exceptions: Flickr,Vimeo,blog,wordspeak
+.. spellcheck_exceptions: creativecommons,https,Flickr,Vimeo,blog,wordspeak
 .. tags: 
 .. link: 
 .. description: 
