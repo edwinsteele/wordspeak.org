@@ -9,7 +9,7 @@
 -->
 
 
-This month I got stuck in a tome, and I found it hard to leave the office during the day, which meant my lunchtime [Instapaper](http://www.instapaper.com/) routine didn't happen very often, which means there aren't so many smaller articles for recommendation this month.
+This month I got stuck in a tome, and I found it hard to leave the office during the day, which meant my lunchtime [Instapaper](https://www.instapaper.com/) routine didn't happen very often, which means there aren't so many smaller articles for recommendation this month.
 
 Notable reading:
 

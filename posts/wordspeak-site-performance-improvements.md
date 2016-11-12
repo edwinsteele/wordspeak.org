@@ -11,7 +11,7 @@
 
 Improving the performance of this site has been a fun journey. I don't think the principles of optimisation change much from domain to domain so the challenge is learning how to apply those principles to a new domain (and learning which ones are going to have the most impact). So these improvements aren't novel, but the process of discovering and implementing them was enjoyable. With no loss of functionality, I was able to significantly improve page load time for all visitors to the site and make additional improvements for those that read the site from Eastern Australia.
 
-The optimisations below were made over the space of about 6 months the improvements to page load time aren't quantified. I did look at [waterfall graphs](https://developers.google.com/chrome-developer-tools/docs/network#network_panel_overview) and get feedback from [WebPagetest](http://www.webpagetest.org) but I wanted to have fun with optimisation instead of baselining and measuring at each stage:
+The optimisations below were made over the space of about 6 months the improvements to page load time aren't quantified. I did look at [waterfall graphs](https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading) and get feedback from [WebPagetest](http://www.webpagetest.org) but I wanted to have fun with optimisation instead of baselining and measuring at each stage:
 
 Minimise geographical distances
 ===============================
