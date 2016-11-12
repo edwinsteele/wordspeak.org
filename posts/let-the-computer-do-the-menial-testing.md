@@ -18,7 +18,7 @@ Recently I [wrote](/posts/experimenting-with-fabric-for-deployments.html) about 
 -   versioning the modules used in my build environment
 -   confirming I've version controlled my posts and build environment
 -   the sync to the staging site (on my local machine)
--   broken link checking using [linkchecker](https://pypi.python.org/pypi/linkchecker)
+-   broken link checking using [linkchecker](https://pypi.python.org/pypi/LinkChecker)
 -   checking for orphaned files (I'm still working out what to do with the gallery, and I haven't finished writing the background for the other page)
 -   the sync to the main site
 -   a push to the github repository to make sure it's current

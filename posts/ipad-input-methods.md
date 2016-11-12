@@ -24,7 +24,7 @@ I learnt to use a stylus when I had a [Palm M500](https://en.wikipedia.org/wiki/
 External Keyboards
 ==================
 
-I find typing and editing with a physical keyboard to be a much better experience than using the on-screen keyboard. I use a spare Apple Bluetooth job that we had lying around but there are also keyboards that are integrated into the case like the [Logitech Ultrathin](http://www.logitech.com/en-au/product/ultrathin-keyboard-cover) which makes transport easier. I prefer a full-sized keyboard, and I'm really fond of my [Portenzo BookCase](http://shop.portenzo.com/bookcase-for-ipad-air-and-other-ipads/) case so I'm happy to lug an extra device for the times that I plan to do a bunch of typing, at least until something better comes along!
+I find typing and editing with a physical keyboard to be a much better experience than using the on-screen keyboard. I use a spare Apple Bluetooth job that we had lying around but there are also keyboards that are integrated into the case like the [Logitech Ultrathin](http://www.logitech.com/en-au/product/ultrathin-keyboard-cover) which makes transport easier. I prefer a full-sized keyboard, and I'm really fond of my [Portenzo BookCase](http://www.portenzo.com/collections/ipad) case so I'm happy to lug an extra device for the times that I plan to do a bunch of typing, at least until something better comes along!
 
 In summary
 ==========

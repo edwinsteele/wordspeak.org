@@ -12,7 +12,7 @@
 I made my first open source contribution today and I'm pretty stoked. The change itself is almost inconsequential (<https://github.com/getnikola/nikola/pull/245>) but there have been a series of events that have helped me get here, including:
 
 -   rediscovering my love for writing code (thanks Preet Kukreti)
--   deciding to publish my code after reading Fredrik Haard's [Dare to show your code](http://css.dzone.com/articles/rant-dare-show-your-code)
+-   deciding to publish my code after reading Fredrik Haard's [Dare to show your code](https://dzone.com/articles/rant-dare-show-your-code)
 -   learning git (and the GitHub workflow)
 -   Hynek Schlawack's [My Road to the Python Commit Bit](https://hynek.me/articles/my-road-to-the-python-commit-bit/)
 -   Jesse Noller's [Why aren't you contributing (To Python)](http://jessenoller.com/2010/04/22/why-arent-you-contributing-to-python)
