@@ -239,8 +239,11 @@ def linkchecker(output_fd=sys.stdout):
 
     broken_links = [line for line in output.stderr.splitlines()
                     if 'Error 404' in line]
+    # Broken links will appear in both lists, but that's ok, excluding
+    #  INFO lines means we make sure we see other errors that aren't
+    #  404.
     warning_lines = [line for line in output.stderr.splitlines()
-                     if 'WARNING' in line]
+                     if ' INFO: ' not in line]
 
     def print_warning_lines(lines, output_fd=output_fd):
         output_fd.write(yellow("Warnings found:\n"))
