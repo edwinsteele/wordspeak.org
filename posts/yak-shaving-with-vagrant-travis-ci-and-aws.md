@@ -17,7 +17,7 @@ I've just finished setting up CI pipeline for a personal project. The project ha
 
 The default build agent is based on Ubuntu 12.04 LTS Server which ships with Ansible 1.0 in its apt repo. The [vagrant-aws](https://github.com/mitchellh/vagrant-aws) plugin requires Vagrant 1.2. Fortunately they have a [Ubuntu 14.04 LTS Server beta](https://docs.travis-ci.com/user/trusty-ci-environment) which has a newer Vagrant in the apt repo.
 
-# Finding #2: The AWS-Vagrant plugin won't build with a newer Vagrant because of missing libraries tools
+# Finding #2: The AWS-Vagrant plugin won't build with a newer Vagrant because of missing libraries and tools
 
 ```
 $ vagrant plugin install vagrant-aws
@@ -70,11 +70,11 @@ Now I'm running out of ideas and I'm considering less conventional means like bu
 
 # The Answer
 
-From https://www.vagrantup.com/docs/installation/
+From [the Vagrant docs](https://www.vagrantup.com/docs/installation/)
 
 > Beware of system package managers! Some operating system distributions include a vagrant package in their upstream package repos. Please do not install Vagrant in this manner. Typically these packages are missing dependencies or include very outdated versions of Vagrant. If you install via your system's package manager, it is very likely that you will experience issues. Please use the official installers on the downloads page.
 
-Yeah, I experienced issues. Once I followed the advice it was smooth 
+Yeah, I experienced issues. Once I followed the advice it was smooth. Perhaps I should have looked at the official docs sooner!
 
 ```
 $ wget -O /tmp/vagrant.deb https://releases.hashicorp.com/vagrant/1.8.7/vagrant_1.8.7_x86_64.deb
