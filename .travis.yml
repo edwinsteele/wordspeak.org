@@ -13,7 +13,7 @@ script:
 - fab linkchecker
 - fab w3c_checks
 - webpagetest test https://origin.wordspeak.org --key=$WEBPAGETEST_API_KEY --location=ec2-ap-southeast-2:Chrome
-  --clearcerts --first --poll --specs ci/wpt_frontpage_testspecs.json --reporter spec
+  --clearcerts --first --poll --timeout 570 --specs ci/wpt_frontpage_testspecs.json --reporter spec
 notifications:
   email:
     recipients:
