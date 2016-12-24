@@ -21,8 +21,8 @@ def get_location_from_str(location_str, locator):
 def extract_details_from_file(filename):
     soc_list = []
 
-    with open(filename) as f:
-        lines = f.readlines()
+    with open(filename) as fd:
+        lines = fd.readlines()
 
     for line in lines:
         # Country is always first
@@ -74,7 +74,6 @@ for soc in soc_list:
     if l:
         soc.lat = l.latitude
         soc.lon = l.longitude
-        #print soc_as_debug(l)
         print soc_as_statement(soc)
     else:
         unable_to_resolve.append("Unable to resolve %s" % (location_str,))
