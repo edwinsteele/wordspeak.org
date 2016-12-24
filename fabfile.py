@@ -2,20 +2,16 @@ from __future__ import print_function
 from future import standard_library
 standard_library.install_aliases()
 from builtins import map
-import csv
 import glob
 import os
 import re
-import smtplib
 import socket
 import sys
-import tempfile
 import urllib.request, urllib.parse, urllib.error
-from email.mime.text import MIMEText
-from fabric.api import abort, local, settings
+from fabric.api import abort, local
 from fabric.colors import green, red, yellow
 from fabric.contrib.console import confirm
-from fabric.context_managers import cd, hide, quiet, warn_only
+from fabric.context_managers import cd, hide, quiet
 from fabric.operations import prompt
 import enchant
 import enchant.checker
@@ -23,6 +19,8 @@ import enchant.tokenize
 import requests
 import conf
 from chump import Application
+import webassets  # for bundle creation
+import rcssmin  # for css minifaction
 
 TILDE = os.path.expanduser("~")
 STAGING_FQDN = "staging.wordspeak.org"
@@ -508,13 +506,6 @@ def get_env_variable(var_name):
 
 def _initialise():
     """Make sure we have all the python modules needed for the build"""
-    try:
-        import webassets  # for bundle creation
-        import rcssmin  # for css minifaction
-    except ImportError as e:
-        # noinspection PyUnusedLocal
-        webassets = rcssmin = None
-        abort(red("Missing module: %s" % (e,)))
     get_env_variable("WORDSPEAK_PUSHOVER_USER")
     get_env_variable("WORDSPEAK_PUSHOVER_API_TOKEN")
 
