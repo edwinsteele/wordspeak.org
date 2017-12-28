@@ -5,6 +5,13 @@ addons:
   apt:
     packages:
     - enchant
+cache:
+  directories:
+  - "$HOME/.cache/pip"
+  pip: true
+  timeout: 86400
+before_cache:
+- rm -f $HOME/.cache/pip/log/debug.log
 install:
 - pip install -r requirements.txt
 - npm install webpagetest -g
