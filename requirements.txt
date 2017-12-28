@@ -12,6 +12,7 @@ docutils==0.12            # via nikola
 doit==0.29.0              # via nikola
 ecdsa==0.13               # via paramiko
 fabric3==1.12.post1
+future==0.16.0
 geopy==1.10.0
 logbook==1.0.0            # via nikola
 lxml==3.6.4               # via nikola
