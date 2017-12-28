@@ -15,7 +15,6 @@ fabric3==1.12.post1
 geopy==1.10.0
 logbook==1.0.0            # via nikola
 lxml==3.6.4               # via nikola
-macfsevents==0.7          # via doit
 mako==1.0.4
 markdown==2.6.6
 markupsafe==0.23          # via mako
