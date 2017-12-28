@@ -5,6 +5,7 @@ from builtins import map
 import glob
 import os
 import re
+from subprocess import Popen, PIPE, TimeoutExpired
 import socket
 import sys
 import urllib.request, urllib.parse, urllib.error
@@ -232,15 +233,32 @@ def linkchecker(output_fd=sys.stdout):
     Ignores posts because the links all appear in the index pages
     Returns whether the task found any 404s
     """
-    with cd(SITE_BASE):
-        output = local("nikola check -l -r --find-sources", capture=True)
+    #with cd(SITE_BASE):
+    #    output = local("nikola check -l -r --find-sources", capture=True)
+    args = [
+        "nikola",
+        "check",
+        "-l",
+        "-r",
+        "--find-sources"
+    ]
 
-    broken_links = [line for line in output.stderr.splitlines()
+    with Popen(args, stderr=PIPE, bufsize=0) as proc:
+        while not proc.poll():
+            try:
+                out, err = proc.communicate(timeout=5)
+            except TimeoutExpired:
+                print(".", end="", flush=True)
+
+        print("poll done")
+        out, err = proc.communicate()
+
+    broken_links = [line for line in err.splitlines()
                     if 'Error 404' in line]
     # Broken links will appear in both lists, but that's ok, excluding
     #  INFO lines means we make sure we see other errors that aren't
     #  404.
-    warning_lines = [line for line in output.stderr.splitlines()
+    warning_lines = [line for line in err.splitlines()
                      if ' INFO: ' not in line]
 
     def print_warning_lines(lines, output_fd=output_fd):
