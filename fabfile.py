@@ -251,7 +251,7 @@ def linkchecker(output_fd=sys.stdout):
                 print(".", end="", flush=True)
 
         print("poll done")
-        out, err = proc.communicate()
+        err = proc.stderr
 
     broken_links = [line for line in err.splitlines()
                     if 'Error 404' in line]
