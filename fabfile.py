@@ -5,7 +5,7 @@ from builtins import map
 import glob
 import os
 import re
-from subprocess import Popen, PIPE, TimeoutExpired
+from subprocess import DEVNULL, Popen, PIPE, TimeoutExpired
 import socket
 import sys
 import urllib.request, urllib.parse, urllib.error
@@ -243,8 +243,8 @@ def linkchecker(output_fd=sys.stdout):
         "--find-sources"
     ]
 
-    with Popen(args, stderr=PIPE, bufsize=0) as proc:
-        while not proc.poll():
+    with Popen(args, stderr=PIPE, stdout=DEVNULL, bufsize=0) as proc:
+        while proc.poll() is None:
             try:
                 out, err = proc.communicate(timeout=5)
             except TimeoutExpired:
