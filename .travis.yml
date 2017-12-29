@@ -17,7 +17,6 @@ install:
 - npm install webpagetest -g
 script:
 - nikola build
-- fab linkchecker
 - fab w3c_checks
 - fab spellchecker
 - webpagetest test https://origin.wordspeak.org --key=$WEBPAGETEST_API_KEY --location=ec2-ap-southeast-2:Chrome
