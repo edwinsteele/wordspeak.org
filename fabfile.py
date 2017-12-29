@@ -5,7 +5,7 @@ from builtins import map
 import glob
 import os
 import re
-from subprocess import DEVNULL, Popen, PIPE, TimeoutExpired
+from subprocess import DEVNULL, Popen, PIPE
 import socket
 import sys
 import time
@@ -35,7 +35,8 @@ PROD_FILESYSTEM_ROOT = "Sites/www.wordspeak.org"
 PROD_RSYNC_DESTINATION_LOCAL = os.path.join(TILDE, PROD_FILESYSTEM_ROOT)
 PROD_RSYNC_DESTINATION_REMOTE = "%s:/home/esteele/%s" % \
                                 (PROD_FQDN, PROD_FILESYSTEM_ROOT)
-SITE_BASE = os.path.join(TILDE, "Code/wordspeak.org")
+# i.e. the directory containing this file
+SITE_BASE = os.path.dirname(__file__)
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
 SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
@@ -567,3 +568,6 @@ def non_interactive_deploy():
         print("Running non-interactive deploy")
 
     deploy(is_interactive_deploy=False)
+
+def zzz():
+    print(__file__)
