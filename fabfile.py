@@ -8,6 +8,7 @@ import re
 from subprocess import DEVNULL, Popen, PIPE, TimeoutExpired
 import socket
 import sys
+import time
 import urllib.request, urllib.parse, urllib.error
 from fabric.api import abort, local
 from fabric.colors import green, red, yellow
@@ -233,8 +234,6 @@ def linkchecker(output_fd=sys.stdout):
     Ignores posts because the links all appear in the index pages
     Returns whether the task found any 404s
     """
-    #with cd(SITE_BASE):
-    #    output = local("nikola check -l -r --find-sources", capture=True)
     args = [
         "nikola",
         "check",
@@ -245,13 +244,11 @@ def linkchecker(output_fd=sys.stdout):
 
     with Popen(args, stderr=PIPE, stdout=DEVNULL, bufsize=0) as proc:
         while proc.poll() is None:
-            try:
-                out, err = proc.communicate(timeout=5)
-            except TimeoutExpired:
-                print(".", end="", flush=True)
+            # Print something to indicate progress to the build
+            print(".", end="", flush=True)
+            time.sleep(5)
 
-        print("poll done")
-        err = proc.stderr
+        err = proc.stderr.read()
 
     broken_links = [line for line in err.splitlines()
                     if 'Error 404' in line]
