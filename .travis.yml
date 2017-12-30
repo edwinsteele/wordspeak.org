@@ -37,9 +37,6 @@ notifications:
 env:
   global:
   - secure: eeupNNeHmMUKWBlQioZpg5X1wa4C0JMqZ46hN1kaDebdhY85UzMbiQtYRTx2N2fA+XA4AbKgCH/iofM81wMq2uhawZZWfi5L88pD3Bs+mqpNip1U219b6yEzvNms3OA/CfuCZgCtmQxcwClT7/738D0YQ3r5+BQGL5neU0QRShoLeAFb948Y839uQPw3m/iWLaayPwH6j9BmxuKxfgCTpLIQa3iePFwVmlAU0tbFQCJMfh7GhMfivlDcfBb3cdUQO8RBPOOuJM3H/3JMIrHDl/cR07hk8r7fx/+v2l2x4x1sY9Cgqf9lV71d/gtohKVrk5XwjHvsAieU7s0uTOUVVe40yazoEt3ndOmjW3pjXVqDN9HYYAG+vhBrAuuBxxeqJ9mi5hUI2QGLJHB8ykUuTTZNiFitTCkqKvm0uaX9H3aE71vZaxKNofW060xBN2ZreA6qWdXZdwQwh5vOfvfutwIW32Wg0uU6JxkG/vVcp9xWi/xurlnYFgwt/oDmr5j8BfZPxk1YSW5yyjS8pSGERBktXpv5gsbWmCGNGO46Ly1N/S6zNZjjuZbrec+bkr7QtQCG367GcCYF0SA/3IXzGOw3skH7BV2CxqAJuKH3jY3/dSntuxDrpWWKQBwbF9tpOpPUoV8g2K1KGHQvaj4A4473ca0/lyApi36/GdcCcOU=
-before_install:
-- openssl aes-256-cbc -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv
-  -in ci/wordspeak-sync-id_rsa.enc -out ci/wordspeak-sync-id_rsa -d
 deploy:
   - provider: script
     script: ci/deploy.sh master
