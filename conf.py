@@ -39,11 +39,9 @@ FAVICONS = {
 }
 
 # Specify these so we can move them outside the dropbox sync'ed area
-# MUST be absolute
-#OUTPUT_FOLDER='/Users/esteele/Code/wordspeak.org/output'
-#CACHE_FOLDER='/Users/esteele/Code/wordspeak.org/cache'
-OUTPUT_FOLDER = os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_output')
-CACHE_FOLDER = os.path.join(os.path.expanduser('~'), 'tmp/nikola_wordspeak_cache')
+# MUST be absolute - XXX. Why must it be absolute?
+OUTPUT_FOLDER = os.path.join(os.path.dirname(__file__), 'output')
+CACHE_FOLDER = os.path.join(os.path.dirname(__file__), 'cache')
 
 MARKDOWN_EXTENSIONS = ['fenced_code', 'codehilite', 'footnotes', 'tables', 'def_list']
 
