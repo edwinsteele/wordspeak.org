@@ -51,20 +51,20 @@ UNWANTED_BUILD_ARTIFACTS = [
 KEY_FILES = ["conf.py", "fabfile.py"]
 W3C_HTML_VALIDATION_URL = 'https://validator.w3.org/nu/?doc=%s&out=%s'
 W3C_HTML_VALIDATION_TARGETS = [
-    'https://origin.wordspeak.org/index.html',
-    'https://origin.wordspeak.org/pages/about.html',
-    'https://origin.wordspeak.org/posts/write-because-you-want-to.html',
-    'https://origin.wordspeak.org/posts/nsw-fires.html',
+    'https://staging.wordspeak.org/index.html',
+    'https://staging.wordspeak.org/pages/about.html',
+    'https://staging.wordspeak.org/posts/write-because-you-want-to.html',
+    'https://staging.wordspeak.org/posts/nsw-fires.html',
 ]
 W3C_CSS_VALIDATION_URL = 'http://jigsaw.w3.org/css-validator/validator?' \
                          'uri=%s&profile=css3&usermedium=all&warning=1&' \
                          'vextwarning=&lang=en&output=%s'
 W3C_CSS_VALIDATION_TARGETS = [
-    'https://origin.wordspeak.org/assets/css/all-nocdn.css',
+    'https://staging.wordspeak.org/assets/css/all-nocdn.css',
 ]
 W3C_RSS_VALIDATION_URL = 'http://validator.w3.org/feed/check.cgi?url=%s'
 W3C_RSS_VALIDATION_TARGETS = [
-    'https://origin.wordspeak.org/rss.xml',
+    'https://staging.wordspeak.org/rss.xml',
 ]
 LANGUAGE_EXPLORER_DIRNAME = "language_explorer"
 

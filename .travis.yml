@@ -17,10 +17,10 @@ install:
 - npm install webpagetest -g
 script:
 - nikola build
+- fab spellchecker
 - ci/deploy.sh staging
 - fab w3c_checks
-- fab spellchecker
-- webpagetest test https://origin.wordspeak.org --key=$WEBPAGETEST_API_KEY --location=ec2-ap-southeast-2:Chrome
+- webpagetest test https://staging.wordspeak.org --key=$WEBPAGETEST_API_KEY --location=ec2-ap-southeast-2:Chrome
   --clearcerts --first --poll --timeout 570 --specs ci/wpt_frontpage_testspecs.json
   --reporter spec
 notifications:
