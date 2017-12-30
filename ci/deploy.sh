@@ -2,15 +2,17 @@
 
 deploy_to_staging( ) {
   echo "Deploying to staging"; 
+  rsync -av -e 'ssh -i ci/wordspeak-sync-id_rsa' --delete --filter="protect language_explorer" --filter="exclude *.md" --filter="exclude *.md.gz" output/ origin.wordspeak.org:/home/esteele/Sites/staging.wordspeak.org/
 }
 
 deploy_to_prod( ) {
   echo "Deploying to prod";
 }
 
-echo "Running with TRAVIS_BRANCH = $TRAVIS_BRANCH"
-deploy_to_staging
+if [ "$1" = "staging" ]; then
+  deploy_to_staging
+fi
 
-if [ "$TRAVIS_BRANCH" = "master" ]; then
+if [ "$1" = "master" ]; then
   deploy_to_prod
 fi

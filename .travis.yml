@@ -17,6 +17,7 @@ install:
 - npm install webpagetest -g
 script:
 - nikola build
+- ci/deploy.sh staging
 - fab w3c_checks
 - fab spellchecker
 - webpagetest test https://origin.wordspeak.org --key=$WEBPAGETEST_API_KEY --location=ec2-ap-southeast-2:Chrome
@@ -41,6 +42,6 @@ before_install:
   -in ci/wordspeak-sync-id_rsa.enc -out ci/wordspeak-sync-id_rsa -d
 deploy:
   - provider: script
-    script: ci/deploy.sh
+    script: ci/deploy.sh master
     on:
-      all_branches: true
+      branch: master
