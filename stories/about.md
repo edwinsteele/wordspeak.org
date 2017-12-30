@@ -19,7 +19,7 @@ You can reach me at <edwin@wordspeak.org>.
 Behind the keyboard
 ===================
 
-I live in Sydney, Australia, and am happily married with two children. I'm a follower of Jesus and am a part of [ImagineNations Church](https://inchurch.com.au) in western Sydney. My day job is in IT Operations but I also love writing software in Python in my spare time.
+I live in Sydney, Australia, and am happily married with three children. I'm a follower of Jesus and am a part of [ImagineNations Church](https://inchurch.com.au) in western Sydney. My day job is in IT Operations but I also love writing software in Python in my spare time.
 
 On the desktop
 ==============
