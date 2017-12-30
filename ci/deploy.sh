@@ -2,7 +2,7 @@
 
 deploy_to_staging( ) {
   echo "Deploying to staging"; 
-  rsync -av -e 'ssh -i ci/wordspeak-sync-id_rsa' --delete --filter="protect language_explorer" --filter="exclude *.md" --filter="exclude *.md.gz" output/ origin.wordspeak.org:/home/esteele/Sites/staging.wordspeak.org/
+  rsync -av -e 'ssh -o StrictHostKeyChecking=no -o BatchMode=yes -i ci/wordspeak-sync-id_rsa' --delete --filter="protect language_explorer" --filter="exclude *.md" --filter="exclude *.md.gz" output/ origin.wordspeak.org:/home/esteele/Sites/staging.wordspeak.org/
 }
 
 deploy_to_prod( ) {
