@@ -39,3 +39,6 @@ env:
 before_install:
 - openssl aes-256-cbc -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv
   -in wordspeak-sync-id_rsa.enc -out wordspeak-sync-id_rsa -d
+deploy:
+  - provider: script
+    script: ci/deploy.sh

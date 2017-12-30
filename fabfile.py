@@ -568,6 +568,3 @@ def non_interactive_deploy():
         print("Running non-interactive deploy")
 
     deploy(is_interactive_deploy=False)
-
-def zzz():
-    print(__file__)
