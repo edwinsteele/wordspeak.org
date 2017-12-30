@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STAGING_DEPLOY_KEY="ci/wordspeak-sync-id_rsa"
+STAGING_DEPLOY_KEY="ci/staging-sync-id_rsa"
 SSH_STANDARD_ARGS="-l esteele -o StrictHostKeyChecking=no -o BatchMode=yes"
 
 deploy_to_staging( ) {
