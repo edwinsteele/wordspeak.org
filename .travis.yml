@@ -42,3 +42,5 @@ before_install:
 deploy:
   - provider: script
     script: ci/deploy.sh
+    on:
+      all_branches: true
