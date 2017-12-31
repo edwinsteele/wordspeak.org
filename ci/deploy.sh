@@ -15,6 +15,7 @@ else
   exit 1;
 fi
 
+chmod 600 $DEPLOY_KEY
 rsync -av \
   -e "ssh $SSH_STANDARD_ARGS -i $DEPLOY_KEY" \
   --delete \
