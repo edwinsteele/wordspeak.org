@@ -13,8 +13,14 @@ cache:
 before_cache:
 - rm -f $HOME/.cache/pip/log/debug.log
 before_install:
-- touch ci/staging-sync-id_rsa && chmod 600 ci/staging-sync-id_rsa && openssl aes-256-cbc -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv -in ci/staging-sync-id_rsa.enc -out ci/staging-sync-id_rsa -d
-- touch ci/prod-sync-id_rsa && chmod 600 ci/prod-sync-id_rsa && openssl aes-256-cbc -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv -in ci/prod-sync-id_rsa.enc -out ci/prod-sync-id_rsa -d
+- openssl aes-256-cbc -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv
+  -in staging-sync-id_rsa.enc -out staging-sync-id_rsa -d
+- touch ci/staging-sync-id_rsa && chmod 600 ci/staging-sync-id_rsa && openssl aes-256-cbc
+  -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv -in ci/staging-sync-id_rsa.enc
+  -out ci/staging-sync-id_rsa -d
+- touch ci/prod-sync-id_rsa && chmod 600 ci/prod-sync-id_rsa && openssl aes-256-cbc
+  -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv -in ci/prod-sync-id_rsa.enc
+  -out ci/prod-sync-id_rsa -d
 install:
 - pip install -r requirements.txt
 - npm install webpagetest -g
