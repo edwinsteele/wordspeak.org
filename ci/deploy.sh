@@ -12,7 +12,8 @@ if [ "$1" = "staging" ]; then
   TARGET_SITE="staging.wordspeak.org"
 elif [ "$1" = "prod" ]; then
   echo "Deploying to prod";
-  ENCRYPTED_KEY="ci/prod-sync-id_rsa.enc"
+  #ENCRYPTED_KEY="ci/prod-sync-id_rsa.enc"
+  ENCRYPTED_KEY="ci/staging-sync-id_rsa.enc"
   TARGET_SITE="www.wordspeak.org"
 else
   echo "Unknown deployment target. Exiting";
