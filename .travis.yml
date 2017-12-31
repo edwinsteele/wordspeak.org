@@ -12,6 +12,11 @@ cache:
   timeout: 86400
 before_cache:
 - rm -f $HOME/.cache/pip/log/debug.log
+before_install:
+- touch ci/prod-sync-id_rsa && chmod 600 ci/prod-sync-id_rsa && openssl aes-256-cbc -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv
+  -in ci/prod-sync-id_rsa.enc -out ci/prod-sync-id_rsa -d
+- touch ci/staging-sync-id_rsa && chmod 600 ci/staging-sync-id_rsa && openssl aes-256-cbc -K $encrypted_68de9d9be834_key -iv $encrypted_68de9d9be834_iv
+  -in ci/staging-sync-id_rsa.enc -out ci/staging-sync-id_rsa -d
 install:
 - pip install -r requirements.txt
 - npm install webpagetest -g
@@ -43,3 +48,6 @@ deploy:
   script: ci/deploy.sh prod
   on:
     branch: master
+after_deploy:
+- rm ci/prod-sync-id_rsa
+- rm ci/staging-sync-id_rsa
