@@ -34,5 +34,7 @@ rsync -av \
   --filter="exclude *.md.gz" \
   output/ \
   origin.wordspeak.org:/home/esteele/Sites/$TARGET_SITE/
+rsync_exit=$?
 
-exit $?
+rm -f $DEPLOY_KEY
+exit $rsync_exit
