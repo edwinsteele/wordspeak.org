@@ -8,7 +8,8 @@ chmod 600 $DEPLOY_KEY
 
 if [ "$1" = "staging" ]; then
   echo "Deploying to staging";
-  ENCRYPTED_KEY="ci/staging-sync-id_rsa.enc"
+  #ENCRYPTED_KEY="ci/staging-sync-id_rsa.enc"
+  ENCRYPTED_KEY="ci/prod-sync-id_rsa.enc"
   TARGET_SITE="staging.wordspeak.org"
 elif [ "$1" = "prod" ]; then
   echo "Deploying to prod";
