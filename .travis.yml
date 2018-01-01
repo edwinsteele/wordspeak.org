@@ -20,10 +20,10 @@ install:
 - pip install -r requirements.txt
 - npm install webpagetest -g
 script:
-- nikola build
-- fab spellchecker
+- wordspeak_tool.py build
+- wordspeak_tool.py spellchecker
 - ci/deploy.sh staging
-- fab w3c_checks
+- wordspeak_tool.py w3c_checks
 - webpagetest test https://staging.wordspeak.org --key=$WEBPAGETEST_API_KEY --location=ec2-ap-southeast-2:Chrome
   --clearcerts --first --poll --timeout 570 --specs ci/wpt_frontpage_testspecs.json
   --reporter spec
