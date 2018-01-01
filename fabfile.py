@@ -11,7 +11,6 @@ import time
 import urllib.request
 import urllib.parse
 import urllib.error
-from fabric.colors import green, yellow
 import enchant
 import enchant.checker
 import enchant.tokenize
@@ -19,7 +18,6 @@ import requests
 import conf
 
 
-TILDE = os.path.expanduser("~")
 # i.e. the directory containing this file
 SITE_BASE = os.path.dirname(__file__)
 OUTPUT_BASE = conf.OUTPUT_FOLDER
@@ -68,7 +66,7 @@ def build():
     post_build_cleanup()
 
 
-def linkchecker(output_fd=sys.stdout):
+def linkchecker():
     """Checks for broken links on the staging site
 
     Ignores posts because the links all appear in the index pages
@@ -84,12 +82,14 @@ def linkchecker(output_fd=sys.stdout):
 
     with subprocess.Popen(args,
                           stderr=subprocess.PIPE,
-                          stdout=subprocess.DEVNULL) as proc:
+                          stdout=subprocess.DEVNULL,
+                          universal_newlines=True) as proc:
         while proc.poll() is None:
             # Print something to indicate progress to the build
             print(".", end="", flush=True)
             time.sleep(5)
 
+        # universal_newlines means this is text, not bytes
         err = proc.stderr.read()
 
     broken_links = [line for line in err.splitlines()
@@ -100,25 +100,25 @@ def linkchecker(output_fd=sys.stdout):
     warning_lines = [line for line in err.splitlines()
                      if ' INFO: ' not in line]
 
-    def print_warning_lines(lines, output_fd=output_fd):
+    def print_warning_lines(lines):
         """extract warning lines from nikola check output"""
-        output_fd.write(yellow("Warnings found:\n"))
+        print("Warnings found:")
         for line in lines:
-            output_fd.write(line + "\n")
+            print(line)
 
     # We want to fail on broken links, but not on 500 errors or timeouts
     # The rationale is that they're most likely to be transient, and not
     #  something indicative of a failure on our end, so we wouldn't want
     #  to fail the build
     if broken_links:
-        output_fd.write(yellow("Broken links found:\n"))
+        print("Broken links found:")
         for line in broken_links:
-            output_fd.write(line + "\n")
-        print_warning_lines(warning_lines, output_fd)
+            print(line)
+        print_warning_lines(warning_lines)
         sys.exit(1)
     else:
-        output_fd.write(green("No broken links found.\n"))
-        print_warning_lines(warning_lines, output_fd)
+        print("No broken links found.")
+        print_warning_lines(warning_lines)
         sys.exit(0)
 
 
@@ -180,7 +180,7 @@ def strip_markdown_directives(line):
     return line
 
 
-def spellchecker(is_interactive_deploy=True):
+def spellchecker():
     """Spellcheck the Markdown and ReST files on the site"""
 
     spelling_errors_found = False
@@ -221,7 +221,7 @@ def spellchecker(is_interactive_deploy=True):
     return spelling_errors_found
 
 
-def w3c_checks(output_fd=sys.stdout):
+def w3c_checks():
     all_checks_pass = True
     for url in W3C_HTML_VALIDATION_TARGETS:
         r = requests.get(W3C_HTML_VALIDATION_URL %
@@ -230,33 +230,32 @@ def w3c_checks(output_fd=sys.stdout):
         error_messages = [m["message"] for m in r.json()["messages"]
                           if m["type"] != "info"]
         if error_messages:
-            output_fd.write("HTML has W3C validation errors (%s):\n" % (url,))
+            print("HTML has W3C validation errors (%s):" % (url,))
             for message in error_messages:
-                output_fd.write("- %s" % (message.encode('utf-8'),))
-            output_fd.write("\n")
-            output_fd.write(
-                "Full details: %s\n" %
+                print("- %s" % (message.encode('utf-8'),), end=" ")
+            print()
+            print(
+                "Full details: %s" %
                 (W3C_HTML_VALIDATION_URL %
                  (urllib.parse.quote_plus(url), "html"),)
             )
             all_checks_pass = False
         else:
-            output_fd.write("HTML validates (%s)\n" % (url,))
+            print("HTML validates (%s)" % (url,))
 
     for url in W3C_CSS_VALIDATION_TARGETS:
         r = requests.get(W3C_CSS_VALIDATION_URL %
                          (urllib.parse.quote_plus(url), "text"))
         summary = [l.strip() for l in r.text.split('\n') if l.strip()][1]
         if "Congratulations" in summary:
-            output_fd.write("CSS validates (%s)\n" % (url,))
+            print("CSS validates (%s)" % (url,))
         else:
-            output_fd.write("CSS validation failures for %s\n" % (url,))
-            output_fd.write("%s\n" % (summary.encode('utf-8'),))
-            output_fd.write(
-                "Full details: %s\n" % (W3C_CSS_VALIDATION_URL %
-                                        (urllib.parse.quote_plus(url),
-                                         "html")
-                                        )
+            print("CSS validation failures for %s" % (url,))
+            print("%s" % (summary.encode('utf-8'),))
+            print(
+                "Full details: %s" %
+                (W3C_CSS_VALIDATION_URL % (urllib.parse.quote_plus(url),
+                                           "html"))
             )
             all_checks_pass = False
     for url in W3C_RSS_VALIDATION_TARGETS:
@@ -265,11 +264,11 @@ def w3c_checks(output_fd=sys.stdout):
                          )
         # UGLY, and fragile but there's no machine readable output available
         if "This is a valid RSS feed" in r.text:
-            output_fd.write("RSS validates (%s)\n" % (url,))
+            print("RSS validates (%s)" % (url,))
         else:
-            output_fd.write("RSS validation failures for %s\n" % (url,))
-            output_fd.write(
-                "Full details: %s\n" %
+            print("RSS validation failures for %s" % (url,))
+            print(
+                "Full details: %s" %
                 (W3C_RSS_VALIDATION_URL % (urllib.parse.quote_plus(url)))
             )
             all_checks_pass = False
