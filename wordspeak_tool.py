@@ -125,11 +125,10 @@ def linkchecker():
         for line in broken_links:
             print(line)
         print_warning_lines(warning_lines)
-        click.exit(1)
+        raise click.ClickException("Broken links found. Exiting with failure")
     else:
         print("No broken links found.")
         print_warning_lines(warning_lines)
-        click.exit(0)
 
 
 @cli.command()
@@ -286,10 +285,8 @@ def w3c_checks():
             )
             all_checks_pass = False
 
-    if all_checks_pass:
-        click.exit(0)
-    else:
-        click.exit(1)
+    if not all_checks_pass:
+        raise click.ClickException("Checks failed. Exiting with failure.")
 
 
 if __name__ == "__main__":
