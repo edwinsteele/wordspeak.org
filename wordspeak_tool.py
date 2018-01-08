@@ -22,7 +22,6 @@ import conf
 SITE_BASE = os.path.dirname(__file__)
 OUTPUT_BASE = conf.OUTPUT_FOLDER
 CACHE_BASE = conf.CACHE_FOLDER
-SPELLCHECK_EXCEPTIONS = os.path.join(SITE_BASE, "spellcheck_exceptions.txt")
 UNWANTED_BUILD_ARTIFACTS = [
     'd3-projects/basic_au_map/basic_au_map.html',
     'd3-projects/census_nt_indig_lang/nt_sla_map.html',
@@ -141,8 +140,6 @@ def clean():
 def _get_spellcheck_exceptions(lines):
     for line in lines:
         if line.startswith(".. spellcheck_exceptions:"):
-            # Use filter(None so that we don't crash if there aren't any
-            #  words specified, even though the tag is there
             word_list = [s.strip() for s in
                          line.split(":")[1].strip().split(",")]
             return [_f for _f in word_list if _f]
@@ -199,35 +196,39 @@ def spellchecker():
     # aspell is available on mac by default, and I don't want to manage custom
     #  word lists for both aspell and myspell so we'll just use aspell
     enchant._broker.set_ordering("en_GB", "aspell")
-    pwl_dictionary = enchant.request_pwl_dict(SPELLCHECK_EXCEPTIONS)
-    en_spellchecker = enchant.checker.SpellChecker(
-        "en_GB",
-        filters=[enchant.tokenize.EmailFilter, enchant.tokenize.URLFilter]
-    )
     md_posts = glob.glob(os.path.join(SITE_BASE, "posts", "*.md"))
     md_pages = glob.glob(os.path.join(SITE_BASE, "stories", "*.md"))
 
     for file_to_check in md_pages + md_posts:
+        en_spellchecker = enchant.checker.SpellChecker(
+            "en_GB",
+            filters=[enchant.tokenize.EmailFilter, enchant.tokenize.URLFilter]
+        )
         with open(file_to_check, 'r', encoding="utf-8") as f:
             lines = f.readlines()
 
         for exc in _get_spellcheck_exceptions(lines):
-            pwl_dictionary.add_to_session(exc)
+            en_spellchecker.add(exc)
 
-        for line in _non_directive_lines(lines):
-            en_spellchecker.set_text(strip_markdown_directives(line))
-            for err in en_spellchecker:
-                if not pwl_dictionary.check(err.word):
-                    spelling_errors_found = True
-                    spelling_error = \
-                        "Not in dictionary: %s (file: %s " \
-                        "line: %s). Suggestions: %s" % \
-                        (err.word,
-                         os.path.basename(file_to_check),
-                         lines.index(line) + 1,
-                         ", ".join(en_spellchecker.suggest(err.word))
-                         )
-                    print(spelling_error)
+        file_text = " ".join([strip_markdown_directives(l)
+                              for l in _non_directive_lines(lines)])
+        en_spellchecker.set_text(file_text)
+        for err in en_spellchecker:
+            spelling_errors_found = True
+            context = "%s %s %s" % (
+                en_spellchecker.leading_context(1),
+                en_spellchecker.word,
+                en_spellchecker.trailing_context(1),
+            )
+            spelling_error = \
+                "Not in dictionary: %s (file: %s " \
+                "context: %s). Suggestions: %s" % \
+                (err.word,
+                 os.path.basename(file_to_check),
+                 context,
+                 ", ".join(en_spellchecker.suggest(err.word))
+                 )
+            print(spelling_error)
 
     return spelling_errors_found
 
