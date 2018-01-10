@@ -4,6 +4,7 @@
 import glob
 import os
 import re
+import platform
 import shutil
 import subprocess
 import time
@@ -191,11 +192,17 @@ def strip_markdown_directives(line):
 def spellchecker():
     """Spellcheck the Markdown and ReST files on the site"""
 
+    if platform.system() == "Darwin":
+        # Mac seems to use ispell as a default, but openbsd and linux
+        #  use aspell. No need to maintain exceptions for multiple
+        #  dictionaries.
+        raise click.ClickException(
+            "Spellchecker not supported on Mac due to different "
+            "enchant backends"
+        )
+
     spelling_errors_found = False
 
-    # aspell is available on mac by default, and I don't want to manage custom
-    #  word lists for both aspell and myspell so we'll just use aspell
-    enchant._broker.set_ordering("en_GB", "aspell")
     md_posts = glob.glob(os.path.join(SITE_BASE, "posts", "*.md"))
     md_pages = glob.glob(os.path.join(SITE_BASE, "stories", "*.md"))
 
@@ -204,6 +211,7 @@ def spellchecker():
             "en_GB",
             filters=[enchant.tokenize.EmailFilter, enchant.tokenize.URLFilter]
         )
+        en_spellchecker.dict._broker.set_ordering("en_GB", "aspell")
         with open(file_to_check, 'r', encoding="utf-8") as f:
             lines = f.readlines()
 
@@ -215,10 +223,10 @@ def spellchecker():
         en_spellchecker.set_text(file_text)
         for err in en_spellchecker:
             spelling_errors_found = True
-            context = "%s %s %s" % (
-                en_spellchecker.leading_context(1),
+            context = "%s%s%s" % (
+                en_spellchecker.leading_context(30),
                 en_spellchecker.word,
-                en_spellchecker.trailing_context(1),
+                en_spellchecker.trailing_context(30),
             )
             spelling_error = \
                 "Not in dictionary: %s (file: %s " \
