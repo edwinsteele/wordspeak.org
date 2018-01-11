@@ -19,7 +19,7 @@ Four jobs I've had:
 1.  Software sales at [The Games Wizards](https://en.wikipedia.org/wiki/Gameswizards)
 2.  Computer Science tutor at the University of Sydney
 3.  Software Developer with Entigen.com
-4.  Unix System Administrator with [CommSecure](http://www.commsecure.com.au)
+4.  Unix System Administrator with CommSecure
 
 Four movies I can watch over and over:
 
