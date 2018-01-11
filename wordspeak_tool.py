@@ -243,6 +243,7 @@ def spellchecker():
 
 @cli.command()
 def w3c_checks():
+    """validate staging with w3c html css and rss validators"""
     all_checks_pass = True
     for url in W3C_HTML_VALIDATION_TARGETS:
         r = requests.get(W3C_HTML_VALIDATION_URL %
