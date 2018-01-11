@@ -12,13 +12,12 @@ class SingleOriginCoffee:
         self.lat = lat
         self.lon = lon
 
+    def as_statement(self):
+        return '  L.marker([%s, %s]).addTo(map).bindPopup("%s (%s, %s)");' % \
+                (self.lat, self.lon, self.title, self.region, self.country)
 
-def get_location_from_str(location_str, locator):
-    location = locator.geocode(location_str)
-    return location
 
-
-def extract_details_from_file(filename):
+def extract_coffee_definitions(filename):
     soc_list = []
 
     with open(filename) as fd:
@@ -46,39 +45,23 @@ def extract_details_from_file(filename):
     return soc_list
 
 
-def soc_as_statement(soc):
-    return '  L.marker([%s, %s]).addTo(map).bindPopup("%s (%s, %s)");' % \
-            (soc.lat, soc.lon, soc.title, soc.region, soc.country)
-
-
-def soc_as_debug(soc):
-    if l:
-        return "%s, %s -> %s (%s, %s)" % (soc.region,
-                                          soc.country,
-                                          l.address,
-                                          l.latitude,
-                                          l.longitude)
-    else:
-        return "%s, %s -> FAILED LOOKUP" % (soc.region, soc.country)
-
-
-soc_list = extract_details_from_file(SINGLE_ORIGIN_DEF_FILE)
+soc_list = extract_coffee_definitions(SINGLE_ORIGIN_DEF_FILE)
 geolocator = Nominatim(timeout=10)
 
 unable_to_resolve = []
 
-print "function addPoints() {"
+print("function addPoints() {")
 for soc in soc_list:
     location_str = "%s, %s" % (soc.region, soc.country)
-    l = get_location_from_str(location_str, geolocator)
-    if l:
-        soc.lat = l.latitude
-        soc.lon = l.longitude
-        print soc_as_statement(soc)
+    loc = geolocator.geocode(location_str)
+    if loc:
+        soc.lat = loc.latitude
+        soc.lon = loc.longitude
+        print(soc.as_statement())
     else:
         unable_to_resolve.append("Unable to resolve %s" % (location_str,))
 
-print "};"
+print("};")
 
-print
-print "\n\/\/ ".join(unable_to_resolve)
+print()
+print("\n\/\/ ".join(unable_to_resolve))
