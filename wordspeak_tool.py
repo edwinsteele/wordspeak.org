@@ -120,7 +120,8 @@ def coffee_defs():
     print("};")
 
     print()
-    print("\n\/\/ ".join(unable_to_resolve))
+    for utr in unable_to_resolve:
+        print("// %s" % (utr,))
 
 
 @cli.command()
@@ -304,7 +305,7 @@ def spellchecker():
                  os.path.basename(file_to_check),
                  context,
                  ", ".join(en_spellchecker.suggest(err.word))
-                 )
+                )
             print(spelling_error)
 
     return spelling_errors_found
@@ -352,7 +353,7 @@ def w3c_checks():
     for url in W3C_RSS_VALIDATION_TARGETS:
         r = requests.get(W3C_RSS_VALIDATION_URL %
                          (urllib.parse.quote_plus(url),)
-                         )
+                        )
         # UGLY, and fragile but there's no machine readable output available
         if "This is a valid RSS feed" in r.text:
             print("RSS validates (%s)" % (url,))
