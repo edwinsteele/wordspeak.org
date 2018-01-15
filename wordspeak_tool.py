@@ -281,7 +281,6 @@ def spellchecker():
             "en_GB",
             filters=[enchant.tokenize.EmailFilter, enchant.tokenize.URLFilter]
         )
-        en_spellchecker.dict._broker.set_ordering("en_GB", "aspell")
         with open(file_to_check, 'r', encoding="utf-8") as f:
             lines = f.readlines()
 
