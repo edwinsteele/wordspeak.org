@@ -307,7 +307,8 @@ def spellchecker():
                 )
             print(spelling_error)
 
-    return spelling_errors_found
+    if spelling_errors_found:
+        raise click.ClickException("Spelling errors found.")
 
 
 @cli.command()
