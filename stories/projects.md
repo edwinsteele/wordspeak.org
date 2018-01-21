@@ -2,7 +2,7 @@
 .. title: Software and Photos
 .. slug: projects
 .. date: 2013/01/12 17:56:51
-.. spellcheck_exceptions: Arduino,GeoJSON,JavaScript,Multi,Vimeo,geolocated,github,wordspeak
+.. spellcheck_exceptions: Arduino,GeoJSON,JavaScript,Multi,Vimeo,geolocated,github,wordspeak,Django
 .. tags: Technology, Photography
 .. link: 
 .. description: 
