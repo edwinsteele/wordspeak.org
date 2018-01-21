@@ -40,6 +40,7 @@ Acknowledgements
 ================
 
 The icons on this site are used under licence, and were obtained via the fantastic [Fontello](http://fontello.com):
+
 - camera and git icons from [Elusive-Iconfont by Aristeides](https://github.com/reduxframework/elusive-iconfont). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 - document, info, mail and RSS icons from [Font Awesome by Dave Gandy](http://fontawesome.io/). Used under [SIL OFL 1.1 licence](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 
