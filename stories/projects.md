@@ -2,7 +2,7 @@
 .. title: Software and Photos
 .. slug: projects
 .. date: 2013/01/12 17:56:51
-.. spellcheck_exceptions: Arduino,Django,Flickr,GeoJSON,JavaScript,Multi,Vimeo,geolocated,github,wordspeak
+.. spellcheck_exceptions: Arduino,GeoJSON,JavaScript,Multi,Vimeo,geolocated,github,wordspeak
 .. tags: Technology, Photography
 .. link: 
 .. description: 
@@ -12,7 +12,7 @@
 Photos
 ======
 
--   My photos are all on [Flickr](http://flickr.com/photos/edwin_steele)
+-   My photos are self-hosted and can be found at [images.wordspeak.org](https://images.wordspeak.org)
 -   And I have a few videos on [Vimeo](https://vimeo.com/edwinsteele/videos)
 
 Software Projects
