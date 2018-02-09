@@ -128,17 +128,6 @@ def coffee_defs():
 def build():
     """Build the site using nikola"""
     subprocess.check_call(["nikola", "build"], cwd=SITE_BASE)
-    # _quietly_run_nikola_cmd("nikola", "mincss")
-    # Need to recopy the leaflet.css file as mincss optimises it away
-    #  because it can't find any leaflet classes in use (they're inserted
-    #  at runtime by the js library
-    shutil.copy2(
-        "%s/files/assets/leaflet-0.7.3/leaflet.css" % (SITE_BASE,),
-        "%s/assets/leaflet-0.7.3/leaflet.css" % (OUTPUT_BASE,)
-    )
-    # Need to recompress css after yuicompressor has run
-    #  Can't run post_render_gzip in N7, so let's just do build again
-    subprocess.check_call(["nikola", "build"], cwd=SITE_BASE)
     # Get rid of the stuff that we don't want to push but was built
     #  (and can't easily be disabled)
     for uba in UNWANTED_BUILD_ARTIFACTS:
