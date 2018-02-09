@@ -1,6 +1,10 @@
+"""
+Nikola configuration for wordspeak.org site
+"""
+
 # -*- coding: utf-8 -*-
-from nikola import filters
 import os
+from nikola import filters
 
 BLOG_AUTHOR = "Edwin Steele"
 BLOG_TITLE = "Wordspeak"
@@ -47,7 +51,7 @@ COPY_SOURCES = False
 SHOW_SOURCELINK = False
 USE_CDN = False
 GZIP_FILES = True
-GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson',
+GZIP_EXTENSIONS = ('.html', '.css', '.js', '.json', '.geojson', '.ico',
                    '.eot', '.svg', '.ttf', '.woff', '.xml')
 DISABLED_PLUGINS = ["render_galleries"]
 
@@ -58,8 +62,7 @@ FILTERS = {
 # Name of the theme to use. Themes are located in themes/theme_name
 THEME = 'wordspeak_lite'
 
-# A small copyright notice for the page footer (in HTML)
-# XXX - Not used. Stored in template now.
+# Not used. Stored in template now.
 CONTENT_FOOTER = ""
 
 COMMENT_SYSTEM = False
