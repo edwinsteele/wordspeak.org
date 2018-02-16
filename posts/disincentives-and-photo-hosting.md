@@ -5,7 +5,7 @@
 .. tags: Photography
 .. category: 
 .. link: 
-.. spellcheck_exceptions: Flickr
+.. spellcheck_exceptions: Flickr,Flickr's,scriptable
 .. description: 
 .. type: text
 -->
