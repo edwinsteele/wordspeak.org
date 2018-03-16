@@ -200,6 +200,10 @@ ul, ol {
     float: left;
 }
 
+li.previous > a:before {
+    content: "\2190\0020";
+}
+
 .postbox {
     border-bottom: 0.1em solid #A9A9A9;
     margin-bottom: 0.75em;
@@ -238,6 +242,10 @@ ul.tags {
 
 ul.tags > li {
     display: inline;
+}
+
+nav > ul.tags {
+    display: none;
 }
 
 @media(max-width:30em) {
