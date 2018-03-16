@@ -113,7 +113,7 @@ ul, ol {
 	width:auto;
 }
 
-.content hr {
+#content hr {
     border-image: none;
     border-style: solid none;
     border-color: #EEE;

@@ -60,10 +60,22 @@ FILTERS = {
 }
 
 # Name of the theme to use. Themes are located in themes/theme_name
-THEME = 'wordspeak_lite'
+#THEME = 'wordspeak_lite'
+THEME = 'wordspeak_lite_j2'
 
 # Not used. Stored in template now.
-CONTENT_FOOTER = ""
+CONTENT_FOOTER = """
+<div class="footerbox">
+Site by <a title="About the author" href="/pages/about.html">Edwin Steele</a>
+<a title="Email" href="mailto:edwin@wordspeak.org">
+  <svg width="1em" viewBox="0 0 1000 1000" fill="#08C">
+	<path d="m1000 454v-443q0-37-26-63t-63-27h-822q-36 0-63 27t-26 63v443q25-28 56-49 202-137 278-192 32-24 51-37t53-27 61-13h2q28 0 61 13t53 27 51 37q95 68 278 192 32 22 56 49z m0 164q0-44-27-84t-68-69q-210-146-262-181-5-4-23-17t-30-22-29-18-33-15-27-5h-2q-12 0-27 5t-33 15-29 18-30 22-23 17q-51 35-147 101t-114 80q-35 23-65 64t-31 77q0 43 23 72t66 29h822q36 0 62-26t27-63z" transform="scale(1,-1) translate(0, -1000)"/>
+  </svg>
+</a> |
+Uncopyright. No rights reserved |
+<a title="Site Licencing" href="/pages/licensing.html">Why give it away?</a>
+</div>
+"""
 
 COMMENT_SYSTEM = False
 INDEX_DISPLAY_POST_COUNT = 5

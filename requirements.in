@@ -1,6 +1,6 @@
 click
 geopy
-Mako
+jinja2
 Markdown
 Nikola
 pyenchant
