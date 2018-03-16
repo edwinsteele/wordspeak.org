@@ -31,7 +31,7 @@
     <header>
         {{ html_title() }}
         <div class="metadata">
-            <span class="dateline">Posted: <time class="published dt-published" datetime="{{ post.formatted_date('webiso') }}" itemprop="datePublished" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time>{% if post.tags %}| More posts about {{ helper.html_tags(post) }}{% endif %}</span>
+            <span class="dateline">Posted: <time class="published dt-published" datetime="{{ post.formatted_date('webiso') }}" itemprop="datePublished" title="{{ post.formatted_date(date_format)|e }}">{{ post.formatted_date(date_format)|e }}</time>{% if post.tags %}| More posts about: {{ helper.html_tags(post) }}{% endif %}</span>
             {% if not post.meta('nocomments') and site_has_comments %}
                 <p class="commentline">{{ comments.comment_link(post.permalink(), post._base_path) }}
             {% endif %}

@@ -218,6 +218,14 @@ ul, ol {
     background:#ddd;
 }
 
+div.metadata {
+    border-top: solid;
+    border-bottom: solid;
+    border-width: thin;
+    border-color: lightgray;
+    padding: 5px 0 5px 0;
+}
+
 ul.tags {
     display: inline;
     list-style: none;
