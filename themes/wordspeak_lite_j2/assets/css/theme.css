@@ -204,6 +204,10 @@ li.previous > a:before {
     content: "\2190\0020";
 }
 
+#footer > p {
+    display: none;
+}
+
 .listdate:after {
     content: " - ";
 }
