@@ -59,6 +59,10 @@ span.icon-nav {
     display: none;
 }
 
+p.vcard {
+    display: none;
+}
+
 ul, ol {
     padding: 0;
     margin: 0 0 0.625em 1.5em;
