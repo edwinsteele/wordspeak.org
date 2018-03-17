@@ -113,7 +113,8 @@ ul, ol {
 .col{
 	float:left;
 }
-.container{
+
+#content {
 	margin:0 1.25em;
 	width:auto;
 }
@@ -288,7 +289,7 @@ nav > ul.tags {
 }
 
 @media(min-width:80em){
-    .container{
+    #content {
         margin:auto;
         width:77em;
     }
