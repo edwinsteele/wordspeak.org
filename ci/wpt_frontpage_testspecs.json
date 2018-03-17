@@ -1,12 +1,12 @@
 {
 	"median": {
 		"firstView": {
-			"requests": 10,
-			"render": 3000,
-			"TTFB": 2000,
-			"loadTime": 3000,
+			"requests": 3,
+			"render": 1000,
+			"TTFB": 500,
+			"loadTime": 1000,
 			"score_gzip": {
-				"min": 90
+				"min": 100
 			}
 		}
 	}
