@@ -24,7 +24,8 @@ script:
 - ./wordspeak_tool.py spellchecker
 - ci/deploy.sh staging
 - ./wordspeak_tool.py w3c_checks
-- webpagetest test https://staging.wordspeak.org --key=$WEBPAGETEST_API_KEY --location=ec2-ap-southeast-2:Chrome
+# target chosen because it doesn't have and will never have images, so request count will remain stable. It also won't have any preload added like the front page may
+- webpagetest test https://staging.wordspeak.org/posts/write-because-you-want-to.html --key=$WEBPAGETEST_API_KEY --location=ec2-ap-southeast-2:Chrome
   --clearcerts --first --poll --timeout 570 --specs ci/wpt_frontpage_testspecs.json
   --reporter spec
 notifications:
