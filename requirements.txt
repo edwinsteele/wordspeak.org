@@ -16,7 +16,6 @@ idna==2.6                 # via requests
 jinja2==2.10
 logbook==1.1.0            # via nikola
 lxml==4.1.1               # via nikola
-macfsevents==0.8.1        # via doit
 mako==1.0.7               # via nikola
 markdown==2.6.10
 markupsafe==1.0           # via jinja2, mako
