@@ -4,10 +4,7 @@
 			"requests": 3,
 			"render": 1000,
 			"TTFB": 500,
-			"loadTime": 1000,
-			"score_gzip": {
-				"min": 99
-			}
+			"loadTime": 500 
 		}
 	}
 }
