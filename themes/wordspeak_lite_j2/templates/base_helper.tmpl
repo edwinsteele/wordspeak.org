@@ -1,0 +1,117 @@
+{#  -*- coding: utf-8 -*- #}
+{% import 'feeds_translations_helper.tmpl' as feeds_translations with context %}
+
+{% macro html_headstart() %}
+<!DOCTYPE html>
+<html \
+{% if use_open_graph or (twitter_card and twitter_card['use_twitter_cards']) or (comment_system == 'facebook') %}
+    prefix='
+        {% if use_open_graph or (twitter_card and twitter_card['use_twitter_cards']) %}
+            og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+        {% endif %}
+        {% if comment_system == 'facebook' %}
+            fb: http://ogp.me/ns/fb#
+        {% endif %}
+    ' \
+    {% if use_open_graph or (twitter_card and twitter_card['use_twitter_cards']) %}
+        vocab="http://ogp.me/ns" \
+    {% endif %}
+{% endif %}
+{% if is_rtl %}
+    dir="rtl"
+{% endif %}
+
+lang="{{ lang }}">
+<head>
+    <meta charset="utf-8">
+    {% if use_base_tag %}
+        <base href="{{ abs_link(permalink) }}">
+    {% endif %}
+    {% if description %}
+        <meta name="description" content="{{ description|e }}">
+    {% endif %}
+    <meta name="viewport" content="width=device-width">
+    {% if title == blog_title %}
+        <title>{{ blog_title|e }}</title>
+    {% else %}
+        <title>{{ title|e }} | {{ blog_title|e }}</title>
+    {% endif %}
+
+    {{ html_stylesheets() }}
+    <meta name="theme-color" content="{{ theme_color }}">
+    {% if meta_generator_tag %}
+        <meta name="generator" content="Nikola (getnikola.com)">
+    {% endif %}
+    {{ feeds_translations.head() }}
+    <link rel="canonical" href="{{ abs_link(permalink) }}">
+
+    {% if favicons %}
+        {% for name, file, size in favicons %}
+            <link rel="{{ name }}" href="{{ file }}" sizes="{{ size }}"/>
+        {% endfor %}
+    {% endif %}
+
+    {% if comment_system == 'facebook' %}
+        <meta property="fb:app_id" content="{{ comment_system_id }}">
+    {% endif %}
+
+    {% if prevlink %}
+        <link rel="prev" href="{{ prevlink }}" type="text/html">
+    {% endif %}
+    {% if nextlink %}
+        <link rel="next" href="{{ nextlink }}" type="text/html">
+    {% endif %}
+
+    {% if use_cdn %}
+        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script><![endif]-->
+    {% else %}
+        <!--[if lt IE 9]><script src="{{ url_replacer(permalink, '/assets/js/html5shiv-printshiv.min.js', lang, url_type) }}"></script><![endif]-->
+    {% endif %}
+
+    {{ extra_head_data }}
+{% endmacro %}
+
+{% macro late_load_js() %}
+    {{ social_buttons_code }}
+{% endmacro %}
+
+{% macro html_stylesheets() %}
+    {% if use_bundles %}
+        {% if use_cdn %}
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.2/baguetteBox.min.css" rel="stylesheet" type="text/css">
+            <link href="/assets/css/all.css" rel="stylesheet" type="text/css">
+        {% else %}
+            {# mincss of all-nocdn against index*.html + pages/*.html #}
+            {# ~/Code/wordspeak.org/output $ mincss --outputdir /Users/esteele $(for f in $(ls -1 index*.html); do echo -n "https://staging.wordspeak.org/$f "; done) $(for f in $(ls -1 pages/*.html); do echo -n "https://staging.wordspeak.org/$f "; done) #}
+            {# then csso of the generated all-nocdn.css and paste below (ignore any other css outputs of mincss) #}
+{% raw %}<style type="text/css">pre.code{background:#f8f8f8}pre.code .c{color:#408080;font-style:italic}pre.code .err{border:1px solid red}pre.code .k{color:green;font-weight:700}pre.code .o{color:#666}pre.code .c1{color:#408080;font-style:italic}pre.code .go{color:#888}pre.code .gp,pre.code .kn{color:navy;font-weight:700}pre.code .kn{color:green}pre.code .m{color:#666}pre.code .s{color:#ba2121}pre.code .nb{color:green}pre.code .nc{color:#00f;font-weight:700}pre.code .no{color:#800}pre.code .nd{color:#a2f}pre.code .nf{color:#00f}pre.code .nt{color:green;font-weight:700}pre.code .nv{color:#19177c}pre.code .mi{color:#666}pre.code .sb{color:#ba2121}pre.code .sd{font-style:italic}pre.code .s2,pre.code .sd{color:#ba2121}pre.code .se,pre.code .si{color:#b62;font-weight:700}pre.code .si{color:#b68}pre.code .sx{color:green}pre.code .sr{color:#b68}pre.code .s1{color:#ba2121}.nav a,a{color:#08c;text-decoration:none}.pager li a,body{background-color:#fff}body{background:0;font:1em sans-serif;margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#333;border-radius:0}blockquote{margin-left:0;border-left:.2em solid #ccc;padding-left:1em}h1,h2,h3{font-size:1.8em;line-height:1.5em}h2,h3{font-size:1.3em}body,h3{font-size:1em}img.ri{width:100%}nav{display:block}pre.code,pre.literal-block{margin-left:2em;margin-right:2em}.dateline{font-size:.8em;margin:0}#footer>p,p.vcard,span.icon-nav{display:none}ol,ul{padding:0;margin:0 0 .625em 1.5em}.amp{font-size:1.05em;font-family:"Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",serif;font-style:italic}.brand{font-size:1.4em;font-weight:200;color:#777}.c8{width:66.66%}.c2{width:16.66%}.c1{width:8.33%}.col{float:left}#content{margin:0 1.25em;width:auto}#content hr{border-image:none;border-style:solid none;border-color:#eee}#footer,.pager{text-align:center}#footer{padding:.25em .95em;margin-bottom:.625em}.nav{outline:0;font-size:.875em;height:1.5em;padding:.625em 0 .95em;box-shadow:0 .1em .625em rgba(0,0,0,.1);border:1px solid #d4d4d4;border-radius:0;border-width:0 0 1px;background-color:#fafafa;background-image:linear-gradient(to bottom,#fff,#f2f2f2);background-repeat:repeat-x}.nav,.nav a:hover{color:#333}.nav a{padding-right:1em;position:relative;color:#777}.pager{list-style:outside none none;margin:1.25em 0}.pager:after{clear:both}.pager:after,.pager:before{display:table;line-height:0;content:""}.pager li{display:inline}.pager li a{display:inline-block;padding:.25em .875em;border:1px solid #ddd;border-radius:.95em}.pager .next>a{float:right}.pager .previous>a{float:left}li.previous>a:before{content:"\2190\0020"}.postbox{border-bottom:.1em solid #a9a9a9;margin-bottom:.75em}.row{overflow:auto}.table tbody>:nth-child(2n-1){background:#ddd}div.metadata{border-top:solid;border-bottom:solid;border-width:thin;border-color:#d3d3d3;padding:5px 0}@media (max-width:30em){span.icon-nav{display:inherit}.c2,span.text-nav{display:none}.nav{overflow:hidden}.nav:active,.nav:focus{height:auto}}@media (max-width:50em){.c2{display:none}.row .col{width:100%}}@media (min-width:80em){#content{margin:auto;width:77em}}</style>{% endraw %}
+        {% endif %}
+    {% else %}
+        <link href="/assets/css/baguetteBox.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/rst.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/code.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/theme.css" rel="stylesheet" type="text/css">
+        {% if has_custom_css %}
+            <link href="/assets/css/custom.css" rel="stylesheet" type="text/css">
+        {% endif %}
+    {% endif %}
+    {% if needs_ipython_css %}
+        <link href="/assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+    {% endif %}
+{% endmacro %}
+
+{#  This function is deprecated; use feed_helper directly. #}
+{% macro html_feedlinks() %}
+    {{ feeds_translations.head() }}
+{% endmacro %}
+
+{% macro html_translations() %}
+    <ul class="translations">
+    {% for langname in translations|sort %}
+        {% if langname != lang %}
+            <li><a href="{{ abs_link(_link("root", None, langname)) }}" rel="alternate" hreflang="{{ langname }}">{{ messages("LANGUAGE", langname) }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endmacro %}
