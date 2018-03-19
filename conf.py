@@ -60,10 +60,7 @@ FILTERS = {
 }
 
 # Name of the theme to use. Themes are located in themes/theme_name
-#THEME = 'wordspeak_lite'
-THEME = 'wordspeak_lite_j2'
-
-# Not used. Stored in template now.
+THEME = 'wordspeak_lite'
 CONTENT_FOOTER = """
 <div class="footerbox">
 Site by <a title="About the author" href="/pages/about.html">Edwin Steele</a>
