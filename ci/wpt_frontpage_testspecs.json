@@ -3,7 +3,7 @@
 		"firstView": {
 			"requests": 3,
 			"render": 1000,
-			"TTFB": 500,
+			"TTFB": 750,
 			"loadTime": 500 
 		}
 	}
