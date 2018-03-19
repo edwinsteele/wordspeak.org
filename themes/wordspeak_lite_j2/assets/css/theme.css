@@ -114,10 +114,16 @@ ul, ol {
 	float:left;
 }
 
+.container{
+	margin:0 1.25em;
+	width:auto;
+}
+
 #content {
 	margin:0 1.25em;
 	width:auto;
 }
+
 
 #content hr {
     border-image: none;
@@ -289,6 +295,10 @@ nav > ul.tags {
 }
 
 @media(min-width:80em){
+    .container {
+        margin:auto;
+        width:77em;
+    }
     #content {
         margin:auto;
         width:77em;
