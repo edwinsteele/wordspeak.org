@@ -6,6 +6,9 @@
 .. tags: Technology
 .. link: 
 .. description: 
+.. stylesheet_urls: /assets/d3_basic_au_map.css
+.. script_urls: /d3-projects/lib/d3.v2.js,/assets/d3_nt_sla_map.js,/assets/d3_nt_sla_scatter.js
+.. template: project.tmpl
 -->
 
 
@@ -20,7 +23,6 @@ In technical terms the map provided an opportunity to:
 -   learn how to zoom and scroll the map, which was surprisingly easy (if you're willing to tolerate a few glitches)
 -   implement mouse-overs to show another dimension of data, even though it requires the user to interact with the graph to extract that data. There doesn't seem to be a clean way to do mouse-overs as the SVG spec doesn't offer z-positioning, so the method feels a bit dirty.
 
-<link rel="stylesheet" href="/assets/d3_nt_sla_map.css" />
 <div id="d3_top_level_div_map"></div>
 
 This scatterplot attempts to help answer the following question:
@@ -64,8 +66,3 @@ The map came from the ESRI Shapefiles of the [Northern Territory Statistical Loc
 The numerical data was also obtained from 2006 Census data using the (now superceded) *CDATA online* tool focussing on dimensions of spoken english language, indigenous language and religion dimensions for the indigenous population in the Northern Territory. The dataset required extra processing as the CDATA pivot tables needed aggregation to give the appropriate level of granularity. The current tool for this type of analysis of Census data is called [TableBuilder](http://www.abs.gov.au/websitedbs/censushome.nsf/home/tablebuilder?opendocument&navpos=240). It may provide a level of control that makes this post-processing uneccessary.
 
 My Github repo has the [Map and data files](https://github.com/edwinsteele/d3-projects/tree/master/data)
-
-<script type="text/javascript" src="/d3-projects/lib/d3.v2.js"></script>
-<script type="text/javascript" src="/assets/d3_nt_sla_map.js"></script>
-<script type="text/javascript" src="/assets/d3_nt_sla_scatter.js"></script>
-

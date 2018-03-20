@@ -17,17 +17,23 @@
 {% endblock %}
 
 {% block extra_js %}
-    {% for script_url in post.meta("script_urls").split(",") %}
+    {% if post.meta("script_urls") != "" %}
+        {% for script_url in post.meta("script_urls").split(",") %}
 <script src="{{ script_url }}"></script>
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 {% endblock %}
 
 {% block extra_head %}
 {{ super() }}
-    {% for preconnect_url in post.meta("preconnect_urls").split(",") %}
+    {% if post.meta("preconnect_urls") != "" %}
+        {% for preconnect_url in post.meta("preconnect_urls").split(",") %}
 <link rel="preconnect" href="{{ preconnect_url }}"/>
-    {% endfor %}
-    {% for stylesheet_url in post.meta("stylesheet_urls").split(",") %}
+        {% endfor %}
+    {% endif %}
+    {% if post.meta("stylesheet_urls") != "" %}
+        {% for stylesheet_url in post.meta("stylesheet_urls").split(",") %}
 <link rel="stylesheet" href="{{ stylesheet_url }}"/>
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 {% endblock %}
