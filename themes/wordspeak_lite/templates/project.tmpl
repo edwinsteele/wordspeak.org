@@ -24,6 +24,9 @@
 
 {% block extra_head %}
 {{ super() }}
+    {% for preconnect_url in post.meta("preconnect_urls").split(",") %}
+<link rel="preconnect" href="{{ preconnect_url }}"/>
+    {% endfor %}
     {% for stylesheet_url in post.meta("stylesheet_urls").split(",") %}
 <link rel="stylesheet" href="{{ stylesheet_url }}"/>
     {% endfor %}

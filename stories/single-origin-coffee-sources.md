@@ -6,6 +6,7 @@
 .. tags: 
 .. stylesheet_urls: /assets/leaflet-0.7.3/leaflet.css,/assets/single_origin_coffee.css
 .. script_urls: /assets/leaflet-0.7.3/leaflet.js,/assets/single_origin_coffee.js
+.. preconnect_urls: https://a.tile.openstreetmap.org,https://b.tile.openstreetmap.org,https://c.tile.openstreetmap.org,https://d.tile.openstreetmap.org
 .. link: 
 .. description: 
 .. type: text
