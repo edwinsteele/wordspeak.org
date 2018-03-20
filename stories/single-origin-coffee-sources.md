@@ -4,9 +4,12 @@
 .. date: 2015-05-29 13:50:11 UTC+10:00
 .. spellcheck_exceptions: geolocated,Javascript,LatLng,OpenStreetMap,addPoints,addTo,clickable,geo,geolocation,href,https,openstreetmap,png,programatically,px,py,setView,tileLayer
 .. tags: 
+.. stylesheet_urls: /assets/leaflet-0.7.3/leaflet.css,/assets/single_origin_coffee.css
+.. script_urls: /assets/leaflet-0.7.3/leaflet.js,/assets/single_origin_coffee.js
 .. link: 
 .. description: 
 .. type: text
+.. template: project.tmpl
 -->
 
 Single-Origin Coffee Sources
@@ -18,10 +21,4 @@ The script and the Javascript are quick-and-dirty jobs - this was definitely mor
 
 The location markers are clickable to show more information about the beans.
 
-<link rel="stylesheet" href="/assets/leaflet-0.7.3/leaflet.css" />
-<link rel="stylesheet" href="/assets/single_origin_coffee.css" />
 <div id="map"></div>
-<script src="/assets/leaflet-0.7.3/leaflet.js"></script>
-<script src="/assets/single_origin_coffee.js"></script>
-
-
