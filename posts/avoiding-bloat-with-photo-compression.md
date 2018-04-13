@@ -6,7 +6,7 @@
 .. category: 
 .. link: 
 .. description: 
-.. spellcheck_exceptions: imageOptim, resize
+.. spellcheck_exceptions: imageOptim, JPEGmini, resize
 .. type: text
 -->
 
@@ -33,7 +33,7 @@ I did experiments on my [Arches gallery](https://images.wordspeak.org/arches/) w
 3. Compression by jpegMini and imageOptim: Final size 4.3MB
     * Photos.app (maximum quality) _103.6MB &#8594; 103.6MB_
     * Pillow (100% quality) _103.6MB &#8594; 27.8MB_
-    * jpegmini (no user-selectable settings) _27.8MB &#8594; 7.1MB_
+    * JPEGmini (no user-selectable settings) _27.8MB &#8594; 7.1MB_
     * imageOptim (74% quality) _7.1MB &#8594; 4.3MB_
 4. **Compression by imageOptim only: Final size 4.1MB** (best result)
     * Photos.app (maximum quality) _103.6MB &#8594; 103.6MB_
