@@ -30,7 +30,7 @@ I did experiments on my [Arches gallery](https://images.wordspeak.org/arches/) w
     * Photos.app (maximum quality) _103.6MB &#8594; 103.6MB_
     * Pillow (75% quality) _103.6MB &#8594; 5.2MB_
     * imageOptim (74% quality) _5.2MB &#8594; 4.6MB_
-3. Compression by jpegMini and imageOptim: Final size 4.3MB
+3. Compression by JPEGmini and imageOptim: Final size 4.3MB
     * Photos.app (maximum quality) _103.6MB &#8594; 103.6MB_
     * Pillow (100% quality) _103.6MB &#8594; 27.8MB_
     * JPEGmini (no user-selectable settings) _27.8MB &#8594; 7.1MB_
