@@ -42,4 +42,4 @@ I did experiments on my [Arches gallery](https://images.wordspeak.org/arches/) w
 
 The best result comes from performing a single compression step with the best compression tool. 
 
-I expected that the individual compression tools would have complementary compression schemes and chaining them together would give the best compression. I suspect now that imageOptim uses all the types of compression schemes available in the other tools and gets the best result because it can take an image with low [entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) image i.e. an uncompressed image and introduce all the entropy (compression) in a single step.
+I expected that the individual compression tools would have complementary compression schemes and chaining them together would give the best compression. I suspect now that imageOptim uses all the types of compression schemes available in the other tools and gets the best result because it can take an image with low [entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) i.e. an uncompressed image and introduce all the entropy (compression) in a single step.
