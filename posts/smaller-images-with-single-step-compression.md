@@ -1,6 +1,6 @@
 <!--
-.. title: Avoiding bloat with photo compression
-.. slug: avoiding-bloat-with-photo-compression
+.. title: Smaller images with single-step compression
+.. slug: smaller-images-with-single-step-compression
 .. date: 2018-04-14 06:38:45 UTC+10:00
 .. tags: 
 .. category: 
@@ -10,7 +10,7 @@
 .. type: text
 -->
 
-I'm reviewing image sizes to improve download times in my photo galleries and I've produced best results by performing a single compression step rather than allowing each tool to compress as it processes the images.
+I'm reviewing image sizes to improve download times in my photo galleries and I've obtained the smallest file sizes by performing a single compression step rather than allowing each tool to perform compression during my image pipeline.
 
 Each tool in my workflow has defaults that work well if there is no subsequent or proceeding compression, but produce sub-optimal results when used in an image pipeline where each tool performs compression. My workflow is:
 
