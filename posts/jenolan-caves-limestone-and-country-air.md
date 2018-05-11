@@ -23,8 +23,8 @@ Here are a few recommendations if you're planning a trip:
 -   Go with friends. You'll love it together!
 -   Don't rush it - we did 2 caves with a long lunch in-between. Remember, you're there to relax!
 
-Here's the [photo album](http://www.flickr.com/photos/edwin_steele/sets/72157632600929663/).
+Here's the [photo album](https://images.wordspeak.org/jenolan_caves_06/).
 
 And here's a taste from the "Temple of Baal" cave:
 
-{{% wordspeak_image flickr_id=8412934156 cloudinary_id=IMG_1970_gykmv0 title="Temple of Baal Cave: A shawl feature" %}}
+{{% wordspeak_image image_set=jenolan_caves_06 cloudinary_id=IMG_1970_gykmv0 title="Temple of Baal Cave: A shawl feature" %}}

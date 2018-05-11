@@ -13,5 +13,4 @@ It seems I process photos in fits and starts. I'd like to say that I got inspire
 
 So I sat down to sort, sequence, prune and geotag the photos from our time in Chicago. As is often the case, the memories flood back, the details resurface from the depths of one's mind, the travel sites are loaded and the planning for (or is it dreaming of?) the next trip commences.
 
-Here's the result. I hope you like it: <http://www.flickr.com/photos/edwin_steele/sets/72157632566695478/>
-
+Here's the result. I hope you like it: [image gallery](https://images.wordspeak.org/chicago_2009/)

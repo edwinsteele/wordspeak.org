@@ -3,7 +3,7 @@
 .. slug: avalon-airshow-2015
 .. date: 2015/03/09 18:27:47
 .. tags: Travel, Photography
-.. spellcheck_exceptions: Yarra,Toorak,Pau,Sichuan,Carbonara,Versachi's,ADF,flickr,img,jpg,ri,src,srcset,vw
+.. spellcheck_exceptions: Yarra,Toorak,Pau,Sichuan,Carbonara,Versachi's,ADF,img,jpg,ri,src,srcset,vw
 .. is_orphan: False
 .. link:
 .. description:

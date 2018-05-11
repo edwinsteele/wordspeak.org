@@ -39,11 +39,11 @@ Hawkesbury
 -   *St Matthew's Anglican, Windsor*. Very large, regal, red-brick church. Building dates from mid-1800's. Surrounded by a cemetery. Very large windows, bell-tower and high roof.
 -   *Uniting Church, Ebenezer*: This was too distant for us to bother seeing but is worth mentioning anyway. Apparently it's Australia's oldest church building, is stone and is very picturesque.
 
-{{% wordspeak_image flickr_id=8412781158 cloudinary_id="05012008217_lw1ddn" title="Leura Catholic" %}}
+{{% wordspeak_image cloudinary_id="05012008217_lw1ddn" title="Leura Catholic" %}}
 
-{{% wordspeak_image flickr_id=8412777254 cloudinary_id="05012008297_noh5fi" title="St Peter's Anglican, Mount Victoria" %}}
+{{% wordspeak_image cloudinary_id="05012008297_noh5fi" title="St Peter's Anglican, Mount Victoria" %}}
 
-{{% wordspeak_image flickr_id=8411679059 cloudinary_id="12012008337_halati" title="St James' Anglican, Pitt Town" %}}
+{{% wordspeak_image cloudinary_id="12012008337_halati" title="St James' Anglican, Pitt Town" %}}
 
 **In order:** Catholic church (Leura), St Peters Anglican (Mt. Victoria), St James Anglican (Pitt Town)
 

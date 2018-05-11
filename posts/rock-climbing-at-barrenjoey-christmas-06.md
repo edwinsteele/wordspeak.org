@@ -13,7 +13,7 @@ I've not done a whole lot of outdoor climbing (everyone's a gym climber unless t
 
 I present to you the photos, starring Jono, Chris B, Chris C, Naomi, Damien, Edwin and Harold the lizard:
 
-<http://www.flickr.com/photos/edwin_steele/sets/72157632600703119/> (shots by Edwin, Chris B, Chris C)
+[image gallery](https://images.wordspeak.org/climbing_at_barrenjoey/) (shots by Edwin, Chris B, Chris C)
 
 So, who's for [Moonarie](http://www.thecrag.com/climbing/australia/moonarie) in Christmas '07?
 

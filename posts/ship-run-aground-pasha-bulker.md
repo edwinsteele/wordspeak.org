@@ -13,6 +13,6 @@ The NSW coast has been battered by heavy storms this month. Aside from large sca
 
 So, armed with the 5mp camera on my new Nokia N95 and with some excellent company, the trip was made to Nobby's beach to see just how big the ship was and how incredibly close to the shore it was (the answer was "very close". I'm sure you could wade out to if it wasn't all fenced off!).
 
-I present the [Pasha Bulker](http://www.flickr.com/photos/edwin_steele/sets/72157632565445286/) . (In the same vein, you might also enjoy the shots of the [beached Guadalupe](http://www.flickr.com/photos/edwin_steele/8396336043/) that I took in Mauritania in 2005)
+I present the [Pasha Bulker](https://images.wordspeak.org/pasha_bulker/) . (In the same vein, you might also enjoy the shots of the [beached Guadalupe](https://images.wordspeak.org/mauritania_2005/#/53) that I took in Mauritania in 2005)
 
-{{% wordspeak_image flickr_id=72157632565445286 cloudinary_id="16062007005_omoomb" title="Pasha Bulker run aground near Newcastle" %}}
+{{% wordspeak_image image_set=pasha_bulker cloudinary_id="16062007005_omoomb" title="Pasha Bulker run aground near Newcastle" %}}

@@ -17,5 +17,5 @@ You might ask why it's taken me 4 months to publish these photos. The answer is 
 
 And why "So Long Hong Kong"? Yeah, I quit my job last week (and the weight lifts off his shoulders), so I don't expect a return trip any time soon. I wonder if my new employer will send me to the orient too!
 
-Enjoy the shots: [Hong Kong Apr07](http://www.flickr.com/photos/edwin_steele/sets/72157632559340831/)
+Enjoy the shots: [Hong Kong Apr07](https://images.wordspeak.org/hong_kong_2007/)
 
