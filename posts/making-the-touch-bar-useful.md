@@ -18,7 +18,7 @@ Here's my new touch bar:.
 
 From right-to-left:
 
-* The escape key. As a user of an Apple iPad keyboard that lacks an escape key, I've mostly retrained muscle memory to use `ctrl+[` for escape. I use it occasionally (and I'd still rather have a physical key).
+* The escape key. As a user of an Apple iPad keyboard that lacks an escape key, I've mostly retrained muscle memory to use `ctrl+[` for escape. I still use the key occasionally (and I'd still rather have a physical key).
 * Battery info. I had battery info in the menu bar but the Touch Bar is more noticeable, and the extra space allows for more info. This helps me be more aware of battery-hungry apps, and now my battery lasts longer.
 * ADSL connection info. My ADSL model exposes this info by SNMP. It was previously in the menu bar as a [custom plugin](https://github.com/edwinsteele/bitbar-plugins/blob/13752ceb419d07bf7b6cf1f32d709ba06f7b4a10/Network/wan_status.10m.sh) for [BitBar](https://getbitbar.com/) and, like the battery info, it's more visible and useful in the Touch Bar.
 * www.wordspeak.org ping time. This is an indication of my upstream connection quality, not as monitoring. When touched, it opens an [Alacritty](https://github.com/jwilm/alacritty) terminal to my hosting machine, with the appropriate colour scheme.
