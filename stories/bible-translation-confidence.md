@@ -12,12 +12,11 @@
 .. template: project.tmpl
 -->
 
-Bible Translation Confidence
-============================
-
 # Background
 
-While scholars agree on the translation of most passages in scripture, some chapters and verses are difficult to translate and there are varying levels of consensus on the meaning of the text. While reading _The New International Commentary of the Old Testament - The Book of Job_ by John E. Hartley, I realised that my application of scripture would be helped if I understood the degree of confidence that scholars have in the translation that I'm reading. This is a proof-of-concept of an inline indicator of translation confidence. It shows footnotes from the commentary and the purpose of the footnote, either a clarification with no impact to meaning, some disagreement as to the correctness of the translation or a significant disagreement as to the correctness of the translation. This proof-of-concept shows part of chapter 30 from the book of Job.
+While scholars agree on the translation of most passages in scripture, some chapters and verses are difficult to translate and there are varying levels of consensus on the meaning of the text. While reading _The New International Commentary of the Old Testament - The Book of Job_ by John E. Hartley, I realised that my application of scripture would be helped if I understood the degree of confidence that scholars have in the translation that I'm reading. This is a proof-of-concept of an inline indicator of translation confidence. It shows footnotes from the commentary and the purpose of the footnote, either a clarification with no impact to meaning, some disagreement as to the correctness of the translation or a significant disagreement as to the correctness of the translation.
+
+This proof-of-concept shows part of chapter 30 from the book of Job, with text and notes from _The New International Commentary of the Old Testament - The Book of Job_ by John E. Hartley.
 
 # Components of Confidence
 
@@ -33,7 +32,7 @@ Bundling all the components of confidence gives the following legend:
 * <span class="minor">Some consensus</span>: There is some consensus on the translation and the footnotes explain diverging opinion
 * <span class="major">Little/no consensus</span>: There is little consensus on the translation and the footnotes explain diverging opinion
 
-The footnote references show the translation notes.
+Open the footnote references to show the translation notes.
 
 <div class="passage">
 <div class="initial-verse-line"><span class="verse-number">16</span>Now my soul is emptied from me;</div>
@@ -69,7 +68,6 @@ The footnote references show the translation notes.
 <div class="initial-verse-line"><span class="verse-number">31</span>My lyre is tuned to wailing,</div>
 <div class="additional-verse-line">and my flute to <span class="minor">the voice of mourners</span>.”<sup id="fnref:17"><a href="#fn:17">17</a></sup></div>
 </div>
-
 
 <div class="footnotes"><ol>
     <li class="footnote" id="fn:1">
@@ -122,3 +120,8 @@ The footnote references show the translation notes.
         <p>Gordis suggests that <i>bōḵîm</i>, “those who weep,” may be an abstract noun, “weeping,” parallel to <i>’ēḇel</i>, “mourning.”<a href="#fnref:17" title="return to article"> ↩</a></p>
     </li>
 </ol></div>
+
+
+Source code is available in my [Github repo](https://github.com/edwinsteele/translation-confidence).
+
+Please let me know if you are aware of any translations with any sort of confidence indicator.
