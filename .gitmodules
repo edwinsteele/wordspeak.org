@@ -1,3 +1,9 @@
 [submodule "files/d3-projects"]
 path = files/d3-projects
 url = https://github.com/edwinsteele/d3-projects.git
+[submodule "translation-confidence"]
+	path = translation-confidence
+	url = https://github.com/edwinsteele/translation-confidence.git
+[submodule "files/translation-confidence"]
+	path = files/translation-confidence
+	url = https://github.com/edwinsteele/translation-confidence.git
