@@ -94,7 +94,7 @@ ul, ol {
 .brand {
     font-size: 1.4em;
     font-weight: 200;
-    color: #696969;
+    color: #696969 !important;
 }
 
 .c12{width:100%}
