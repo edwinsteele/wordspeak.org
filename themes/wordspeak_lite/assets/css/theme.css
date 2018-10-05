@@ -242,6 +242,10 @@ li.previous > a:before {
     background:#ddd;
 }
 
+.text-nav {
+    color: #686868;
+}
+
 div.metadata {
     border-top: solid;
     border-bottom: solid;
