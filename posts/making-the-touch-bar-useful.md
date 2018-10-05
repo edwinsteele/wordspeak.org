@@ -6,7 +6,7 @@
 .. category: 
 .. link: 
 .. description: 
-.. spellcheck_exceptions: BetterTouchTool,BTT,ADSL,SNMP,BitBar,ctrl,Alacritty
+.. spellcheck_exceptions: BetterTouchTool,BTT,ADSL,SNMP,BitBar,ctrl,Alacritty,Macbook,www
 .. type: text
 -->
 

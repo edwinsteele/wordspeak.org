@@ -2,7 +2,7 @@
 .. title: Words and Pictures - May
 .. slug: words-and-pictures-may
 .. date: 2013/06/05 17:38:47
-.. spellcheck_exceptions: wapm,Jabbar,Schettler,Spurgeon
+.. spellcheck_exceptions: wapm,Jabbar,Schettler,Spurgeon,Yorker
 .. tags: Reading
 .. link:
 .. description:
