@@ -151,19 +151,9 @@ ul, ol {
     background-repeat: repeat-x;
 }
 
-.nav,.nav .current,.nav a:hover{
-	color:#333;
-}
-
 .nav a{
     padding-right:1em;
     position:relative;
-    color: #777;
-    text-decoration: none;
-}
-
-.nav .active {
-    color: #333;
     text-decoration: none;
 }
 
