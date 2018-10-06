@@ -1,5 +1,5 @@
 <!--
-.. title: Accessibility - the old gray mare, she aint what she used to be
+.. title: Accessibility - the old gray mare, she ain't what she used to be
 .. slug: accessibility-the-old-gray-mare-she-aint-what-she-used-to-be
 .. date: 2018-10-06 17:34:51 UTC+10:00
 .. tags: 
