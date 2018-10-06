@@ -3,7 +3,7 @@
 .. slug: accessibility-the-old-gray-mare-she-aint-what-she-used-to-be
 .. date: 2018-10-06 17:34:51 UTC+10:00
 .. tags: 
-.. spellcheck_exceptions: WebAIM
+.. spellcheck_exceptions: WebAIM's,gray,aint,
 .. category: 
 .. link: 
 .. description: 
