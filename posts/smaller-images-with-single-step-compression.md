@@ -18,7 +18,7 @@ Each tool in my workflow has defaults that work well if there is no subsequent o
 1. Export from Photos.app. I choose a "JPEG Quality" level at export time.
 1. Stamp copyright and licencing info using ExifTool
 1. Resize images as a part of image gallery creation using Pillow, which generally involves a compression step
-1. Perform final optimisation using imageOptim. I've used this tool in the past to reduce jpg sizes with great success and it's consistently given me the best image compression. Adding this step was the trigger point for this investigation.
+1. Perform final optimisation using imageOptim. I've used this tool in the past to reduce JPEG sizes with great success and it's consistently given me the best image compression. Adding this step was the trigger point for this investigation.
 
 I did experiments on my [Arches gallery](https://images.wordspeak.org/arches/) whose photos have a total uncompressed size of 103.6MB. I tried four permutations of compression with the results below, noting that the Pillow step also includes resizing:
 
