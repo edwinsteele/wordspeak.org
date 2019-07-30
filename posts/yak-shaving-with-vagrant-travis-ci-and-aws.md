@@ -11,7 +11,7 @@
 
 Tldr; Don't use the vagrant package from your distribution if you intent to build plugins.
 
-I've just finished setting up CI pipeline for a personal project. The project has an ansible playbook that I want to exercise every time there's a commit or a PR. While completing the task I [shaved a yak](http://catb.org/jargon/html/Y/yak-shaving.html) and narrowly avoided shaving a whole herd. I planned to use Vagrant in my Travis-CI pipeline to start an instance in AWS, run the playbook, look at the result and terminate the instance. Vagrant, Travis-CI and AWS are pretty common tools, so I was surprised at the wrangling involved before I ended up with a solution. I thought I'd document my findings to minimise the chance that others will have the same experience.
+I've just finished setting up CI pipeline for a personal project. The project has an Ansible playbook that I want to exercise every time there's a commit or a PR. While completing the task I [shaved a yak](http://catb.org/jargon/html/Y/yak-shaving.html) and narrowly avoided shaving a whole herd. I planned to use Vagrant in my Travis-CI pipeline to start an instance in AWS, run the playbook, look at the result and terminate the instance. Vagrant, Travis-CI and AWS are pretty common tools, so I was surprised at the wrangling involved before I ended up with a solution. I thought I'd document my findings to minimise the chance that others will have the same experience.
 
 # Finding #1: Travis' default build agent has an old Vagrant
 

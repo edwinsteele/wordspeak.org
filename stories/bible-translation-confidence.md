@@ -2,7 +2,7 @@
 .. title: Bible Translation Confidence
 .. slug: bible-translation-confidence
 .. date: 2018-10-03 11:50:11 UTC+10:00
-.. spellcheck_exceptions: Hartley,ConnectBox,repo
+.. spellcheck_exceptions: Hartley,ConnectBox,repo,Github
 .. tags: 
 .. stylesheet_urls: /translation-confidence/css/translation-confidence.css,/translation-confidence/css/bigfoot-number.css
 .. script_urls: /translation-confidence/js/jquery-2.2.4.min.js,/translation-confidence/js/bigfoot.min.js,/translation-confidence/js/translation-confidence.js
