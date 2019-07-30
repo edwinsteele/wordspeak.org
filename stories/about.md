@@ -19,12 +19,12 @@ You can reach me at <edwin@wordspeak.org>.
 Behind the keyboard
 ===================
 
-I live in Sydney, Australia, and am happily married with three children. I'm a follower of Jesus and am a part of [ImagineNations Church](https://inchurch.com.au) in western Sydney. My day job is in IT Operations but I also love writing software in Python in my spare time.
+I live in Sydney, Australia, and am happily married with three children. I'm a follower of Jesus and am a part of [ImagineNations Church](https://inchurch.com.au) in western Sydney. My day job is in IT but I also love writing software in Python in my spare time.
 
 On the desktop
 ==============
 
--   I run MacOS on the desktop (a 15" MacBook Pro hooked up to a Dell UP2414Q 4K monitor) and OpenBSD on servers
+-   I run MacOS on the desktop (a 13" MacBook Pro hooked up to a Dell UP2414Q 4K monitor) and OpenBSD on servers
 -   My current photos are taken with convenient devices, generally my iPad Pro or on my iPhone SE. My older photos were taken on a more traditional format camera, a 3.2mp Canon Ixus IIs, 10mp Panasonic DMC-TZ15 or film Nikon FM2
 -   I write text and code in Vim and process photos in Apple Photos
 -   I store my source code on [Github](https://github.com/edwinsteele)
@@ -54,4 +54,3 @@ Archives
 
 -   See [Archives by Date](/archive.html)
 -   See [Archives by Tag](/categories/index.html)
-

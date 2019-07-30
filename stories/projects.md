@@ -18,18 +18,21 @@ Photos
 Software Projects
 =================
 
-JavaScript
-----------
+Larger
+------
+
+- [ConnectBox](https://github.com/ConnectBox). I help develop a portable, -offline media sharing system for small form-factor computers.
+- [Australian Aboriginal Scripture Availability](https://language-explorer.wordspeak.org). Querying and visualisation of bible translation efforts for Australian Aboriginal languages.
+
+
+Smaller
+-------
 
 -   [Australian Map Demo](/pages/d3/d3-australian-map-demo.html). Shows a GeoJSON map and colour scales using D3
 -   [Experiments with Census data](/pages/d3/d3-nt-sla-map.html). Multi-dimensional scatter-plot and GeoJSON map based on Australian 2006 Census data using D3
 -   [Single-origin coffee locations](/pages/single-origin-coffee-sources.html). Mapping of geolocated points using Leaflet.
 -   [Bible Translation Confidence](/pages/bible-translation-confidence.html). A proof-of-concept to show degrees of confidence in bible translation.
 
-Systems
--------
-
-- [ConnectBox](https://github.com/ConnectBox). I help develop a portable-offline media sharing system for small form-factor computers.
 
 This site
 ---------
