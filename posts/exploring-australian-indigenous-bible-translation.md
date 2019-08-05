@@ -37,4 +37,4 @@ The software also has a map of language groups, with size corresponding to speak
 
 The data shown in the software is a few years old, so it's quite possible that the Kukatja and the Jaru people have a bible translation underway, but I think there's promise in combining a data-driven approach with God's leading as we work towards giving everyone access to the bible in their native language. If you're interested in current Australian indigenous bible translation efforts, take a look at [Aboriginal Bibles](https://www.aboriginalbibles.org.au).
 
-The source code is available on [Github](https://github.com/edwinsteele/language_explorer)
+The source code for the software is available on [Github](https://github.com/edwinsteele/language_explorer)
