@@ -1,6 +1,9 @@
 {% if image_set is defined %}
 <a href="https://images.wordspeak.org/{{ image_set }}" title="{{ title }}">
 {% endif %}
+{% if href is defined %}
+<a href="{{ href }}" title="{{ title }}">
+{% endif %}
  <img class="ri"
    src="https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_375/{{ cloudinary_id }}"
    sizes="(max-width: 50em) 100vw,
@@ -11,5 +14,8 @@
            https://res.cloudinary.com/wordspeak/image/upload/f_auto%2Cq_auto%2Cw_1536/{{ cloudinary_id }} 1536w"
    alt="{{ title }}">
 {% if image_set is defined %}
+</a>
+{% endif %}
+{% if href is defined %}
 </a>
 {% endif %}
