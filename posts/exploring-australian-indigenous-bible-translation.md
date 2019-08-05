@@ -1,9 +1,10 @@
 <!--
 .. title: Exploring Australian indigenous bible translation
 .. slug: exploring-australian-indigenous-bible-translation
-.. date: 2019-07-31 06:53:00 UTC+10:00
+.. date: 2019-08-05 16:53:00 UTC+10:00
 .. tags: 
 .. category: 
+.. speelcheck_exceptions: Kukatja,SIL's,AIATSIS,AUSTLANG,Tindale's,Jaru
 .. link: 
 .. description: 
 .. type: text
@@ -24,7 +25,7 @@ You can see it at [https://language-explorer.wordspeak.org](https://language-exp
 # Why the Kukatja?
 
 Most importantly, they don't have *any* of the bible in their native language. Given the first book of the bible to be translated is usually one of the gospels, a language group with even a single book has access to the key parts of the message of Jesus. Given everyone should have some chance to read about Jesus, it's important to prioritise a giving that first opportunity.
-Secondly, while the Kukatja aren't the largest language group without bible access (that'd be the [Jaru](https://language-explorer.wordspeak.org/language/iso/ddj.html)) their low (self-assessed) ability in Australia's national language, English, means that they can't use an English-language bible either, so they're quite stuck.
+Secondly, while the Kukatja aren't the largest language group without bible access (that would be the [Jaru](https://language-explorer.wordspeak.org/language/iso/ddj.html)) their low (self-assessed) ability in Australia's national language, English, means that they can't use an English-language bible either, so they're quite stuck.
 
 Here's output from the software showing only language groups without a bible (filter by _No Scripture_) and sorted by count of non English language readers.
 
@@ -34,6 +35,6 @@ The software also has a map of language groups, with size corresponding to speak
 
 {{% wordspeak_image cloudinary_id="language-map1" title="Filterable language map" href="https://language-explorer.wordspeak.org/map.html" %}}
 
-The data shown in the software is a few years old, so it's quite possible that the Kukatja and the Jaru people have a bible translation underway, but I think there's promise in combining a data-driven approach with God's leading as we work towards giving everyone access to the bible in their native language. If you're interested in current bible translation efforts, take a look at the [Aboriginal Bible Site](https://www.aboriginalbibles.org.au)
+The data shown in the software is a few years old, so it's quite possible that the Kukatja and the Jaru people have a bible translation underway, but I think there's promise in combining a data-driven approach with God's leading as we work towards giving everyone access to the bible in their native language. If you're interested in current Australian indigenous bible translation efforts, take a look at [Aboriginal Bibles](https://www.aboriginalbibles.org.au).
 
 The source code is available on [Github](https://github.com/edwinsteele/language_explorer)
