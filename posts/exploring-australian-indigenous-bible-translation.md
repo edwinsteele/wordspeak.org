@@ -4,7 +4,7 @@
 .. date: 2019-08-05 16:53:00 UTC+10:00
 .. tags: 
 .. category: 
-.. speelcheck_exceptions: Kukatja,SIL's,AIATSIS,AUSTLANG,Tindale's,Jaru
+.. spellcheck_exceptions: Kukatja,SIL's,AIATSIS,AUSTLANG,Tindale's,Jaru
 .. link: 
 .. description: 
 .. type: text
