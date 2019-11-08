@@ -28,7 +28,6 @@ piexif==1.0.13            # via nikola
 pillow==6.2.0             # via nikola
 pyenchant==2.0.0
 pygments==2.2.0           # via nikola
-pyinotify==0.9.6          # via doit
 pyrss2gen==1.1            # via nikola
 python-dateutil==2.6.1    # via nikola
 rcssmin==1.0.6
