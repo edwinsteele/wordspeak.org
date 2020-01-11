@@ -20,7 +20,6 @@ rsync --version
 rsync -av \
   -e "ssh $SSH_STANDARD_ARGS -i $DEPLOY_KEY" \
   --delete \
-  --rsync-path=/usr/bin/openrsync \
   --size-only \
   --filter="protect language_explorer" \
   --filter="exclude *.md" \
