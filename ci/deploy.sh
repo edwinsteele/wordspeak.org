@@ -18,6 +18,7 @@ fi
 chmod 600 $DEPLOY_KEY
 rsync -av \
   -e "ssh $SSH_STANDARD_ARGS -i $DEPLOY_KEY" \
+  --rsync-path=/usr/bin/openrsync \
   --delete \
   --size-only \
   --filter="exclude *.md" \
