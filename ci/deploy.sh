@@ -20,8 +20,8 @@ rsync -av \
   -e "ssh $SSH_STANDARD_ARGS -i $DEPLOY_KEY" \
   --rsync-path=/usr/bin/openrsync \
   --delete \
-  --filter="exclude *.md" \
-  --filter="exclude *.md.gz" \
+  --filter='exclude *.md' \
+  --filter='exclude *.md.gz' \
   output/ \
   origin.wordspeak.org:/home/esteele/Sites/$TARGET_SITE/
 rsync_exit=$?
