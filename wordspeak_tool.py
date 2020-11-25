@@ -141,10 +141,14 @@ def build():
     subprocess.check_call(["nikola", "build"], cwd=SITE_BASE)
     # Get rid of the stuff that we don't want to push but was built
     #  (and can't easily be disabled)
-    #
-    # XXXXXXXXXXXXXXXXXXXX uncomment
-    #for uba in UNWANTED_BUILD_ARTIFACTS:
-    #    os.remove(os.path.join(OUTPUT_BASE, uba))
+    print("__file__ is ", __file__)
+    print("OUTPUT_BASE is ", OUTPUT_BASE)
+    print("os.listdir(OUTPUT_BASE/d3-projects)")
+    print(os.listdir(os.path.join(OUTPUT_BASE, "d3-projects")))
+    print("os.listdir(OUTPUT_BASE)")
+    print(os.listdir(OUTPUT_BASE))
+    for uba in UNWANTED_BUILD_ARTIFACTS:
+        os.remove(os.path.join(OUTPUT_BASE, uba))
 
 
 @cli.command()

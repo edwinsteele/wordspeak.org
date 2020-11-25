@@ -3,7 +3,7 @@
 .. slug: site-security-improvements
 .. date: 2016/10/07 07:01:00
 .. tags:
-.. spellcheck_exceptions: ssi,CSP,HSTS,XSS,evaluator,validator,SecurityHeaders,io,Helme's,Qualys,JavaScript
+.. spellcheck_exceptions: ssi,CSP,HSTS,XSS,evaluator,validator,SecurityHeaders,io,Helme's,Qualys,JavaScript,config
 .. is_orphan: False
 .. link:
 .. description:
