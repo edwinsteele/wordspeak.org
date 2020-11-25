@@ -1,0 +1,21 @@
+name: CI
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.6'
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        npm install webpagetest
+    - name: Build site
+      run: ./wordspeak_tool.py build
+    - name: Run tests
+      run: |
+        ./wordspeak_tool.py spellchecker
