@@ -19,7 +19,18 @@ jobs:
     - name: Build site
       run: ./wordspeak_tool.py build
     - name: Deploy to staging
-      run: true
+      uses: reggionick/s3-deploy@v3
+      with:
+        folder: output
+        bucket: ${{ secrets.STAGING_S3_BUCKET }}
+        bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+        dist-id: ${{ secrets.STAGING_CLOUDFRONT_DISTRIBUTION_ID }}
+        delete-removed: true
+        no-cache: true
+        private: true
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
     # Our wpt elements include the favicon and the pre-loading of the next page, because we're not
     #  testing with --onload. We choose not to use --onload because it'll show us if we accidentally
     #  introduce something that runs after document complete.
@@ -31,4 +42,7 @@ jobs:
         /usr/local/bin/webpagetest test https://staging.wordspeak.org/posts/write-because-you-want-to.html --key=$WEBPAGETEST_API_KEY --location=azure-australia-southeast:Chrome --clearcerts --first --poll --timeout 570 --specs ci/wpt_frontpage_testspecs.json --reporter spec
       env:
         WEBPAGETEST_API_KEY: ${{ secrets.WEBPAGETEST_API_KEY }}
+    - name: Do a thing only when on master
+      run: echo "I'm on master"
+      if: github.ref == 'refs/heads/master'
 
