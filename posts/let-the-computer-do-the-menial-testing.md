@@ -61,5 +61,5 @@ I consider these sort of tasks to be the unit tests and static validations for m
 -   make it harder to deploy the site without running them than with them (I do this by making my deploy command run all the tests)
 -   white-list the known, but accepted, violations so you don't have to think about whether the warning is *known*
 
-The source for my fabfile is on [github](https://github.com/edwinsteele/wordspeak.org/blob/master/fabfile.py)
+The source for my fabfile is on [github](https://github.com/edwinsteele/wordspeak.org/blob/59496af3211f38bdc691b479182b53e9febbeb3e/fabfile.py)
 
