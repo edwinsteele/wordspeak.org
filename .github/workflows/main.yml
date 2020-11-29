@@ -42,7 +42,17 @@ jobs:
         /usr/local/bin/webpagetest test https://staging.wordspeak.org/posts/write-because-you-want-to.html --key=$WEBPAGETEST_API_KEY --location=azure-australia-southeast:Chrome --clearcerts --first --poll --timeout 570 --specs ci/wpt_frontpage_testspecs.json --reporter spec
       env:
         WEBPAGETEST_API_KEY: ${{ secrets.WEBPAGETEST_API_KEY }}
-    - name: Do a thing only when on master
-      run: echo "I'm on master"
-      if: github.ref == 'refs/heads/master'
-
+   - name: Deploy to prod (master only)
+     uses: reggionick/s3-deploy@v3
+     with:
+       folder: output
+       bucket: ${{ secrets.PROD_S3_BUCKET }}
+       bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+       dist-id: ${{ secrets.PROD_CLOUDFRONT_DISTRIBUTION_ID }}
+       delete-removed: true
+       no-cache: true
+       private: true
+     env:
+       AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
+       AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
+     if: github.ref == 'refs/heads/master'
