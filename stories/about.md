@@ -32,7 +32,7 @@ On the desktop
 On the server
 =============
 
--   This site is built using [Nikola](https://getnikola.com) and is hosted on [Vultr](https://vultr.com)
+-   This site is built using [Nikola](https://getnikola.com)
 -   Photo Galleries are built using [Sigal](http://sigal.saimon.org/en/latest/) and are self-hosted at [images.wordspeak.org](https://images.wordspeak.org) and videos are on [Vimeo](https://vimeo.com/edwinsteele/videos)
 -   Source for this site is in my [Github repository](https://github.com/edwinsteele/wordspeak.org)
 
