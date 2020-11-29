@@ -24,7 +24,7 @@ I live in Sydney, Australia, and am happily married with three children. I'm a f
 On the desktop
 ==============
 
--   I run MacOS on the desktop (a 13" MacBook Pro hooked up to a Dell UP2414Q 4K monitor) and OpenBSD on servers
+-   I run MacOS on the desktop and OpenBSD on servers
 -   My current photos are taken with convenient Apple devices. My older photos were taken on a more traditional format camera, a 3.2mp Canon Ixus IIs, 10mp Panasonic DMC-TZ15 or film Nikon FM2
 -   I write text and code in Vim and process photos in Apple Photos
 -   I store my source code on [Github](https://github.com/edwinsteele)
