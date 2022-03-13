@@ -29,7 +29,6 @@ jobs:
     - name: Run tests  (XXX need to inject staging deploy)
       run: |
         ./wordspeak_tool.py spellchecker
-        ./wordspeak_tool.py w3c_checks
         echo $PATH
     #- name: Deploy to prod (master only)
     #  uses: reggionick/s3-deploy@v3
