@@ -20,7 +20,7 @@ jobs:
     - name: Deploy to staging
       uses: burnett01/rsync-deployments@5.2
       with:
-        switches: -avzr --delete
+        switches: -avr --delete --rsync-path=/usr/bin/openrsync
         path: output/
         remote_path: ${{ secrets.STAGING_DEPLOY_PATH }}
         remote_host: ${{ secrets.STAGING_DEPLOY_HOST }}
