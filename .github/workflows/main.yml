@@ -21,7 +21,8 @@ jobs:
     - name: Deploy to staging
       uses: burnett01/rsync-deployments@5.2
       with:
-        switches: -avr --delete --rsync-path=/usr/bin/openrsync
+        # Switches need to match arguments in authorised_keys
+        switches: '--rsync-path=/usr/bin/openrsync -av --delete'
         path: output/
         remote_path: ${{ secrets.STAGING_DEPLOY_PATH }}
         remote_host: ${{ secrets.STAGING_DEPLOY_HOST }}
@@ -29,19 +30,16 @@ jobs:
         remote_key: ${{ secrets.STAGING_DEPLOY_KEY }}
     - name: Run tests
       run: |
-        ./wordspeak_tool.py spellchecker
+        #./wordspeak_tool.py spellchecker
         echo $PATH
-    #- name: Deploy to prod (master only)
-    #  uses: reggionick/s3-deploy@v3
-    #  with:
-    #    folder: output
-    #    bucket: ${{ secrets.PROD_S3_BUCKET }}
-    #    bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-    #    dist-id: ${{ secrets.PROD_CLOUDFRONT_DISTRIBUTION_ID }}
-    #    delete-removed: true
-    #    no-cache: true
-    #    private: true
-    #  env:
-    #    AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
-    #    AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
-    #  if: github.ref == 'refs/heads/master'
+    - name: Deploy to prod (master only)
+      uses: burnett01/rsync-deployments@5.2
+      with:
+        # Switches need to match arguments in authorised_keys
+        switches: '--rsync-path=/usr/bin/openrsync -av --delete'
+        path: output/
+        remote_path: ${{ secrets.PROD_DEPLOY_PATH }}
+        remote_host: ${{ secrets.PROD_DEPLOY_HOST }}
+        remote_user: ${{ secrets.PROD_DEPLOY_USER }}
+        remote_key: ${{ secrets.PROD_DEPLOY_KEY }}
+      if: github.ref == 'refs/heads/master'
