@@ -14,6 +14,7 @@ jobs:
         python-version: '3.6'
     - name: Install dependencies
       run: |
+        sudo apt-get install enchant
         pip install -r requirements.txt
     - name: Build site
       run: ./wordspeak_tool.py build
@@ -26,9 +27,9 @@ jobs:
         remote_host: ${{ secrets.STAGING_DEPLOY_HOST }}
         remote_user: ${{ secrets.STAGING_DEPLOY_USER }}
         remote_key: ${{ secrets.STAGING_DEPLOY_KEY }}
-    - name: Run tests  (XXX need to inject staging deploy)
+    - name: Run tests
       run: |
-        #./wordspeak_tool.py spellchecker
+        ./wordspeak_tool.py spellchecker
         echo $PATH
     #- name: Deploy to prod (master only)
     #  uses: reggionick/s3-deploy@v3
