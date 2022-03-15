@@ -4,7 +4,7 @@
 .. date: 2016-06-30 07:09:59 UTC+11:00
 .. tags: 
 .. link: 
-.. spellcheck_exceptions: hiutaw,Fitbit,haptics,watchOS
+.. spellcheck_exceptions: hiutaw,Fitbit,haptics,watchOS,iCloud
 .. description: 
 .. type: text
 -->
