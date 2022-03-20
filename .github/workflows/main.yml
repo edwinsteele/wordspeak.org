@@ -11,10 +11,10 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.6'
+        python-version: '3.8'
     - name: Install dependencies
       run: |
-        sudo apt-get install enchant
+        sudo apt-get install aspell-en enchant libxml2-dev libxslt-dev
         pip install -r requirements.txt
     - name: Build site
       run: ./wordspeak_tool.py build
@@ -30,7 +30,9 @@ jobs:
         remote_key: ${{ secrets.STAGING_DEPLOY_KEY }}
     - name: Run tests
       run: |
-        #./wordspeak_tool.py spellchecker
+        python3 -c "import enchant; print(enchant.list_languages())"
+        python3 -c "import os; print(os.environ)"
+        ./wordspeak_tool.py spellchecker
         echo $PATH
     - name: Deploy to prod (master only)
       uses: burnett01/rsync-deployments@5.2

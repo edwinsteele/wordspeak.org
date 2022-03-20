@@ -292,14 +292,10 @@ def strip_markdown_directives(line):
 def spellchecker():
     """Spellcheck the Markdown and ReST files on the site"""
 
-    if platform.system() == "Darwin":
-        # Mac seems to use ispell as a default, but openbsd and linux
-        #  use aspell. No need to maintain exceptions for multiple
-        #  dictionaries.
-        raise click.ClickException(
-            "Spellchecker not supported on Mac due to different "
-            "enchant backends"
-        )
+    # Mac seems to use ispell as a default, but openbsd and linux
+    #  use aspell. Let's force aspell as the preferred
+    b = enchant.Broker()
+    b.set_ordering("en_GB","aspell,ispell")
 
     spelling_errors_found = False
 
