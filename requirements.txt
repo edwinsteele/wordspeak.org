@@ -6,7 +6,7 @@
 #
 blinker==1.4
     # via nikola
-certifi==2021.10.8
+certifi==2022.12.7
     # via
     #   cloudinary
     #   requests
@@ -60,6 +60,8 @@ pyenchant==3.2.2
     # via -r requirements.in
 pygments==2.11.2
     # via nikola
+pyinotify==0.9.6
+    # via doit
 pyrss2gen==1.1
     # via nikola
 python-dateutil==2.8.2
