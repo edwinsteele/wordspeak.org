@@ -14,7 +14,7 @@ jobs:
         python-version: '3.8'
     - name: Install dependencies
       run: |
-        sudo apt-get install aspell-en enchant libxml2-dev libxslt-dev
+        sudo apt-get install aspell-en enchant-2 libxml2-dev libxslt-dev
         pip install -r requirements.txt
     - name: Build site
       run: ./wordspeak_tool.py build

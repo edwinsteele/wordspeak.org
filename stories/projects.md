@@ -21,7 +21,7 @@ Software Projects
 Larger
 ------
 
-- [ConnectBox](https://github.com/ConnectBox). I help develop a portable, -offline media sharing system for small form-factor computers.
+- [ConnectBox](https://github.com/ConnectBox). I help develop a portable, offline media sharing system for small form-factor computers.
 - [Australian Aboriginal Scripture Availability](https://language-explorer.wordspeak.org). Querying and visualisation of bible translation efforts for Australian Aboriginal languages.
 
 
