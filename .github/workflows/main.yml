@@ -12,6 +12,9 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.8'
+    - name: Find depedencies
+      run: |
+        sudo apt search enchant
     - name: Install dependencies
       run: |
         sudo apt-get install aspell-en enchant libxml2-dev libxslt-dev
