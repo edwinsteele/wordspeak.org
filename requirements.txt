@@ -6,7 +6,7 @@
 #
 blinker==1.4
     # via nikola
-certifi==2022.12.7
+certifi==2023.7.22
     # via
     #   cloudinary
     #   requests
